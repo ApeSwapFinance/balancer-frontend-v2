@@ -1,5 +1,25 @@
+# <img src="logo.svg" alt="ApeSwap" height="160px"> <img src="logo-b.svg" alt="Balancer" height="64px"> 
 # Balancer Frontend App (v2)
 Frontend Vue app for Balancer exchange and pool management.
+
+This repository contains the code for the ApeSwap DEX V2. This project is a fork of [balancer-frontend-v2](https://github.com/balancer-labs/frontend-v2). For more further information please see their detailed [documentation](https://docs.balancer.fi/) as we build out ours.
+
+## Pulling Upstream Changes
+Balancer V2 Frontend is an actively maintained repository. The unaltered Balancer V2 code lives in the [balancer-v2](https://github.com/ApeSwapFinance/apeswap-swap-v2-monorepo/tree/balancer-v2) branch. To pull in new updates to that branch run the following: 
+
+```bash
+git checkout balancer-v2
+git fetch upstream
+git merge upstream/master
+```
+
+Now the new updates will be in the [balancer-v2](https://github.com/ApeSwapFinance/balancer-frontend-v2/tree/balancer-v2) branch. These updates can then be merged into a feature branch off of `main` reconcile the updates.  
+
+```
+git checkout main
+git checkout -b feature/<feature-name>
+git merge balancer-v2
+```
 
 ## Development
 To setup the development environment first clone the repo:
