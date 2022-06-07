@@ -1,5 +1,5 @@
 {
-  "name": "@balancer-labs/frontend-v2",
+  "name": "@ape.swap/balancer-frontend-v2",
   "version": "1.57.0",
   "engines": {
     "node": "14.x",
