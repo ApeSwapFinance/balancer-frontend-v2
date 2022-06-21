@@ -31,7 +31,7 @@ const props = withDefaults(defineProps<Props>(), {
   textAlign: '',
   iconName: 'info',
   iconSize: 'md',
-  iconClass: 'text-gray-300',
+  iconClass: 'text-gray',
   delayMs: 0
 });
 
@@ -190,7 +190,7 @@ onUnmounted(() => {
 }
 
 .dark .tooltip[data-popper-placement='top'] .tooltip-content:before {
-  border-top: solid #0f172a 8px; /* gray-900 */
+  border-top: solid #0f172a 8px; /* white1-dark */
 }
 
 /* Top triangle for top placed tooltips */
@@ -202,11 +202,11 @@ onUnmounted(() => {
 }
 
 .dark .tooltip[data-popper-placement='bottom'] .tooltip-content:after {
-  border-bottom: solid #0f172a 8px; /* gray-900 */
+  border-bottom: solid #0f172a 8px; /* white1-dark */
 }
 
 .tooltip-content {
-  @apply rounded-md text-xs text-black dark:text-white bg-white dark:bg-gray-900 font-medium;
+  @apply rounded-md text-xs text-primary dark:text-primary-bright bg-white dark:bg-white1-dark font-medium;
 }
 
 .tooltip-text {

@@ -11,7 +11,7 @@
           noStyle
           class="group"
         >
-          <div class="font-semibold flex items-center">
+          <div class="font-bold flex items-center">
             {{ $t(`transactionAction.${transaction.action}`) }}
             <BalIcon
               v-if="
@@ -22,11 +22,11 @@
               "
               name="arrow-up-right"
               size="sm"
-              class="ml-1 text-gray-400 dark:text-gray-600 group-hover:text-pink-500 transition-colors"
+              class="ml-1 text-gray-dark dark:text-gray-dark group-hover:text-pink-500 transition-colors"
             />
           </div>
           <div
-            class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors summary"
+            class="text-sm text-gray dark:text-gray-dark group-hover:text-gray dark:group-hover:text-primary-bright transition-colors summary"
           >
             {{ transaction.summary }}
           </div>

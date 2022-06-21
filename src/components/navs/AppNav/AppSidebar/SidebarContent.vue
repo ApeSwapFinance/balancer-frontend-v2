@@ -82,7 +82,7 @@ watch(blockNumber, async () => {
 <template>
   <div class="opacity-0 fade-in-delay">
     <div
-      class="h-20 px-4 border-b border-gray-800 flex flex-col justify-center"
+      class="h-20 px-4 border-b border-white3-dark flex flex-col justify-center"
     >
       <AppLogo forceDark />
     </div>
@@ -99,7 +99,7 @@ watch(blockNumber, async () => {
     </div>
 
     <div class="grid grid-col-1 text-sm mt-5">
-      <span class="text-gray-500 px-4 pb-1 font-medium">Ecosystem</span>
+      <span class="text-gray px-4 pb-1 font-medium">Ecosystem</span>
       <BalLink
         v-for="link in ecosystemLinks"
         :key="link.url"
@@ -109,7 +109,7 @@ watch(blockNumber, async () => {
         noStyle
       >
         {{ link.label }}
-        <BalIcon name="arrow-up-right" size="sm" class="ml-1 text-gray-500" />
+        <BalIcon name="arrow-up-right" size="sm" class="ml-1 text-gray" />
       </BalLink>
     </div>
 
@@ -151,7 +151,7 @@ watch(blockNumber, async () => {
           ref="blockIcon"
           class="block-icon w-2 h-2 rounded-full bg-green-500"
         />
-        <span class="ml-2 text-gray-300">
+        <span class="ml-2 text-gray">
           {{ networkConfig.name }}: Block {{ blockNumber }}
         </span>
       </div>
@@ -159,7 +159,7 @@ watch(blockNumber, async () => {
         :href="
           `https://github.com/balancer-labs/frontend-v2/releases/tag/${version}`
         "
-        class="text-gray-300 flex items-center mt-2"
+        class="text-gray flex items-center mt-2"
         external
         noStyle
       >
@@ -172,15 +172,15 @@ watch(blockNumber, async () => {
 
 <style scoped>
 .side-bar-link {
-  @apply transition duration-300 p-4 py-1.5 hover:bg-gray-850 cursor-pointer;
+  @apply transition duration-300 p-4 py-1.5 hover:bg-white1-dark cursor-pointer;
 }
 
 .side-bar-btn {
-  @apply flex items-center bg-gray-850 hover:bg-gray-800 rounded-lg p-2 cursor-pointer transition;
+  @apply flex items-center bg-white1-dark hover:bg-white3-dark rounded-lg p-2 cursor-pointer transition;
 }
 
 .social-link {
-  @apply w-11 h-11 xs:w-12 xs:h-12  rounded-full bg-gray-850 hover:bg-gray-800 flex items-center justify-center text-white cursor-pointer;
+  @apply w-11 h-11 xs:w-12 xs:h-12  rounded-full bg-white1-dark hover:bg-white3-dark flex items-center justify-center text-primary-bright cursor-pointer;
 }
 
 .social-link > svg {

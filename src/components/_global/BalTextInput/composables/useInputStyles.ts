@@ -67,10 +67,11 @@ export default function useInputStyles(
   const inputContainerClasses = computed(() => ({
     border: !props.noBorder,
     [extPaddingClass()]: true,
-    'border-gray-100 dark:border-gray-800': !isInvalid.value && !isActive.value,
+    'border-primary-bright dark:border-white3-dark':
+      !isInvalid.value && !isActive.value,
     'border-red-500 dark:border-red-500': isInvalid.value,
     'border-blue-300': isActive.value && !isInvalid.value,
-    'hover:border-gray-300 dark:hover:border-gray-700':
+    'hover:border-gray-dark dark:hover:border-white4-dark':
       isHover.value && !isActive.value,
     'shadow-inner': !props.noShadow
   }));

@@ -300,7 +300,7 @@ function getMainTokenEquivalentAmount(address: string, amount: string) {
           <template v-else>
             <template v-for="(tokenAmount, i) in action.tokenAmounts" :key="i">
               <div
-                class="m-1 flex items-center p-1 px-2 bg-gray-50 dark:bg-gray-700 rounded-lg"
+                class="m-1 flex items-center p-1 px-2 bg-primary-bright dark:bg-white4-dark rounded-lg"
                 v-if="tokenAmount.amount !== '0'"
               >
                 <BalAsset
@@ -336,7 +336,7 @@ function getMainTokenEquivalentAmount(address: string, amount: string) {
               <BalIcon
                 name="arrow-up-right"
                 size="sm"
-                class="text-gray-500 hover:text-blue-500 transition-colors"
+                class="text-gray hover:text-blue-500 transition-colors"
               />
             </BalLink>
           </div>
@@ -348,6 +348,6 @@ function getMainTokenEquivalentAmount(address: string, amount: string) {
 
 <style scoped>
 .token-item {
-  @apply m-1 flex items-center p-1 px-2 bg-gray-50 dark:bg-gray-700 rounded-lg;
+  @apply m-1 flex items-center p-1 px-2 bg-primary-bright dark:bg-white4-dark rounded-lg;
 }
 </style>

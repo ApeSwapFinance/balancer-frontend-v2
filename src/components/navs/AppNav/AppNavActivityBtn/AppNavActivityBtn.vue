@@ -14,7 +14,7 @@
     <BalCard class="w-72" noPad noBorder>
       <template v-slot:header>
         <div
-          class="p-3 w-full flex items-center justify-between border-b dark:border-gray-900"
+          class="p-3 w-full flex items-center justify-between border-b dark:border-white1-dark"
         >
           <h5>{{ $t('recentActivityTitle') }}</h5>
         </div>
@@ -32,7 +32,7 @@
             v-if="
               pendingTransactions.length > 0 && finalizedTransactions.length > 0
             "
-            class="bg-gray-100 dark:bg-gray-700 my-3 h-px"
+            class="bg-primary-bright dark:bg-white4-dark my-3 h-px"
           />
           <ActivityRows
             :transactions="finalizedTransactions"
@@ -45,7 +45,9 @@
         <template v-else>{{ $t('noRecentActivity') }}</template>
       </div>
       <template v-if="transactions.length > 0" v-slot:footer>
-        <div class="w-full p-3 rounded-b-lg bg-white dark:bg-gray-800 text-sm">
+        <div
+          class="w-full p-3 rounded-b-lg bg-white dark:bg-white3-dark text-sm"
+        >
           <a @click="clearAllTransactions()" class="text-blue-500">
             {{ $t('clearTransactions') }}
           </a>

@@ -5,7 +5,7 @@
         :src="require(`@/assets/images/connectors/${wallet}.svg`)"
         class="h-10 w-10 mr-4"
       />
-      <h5 class="text-gray-700 dark:text-white text-base">
+      <h5 class="text-gray dark:text-primary-bright text-base">
         <span class="capitalize">{{ WalletNameMap[wallet] }}</span>
       </h5>
     </div>
@@ -37,8 +37,8 @@ export default defineComponent({
 <style>
 .wallet-connect-btn {
   @apply transition-all;
-  @apply bg-white dark:bg-gray-850 hover:bg-gray-50 dark:hover:bg-gray-800;
-  @apply border dark:border-gray-900;
+  @apply bg-white dark:bg-white1-dark hover:bg-primary-bright dark:hover:bg-white3-dark;
+  @apply border dark:border-white1-dark;
   @apply p-4 flex justify-start items-center w-full h-14 rounded-md mb-3 shadow-lg;
 }
 </style>

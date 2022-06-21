@@ -2,7 +2,7 @@
   <BalLoadingBlock v-if="isLoading" class="h-96 mt-16" />
   <div :class="[wrapperClass]" v-else @mouseleave="handleMouseLeave">
     <div id="lineChartHeader" class="mb-4" v-if="showHeader">
-      <h3 class="text-gray-800 dark:text-gray-400 text-xl tracking-wider">
+      <h3 class="text-gray dark:text-gray-dark text-xl tracking-wider">
         {{ currentValue }}
       </h3>
       <span
@@ -263,7 +263,7 @@ export default defineComponent({
           : tailwind.theme.colors.white,
         formatter: params => {
           return `
-            <div class='flex flex-col font-body bg-white dark:bg-gray-850 dark:text-white'>
+            <div class='flex flex-col font-body bg-white dark:bg-white1-dark dark:text-primary-bright'>
               <span>${params[0].value[0]}</span>
               ${params
                 .map(

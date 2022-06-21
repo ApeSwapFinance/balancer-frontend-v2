@@ -81,7 +81,7 @@ function handleSuccess() {
           v-if="unlockConfirmed"
           size="8"
           color="green"
-          class="text-white mr-2"
+          class="text-primary-bright mr-2"
         >
           <BalIcon name="check" />
         </BalCircle>

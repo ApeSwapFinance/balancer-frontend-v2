@@ -135,7 +135,7 @@ const weightColor = computed(() => {
   if (Number(totalWeight.value) > 100 || Number(totalWeight.value) <= 0) {
     return 'text-red-500';
   }
-  return darkMode.value ? 'text-gray-300' : 'text-gray-800';
+  return darkMode.value ? 'text-gray' : 'text-gray';
 });
 
 /**
@@ -317,10 +317,10 @@ function onAlertMountChange() {
     <BalCard shadow="xl" noBorder>
       <BalStack vertical spacing="sm">
         <BalStack vertical spacing="xs">
-          <span class="text-xs text-gray-700 dark:text-gray-500">{{
+          <span class="text-xs text-gray dark:text-gray-dark">{{
             networkName
           }}</span>
-          <h5 class="font-bold dark:text-gray-300">
+          <h5 class="font-bold dark:text-gray-dark">
             {{ $t('createAPool.chooseTokenWeights') }}
           </h5>
         </BalStack>
@@ -328,7 +328,7 @@ function onAlertMountChange() {
           <div ref="tokenWeightListWrapper">
             <div class="flex flex-col">
               <div
-                class="bg-gray-50 dark:bg-gray-850 w-full flex justify-between p-2 px-4"
+                class="bg-primary-bright dark:bg-white1-dark w-full flex justify-between p-2 px-4"
               >
                 <h6>{{ $t('token') }}</h6>
                 <h6>{{ $t('weight') }}</h6>
@@ -368,7 +368,7 @@ function onAlertMountChange() {
               </div>
               <div
                 ref="totalsRowElement"
-                class="bg-gray-50 dark:bg-gray-850 w-full p-2 px-4"
+                class="bg-primary-bright dark:bg-white1-dark w-full p-2 px-4"
               >
                 <div class="w-full flex justify-between">
                   <h6>{{ $t('totalAllocated') }}</h6>

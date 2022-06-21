@@ -68,11 +68,11 @@ export default defineComponent({
     const bgColorClass = computed(() => {
       switch (props.type) {
         case 'warning':
-          return 'bg-orange-50 dark:bg-orange-500 border border-orange-200 dark:border-0 text-black dark:text-white';
+          return 'bg-orange-50 dark:bg-orange-500 border border-orange-200 dark:border-0 text-primary dark:text-primary-bright';
         case 'error':
-          return 'bg-red-50 dark:bg-red-500 border border-red-200 dark:border-0 text-black dark:text-white';
+          return 'bg-red-50 dark:bg-red-500 border border-red-200 dark:border-0 text-primary dark:text-primary-bright';
         default:
-          return 'bg-gray-100 dark:bg-gray-500 border dark:border-0 border-gray-200 text-black dark:text-white';
+          return 'bg-primary-bright dark:bg-primary-bright border dark:border-0 border-primary-bright text-primary dark:text-primary-bright';
       }
     });
 
@@ -128,11 +128,11 @@ export default defineComponent({
     const iconColorClasses = computed(() => {
       switch (props.type) {
         case 'warning':
-          return 'text-orange-500 dark:text-white bg-orange-500 dark:bg-white bg-opacity-10 dark:bg-opacity-10';
+          return 'text-orange-500 dark:text-primary-bright bg-orange-500 dark:bg-white bg-opacity-10 dark:bg-opacity-10';
         case 'error':
-          return 'text-red-500 dark:text-white bg-red-500 dark:bg-white bg-opacity-10 dark:bg-opacity-10';
+          return 'text-red-500 dark:text-primary-bright bg-red-500 dark:bg-white bg-opacity-10 dark:bg-opacity-10';
         default:
-          return 'text-gray-500 dark:text-white bg-black dark:bg-white bg-opacity-10 dark:bg-opacity-10';
+          return 'text-gray dark:text-primary-bright bg-black dark:bg-white bg-opacity-10 dark:bg-opacity-10';
       }
     });
 
@@ -149,8 +149,8 @@ export default defineComponent({
 
     const descriptionColor = computed(() => {
       if (props.type === 'info')
-        return 'text-black dark:text-white text-opacity-70';
-      return 'text-black dark:text-white text-opacity-70';
+        return 'text-primary dark:text-primary-bright text-opacity-70';
+      return 'text-primary dark:text-primary-bright text-opacity-70';
     });
 
     const iconSize = computed(() => {

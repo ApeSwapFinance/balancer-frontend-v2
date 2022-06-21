@@ -223,7 +223,7 @@ onBeforeMount(async () => {
             }}
           </p>
         </div>
-        <div class="bg-gray-200 dark:bg-gray-700 p-4 rounded-lg">
+        <div class="bg-primary-bright dark:bg-white4-dark p-4 rounded-lg">
           <h3 class="mb-3">
             {{
               isL2

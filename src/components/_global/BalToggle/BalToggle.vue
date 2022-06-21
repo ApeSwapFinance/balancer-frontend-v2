@@ -10,7 +10,7 @@
     />
     <label :for="name" class="bal-toggle-track" />
   </div>
-  <label v-if="label" class="text-xs  dark:text-white ml-2">
+  <label v-if="label" class="text-xs  dark:text-primary-bright ml-2">
     {{ label }}
   </label>
 </template>
@@ -55,10 +55,10 @@ export default defineComponent({
   @apply relative inline-block w-10 align-middle select-none transition duration-200 ease-out;
 }
 .bal-toggle-checkbox {
-  @apply absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-200 group-hover:border-gray-300 dark:border-gray-700 dark:group-hover:border-gray-900 appearance-none cursor-pointer transition-colors;
+  @apply absolute block w-6 h-6 rounded-full bg-white border-4 border-primary-bright group-hover:border-gray-dark dark:border-white4-dark dark:group-hover:border-white1-dark appearance-none cursor-pointer transition-colors;
 }
 .bal-toggle-track {
-  @apply block overflow-hidden h-6 rounded-full bg-gray-200 group-hover:bg-gray-300 dark:bg-gray-700 dark:group-hover:bg-gray-900 bg-none cursor-pointer transition-colors;
+  @apply block overflow-hidden h-6 rounded-full bg-primary-bright group-hover:bg-gray-dark dark:bg-white4-dark dark:group-hover:bg-white1-dark bg-none cursor-pointer transition-colors;
 }
 .bal-toggle-checkbox:checked {
   @apply right-0 border-green-400 group-hover:border-green-500 dark:border-green-500 dark:group-hover:border-green-400 transition-colors;
@@ -81,9 +81,9 @@ export default defineComponent({
   @apply bg-green-400 group-hover:bg-green-500 dark:bg-green-500 dark:group-hover:bg-green-400;
 }
 .bal-toggle-checkbox[disabled] {
-  @apply border-gray-300 dark:border-gray-700 cursor-not-allowed;
+  @apply border-gray-dark dark:border-white4-dark cursor-not-allowed;
 }
 .bal-toggle-checkbox[disabled] + .bal-toggle-track {
-  @apply bg-gray-300 dark:bg-gray-700 cursor-not-allowed;
+  @apply bg-gray-dark dark:bg-white4-dark cursor-not-allowed;
 }
 </style>

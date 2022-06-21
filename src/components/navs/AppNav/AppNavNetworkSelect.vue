@@ -15,7 +15,7 @@
     </template>
     <div class="flex flex-col w-44 rounded-lg overflow-hidden">
       <div
-        class="p-3 border-b dark:border-gray-900 whitespace-nowrap text-gray-500 font-medium"
+        class="p-3 border-b dark:border-white1-dark whitespace-nowrap text-gray font-medium"
       >
         Select a network
       </div>
@@ -23,7 +23,7 @@
         v-for="network in networks"
         :key="network.id"
         :href="appUrl(network)"
-        class="flex items-center justify-between p-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-850"
+        class="flex items-center justify-between p-3 cursor-pointer hover:bg-primary-bright dark:hover:bg-white1-dark"
       >
         <div class="flex items-center">
           <img

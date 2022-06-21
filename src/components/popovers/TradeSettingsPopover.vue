@@ -5,7 +5,7 @@
         circle
         color="white"
         size="sm"
-        class="mb-2 text-gray-500 icon-spin-anim"
+        class="mb-2 text-gray icon-spin-anim"
         @click="onActivatorClick"
       >
         <BalIcon name="settings" size="sm" />
@@ -17,7 +17,7 @@
         <span v-text="$t('slippageTolerance')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-400 -mb-px" />
+            <BalIcon name="info" size="xs" class="ml-1 text-gray-dark -mb-px" />
           </template>
           <div v-html="$t('marketConditionsWarning')" />
         </BalTooltip>
@@ -29,7 +29,7 @@
         <span v-text="$t('transactionType')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-400 -mb-px" />
+            <BalIcon name="info" size="xs" class="ml-1 text-gray-dark -mb-px" />
           </template>
           <div v-text="$t('ethereumTxTypeTooltip')" />
         </BalTooltip>
@@ -50,14 +50,14 @@
         <span v-text="$t('transactionDeadline')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-400 -mb-px" />
+            <BalIcon name="info" size="xs" class="ml-1 text-gray-dark -mb-px" />
           </template>
           <div v-html="$t('transactionDeadlineTooltip')" />
         </BalTooltip>
       </div>
       <div class="flex mt-1">
         <div
-          class="flex items-center px-1 border rounded-lg shadow-inner dark:border-gray-700"
+          class="flex items-center px-1 border rounded-lg shadow-inner dark:border-white4-dark"
         >
           <input
             class="w-8 text-right bg-transparent"

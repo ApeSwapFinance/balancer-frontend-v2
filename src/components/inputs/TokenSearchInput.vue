@@ -103,7 +103,7 @@ function onClick() {
       </div>
       <div
         v-if="account && !dynamicDataLoading && !hasNoBalances"
-        class="text-gray-400 overflow-x-auto"
+        class="text-gray-dark overflow-x-auto"
       >
         <span class="mr-2">{{ $t('inYourWallet') }}:</span>
         <span
@@ -115,12 +115,12 @@ function onClick() {
           {{ token?.symbol }}
         </span>
       </div>
-      <div v-else class="text-gray-400 flex flex-wrap py-3">
+      <div v-else class="text-gray-dark flex flex-wrap py-3">
         <span class="mr-2">{{ $t('popularBases') }}</span>
         <span
           v-for="token in whiteListedTokens"
           :key="`popular-${token.symbol}`"
-          class="mr-3 md:mr-4 cursor-pointer hover:text-gray-700 dark:hover:text-white transition-colors"
+          class="mr-3 md:mr-4 cursor-pointer hover:text-gray dark:hover:text-primary-bright transition-colors"
           @click="addToken(token.address)"
         >
           {{ token?.symbol }}

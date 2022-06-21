@@ -218,14 +218,14 @@ async function claimAvailableRewards() {
 
 <template>
   <div class="w-full sm:w-3/4 md:w-1/2 mt-4" v-if="userClaims != null">
-    <div class="text-sm text-gray-600 mb-1" v-if="isAirdrop">
+    <div class="text-sm text-gray mb-1" v-if="isAirdrop">
       {{ $t('liquidityMiningPopover.airdropExplainer', ['Polygon']) }}
     </div>
     <div v-if="!isAirdrop" class="">
       <BalCard no-pad class="mb-4">
         <template v-slot:header>
           <div
-            class="w-full px-3 border-b dark:border-gray-900 bg-gray-50 dark:bg-gray-800"
+            class="w-full px-3 border-b dark:border-white1-dark bg-primary-bright dark:bg-white3-dark"
           >
             <BalTabs
               v-model="activeTab"
@@ -241,7 +241,7 @@ async function claimAvailableRewards() {
             :key="`token-${claimableToken.token}`"
           >
             <div
-              class="px-3 py-2 flex items-center mb-2 border-b dark:border-gray-900 last:border-0"
+              class="px-3 py-2 flex items-center mb-2 border-b dark:border-white1-dark last:border-0"
             >
               <BalAsset
                 :address="claimableToken.token"
@@ -253,7 +253,7 @@ async function claimAvailableRewards() {
                   {{ fNum2(claimableToken.amount, FNumFormats.token) }}
                   {{ claimableToken.symbol }}
                 </div>
-                <div class="font-sm text-gray-400">
+                <div class="font-sm text-gray-dark">
                   {{ fNum2(claimableToken.fiatValue, FNumFormats.fiat) }}
                 </div>
               </div>
@@ -266,7 +266,7 @@ async function claimAvailableRewards() {
             :key="`token-${claimableToken.token}`"
           >
             <div
-              class="px-3 py-2 flex items-center mb-2 border-b dark:border-gray-900 last:border-0"
+              class="px-3 py-2 flex items-center mb-2 border-b dark:border-white1-dark last:border-0"
             >
               <BalAsset
                 :address="claimableToken.token"
@@ -278,7 +278,7 @@ async function claimAvailableRewards() {
                   {{ fNum2(claimableToken.amount, FNumFormats.token) }}
                   {{ claimableToken.symbol }}
                 </div>
-                <div class="font-sm text-gray-400">
+                <div class="font-sm text-gray-dark">
                   {{ fNum2(claimableToken.fiatValue, FNumFormats.fiat) }}
                 </div>
               </div>
@@ -317,7 +317,7 @@ async function claimAvailableRewards() {
     </div>
     <div v-if="!isAirdrop">
       <div class="mb-4">
-        <div class="font-semibold mb-2">
+        <div class="font-bold mb-2">
           Looking for other claimable tokens?
         </div>
         <ul class="pl-8 list-disc">

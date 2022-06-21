@@ -35,31 +35,31 @@ const aprLabel = computed((): string => {
 
 <template>
   <BalCard noPad shadow="none">
-    <div class="p-4 w-full border-b dark:border-gray-900">
+    <div class="p-4 w-full border-b dark:border-white1-dark">
       <h6>
         {{ $t(`migratePool.${poolMigrationInfo.type}.poolStats.title`) }}
       </h6>
     </div>
     <div class="-mt-2 p-4">
       <div class="mb-3">
-        <div class="text-gray-500">
+        <div class="text-gray">
           {{ $t('poolValue') }}
         </div>
-        <div class="font-semibold">
+        <div class="font-bold">
           {{ fNum2(pool.totalLiquidity, FNumFormats.fiat) }}
         </div>
       </div>
       <div class="mb-3">
-        <div class="text-gray-500">
+        <div class="text-gray">
           {{ $t('volumeTime', ['24h']) }}
         </div>
-        <div class="font-semibold">
+        <div class="font-bold">
           {{ fNum2(pool.volumeSnapshot || '0', FNumFormats.fiat) }}
         </div>
       </div>
       <div>
-        <div class="text-gray-500">{{ $t('apr') }}</div>
-        <div class="flex items-center font-semibold">
+        <div class="text-gray">{{ $t('apr') }}</div>
+        <div class="flex items-center font-bold">
           {{ aprLabel }}
           <APRTooltip :pool="pool" />
         </div>

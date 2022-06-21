@@ -135,7 +135,7 @@ async function submit() {
     />
     <template v-else>
       <div
-        class="flex items-center justify-between text-gray-400 dark:text-gray-600 mt-4 text-sm"
+        class="flex items-center justify-between text-gray-dark dark:text-gray-dark mt-4 text-sm"
       >
         <div class="flex items-center">
           <BalIcon name="clock" />

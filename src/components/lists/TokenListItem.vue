@@ -34,9 +34,9 @@
         type="fiat"
         numberWidth="2"
         numberHeight="4"
-        class="text-sm font-normal"
+        class="text-sm font-medium"
       />
-      <div v-else class="text-gray-500 text-sm font-normal">
+      <div v-else class="text-gray text-sm font-medium">
         <template v-if="value > 0">
           {{ fNum2(value, FNumFormats.fiat) }}
         </template>

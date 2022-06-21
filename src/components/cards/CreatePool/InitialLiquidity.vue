@@ -223,7 +223,7 @@ function saveAndProceed() {
     <BalCard shadow="xl" noBorder>
       <BalStack vertical>
         <BalStack vertical spacing="xs">
-          <span class="text-xs text-gray-700 dark:text-gray-500">{{
+          <span class="text-xs text-gray dark:text-gray-dark">{{
             userNetworkConfig?.name
           }}</span>
           <BalStack horizontal spacing="xs" align="center">
@@ -235,7 +235,7 @@ function saveAndProceed() {
               <BalIcon class="flex" name="chevron-left" />
             </button>
 
-            <h5 class="font-bold dark:text-gray-300">Set initial liquidity</h5>
+            <h5 class="font-bold dark:text-gray-dark">Set initial liquidity</h5>
           </BalStack>
           <AnimatePresence :isVisible="isOptimised" unmountInstantly>
             <BalStack
@@ -244,13 +244,13 @@ function saveAndProceed() {
               spacing="sm"
               class="border rounded-lg p-2 mt-2"
             >
-              <BalIcon name="zap" size="sm" class="mt-1 text-gray-500" />
-              <span class="dark:text-gray-400 font-medium">
+              <BalIcon name="zap" size="sm" class="mt-1 text-gray" />
+              <span class="dark:text-gray-dark font-medium">
                 {{ t('optimizedPrefilled') }}
               </span>
               <button
                 @click="handleClearAll"
-                class="text-sm font-medium text-gray-400 hover:text-blue-500"
+                class="text-sm font-medium text-gray-dark hover:text-blue-500"
               >
                 Clear all
               </button>
@@ -282,7 +282,7 @@ function saveAndProceed() {
                 <BalIcon
                   name="info"
                   size="xs"
-                  class="text-gray-400 ml-1 flex"
+                  class="text-gray-dark ml-1 flex"
                 />
               </template>
               <div v-html="t('autoOptimiseLiquidityToggle.tooltip')" />
@@ -308,9 +308,9 @@ function saveAndProceed() {
                 <button
                   :disabled="areAmountsMaxed"
                   :class="[
-                    'text-sm font-semibold3',
+                    'text-sm font-bold3',
                     {
-                      'text-gray-400 dark:text-gray-600': areAmountsMaxed,
+                      'text-gray-dark dark:text-gray-dark': areAmountsMaxed,
                       'text-blue-500 hover:text-blue-50': !areAmountsMaxed
                     }
                   ]"

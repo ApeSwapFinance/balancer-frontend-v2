@@ -21,15 +21,15 @@ body {
 }
 
 input {
-  caret-color: theme('colors.pink.500');
+  caret-color: theme('colors.gray');
 }
 
 #app {
-  @apply text-gray-900 dark:text-gray-50;
+  @apply dark:text-primary-bright;
 }
 
 #storybook-app {
-  @apply text-gray-900 dark:text-gray-50;
+  @apply dark:text-primary-bright;
 }
 
 a {
@@ -47,8 +47,8 @@ input[type=number] {
 }
 
 *::-webkit-scrollbar {
-  @apply bg-gray-50 dark:bg-gray-900;
+  @apply bg-primary-bright dark:bg-white1-dark;
 }
 *::-webkit-scrollbar-thumb {
-  @apply bg-gray-200 dark:bg-gray-700;
+  @apply bg-primary-bright dark:bg-white4-dark;
 }

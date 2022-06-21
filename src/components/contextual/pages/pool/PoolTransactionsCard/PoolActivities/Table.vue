@@ -207,7 +207,7 @@ function getJoinExitDetails(amounts: PoolActivity['amounts']) {
         <div class="px-6 py-4 flex -mt-1 flex-wrap">
           <template v-for="(tokenAmount, i) in action.tokenAmounts" :key="i">
             <div
-              class="m-1 flex items-center p-1 px-2 bg-gray-50 dark:bg-gray-700 rounded-lg"
+              class="m-1 flex items-center p-1 px-2 bg-primary-bright dark:bg-white4-dark rounded-lg"
               v-if="tokenAmount.amount !== '0'"
             >
               <BalAsset
@@ -240,7 +240,7 @@ function getJoinExitDetails(amounts: PoolActivity['amounts']) {
               <BalIcon
                 name="arrow-up-right"
                 size="sm"
-                class="text-gray-500 hover:text-blue-500 transition-colors"
+                class="text-gray hover:text-blue-500 transition-colors"
               />
             </BalLink>
           </div>

@@ -50,7 +50,7 @@ const { poolPathSymbolSegment, apyVisionNetworkName } = useApyVisionHelpers();
       <BalIcon
         name="arrow-up-right"
         size="sm"
-        class="ml-0.5 text-gray-500 hover:text-blue-400 transition-colors group-hover:text-blue-500"
+        class="ml-0.5 text-gray hover:text-blue-400 transition-colors group-hover:text-blue-500"
       />
     </BalLink>
   </div>

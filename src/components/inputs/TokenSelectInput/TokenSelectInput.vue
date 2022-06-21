@@ -80,7 +80,7 @@ function tokenFor(option: string): TokenInfo {
       <span class="text-base font-medium">
         {{ token?.symbol }}
       </span>
-      <span v-if="Number(weight) > 0" class="text-gray-500 ml-2">
+      <span v-if="Number(weight) > 0" class="text-gray ml-2">
         {{
           fNum2(weight, {
             style: 'percent',
@@ -109,7 +109,7 @@ function tokenFor(option: string): TokenInfo {
           <span class="text-base font-medium">
             {{ token?.symbol }}
           </span>
-          <span v-if="Number(weight) > 0" class="text-gray-500 ml-2">
+          <span v-if="Number(weight) > 0" class="text-gray ml-2">
             {{
               fNum2(weight, {
                 style: 'percent',
@@ -170,7 +170,7 @@ function tokenFor(option: string): TokenInfo {
 .token-select-input {
   @apply shadow rounded-lg flex items-center h-10 px-2 whitespace-nowrap;
   @apply text-sm;
-  font-variation-settings: 'wght' 700;
+  font-weight: 700;
 }
 
 .selectable {
@@ -178,10 +178,10 @@ function tokenFor(option: string): TokenInfo {
 }
 
 .unselected {
-  @apply bg-blue-500 text-white;
+  @apply bg-blue-500 text-primary-bright;
 }
 
 .selected {
-  @apply bg-gray-50 dark:bg-gray-700 text-black dark:text-white;
+  @apply bg-primary-bright dark:bg-white4-dark text-primary dark:text-primary-bright;
 }
 </style>

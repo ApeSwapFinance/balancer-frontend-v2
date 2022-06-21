@@ -1,6 +1,6 @@
 <template>
   <div class="pr-2">
-    <div class="flex justify-between text-sm text-gray-500">
+    <div class="flex justify-between text-sm text-gray">
       <div>
         <slot v-if="$slots.leftLabel || leftLabel" name="leftLabel">
           {{ leftLabel }}

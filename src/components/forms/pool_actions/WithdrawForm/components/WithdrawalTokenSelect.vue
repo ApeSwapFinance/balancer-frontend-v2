@@ -130,7 +130,7 @@ function handleSelected(newToken: string): void {
 .token-select-input {
   @apply shadow rounded-lg flex items-center h-10 px-2 whitespace-nowrap;
   @apply text-sm;
-  font-variation-settings: 'wght' 700;
+  font-weight: 700;
 }
 
 .selectable {
@@ -138,6 +138,6 @@ function handleSelected(newToken: string): void {
 }
 
 .selected {
-  @apply bg-gray-50 dark:bg-gray-700 text-black dark:text-white;
+  @apply bg-primary-bright dark:bg-white4-dark text-primary dark:text-primary-bright;
 }
 </style>

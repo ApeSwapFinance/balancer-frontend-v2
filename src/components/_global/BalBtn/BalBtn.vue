@@ -114,7 +114,7 @@ export default defineComponent({
       }
 
       if (props.disabled) {
-        return `bg-gray-300 dark:bg-gray-700 text-white dark:text-gray-500`;
+        return `bg-gray-dark dark:bg-white4-dark text-primary-bright dark:text-gray-dark`;
       }
       if (props.loading) {
         return `bg-gradient-to-tr from-${fromColor}-50 to-${toColor}-50`;
@@ -137,10 +137,10 @@ export default defineComponent({
       else if (props.outline) return 'bg-transparent';
       else if (props.flat) return bgFlatClasses.value;
       else if (props.color === 'white') {
-        return 'bg-gray-50 dark:bg-gray-800';
+        return 'bg-primary-bright dark:bg-white3-dark';
       } else {
         if (props.disabled) {
-          return `bg-gray-300 dark:bg-gray-700 text-white dark:text-gray-500`;
+          return `bg-gray-dark dark:bg-white4-dark text-primary-bright dark:text-gray-dark`;
         }
         if (props.loading) {
           return `bg-${props.color}-400 dark:bg-${props.color}-dark-400`;
@@ -161,15 +161,15 @@ export default defineComponent({
 
     const textColorClasses = computed(() => {
       if (props.outline && props.disabled)
-        return 'text-gray-400 dark:text-gray-700';
+        return 'text-gray-dark dark:text-gray-dark';
       if (props.outline && props.color === 'gradient') return 'text-purple-700';
       if (props.color === 'white') {
-        if (props.outline) return 'text-white';
-        else return 'text-gray-800 dark:text-gray-100';
+        if (props.outline) return 'text-primary-bright';
+        else return 'text-gray dark:text-gray-dark';
       }
       if (props.outline || props.flat)
         return `text-${props.color}-500 dark:text-${props.color}-400`;
-      return 'text-white';
+      return 'text-primary-bright';
     });
 
     const displayClasses = computed(() => {
@@ -225,7 +225,7 @@ export default defineComponent({
 <style scoped>
 .bal-btn {
   @apply overflow-hidden tracking-tight;
-  font-variation-settings: 'wght' 500;
+  font-weight: 500;
   transition: all 0.2s ease;
   text-decoration: none !important;
   line-height: 0;

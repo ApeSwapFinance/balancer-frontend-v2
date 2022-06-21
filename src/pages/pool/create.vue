@@ -320,7 +320,7 @@ watch(
           :title="$t('createAPool.recoveredState')"
         >
           {{ $t('createAPool.recoveredStateInfo') }}
-          <button @click="handleReset" class="font-semibold text-blue-500">
+          <button @click="handleReset" class="font-bold text-blue-500">
             {{ $t('clickHere') }}
           </button>
         </BalAlert>

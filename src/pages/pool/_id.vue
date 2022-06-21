@@ -11,7 +11,7 @@
             <div
               v-for="([address, tokenMeta], i) in titleTokens"
               :key="i"
-              class="mt-2 mr-2 flex items-center px-2 h-10 bg-gray-50 dark:bg-gray-850 rounded-lg"
+              class="mt-2 mr-2 flex items-center px-2 h-10 bg-primary-bright dark:bg-white1-dark rounded-lg"
             >
               <BalAsset :address="address" />
               <span class="ml-2">
@@ -19,7 +19,7 @@
               </span>
               <span
                 v-if="!isStableLikePool"
-                class="font-medium text-gray-400 text-xs mt-px ml-1"
+                class="font-medium text-gray-dark text-xs mt-px ml-1"
               >
                 {{
                   fNum2(tokenMeta.weight, {
@@ -48,12 +48,12 @@
               <BalIcon
                 name="arrow-up-right"
                 size="sm"
-                class="ml-2 mt-2 text-gray-500 hover:text-blue-500 transition-colors"
+                class="ml-2 mt-2 text-gray hover:text-blue-500 transition-colors"
               />
             </BalLink>
           </div>
           <div class="flex items-center mt-2">
-            <div v-html="poolFeeLabel" class="text-sm text-gray-600 mr-2" />
+            <div v-html="poolFeeLabel" class="text-sm text-gray mr-2" />
             <BalTooltip>
               <template v-slot:activator>
                 <BalLink
@@ -63,7 +63,7 @@
                 >
                   <GauntletIcon />
                 </BalLink>
-                <BalIcon v-else name="info" size="xs" class="text-gray-400" />
+                <BalIcon v-else name="info" size="xs" class="text-gray-dark" />
               </template>
               <span>
                 {{ swapFeeToolTip }}
@@ -465,7 +465,7 @@ export default defineComponent({
 <style scoped>
 .pool-title {
   @apply mr-4 capitalize mt-2;
-  font-variation-settings: 'wght' 700;
+  font-weight: 700;
 }
 
 .pool-actions-card {

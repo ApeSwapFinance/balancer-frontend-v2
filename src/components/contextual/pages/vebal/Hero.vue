@@ -32,19 +32,21 @@ function navigateToGetVeBAL() {
 </script>
 
 <template>
-  <div class="w-full bg-gray-850 hero-container">
+  <div class="w-full bg-white1-dark hero-container">
     <div class="hero-content">
       <div
         class="hero-text py-8 lg:py-4 xl:pt-0 px-4 lg:px-8 2xl:px-0 max-w-md"
       >
-        <p class="text-white font-medium mb-3">
+        <p class="text-primary-bright font-medium mb-3">
           {{ $t('veBAL.hero.eyebrow') }}
         </p>
-        <h1 class="title mb-6 text-white">{{ $t('veBAL.hero.title') }}</h1>
+        <h1 class="title mb-6 text-primary-bright">
+          {{ $t('veBAL.hero.title') }}
+        </h1>
         <div
           v-for="(benefit, i) in benefits"
           :key="i"
-          class="flex items-center mb-2 text-white"
+          class="flex items-center mb-2 text-primary-bright"
         >
           <BalIcon name="check" class="text-green-500 mr-2" />
           {{ benefit }}
@@ -171,7 +173,7 @@ function navigateToGetVeBAL() {
   @apply transition-transform duration-300;
 }
 .caption {
-  @apply font-semibold text-sm md:text-base text-gray-400 transition-colors text-center group-hover:text-white;
+  @apply font-bold text-sm md:text-base text-gray-dark transition-colors text-center group-hover:text-primary-bright;
   animation: fadeInMoveUp 0.5s ease-out 0.15s both;
 }
 

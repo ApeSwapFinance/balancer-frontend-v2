@@ -21,7 +21,7 @@
           @click="toggleSelectTokenList"
           class="flex items-center group cursor-pointer"
         >
-          <span class="text-xs text-gray-500">{{ $t('tokenLists') }}</span>
+          <span class="text-xs text-gray">{{ $t('tokenLists') }}</span>
           <div class="flex items-center ml-2">
             <span class="mr-1 ">
               <img
@@ -44,7 +44,7 @@
       <Search
         v-model="query"
         :placeholder="$t('searchByName')"
-        class="px-4 py-3 flex-auto border-b dark:border-gray-700"
+        class="px-4 py-3 flex-auto border-b dark:border-white4-dark"
       />
       <div>
         <div
@@ -68,7 +68,7 @@
       </div>
     </template>
     <template v-else>
-      <div class="border-b dark:border-gray-700 flex">
+      <div class="border-b dark:border-white4-dark flex">
         <Search
           v-model="query"
           :placeholder="$t('searchBy')"
@@ -98,7 +98,7 @@
         <div
           v-else
           v-text="$t('errorNoTokens')"
-          class="h-96 p-12 text-center text-gray-500"
+          class="h-96 p-12 text-center text-gray"
         />
       </div>
     </template>

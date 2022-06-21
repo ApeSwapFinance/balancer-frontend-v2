@@ -14,16 +14,16 @@ export function useChipClasses(props) {
 
   const bgColorClasses = (): string => {
     if (props.color === 'gradient')
-      return 'text-white bg-gradient-to-tr from-blue-500 to-pink-500';
-    if (props.color === 'white') return 'bg-white dark:bg-gray-900';
-    if (props.color === 'red') return 'text-white bg-red-500';
+      return 'text-primary-bright bg-gradient-to-tr from-blue-500 to-pink-500';
+    if (props.color === 'white') return 'bg-white dark:bg-white1-dark';
+    if (props.color === 'red') return 'text-primary-bright bg-red-500';
 
     return `bg-${props.color}-100 dark:bg-${props.color}-800`;
   };
 
   const outlineClasses = (): string => {
     if (props.outline) {
-      return `border-gray-100 dark:border-gray-900 border shadow-lg`;
+      return `border-primary-bright dark:border-white1-dark border shadow-lg`;
     }
     return 'shadow-lg';
   };
@@ -45,7 +45,9 @@ export function useChipClasses(props) {
 
 export function useCloseIconClasses(props) {
   const isGradient = props.color === 'gradient';
-  const colorClass = isGradient ? 'text-white' : `text-${props.color}-500`;
+  const colorClass = isGradient
+    ? 'text-primary-bright'
+    : `text-${props.color}-500`;
 
   const classes = computed(() => {
     return {

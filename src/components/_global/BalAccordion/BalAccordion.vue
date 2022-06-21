@@ -192,9 +192,9 @@ watch(
           ref="handleBarElement"
           @click="toggleSection(section.id)"
           :class="[
-            'w-full flex justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800',
+            'w-full flex justify-between p-3 hover:bg-primary-bright dark:hover:bg-white3-dark',
             {
-              'border-b dark:border-gray-900': i !== sections.length - 1
+              'border-b dark:border-white1-dark': i !== sections.length - 1
             }
           ]"
         >

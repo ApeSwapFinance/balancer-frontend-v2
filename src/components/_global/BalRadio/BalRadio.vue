@@ -76,7 +76,7 @@ export default defineComponent({
     });
 
     const colorClass = computed(() => {
-      if (props.disabled) return 'text-gray-500';
+      if (props.disabled) return 'text-gray';
       return `text-${props.color}-500`;
     });
 
@@ -111,8 +111,8 @@ export default defineComponent({
 
 <style>
 .bal-radio-input {
-  @apply bg-white dark:bg-gray-900 rounded-full m-0;
-  @apply border border-gray-300 dark:border-gray-900;
+  @apply bg-white dark:bg-white1-dark rounded-full m-0;
+  @apply border border-gray-dark dark:border-white1-dark;
   transition: all ease 0.25s;
   -webkit-appearance: none;
   -moz-appearance: none;

@@ -99,7 +99,7 @@ function injectUnknownPrices() {
         }}
       </p>
 
-      <span class="font-semibold">
+      <span class="font-bold">
         {{ $t('createAPool.enterTokenPrice', [readableUnknownTokenSymbols]) }}
       </span>
       <BalStack isDynamic vertical>

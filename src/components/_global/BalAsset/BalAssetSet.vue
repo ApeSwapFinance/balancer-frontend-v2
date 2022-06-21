@@ -174,8 +174,8 @@ export default defineComponent({
 .token-icon {
   margin-left: -2px;
   @apply rounded-full overflow-hidden shadow-none;
-  @apply bg-white dark:bg-gray-850;
-  @apply border-2 border-white dark:border-gray-850 group-hover:border-gray-50 dark:group-hover:border-gray-800;
+  @apply bg-white dark:bg-white1-dark;
+  @apply border-2 border-white dark:border-white1-dark group-hover:border-primary-bright dark:group-hover:border-white3-dark;
 }
 
 .my-wallet .token-icon {

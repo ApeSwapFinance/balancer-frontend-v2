@@ -224,7 +224,7 @@ const cards = computed(() => {
 }
 
 .secondary-value {
-  @apply text-sm text-gray-500 dark:text-gray-400;
+  @apply text-sm text-gray dark:text-gray-dark;
 }
 
 .plus-circle:hover,
@@ -236,7 +236,7 @@ const cards = computed(() => {
 
 .plus-circle:hover :deep(svg.feather-plus-circle),
 .plus-circle:focus :deep(svg.feather-plus-circle) {
-  @apply transition-all text-white;
+  @apply transition-all text-primary-bright;
   fill: #384aff; /* blue-500 */
 }
 
@@ -247,7 +247,7 @@ const cards = computed(() => {
 
 .minus-circle:hover :deep(svg.feather-minus-circle),
 .minus-circle:focus :deep(svg.feather-minus-circle) {
-  @apply transition-all text-white;
+  @apply transition-all text-primary-bright;
   fill: rgba(239, 68, 68); /* red-500 */
 }
 

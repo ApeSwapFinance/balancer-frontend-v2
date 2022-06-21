@@ -157,7 +157,7 @@ function handleClose() {
         v-if="isActionConfirmed"
         size="8"
         color="green"
-        class="text-white"
+        class="text-primary-bright"
       >
         <BalIcon name="check" />
       </BalCircle>
@@ -167,7 +167,7 @@ function handleClose() {
       <BalStack horizontal justify="between" align="center">
         <BalStack vertical spacing="none">
           <h5>{{ fNum2(shareBalanceToDisplay) }} {{ $t('lpTokens') }}</h5>
-          <span class="text-gray-500">
+          <span class="text-gray">
             {{ getToken(pool.address).symbol }}
           </span>
         </BalStack>

@@ -132,7 +132,7 @@ const isIncreaseLockOnly = computed(
 
 <style scoped>
 .summary-table {
-  @apply border dark:border-gray-700 divide-y dark:divide-gray-700 rounded-lg mt-4;
+  @apply border dark:border-white4-dark divide-y dark:divide-white4-dark rounded-lg mt-4;
 }
 
 .summary-item-row {

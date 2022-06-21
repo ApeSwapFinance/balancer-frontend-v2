@@ -167,7 +167,7 @@ export default defineComponent({
 }
 
 .label {
-  @apply text-gray-400;
+  @apply text-gray-dark;
 }
 
 select {

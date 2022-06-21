@@ -49,7 +49,7 @@ const { userNetworkConfig } = useWeb3();
  */
 const customInputClasses = computed(() => ({
   'border border-blue-500 text-blue-500': isCustomFee.value,
-  'border dark:border-gray-900': !isCustomFee.value
+  'border dark:border-white1-dark': !isCustomFee.value
 }));
 
 const isProceedDisabled = computed(() => {
@@ -140,7 +140,7 @@ async function onChangeFeeController(val: string) {
     <BalCard shadow="xl" noBorder>
       <BalStack vertical>
         <BalStack vertical spacing="xs">
-          <span class="text-xs text-gray-700 dark:text-gray-500">{{
+          <span class="text-xs text-gray dark:text-gray-dark">{{
             userNetworkConfig?.name
           }}</span>
           <BalStack horizontal align="center" spacing="xs">
@@ -150,7 +150,7 @@ async function onChangeFeeController(val: string) {
             >
               <BalIcon class="flex" name="chevron-left" />
             </button>
-            <h5 class="font-bold dark:text-gray-300">
+            <h5 class="font-bold dark:text-gray-dark">
               {{ $t('createAPool.setPoolFees') }}
             </h5>
           </BalStack>
@@ -158,7 +158,7 @@ async function onChangeFeeController(val: string) {
         <BalStack vertical spacing="sm">
           <div>
             <h6 class="mb-1">Initial swap fee</h6>
-            <p class="text-gray-600">{{ $t('createAPool.bestFeeOption') }}</p>
+            <p class="text-gray">{{ $t('createAPool.bestFeeOption') }}</p>
           </div>
           <BalStack spacing="xs" horizontal>
             <BalBtnGroup
@@ -278,7 +278,7 @@ async function onChangeFeeController(val: string) {
           spacing="xs"
         >
           <h6>{{ $t('createAPool.customAddressTitle') }}</h6>
-          <p class="text-gray-600 mb-1">
+          <p class="text-gray mb-1">
             {{ $t('createAPool.customAddressInfo') }}
           </p>
           <BalStack vertical spacing="xs">

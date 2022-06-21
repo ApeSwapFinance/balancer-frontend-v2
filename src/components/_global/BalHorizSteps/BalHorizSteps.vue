@@ -55,7 +55,7 @@ function stateClasses(state: StepState): string {
     case StepState.WalletOpen:
       return 'border-purple-500 dark:border-purple-500 text-gradient';
     default:
-      return 'dark:border-gray-700';
+      return 'dark:border-white4-dark';
   }
 }
 </script>
@@ -65,7 +65,10 @@ function stateClasses(state: StepState): string {
     <div v-for="(step, i) in steps" :key="i" class="flex items-center">
       <div
         v-if="i !== 0"
-        :class="['h-px bg-gray-100 dark:bg-gray-700', `w-${spacerWidth}`]"
+        :class="[
+          'h-px bg-primary-bright dark:bg-white4-dark',
+          `w-${spacerWidth}`
+        ]"
       />
       <BalTooltip :text="step.tooltip" width="44" textAlign="center">
         <template v-slot:activator>

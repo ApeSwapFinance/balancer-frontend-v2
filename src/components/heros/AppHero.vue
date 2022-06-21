@@ -87,14 +87,14 @@ function onClickConnect() {
       <template v-if="isWalletReady || isWalletConnecting">
         <h1
           v-text="$t('myBalancerInvestments')"
-          class="text-base font-medium text-white opacity-90 font-body mb-2"
+          class="text-base font-medium text-primary-bright opacity-90 font-body mb-2"
         />
         <BalLoadingBlock
           v-if="isLoadingTotalValue"
           class="h-10 w-40 mx-auto"
           white
         />
-        <div v-else class="text-3xl font-bold text-white mb-1">
+        <div v-else class="text-3xl font-bold text-primary-bright mb-1">
           {{ totalInvestedLabel }}
         </div>
         <div v-if="!isL2" class="relative mt-2 inline-block">
@@ -116,8 +116,8 @@ function onClickConnect() {
               cursor-pointer
               border border-yellow-500
               group
-              hover:text-white
-              focus:text-white
+              hover:text-primary-bright
+              focus:text-primary-bright
               transition-colors
               rounded-bl rounded-tr
             "
@@ -186,8 +186,8 @@ function onClickConnect() {
   border-bottom-right-radius: 8px;
 }
 .headline {
-  @apply text-white text-center text-4xl md:text-5xl pb-2 font-display font-black;
+  @apply text-primary-bright text-center text-4xl md:text-5xl pb-2 font-display font-bold;
   font-weight: 600;
-  font-variation-settings: 'wght' 700;
+  font-weight: 700;
 }
 </style>

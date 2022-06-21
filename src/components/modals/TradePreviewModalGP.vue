@@ -4,7 +4,7 @@
       <BalCard noPad class="relative mb-6 overflow-auto">
         <template v-slot:header>
           <div
-            class="w-full p-3 border-b bg-gray-50 rounded-t-lg text-sm dark:border-gray-800 dark:bg-gray-800"
+            class="w-full p-3 border-b bg-primary-bright rounded-t-lg text-sm dark:border-white3-dark dark:bg-white3-dark"
           >
             <span>
               {{ $t('effectivePrice') }}
@@ -18,7 +18,7 @@
         </template>
         <div>
           <div
-            class="p-3 border-gray-100 border-b relative dark:border-gray-900"
+            class="p-3 border-primary-bright border-b relative dark:border-white1-dark"
           >
             <div class="flex items-center">
               <div class="mr-3">
@@ -31,7 +31,7 @@
                   }}
                   {{ trading.tokenIn.value.symbol }}
                 </div>
-                <div class="text-gray-500 dark:text-gray-400 text-sm">
+                <div class="text-gray dark:text-gray-dark text-sm">
                   {{ tokenInFiatValue }}
                 </div>
               </div>
@@ -55,7 +55,7 @@
                   }}
                   {{ trading.tokenOut.value.symbol }}
                 </div>
-                <div class="text-gray-500 dark:text-gray-400 text-sm">
+                <div class="text-gray dark:text-gray-dark text-sm">
                   {{ tokenOutFiatValue }}
                   <span
                     v-if="
@@ -77,12 +77,14 @@
       <BalCard noPad shadow="none" class="mb-3">
         <template v-slot:header>
           <div
-            class="p-3 flex w-full items-center justify-between border-b dark:border-gray-900"
+            class="p-3 flex w-full items-center justify-between border-b dark:border-white1-dark"
           >
-            <div class="font-semibold">
+            <div class="font-bold">
               {{ labels.tradeSummary.title }}
             </div>
-            <div class="flex divide-x dark:divide-gray-500 text-xs uppercase">
+            <div
+              class="flex divide-x dark:divide-primary-bright text-xs uppercase"
+            >
               <div
                 :class="[
                   'pr-2 cursor-pointer font-medium',
@@ -132,7 +134,7 @@
         </div>
         <template v-slot:footer>
           <div
-            class="w-full p-3 rounded-b-lg bg-white text-sm dark:bg-gray-800"
+            class="w-full p-3 rounded-b-lg bg-white text-sm dark:bg-white3-dark"
           >
             <div class="summary-item-row font-medium">
               <div class="w-64">
@@ -140,7 +142,7 @@
               </div>
               <div v-html="summary.totalWithoutSlippage" />
             </div>
-            <div class="summary-item-row text-gray-500 dark:text-gray-400">
+            <div class="summary-item-row text-gray dark:text-gray-dark">
               <div class="w-64">
                 {{ labels.tradeSummary.totalWithSlippage }}
               </div>
@@ -196,7 +198,7 @@
               </div>
             </template>
             <div>
-              <div class="mb-2 font-semibold">
+              <div class="mb-2 font-bold">
                 <div>
                   {{
                     $t(
@@ -238,7 +240,7 @@
               </div>
             </template>
             <div>
-              <div class="mb-2 font-semibold">
+              <div class="mb-2 font-bold">
                 <div>
                   {{
                     $t(
@@ -287,7 +289,7 @@
               </div>
             </template>
             <div>
-              <div class="mb-2 font-semibold">
+              <div class="mb-2 font-bold">
                 {{
                   $t(
                     'tradeSummary.transactionTypesTooltips.tokenApproval.title',
@@ -320,7 +322,7 @@
             </div>
           </template>
           <div>
-            <div class="mb-2 font-semibold">
+            <div class="mb-2 font-bold">
               {{
                 trading.isGnosisTrade.value
                   ? $t('tradeSummary.transactionTypesTooltips.sign.title')
@@ -878,7 +880,7 @@ export default defineComponent({
 </script>
 <style scoped>
 .arrow-down {
-  @apply absolute right-0 rounded-full border border-gray-100 flex items-center h-8 w-8 justify-center bg-white mr-3 dark:border-gray-800 dark:bg-gray-800;
+  @apply absolute right-0 rounded-full border border-primary-bright flex items-center h-8 w-8 justify-center bg-white mr-3 dark:border-white3-dark dark:bg-white3-dark;
   transform: translateY(-50%);
 }
 
@@ -887,10 +889,10 @@ export default defineComponent({
 }
 
 .step {
-  @apply rounded-full w-7 h-7 border border-gray-100 dark:border-gray-700 flex items-center justify-center text-purple-500 relative;
+  @apply rounded-full w-7 h-7 border border-primary-bright dark:border-white4-dark flex items-center justify-center text-purple-500 relative;
 }
 .step-seperator {
-  @apply bg-gray-200 dark:bg-gray-700 h-px w-6;
+  @apply bg-primary-bright dark:bg-white4-dark h-px w-6;
 }
 
 .step-active {

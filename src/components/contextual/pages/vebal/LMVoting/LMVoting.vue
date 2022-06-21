@@ -98,19 +98,19 @@ function handleVoteSuccess() {
     <div class="flex gap-2 xs:gap-3">
       <BalCard shadow="none" class="min-w-max md:w-48">
         <div class="flex items-center">
-          <p class="text-sm text-gray-500 inline mr-1">
+          <p class="text-sm text-gray inline mr-1">
             My unallocated votes
           </p>
           <BalTooltip
             :text="$t('veBAL.liquidityMining.myUnallocatedVotesTooltip')"
-            iconClass="text-gray-400 dark:text-gray-600"
+            iconClass="text-gray-dark dark:text-gray-dark"
             icon-size="sm"
             width="72"
             class="mt-1"
           />
         </div>
         <p
-          class="text-lg font-semibold inline mr-1"
+          class="text-lg font-bold inline mr-1"
           :class="{ 'text-red-500': hasExpiredLock }"
         >
           <span v-if="hasLock">
@@ -134,19 +134,19 @@ function handleVoteSuccess() {
         <div class="flex items-center">
           <p
             :class="{ 'text-orange-500 font-medium': votingPeriodLastHour }"
-            class="text-sm text-gray-500 inline mr-1"
+            class="text-sm text-gray inline mr-1"
           >
             Voting period ends
           </p>
           <BalTooltip
             :text="$t('veBAL.liquidityMining.votingPeriodTooltip')"
             icon-size="sm"
-            iconClass="text-gray-400 dark:text-gray-600"
+            iconClass="text-gray-dark dark:text-gray-dark"
             width="72"
             class="mt-1"
           />
         </div>
-        <p class="text-lg font-semibold tabular-nums">
+        <p class="text-lg font-bold tabular-nums">
           <span
             :class="{ 'text-orange-500': votingPeriodLastHour }"
             v-if="votingPeriodEnd.length"

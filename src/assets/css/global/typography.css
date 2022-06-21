@@ -1,6 +1,6 @@
 h1,
 h2 {
-  font-variation-settings: 'wght' 700;
+  font-weight: 700;
 }
 h1 {
   @apply text-4xl 2xl:text-5xl;
@@ -17,19 +17,19 @@ h6 {
 }
 h3 {
   @apply text-2xl tracking-tight;
-  font-variation-settings: 'wght' 600;
+  font-weight: 700;
 }
 h4 {
   @apply text-xl tracking-tight;
-  font-variation-settings: 'wght' 600;
+  font-weight: 700;
 }
 h5 {
   @apply text-lg;
   font-weight: unset;
-  font-variation-settings: 'wght' 600;
+  font-weight: 700;
 }
 h6 {
-  font-variation-settings: 'wght' 600;
+  font-weight: 700;
 }
 
 .eth-address {
@@ -39,48 +39,24 @@ h6 {
 /* Using font-variation-settings instead of font-weight for the Inter variable font */
 
 th,
-.font-thin,
-.font-extralight,
 .font-light,
-.font-normal,
 .font-medium,
-.font-semibold,
-.font-bold,
-.font-extrabold,
-.font-black {
+.font-bold {
   font-weight: unset;
 }
 
 th {
-  font-variation-settings: 'wght' 600;
+  font-weight: 700;
 }
 
-.font-thin {
-  font-variation-settings: 'wght' 100;
-}
-.font-extralight {
-  font-variation-settings: 'wght' 200;
-}
 .font-light {
-  font-variation-settings: 'wght' 300;
-}
-.font-normal {
-  font-variation-settings: 'wght' 400;
+  font-weight: 300;
 }
 .font-medium {
-  font-variation-settings: 'wght' 500;
-}
-.font-semibold {
-  font-variation-settings: 'wght' 600;
+  font-weight: 500;
 }
 .font-bold {
-  font-variation-settings: 'wght' 700;
-}
-.font-extrabold {
-  font-variation-settings: 'wght' 800;
-}
-.font-black {
-  font-variation-settings: 'wght' 900;
+  font-weight: 700;
 }
 
 .font-numeric {
@@ -103,5 +79,5 @@ th {
 }
 
 .link-black {
-  @apply text-black dark:text-white;
+  @apply text-primary dark:text-primary-bright;
 }

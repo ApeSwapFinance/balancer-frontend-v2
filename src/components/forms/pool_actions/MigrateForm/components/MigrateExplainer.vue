@@ -13,13 +13,13 @@ defineProps<Props>();
 
 <template>
   <BalCard noPad shadow="none">
-    <div class="p-4 w-full border-b dark:border-gray-900">
+    <div class="p-4 w-full border-b dark:border-white1-dark">
       <h6>
         {{ $t(`migratePool.${poolMigrationInfo.type}.whyMigrate.title`) }}
       </h6>
     </div>
     <div class="-mt-2 p-4">
-      <div class="text-gray-500">
+      <div class="text-gray">
         {{ $t(`migratePool.${poolMigrationInfo.type}.whyMigrate.description`) }}
       </div>
     </div>

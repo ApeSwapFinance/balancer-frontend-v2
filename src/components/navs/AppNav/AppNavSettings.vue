@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="p-4 border-b dark:border-gray-900">
+    <div class="p-4 border-b dark:border-white1-dark">
       <div class="flex justify-between items-center mb-4">
         <h5 v-text="$t('account')" class="leading-none" />
         <div v-if="!hideDisconnect">
@@ -100,7 +100,7 @@
         <span v-text="$t('slippageTolerance')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-400 -mb-px" />
+            <BalIcon name="info" size="xs" class="ml-1 text-gray-dark -mb-px" />
           </template>
           <div v-html="$t('marketConditionsWarning')" />
         </BalTooltip>
@@ -112,7 +112,7 @@
         <span v-text="$t('transactionType')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-400 -mb-px" />
+            <BalIcon name="info" size="xs" class="ml-1 text-gray-dark -mb-px" />
           </template>
           <div v-text="$t('ethereumTxTypeTooltip')" />
         </BalTooltip>
@@ -131,7 +131,7 @@
         <span v-text="$t('tradeInterface')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-400 -mb-px" />
+            <BalIcon name="info" size="xs" class="ml-1 text-gray-dark -mb-px" />
           </template>
           <div v-text="$t('tradeInterfaceTooltip')" class="w-52" />
         </BalTooltip>
@@ -144,7 +144,7 @@
       <div class="flex mt-1"></div>
     </div>
     <div
-      class="network p-4 mt-4 text-sm border-t dark:border-gray-900 rounded-b-xl"
+      class="network p-4 mt-4 text-sm border-t dark:border-white1-dark rounded-b-xl"
     >
       <div v-text="$t('network')" />
       <div class="flex items-baseline">

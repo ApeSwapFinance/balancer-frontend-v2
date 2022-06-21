@@ -254,7 +254,7 @@ watchEffect(() => {
         class="flex flex-col pt-1"
       >
         <div
-          class="flex items-center justify-between text-sm text-gray-500 leading-none"
+          class="flex items-center justify-between text-sm text-gray leading-none"
         >
           <div v-if="!isWalletReady || disableBalance" />
           <div v-else class="cursor-pointer flex items-center" @click="setMax">
@@ -269,7 +269,7 @@ watchEffect(() => {
               <span v-if="!isMaxed" class="text-blue-500">
                 {{ $t('max') }}
               </span>
-              <span v-else class="text-gray-400 dark:text-gray-600 lowercase">
+              <span v-else class="text-gray-dark dark:text-gray-dark lowercase">
                 {{ $t('maxed') }}
               </span>
             </template>

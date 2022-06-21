@@ -213,7 +213,7 @@ const unallocatedVotesFormatted = computed((): string =>
 );
 
 const unallocatedVotesClass = computed(() => {
-  return hasEnoughVotes.value ? ['text-gray-500'] : ['text-red-600'];
+  return hasEnoughVotes.value ? ['text-gray'] : ['text-red-600'];
 });
 
 const remainingVotes = computed(() => {
@@ -331,7 +331,7 @@ onMounted(() => {
           v-if="voteState.confirmed"
           size="8"
           color="green"
-          class="text-white mr-2"
+          class="text-primary-bright mr-2"
         >
           <BalIcon name="check" />
         </BalCircle>
@@ -353,11 +353,11 @@ onMounted(() => {
       />
 
       <div
-        class="border dark:border-gray-800 p-2 rounded-lg mb-4 flex items-center justify-between"
+        class="border dark:border-white3-dark p-2 rounded-lg mb-4 flex items-center justify-between"
       >
         <div class="flex items-center h-full">
           <BalAssetSet :logoURIs="logoURIs" :width="100" :size="32" />
-          <span class="text-gray-500">{{ gauge.pool.symbol }}</span>
+          <span class="text-gray">{{ gauge.pool.symbol }}</span>
         </div>
         <BalLink
           :href="poolURL"
@@ -367,7 +367,7 @@ onMounted(() => {
         >
           <BalIcon
             name="arrow-up-right"
-            class="text-gray-500 group-hover:text-pink-500 transition-colors"
+            class="text-gray group-hover:text-pink-500 transition-colors"
           />
         </BalLink>
       </div>
@@ -388,7 +388,7 @@ onMounted(() => {
         >
           <template v-slot:append>
             <div class="h-full flex flex-row justify-center items-center px-2">
-              <span class="text-gray-500">%</span>
+              <span class="text-gray">%</span>
             </div>
           </template>
         </BalTextInput>
@@ -436,7 +436,7 @@ onMounted(() => {
           </BalBtn>
         </div>
       </BalForm>
-      <div class="text-gray-500 text-sm mt-4" v-if="!voteWarning">
+      <div class="text-gray text-sm mt-4" v-if="!voteWarning">
         {{
           t('veBAL.liquidityMining.popover.voteLockInfo', [voteLockedUntilText])
         }}

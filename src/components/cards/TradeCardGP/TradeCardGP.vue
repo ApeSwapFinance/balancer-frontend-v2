@@ -77,7 +77,7 @@
         <Transition name="fade" mode="out-in">
           <div
             v-if="trading.isGaslessTradingDisabled.value"
-            class="text-gray-600 dark:text-gray-500"
+            class="text-gray dark:text-gray-dark"
           >
             <div class="flex items-center gap-2">
               <span class="text-lg">⛽</span>
@@ -118,12 +118,12 @@
               <Transition name="fade" mode="out-in">
                 <span
                   v-if="trading.tradeGasless.value"
-                  class="text-sm pl-2 text-gray-600 dark:text-gray-500"
+                  class="text-sm pl-2 text-gray dark:text-gray-dark"
                   >{{ $t('tradeToggle.tradeGasless') }}</span
                 >
                 <span
                   v-else
-                  class="text-sm pl-2 text-gray-600 dark:text-gray-500"
+                  class="text-sm pl-2 text-gray dark:text-gray-dark"
                   >{{ $t('tradeToggle.tradeWithGas') }}</span
                 >
               </Transition>
@@ -132,7 +132,7 @@
                   <BalIcon
                     name="info"
                     size="xs"
-                    class="text-gray-400 ml-1 flex"
+                    class="text-gray-dark ml-1 flex"
                   />
                 </template>
                 <div v-html="$t('tradeGaslessToggle.tooltip')" />
@@ -462,7 +462,7 @@ export default defineComponent({
   width: 3rem;
 }
 .gas-symbol {
-  @apply h-8 w-8 rounded-full flex items-center justify-center text-lg bg-gray-50 dark:bg-gray-800;
+  @apply h-8 w-8 rounded-full flex items-center justify-center text-lg bg-primary-bright dark:bg-white3-dark;
 }
 .gas-symbol:before {
   content: '⛽';

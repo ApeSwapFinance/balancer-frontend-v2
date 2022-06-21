@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const classes = computed(() => ({
-  'border-white dark:border-gray-900': !props.active,
+  'border-white dark:border-white1-dark': !props.active,
   'border-blue-500 text-blue-500': props.active
 }));
 </script>

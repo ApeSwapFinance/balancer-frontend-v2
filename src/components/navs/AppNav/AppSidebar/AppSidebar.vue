@@ -28,7 +28,7 @@ const { setSidebarOpen } = useSidebar();
         <BalIcon
           name="x"
           size="lg"
-          class="close-icon flex justify-center items-center fixed top-4 right-2 text-white cursor-pointer"
+          class="close-icon flex justify-center items-center fixed top-4 right-2 text-primary-bright cursor-pointer"
         />
       </div>
     </div>
@@ -43,7 +43,7 @@ const { setSidebarOpen } = useSidebar();
 }
 
 .app-sidebar {
-  @apply text-white shadow-xl h-full w-3/4 max-w-sm bg-gray-900 cursor-default overflow-y-auto pb-4;
+  @apply text-primary-bright shadow-xl h-full w-3/4 max-w-sm bg-white1-dark cursor-default overflow-y-auto pb-4;
   will-change: transform;
 }
 

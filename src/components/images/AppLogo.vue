@@ -21,14 +21,16 @@ const props = withDefaults(defineProps<Props>(), {
  * COMPUTED
  */
 const textColor = computed(() =>
-  props.forceDark ? 'text-white' : 'text-black dark:text-white'
+  props.forceDark
+    ? 'text-primary-bright'
+    : 'text-primary dark:text-primary-bright'
 );
 </script>
 
 <template>
   <div class="flex items-center">
     <AppIcon :forceDark="forceDark" />
-    <span :class="['mr-1 font-secondary text-xl font-semibold', textColor]">
+    <span :class="['mr-1 font-secondary text-xl font-bold', textColor]">
       Balancer
     </span>
   </div>

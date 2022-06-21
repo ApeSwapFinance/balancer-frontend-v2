@@ -34,7 +34,7 @@ const unallocatedTokenWeight = computed(() =>
 );
 
 const totalsClass = computed(() => ({
-  'text-gray-700 ': maxInitialLiquidity.value >= 20000,
+  'text-gray ': maxInitialLiquidity.value >= 20000,
   'text-orange-500': maxInitialLiquidity.value < 20000
 }));
 
@@ -44,26 +44,24 @@ const optimisedLiquidity = computed(() => getOptimisedLiquidity());
 <template>
   <BalCard noPad shadow="none">
     <div
-      class="p-2 px-3 border-b dark:border-gray-600"
+      class="p-2 px-3 border-b dark:border-gray-dark"
       v-if="!upToLargeBreakpoint"
     >
-      <h6 class="dark:text-gray-300">
+      <h6 class="dark:text-gray-dark">
         {{ $t('createAPool.maxInitialLiquidity') }}
       </h6>
     </div>
     <div class="p-2 px-4">
       <div class="grid grid-cols-12 w-full gap-y-1.5">
         <div class="col-span-6">
-          <span
-            class="text-sm font-semibold text-gray-700 dark:text-gray-500"
-            >{{ $t('token') }}</span
-          >
+          <span class="text-sm font-bold text-gray dark:text-gray-dark">{{
+            $t('token')
+          }}</span>
         </div>
         <div class="col-span-6 text-right">
-          <span
-            class="text-sm font-semibold text-gray-700 dark:text-gray-500"
-            >{{ $t('usdValue') }}</span
-          >
+          <span class="text-sm font-bold text-gray dark:text-gray-dark">{{
+            $t('usdValue')
+          }}</span>
         </div>
         <template
           v-for="(token, i) in allocatedTokenWeights"
@@ -100,11 +98,11 @@ const optimisedLiquidity = computed(() => getOptimisedLiquidity());
           -
         </div>
         <div class="col-span-6">
-          <span class="text-sm font-semibold">{{ $t('total') }}</span>
+          <span class="text-sm font-bold">{{ $t('total') }}</span>
         </div>
         <div
           :class="[
-            'col-span-6 text-sm font-semibold flex items-center justify-end',
+            'col-span-6 text-sm font-bold flex items-center justify-end',
             totalsClass
           ]"
         >
@@ -115,11 +113,11 @@ const optimisedLiquidity = computed(() => getOptimisedLiquidity());
     <!-- <BalAlert type="error" title="">
       <BalStack vertical spacing='xs'>
 
-      <span class="font-medium text-gray-700">
+      <span class="font-medium text-gray">
         Add estimated token price for the unknown tokens to see potential pool
         liquidity percentages
       </span>
-      <button class="font-semibold text-red-500">Add token prices -></button>
+      <button class="font-bold text-red-500">Add token prices -></button>
       </BalStack>
     </BalAlert> -->
   </BalCard>

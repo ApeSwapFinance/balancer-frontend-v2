@@ -39,7 +39,7 @@ function getHorizontalStickyClass(index: number) {
       'bg-white z-10 row-bg group',
       {
         'cursor-pointer': handleRowClick,
-        'border-b dark:border-gray-700': pinned
+        'border-b dark:border-white4-dark': pinned
       }
     ]"
   >

@@ -28,7 +28,8 @@ const { priceImpact, highPriceImpact, loadingAmountsOut } = toRefs(props.math);
  * COMPUTED
  */
 const priceImpactClasses = computed(() => ({
-  'bg-red-500 text-white divide-red-400 border-none': highPriceImpact.value
+  'bg-red-500 text-primary-bright divide-red-400 border-none':
+    highPriceImpact.value
 }));
 </script>
 
@@ -53,7 +54,7 @@ const priceImpactClasses = computed(() => ({
                 v-else
                 name="info"
                 size="xs"
-                class="text-gray-400 -mb-px ml-1"
+                class="text-gray-dark -mb-px ml-1"
               />
             </template>
           </BalTooltip>
@@ -65,14 +66,14 @@ const priceImpactClasses = computed(() => ({
 
 <style scoped>
 .data-table {
-  @apply rounded-lg divide-y dark:divide-gray-700;
+  @apply rounded-lg divide-y dark:divide-white4-dark;
 }
 
 .data-table-row {
   @apply flex;
   @apply rounded-lg;
-  @apply divide-x dark:divide-gray-900 border dark:border-gray-900;
-  @apply dark:bg-gray-800;
+  @apply divide-x dark:divide-white1-dark border dark:border-white1-dark;
+  @apply dark:bg-white3-dark;
 }
 
 .data-table-number-col {

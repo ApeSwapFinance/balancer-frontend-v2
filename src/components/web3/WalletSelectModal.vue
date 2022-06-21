@@ -25,10 +25,10 @@
         p-4
         rounded-lg
         bg-gradient-to-b
-        from-gray-50
-        dark:from-gray-900
-        to-gray-100
-        dark:to-gray-850
+        from-primary-bright
+        dark:from-white1-dark
+        to-primary-bright
+        dark:to-white1-dark
       "
     >
       <h6>{{ $t('newToEthereum') }}</h6>

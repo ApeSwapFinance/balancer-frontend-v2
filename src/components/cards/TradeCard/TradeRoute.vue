@@ -1,7 +1,7 @@
 <template>
   <BalCard shadow="none" v-if="routes.length > 0">
     <div
-      class="flex text-gray-500 items-center cursor-pointer"
+      class="flex text-gray items-center cursor-pointer"
       @click="toggleVisibility"
     >
       <div class="mr-2">
@@ -14,7 +14,7 @@
       <div
         v-if="routes.length === 0"
         v-text="$t('noData')"
-        class="mt-5 text-sm text-gray-500"
+        class="mt-5 text-sm text-gray"
       />
       <div v-else>
         <div>
@@ -38,7 +38,7 @@
           </div>
           <div class="relative mt-2">
             <div
-              class="pair-line absolute h-1/2 mx-9 border-b border-dashed border-gray-500"
+              class="pair-line absolute h-1/2 mx-9 border-b border-dashed border-primary-bright"
             />
             <div class="relative z-10 flex justify-between">
               <BalAsset :address="input.address" :size="36" />
@@ -54,13 +54,13 @@
             name="triangle"
             size="xxs"
             :filled="true"
-            class="transform rotate-180 text-gray-500"
+            class="transform rotate-180 text-gray"
           />
           <BalIcon
             name="triangle"
             size="xxs"
             :filled="true"
-            class="text-gray-500"
+            class="text-gray"
           />
         </div>
         <div class="relative my-1.5 mx-4">
@@ -72,7 +72,7 @@
               width: `calc(100% - ${4 * (routes.length - index - 1)}px + 1px)`,
               margin: `0 ${2 * (routes.length - index - 1) - 1}px`
             }"
-            class="absolute border-l border-r border-b border-gray-500 rounded-b-md"
+            class="absolute border-l border-r border-b border-primary-bright rounded-b-md"
           />
           <div class="relative z-10">
             <div
@@ -85,14 +85,14 @@
                   name="triangle"
                   size="xxs"
                   :filled="true"
-                  class="transform rotate-90 text-gray-500"
+                  class="transform rotate-90 text-gray"
                 />
               </div>
               <div class="flex">
                 <div
                   v-for="hop in route.hops"
                   :key="hop?.pool?.address"
-                  class="ml-4 first:ml-0 flex bg-white hover:bg-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 border border-gray-100 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-400 rounded-xl shadow transition-colors"
+                  class="ml-4 first:ml-0 flex bg-white hover:bg-primary-bright dark:bg-white1-dark dark:hover:bg-white3-dark border border-primary-bright hover:border-gray-dark dark:border-gray-dark dark:hover:border-gray-dark rounded-xl shadow transition-colors"
                 >
                   <a
                     class="flex p-1.5"
@@ -109,7 +109,7 @@
                   </a>
                 </div>
               </div>
-              <div class="w-10 mr-4 text-xs text-right text-gray-500">
+              <div class="w-10 mr-4 text-xs text-right text-gray">
                 {{ formatShare(route.share) }}
               </div>
             </div>

@@ -232,19 +232,19 @@ watch(
           />
         </colgroup>
         <!-- header is rendered as a row - seperated by columns -->
-        <thead class="bg-white dark:bg-gray-900 z-10">
+        <thead class="bg-white dark:bg-white1-dark z-10">
           <th
             v-for="(column, columnIndex) in filteredColumns"
             :key="`header-${column.id}`"
             :class="[
-              'p-6 bg-white dark:bg-gray-850 headingShadow border-b dark:border-gray-900',
+              'p-6 bg-white dark:bg-white1-dark headingShadow border-b dark:border-white1-dark',
               column.className,
               getHorizontalStickyClass(columnIndex),
               isColumnStuck ? 'isSticky' : '',
               column.sortKey ? 'cursor-pointer' : '',
               currentSortColumn === column.id && currentSortDirection
                 ? 'text-blue-400'
-                : 'text-gray-800 dark:text-gray-100'
+                : 'text-gray dark:text-gray-dark'
             ]"
             :ref="setHeaderRef(columnIndex)"
             @click="handleSort(column.id)"
@@ -292,7 +292,7 @@ watch(
       />
       <div
         v-else-if="!isLoading && !tableData.length"
-        class="max-w-full bg-white dark:bg-gray-850 row-bg h-40 flex items-center justify-center text-gray-500"
+        class="max-w-full bg-white dark:bg-white1-dark row-bg h-40 flex items-center justify-center text-gray"
       >
         {{ noResultsLabel || $t('noResults') }}
       </div>
@@ -313,7 +313,7 @@ watch(
               column.align === 'right' ? 'text-left' : 'text-right',
               getHorizontalStickyClass(columnIndex),
               isColumnStuck ? 'isSticky' : '',
-              'bg-white dark:bg-gray-850 p-0 m-0 h-0'
+              'bg-white dark:bg-white1-dark p-0 m-0 h-0'
             ]"
           ></td>
         </tr>
@@ -382,7 +382,7 @@ watch(
 
 <style>
 .horizontalSticky {
-  @apply z-10 bg-white dark:bg-gray-850 group-hover:bg-gray-50 dark:group-hover:bg-gray-800 opacity-95 xs:opacity-90;
+  @apply z-10 bg-white dark:bg-white1-dark group-hover:bg-primary-bright dark:group-hover:bg-white3-dark opacity-95 xs:opacity-90;
   position: sticky;
   left: 0;
   width: 100%;
@@ -405,13 +405,13 @@ watch(
 }
 
 .row-bg {
-  @apply bg-white dark:bg-gray-850 hover:bg-gray-50 dark:hover:bg-gray-800;
+  @apply bg-white dark:bg-white1-dark hover:bg-primary-bright dark:hover:bg-white3-dark;
 }
 
 .bal-table-pagination-btn {
   @apply flex items-center justify-center h-16 transition-all;
-  @apply text-gray-500 font-medium hover:text-gray-800 dark:hover:text-gray-400;
-  @apply border-t dark:border-gray-900 rounded-b-lg;
-  @apply hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer;
+  @apply text-gray font-medium hover:text-gray dark:hover:text-gray-dark;
+  @apply border-t dark:border-white1-dark rounded-b-lg;
+  @apply hover:bg-primary-bright dark:hover:bg-white3-dark cursor-pointer;
 }
 </style>

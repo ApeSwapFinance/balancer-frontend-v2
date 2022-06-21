@@ -66,7 +66,7 @@ const totalFiat = computed(() => {
           >
             <BalStack vertical spacing="none">
               <h6>{{ _tokens[token]?.symbol || 'N/A' }}</h6>
-              <span class="text-sm text-gray-600">{{
+              <span class="text-sm text-gray">{{
                 _tokens[token]?.name || 'Unknown token'
               }}</span>
             </BalStack>
@@ -74,7 +74,7 @@ const totalFiat = computed(() => {
               <h6>
                 {{ fNum2(balanceFor(token), FNumFormats.token) }}
               </h6>
-              <span class="text-sm text-gray-600">{{
+              <span class="text-sm text-gray">{{
                 fNum2(
                   priceFor(token) * Number(balanceFor(token)),
                   FNumFormats.fiat
@@ -97,7 +97,7 @@ const totalFiat = computed(() => {
             <BalStack horizontal justify="between">
               <BalStack vertical spacing="none">
                 <h6>{{ _tokens[token]?.symbol || 'N/A' }}</h6>
-                <span class="text-sm text-gray-600">{{
+                <span class="text-sm text-gray">{{
                   _tokens[token]?.name || 'Unknown token'
                 }}</span>
               </BalStack>
@@ -105,7 +105,7 @@ const totalFiat = computed(() => {
                 <h6>
                   {{ fNum2(balanceFor(token), FNumFormats.token) }}
                 </h6>
-                <span class="text-sm text-gray-600">{{
+                <span class="text-sm text-gray">{{
                   fNum2(
                     priceFor(token) * Number(balanceFor(token)),
                     FNumFormats.fiat
@@ -132,7 +132,7 @@ const totalFiat = computed(() => {
   width: 1px;
   bottom: -5.25rem;
   left: 0.5rem;
-  @apply bg-gray-300;
+  @apply bg-gray-dark;
 }
 
 .twig::before {
@@ -142,6 +142,6 @@ const totalFiat = computed(() => {
   height: 0.5px;
   top: 50%;
   left: -1rem;
-  @apply bg-gray-300;
+  @apply bg-gray-dark;
 }
 </style>
