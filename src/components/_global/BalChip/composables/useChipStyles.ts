@@ -45,9 +45,7 @@ export function useChipClasses(props) {
 
 export function useCloseIconClasses(props) {
   const isGradient = props.color === 'gradient';
-  const colorClass = isGradient
-    ? 'text-primary-bright'
-    : `text-${props.color}-500`;
+  const colorClass = isGradient ? 'text-primary-bright' : `text-${props.color}`;
 
   const classes = computed(() => {
     return {

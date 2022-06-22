@@ -1,5 +1,6 @@
 h1,
 h2 {
+  @apply font-body;
   font-weight: 700;
 }
 h1 {
@@ -25,7 +26,6 @@ h4 {
 }
 h5 {
   @apply text-lg;
-  font-weight: unset;
   font-weight: 700;
 }
 h6 {

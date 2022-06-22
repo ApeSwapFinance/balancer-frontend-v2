@@ -36,7 +36,7 @@ function getHorizontalStickyClass(index: number) {
   <tr
     @click="handleRowClick(data)"
     :class="[
-      'bg-white z-10 row-bg group',
+      'bg-white2 dark:bg-white2-dark z-10 row-bg group',
       {
         'cursor-pointer': handleRowClick,
         'border-b dark:border-white4-dark': pinned
@@ -64,7 +64,7 @@ function getHorizontalStickyClass(index: number) {
           v-else
           :class="
             compact([
-              'px-6 py-4',
+              'px-6 py-4 text-primary dark:text-primary-bright',
               column.align === 'right' ? 'text-right' : 'text-left',
               column.cellClassName
             ])
@@ -83,7 +83,7 @@ function getHorizontalStickyClass(index: number) {
           v-else
           :class="
             compact([
-              'px-6 py-4',
+              'px-6 py-4 text-primary dark:text-primary-bright',
               column.align === 'right' ? 'text-right' : 'text-left',
               column.cellClassName
             ])

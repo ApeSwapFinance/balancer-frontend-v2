@@ -286,7 +286,7 @@ function aprLabelFor(pool: PoolWithShares): string {
           :key="columnStates.volume"
         >
           <span v-if="!pool?.volumeSnapshot">-</span>
-          <span v-else class="text-right">
+          <span v-else class="text-right text-primary dark:text-primary-bright">
             {{
               fNum2(pool?.volumeSnapshot, {
                 style: 'currency',
@@ -306,7 +306,9 @@ function aprLabelFor(pool: PoolWithShares): string {
             class="h-4 w-12"
           />
           <template v-else>
-            {{ aprLabelFor(pool) }}
+            <span class="text-primary dark:text-primary-bright">
+              {{ aprLabelFor(pool) }}
+            </span>
             <APRTooltip v-if="pool?.apr?.total?.unstaked" :pool="pool" />
           </template>
         </div>

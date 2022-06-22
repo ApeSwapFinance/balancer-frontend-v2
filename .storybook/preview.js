@@ -10,8 +10,8 @@ export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   backgrounds: {
     values: [
-      { name: 'light', value: fullConfig.theme.colors.light.white1 },
-      { name: 'dark', value: fullConfig.theme.colors.dark.white1 },
+      { name: 'light', value: fullConfig.theme.colors['white1'] },
+      { name: 'dark', value: fullConfig.theme.colors['white1-dark'] },
     ],
   },
 }

@@ -223,7 +223,7 @@ watch(
   >
     <div class="overflow-hidden" ref="headerRef">
       <table class="w-full table-fixed whitespace-normal">
-        <!-- header width handled by colgroup  -->
+        <!-- header width handled by colgroup -->
         <colgroup>
           <col
             v-for="column in filteredColumns"
@@ -232,19 +232,19 @@ watch(
           />
         </colgroup>
         <!-- header is rendered as a row - seperated by columns -->
-        <thead class="bg-white dark:bg-white1-dark z-10">
+        <thead class="bg-white2 dark:bg-white2-dark z-10">
           <th
             v-for="(column, columnIndex) in filteredColumns"
             :key="`header-${column.id}`"
             :class="[
-              'p-6 bg-white dark:bg-white1-dark headingShadow border-b dark:border-white1-dark',
+              'p-6 bg-white2 dark:bg-white2-dark headingShadow border-b dark:border-white2-dark',
               column.className,
               getHorizontalStickyClass(columnIndex),
               isColumnStuck ? 'isSticky' : '',
               column.sortKey ? 'cursor-pointer' : '',
               currentSortColumn === column.id && currentSortDirection
                 ? 'text-blue-400'
-                : 'text-gray dark:text-gray-dark'
+                : 'text-primary dark:text-primary-dark'
             ]"
             :ref="setHeaderRef(columnIndex)"
             @click="handleSort(column.id)"
@@ -256,11 +256,11 @@ watch(
                 :name="column.Header"
               ></slot>
               <div v-else>
-                <h5 class="text-base">
+                <h5 class="text-base text-primary dark:text-primary-bright">
                   {{ column.name }}
                 </h5>
               </div>
-              <BalIcon
+              <!-- <BalIcon
                 name="arrow-up"
                 size="sm"
                 v-if="
@@ -277,7 +277,7 @@ watch(
                     currentSortDirection === 'desc'
                 "
                 class="ml-1 flex items-center"
-              />
+              /> -->
             </div>
           </th>
         </thead>
@@ -292,7 +292,7 @@ watch(
       />
       <div
         v-else-if="!isLoading && !tableData.length"
-        class="max-w-full bg-white dark:bg-white1-dark row-bg h-40 flex items-center justify-center text-gray"
+        class="max-w-full bg-white2 dark:bg-white2-dark row-bg h-40 flex items-center justify-center text-primary"
       >
         {{ noResultsLabel || $t('noResults') }}
       </div>
@@ -313,7 +313,7 @@ watch(
               column.align === 'right' ? 'text-left' : 'text-right',
               getHorizontalStickyClass(columnIndex),
               isColumnStuck ? 'isSticky' : '',
-              'bg-white dark:bg-white1-dark p-0 m-0 h-0'
+              'bg-white2 dark:bg-white2-dark p-0 m-0 h-0'
             ]"
           ></td>
         </tr>
@@ -382,7 +382,7 @@ watch(
 
 <style>
 .horizontalSticky {
-  @apply z-10 bg-white dark:bg-white1-dark group-hover:bg-primary-bright dark:group-hover:bg-white3-dark opacity-95 xs:opacity-90;
+  @apply z-10 bg-white2 dark:bg-white2-dark group-hover:bg-white2 dark:group-hover:bg-white2-dark opacity-95 xs:opacity-90;
   position: sticky;
   left: 0;
   width: 100%;
@@ -405,13 +405,13 @@ watch(
 }
 
 .row-bg {
-  @apply bg-white dark:bg-white1-dark hover:bg-primary-bright dark:hover:bg-white3-dark;
+  @apply bg-white2 dark:bg-white2-dark hover:bg-white2 dark:hover:bg-white2-dark;
 }
 
 .bal-table-pagination-btn {
   @apply flex items-center justify-center h-16 transition-all;
-  @apply text-gray font-medium hover:text-gray dark:hover:text-gray-dark;
-  @apply border-t dark:border-white1-dark rounded-b-lg;
-  @apply hover:bg-primary-bright dark:hover:bg-white3-dark cursor-pointer;
+  @apply text-gray dark:text-gray-dark font-medium hover:text-gray dark:hover:text-gray-dark;
+  @apply border-t border-white2 dark:border-white2-dark rounded-b-lg;
+  @apply bg-white2 dark:bg-white2-dark hover:bg-white2 dark:hover:bg-white2-dark cursor-pointer;
 }
 </style>

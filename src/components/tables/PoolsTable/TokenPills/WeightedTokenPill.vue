@@ -37,6 +37,7 @@ withDefaults(defineProps<Props>(), {
         <div v-if="hasBalance" class="balance-indicator" />
         <span
           :class="[
+            'text-primary dark:text-primary-bright',
             {
               'font-medium': isSelected
             }
@@ -55,11 +56,11 @@ withDefaults(defineProps<Props>(), {
 
 <style scoped>
 .pill {
-  @apply flex items-center px-2 my-1 py-1 rounded-lg bg-primary-bright dark:bg-white4-dark relative h-full;
+  @apply flex items-center px-2 my-1 py-1 rounded-lg bg-white3 dark:bg-white3-dark relative h-full;
 }
 
 .pill-selected {
-  @apply ring-2 ring-blue-500 dark:ring-blue-400;
+  @apply ring-2 ring-primary dark:ring-primary-bright;
 }
 
 .pill-weight {
@@ -69,13 +70,13 @@ withDefaults(defineProps<Props>(), {
 
 .balance-indicator {
   @apply w-3 h-3;
-  @apply rounded-full border-2 border-white dark:border-white1-dark group-hover:border-primary-bright dark:group-hover:border-white3-dark;
+  @apply rounded-full border-2 border-white1 dark:border-white1-dark group-hover:border-primary-bright dark:group-hover:border-white3-dark;
   @apply bg-green-400 dark:bg-green-500;
   @apply absolute top-0 right-0 -mt-1 -mr-1;
 }
 
 .pill-hoverable:hover,
 .pill-hoverable:focus {
-  @apply bg-primary-bright dark:bg-white1-dark;
+  @apply bg-white1 dark:bg-white1-dark;
 }
 </style>

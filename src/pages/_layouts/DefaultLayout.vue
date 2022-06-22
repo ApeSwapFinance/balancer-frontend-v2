@@ -20,7 +20,7 @@ const isHomePage = computed(() => route.path === '/');
 </script>
 
 <template>
-  <div>
+  <div class="body-con">
     <AppNav />
     <template v-if="isHomePage">
       <StakingProvider>
@@ -50,5 +50,8 @@ const isHomePage = computed(() => route.path === '/');
 
 #intercom-activator {
   z-index: 2147483004;
+}
+.body-con {
+  @apply bg-white1 dark:bg-white1-dark;
 }
 </style>

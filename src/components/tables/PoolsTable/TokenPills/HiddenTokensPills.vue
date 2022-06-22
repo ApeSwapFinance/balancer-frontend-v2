@@ -59,8 +59,8 @@ withDefaults(defineProps<Props>(), {
 }
 
 .pill-selected {
-  @apply bg-blue-600 dark:bg-blue-600;
-  @apply text-primary-bright dark:text-primary-bright;
+  @apply bg-white3 dark:bg-white3-dark;
+  @apply text-primary dark:text-primary-bright;
 }
 
 .pill-stacked {
@@ -71,7 +71,7 @@ withDefaults(defineProps<Props>(), {
 
 .balance-indicator {
   @apply w-3 h-3;
-  @apply rounded-full border-2 border-white dark:border-white1-dark;
+  @apply rounded-full border-2 border-white1 dark:border-white1-dark;
   @apply bg-green-200 dark:bg-green-500;
   @apply absolute top-0 right-0 -mt-1 -mr-1;
 }

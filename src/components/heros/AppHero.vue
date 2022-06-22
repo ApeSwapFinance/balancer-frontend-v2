@@ -1,10 +1,8 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { useRouter } from 'vue-router';
 
 import usePools from '@/composables/pools/usePools';
 import useStaking from '@/composables/staking/useStaking';
-import useDarkMode from '@/composables/useDarkMode';
 import useFathom from '@/composables/useFathom';
 import { useLock } from '@/composables/useLock';
 import { isL2 } from '@/composables/useNetwork';
@@ -16,7 +14,6 @@ import useWeb3 from '@/services/web3/useWeb3';
 /**
  * COMPOSABLES
  */
-const router = useRouter();
 const { fNum2 } = useNumbers();
 const {
   isWalletReady,
@@ -25,7 +22,6 @@ const {
 } = useWeb3();
 const { trackGoal, Goals } = useFathom();
 const { totalInvestedAmount, isLoadingUserPools } = usePools();
-const { darkMode } = useDarkMode();
 const { lockFiatValue, isLoadingLock } = useLock();
 const {
   userData: {
@@ -60,10 +56,6 @@ const totalInvestedLabel = computed((): string => {
   return fNum2(value, FNumFormats.fiat);
 });
 
-const totalVeBalLabel = computed((): string =>
-  fNum2(lockFiatValue.value, FNumFormats.fiat)
-);
-
 const isLoadingLockAndStaking = computed(
   (): boolean => (!isL2.value && isLoadingLock.value) || isStakingLoading.value
 );
@@ -87,14 +79,16 @@ function onClickConnect() {
       <template v-if="isWalletReady || isWalletConnecting">
         <h1
           v-text="$t('myBalancerInvestments')"
-          class="text-base font-medium text-primary-bright opacity-90 font-body mb-2"
+          class="text-base font-medium text-primary dark:text-primary-bright opacity-90 font-body mb-2"
         />
         <BalLoadingBlock
           v-if="isLoadingTotalValue"
-          class="h-10 w-40 mx-auto"
-          white
+          class="h-10 w-40 mx-auto text-primary"
         />
-        <div v-else class="text-3xl font-bold text-primary-bright mb-1">
+        <div
+          v-else
+          class="text-3xl font-bold text-primary dark:text-primary-bright mb-1"
+        >
           {{ totalInvestedLabel }}
         </div>
         <div v-if="!isL2" class="relative mt-2 inline-block">
@@ -103,39 +97,13 @@ function onClickConnect() {
             class="h-8 w-40 mx-auto"
             white
           />
-          <div
-            v-else
-            class="
-              vebal-banner
-              h-8
-              flex
-              items-center
-              px-3
-              text-yellow-500 text-sm
-              font-medium
-              cursor-pointer
-              border border-yellow-500
-              group
-              hover:text-primary-bright
-              focus:text-primary-bright
-              transition-colors
-              rounded-bl rounded-tr
-            "
-            @click="router.push({ name: 'vebal' })"
-          >
-            <span v-if="lockFiatValue === '0'"
-              >{{ lockFiatValue }} {{ $t('veBAL.hero.tokens.veBAL') }}</span
-            >
-            <span v-else>{{ $t('inclXInVeBal', [totalVeBalLabel]) }}</span>
-          </div>
         </div>
       </template>
       <template v-else>
         <h1 v-text="$t('ammPlatform')" class="headline" />
         <div class="flex justify-center mt-4">
           <BalBtn
-            :color="darkMode ? 'gray' : 'white'"
-            class="mr-3"
+            class="mr-3 bg-ape-yellow hover:bg-hovered-ape-yellow"
             @click="onClickConnect"
           >
             {{ $t('connectWallet') }}
@@ -145,8 +113,8 @@ function onClickConnect() {
             :href="EXTERNAL_LINKS.Balancer.Home"
             target="_blank"
             rel="noreferrer"
-            color="white"
             outline
+            class="learn-more"
             @click="trackGoal(Goals.ClickHeroLearnMore)"
           >
             {{ $t('learnMore') }}
@@ -160,34 +128,12 @@ function onClickConnect() {
 
 <style>
 .app-hero {
-  @apply bg-cover bg-center flex items-center justify-center text-center px-4;
-  transition: all 0.3s ease-in-out;
-  background-image: url('/images/backgrounds/bg-header.svg');
-}
-
-.vebal-banner::before {
-  @apply border border-yellow-500;
-  content: '';
-  width: 16px;
-  height: 6px;
-  left: 0;
-  top: -5px;
-  position: absolute;
-  border-top-left-radius: 8px;
-}
-.vebal-banner::after {
-  @apply border border-yellow-500;
-  content: '';
-  width: 16px;
-  height: 6px;
-  bottom: -5px;
-  right: 0;
-  position: absolute;
-  border-bottom-right-radius: 8px;
+  @apply bg-cover bg-center bg-white3 dark:bg-white3-dark flex items-center justify-center text-center px-4;
 }
 .headline {
-  @apply text-primary-bright text-center text-4xl md:text-5xl pb-2 font-display font-bold;
-  font-weight: 600;
-  font-weight: 700;
+  @apply text-primary dark:text-primary-bright text-center text-4xl md:text-5xl pb-2 font-display font-bold;
+}
+.learn-more {
+  @apply text-primary dark:text-primary-bright bg-transparent border-primary dark:border-primary-bright border-2;
 }
 </style>
