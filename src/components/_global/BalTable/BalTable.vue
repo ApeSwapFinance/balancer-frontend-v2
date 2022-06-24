@@ -237,7 +237,7 @@ watch(
             v-for="(column, columnIndex) in filteredColumns"
             :key="`header-${column.id}`"
             :class="[
-              'p-6 bg-white2 dark:bg-white2-dark headingShadow border-b dark:border-white2-dark',
+              'p-6 bg-white2 dark:bg-white2-dark headingShadow border-b border-white4 dark:border-white4-dark',
               column.className,
               getHorizontalStickyClass(columnIndex),
               isColumnStuck ? 'isSticky' : '',
@@ -292,7 +292,7 @@ watch(
       />
       <div
         v-else-if="!isLoading && !tableData.length"
-        class="max-w-full bg-white2 dark:bg-white2-dark row-bg h-40 flex items-center justify-center text-primary"
+        class="max-w-full bg-white2 dark:bg-white2-dark row-bg h-40 flex items-center justify-center text-primary dark:text-primary-bright"
       >
         {{ noResultsLabel || $t('noResults') }}
       </div>

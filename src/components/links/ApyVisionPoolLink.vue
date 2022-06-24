@@ -36,7 +36,6 @@ const { poolPathSymbolSegment, apyVisionNetworkName } = useApyVisionHelpers();
           getAddressFromPoolId(poolId)
       "
       external
-      noStyle
       class="flex items-center font-medium link link-black"
     >
       <img
@@ -50,7 +49,7 @@ const { poolPathSymbolSegment, apyVisionNetworkName } = useApyVisionHelpers();
       <BalIcon
         name="arrow-up-right"
         size="sm"
-        class="ml-0.5 text-gray hover:text-blue-400 transition-colors group-hover:text-blue-500"
+        class="ml-0.5 text-gray dark:text-gray-dark transition-colors"
       />
     </BalLink>
   </div>

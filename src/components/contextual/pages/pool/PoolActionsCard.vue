@@ -61,13 +61,13 @@ const fiatTotal = computed(() => {
 </script>
 
 <template>
-  <div
-    class="p-4 w-full bg-primary-bright dark:bg-white3-dark border-t border-primary-bright dark:border-white1-dark"
-  >
-    <div class="text-gray text-sm">
+  <div class="p-4 w-full bg-white3 dark:bg-white3-dark">
+    <div class="text-gray dark:text-gray-dark text-sm">
       {{ $t('basedOnTokensInWallet') }}
     </div>
-    <div class="flex justify-between items-center mb-4">
+    <div
+      class="flex justify-between items-center mb-4 text-primary dark:text-primary-bright"
+    >
       <h5>
         {{ $t('youCanInvest') }}
       </h5>
@@ -79,7 +79,7 @@ const fiatTotal = computed(() => {
     <BalBtn
       v-if="!isWalletReady"
       :label="$t('connectWallet')"
-      color="gradient"
+      color="ape-yellow"
       block
       @click="toggleWalletSelectModal"
     />
@@ -88,7 +88,7 @@ const fiatTotal = computed(() => {
         tag="router-link"
         :to="{ name: 'invest' }"
         :label="$t('invest')"
-        color="gradient"
+        color="ape-yellow"
         block
       />
       <BalBtn

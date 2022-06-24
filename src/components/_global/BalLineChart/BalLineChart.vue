@@ -7,8 +7,8 @@
       </h3>
       <span
         :class="{
-          'text-green-400': change >= 0,
-          'text-red-400': change < 0,
+          'text-success': change >= 0,
+          'text-error': change < 0,
           'font-medium': true
         }"
         >{{ numeral(change).format('+0.0%') }}</span
@@ -163,8 +163,8 @@ export default defineComponent({
 
     const axisColor = computed(() =>
       darkMode.value
-        ? tailwind.theme.colors.gray['800']
-        : tailwind.theme.colors.gray['100']
+        ? tailwind.theme.colors['white4-dark']
+        : tailwind.theme.colors.white4
     );
 
     // https://echarts.apache.org/en/option.html
@@ -189,12 +189,12 @@ export default defineComponent({
         selected: props.legendState || {},
         textStyle: {
           color: darkMode.value
-            ? tailwind.theme.colors.gray['100']
-            : tailwind.theme.colors.gray['800']
+            ? tailwind.theme.colors['gray-dark']
+            : tailwind.theme.colors.gray
         },
         inactiveColor: darkMode.value
-          ? tailwind.theme.colors.gray['700']
-          : tailwind.theme.colors.gray['300']
+          ? tailwind.theme.colors['gray-dark']
+          : tailwind.theme.colors.gray
       },
       // controlling the display of the X-Axis
       xAxis: {
@@ -209,7 +209,9 @@ export default defineComponent({
           formatter: props.axisLabelFormatter.xAxis
             ? value => fNum2(value, props.axisLabelFormatter.xAxis)
             : undefined,
-          color: tailwind.theme.colors.gray['400']
+          color: darkMode.value
+            ? tailwind.theme.colors['gray-dark']
+            : tailwind.theme.colors.gray
         }
       },
       // controlling the display of the Y-Axis
@@ -232,7 +234,7 @@ export default defineComponent({
           formatter: props.axisLabelFormatter.yAxis
             ? value => fNum2(value, props.axisLabelFormatter.yAxis)
             : undefined,
-          color: tailwind.theme.colors.gray['400']
+          color: tailwind.theme.colors.gray
         },
         nameGap: 25
       },
@@ -256,14 +258,14 @@ export default defineComponent({
           }
         },
         backgroundColor: darkMode.value
-          ? tailwind.theme.colors.gray['800']
-          : tailwind.theme.colors.white,
+          ? tailwind.theme.colors['white2-dark']
+          : tailwind.theme.colors.white2,
         borderColor: darkMode.value
-          ? tailwind.theme.colors.gray['900']
-          : tailwind.theme.colors.white,
+          ? tailwind.theme.colors['white2-dark']
+          : tailwind.theme.colors.white2,
         formatter: params => {
           return `
-            <div class='flex flex-col font-body bg-white dark:bg-white1-dark dark:text-primary-bright'>
+            <div class='flex flex-col font-body bg-white2 dark:bg-white2-dark dark:text-primary-bright'>
               <span>${params[0].value[0]}</span>
               ${params
                 .map(

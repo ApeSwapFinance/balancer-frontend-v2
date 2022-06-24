@@ -31,7 +31,7 @@ const props = withDefaults(defineProps<Props>(), {
   textAlign: '',
   iconName: 'info',
   iconSize: 'md',
-  iconClass: 'text-gray',
+  iconClass: 'text-primary, dark:text-primary-bright',
   delayMs: 0
 });
 
@@ -183,14 +183,14 @@ onUnmounted(() => {
 
 /* bottom triangle for top placed tooltips */
 .tooltip[data-popper-placement='top'] .tooltip-content:before {
-  border-top: solid #fff 8px;
+  border-top: solid #f9f4e7 8px;
   border-left: solid transparent 8px;
   border-right: solid transparent 8px;
   bottom: -7px;
 }
 
 .dark .tooltip[data-popper-placement='top'] .tooltip-content:before {
-  border-top: solid #0f172a 8px; /* white1-dark */
+  border-top: solid #0b0b0b 8px; /* white1-dark */
 }
 
 /* Top triangle for top placed tooltips */
@@ -198,15 +198,15 @@ onUnmounted(() => {
   @apply -top-2;
   border-left: solid transparent 8px;
   border-right: solid transparent 8px;
-  border-bottom: solid #fff 8px;
+  border-bottom: solid #f9f4e7 8px;
 }
 
 .dark .tooltip[data-popper-placement='bottom'] .tooltip-content:after {
-  border-bottom: solid #0f172a 8px; /* white1-dark */
+  border-bottom: 8px solid #0b0b0b; /* white1-dark */
 }
 
 .tooltip-content {
-  @apply rounded-md text-xs text-primary dark:text-primary-bright bg-white dark:bg-white1-dark font-medium;
+  @apply rounded-md text-xs text-primary dark:text-primary-bright bg-white2 dark:bg-white2-dark font-medium;
 }
 
 .tooltip-text {

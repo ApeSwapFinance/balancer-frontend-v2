@@ -254,20 +254,15 @@ function getMainTokenEquivalentAmount(address: string, amount: string) {
                 v-if="action.type === 'invest'"
                 name="plus"
                 size="sm"
-                class="text-green-500 dark:text-green-400"
+                class="text-success"
               />
               <BalIcon
                 v-else-if="action.type === 'withdraw'"
                 name="minus"
                 size="sm"
-                class="text-red-500"
+                class="text-error"
               />
-              <BalIcon
-                v-else
-                name="repeat"
-                size="sm"
-                class="text-green-500 dark:text-green-400"
-              />
+              <BalIcon v-else name="repeat" size="sm" class="text-success" />
             </div>
             <div>{{ action.label }}</div>
           </div>
@@ -300,7 +295,7 @@ function getMainTokenEquivalentAmount(address: string, amount: string) {
           <template v-else>
             <template v-for="(tokenAmount, i) in action.tokenAmounts" :key="i">
               <div
-                class="m-1 flex items-center p-1 px-2 bg-primary-bright dark:bg-white4-dark rounded-lg"
+                class="m-1 flex items-center p-1 px-2 bg-white3 dark:bg-white3-dark rounded-lg"
                 v-if="tokenAmount.amount !== '0'"
               >
                 <BalAsset
@@ -348,6 +343,6 @@ function getMainTokenEquivalentAmount(address: string, amount: string) {
 
 <style scoped>
 .token-item {
-  @apply m-1 flex items-center p-1 px-2 bg-primary-bright dark:bg-white4-dark rounded-lg;
+  @apply m-1 flex items-center p-1 px-2 bg-white3 dark:bg-white3-dark rounded-lg;
 }
 </style>

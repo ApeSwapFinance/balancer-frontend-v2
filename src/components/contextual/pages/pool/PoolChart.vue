@@ -46,12 +46,12 @@ const { darkMode } = useDarkMode();
  */
 const hodlColor = computed(() =>
   darkMode.value
-    ? tailwind.theme.colors.gray['600']
-    : tailwind.theme.colors.black
+    ? tailwind.theme.colors['primary-bright']
+    : tailwind.theme.colors.primary
 );
 
 const chartColors = computed(() => [
-  tailwind.theme.colors.green['400'],
+  tailwind.theme.colors.success,
   hodlColor.value
 ]);
 

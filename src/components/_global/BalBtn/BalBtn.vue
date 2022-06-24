@@ -114,7 +114,7 @@ export default defineComponent({
       }
 
       if (props.disabled) {
-        return `bg-gray-dark dark:bg-white4-dark text-primary-bright dark:text-gray-dark`;
+        return `bg-white3 dark:bg-white3 text-white4-dark-greyed`;
       }
       if (props.loading) {
         return `bg-gradient-to-tr from-${fromColor}-50 to-${toColor}-50`;
@@ -127,8 +127,8 @@ export default defineComponent({
 
     const bgFlatClasses = computed(() => {
       return `
-        bg-${props.color}-50 hover:bg-${props.color}-100
-        dark:bg-${props.color}-800 dark:hover:bg-${props.color}-700
+        bg-${props.color} hover:bg-${props.color}
+        dark:bg-${props.color}-dark dark:hover:bg-${props.color}-dark
       `;
     });
 
@@ -138,17 +138,19 @@ export default defineComponent({
       else if (props.flat) return bgFlatClasses.value;
       else if (props.color === 'white') {
         return 'bg-primary-bright dark:bg-white3-dark';
+      } else if (props.color === 'ape-yellow') {
+        return `bg-${props.color} hover:bg-hovered-${props.color}`;
       } else {
         if (props.disabled) {
-          return `bg-gray-dark dark:bg-white4-dark text-primary-bright dark:text-gray-dark`;
+          return `bg-white3 dark:bg-white3 text-white4-dark-greyed`;
         }
         if (props.loading) {
           return `bg-${props.color}-400 dark:bg-${props.color}-dark-400`;
         }
 
         return `
-          bg-${props.color}-500 hover:bg-${props.color}-600
-          dark:bg-${props.color}-dark-500 dark:hover:bg-${props.color}-dark-600
+          bg-${props.color} hover:bg-${props.color}
+          dark:bg-${props.color}-dark dark:hover:bg-${props.color}-dark
         `;
       }
     });
@@ -161,14 +163,14 @@ export default defineComponent({
 
     const textColorClasses = computed(() => {
       if (props.outline && props.disabled)
-        return 'text-gray-dark dark:text-gray-dark';
+        return 'bg-white3 dark:bg-white3 text-white4-dark-greyed';
       if (props.outline && props.color === 'gradient') return 'text-purple-700';
       if (props.color === 'white') {
         if (props.outline) return 'text-primary-bright';
         else return 'text-gray dark:text-gray-dark';
       }
       if (props.outline || props.flat)
-        return `text-${props.color}-500 dark:text-${props.color}-400`;
+        return `text-${props.color} dark:text-${props.color}-dark`;
       return 'text-primary-bright';
     });
 

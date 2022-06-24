@@ -11,7 +11,7 @@
             <div
               v-for="([address, tokenMeta], i) in titleTokens"
               :key="i"
-              class="mt-2 mr-2 flex items-center px-2 h-10 bg-primary-bright dark:bg-white1-dark rounded-lg"
+              class="mt-2 mr-2 flex items-center px-2 h-10 bg-white3 dark:bg-white3-dark rounded-lg"
             >
               <BalAsset :address="address" />
               <span class="ml-2">
@@ -19,7 +19,7 @@
               </span>
               <span
                 v-if="!isStableLikePool"
-                class="font-medium text-gray-dark text-xs mt-px ml-1"
+                class="font-medium text-gray dark:text-gray-dark text-xs mt-px ml-1"
               >
                 {{
                   fNum2(tokenMeta.weight, {
@@ -48,12 +48,15 @@
               <BalIcon
                 name="arrow-up-right"
                 size="sm"
-                class="ml-2 mt-2 text-gray hover:text-blue-500 transition-colors"
+                class="ml-2 mt-2 text-gray dark:text-gray-dark hover:text-primary dark:hover:text-primary-bright transition-colors"
               />
             </BalLink>
           </div>
           <div class="flex items-center mt-2">
-            <div v-html="poolFeeLabel" class="text-sm text-gray mr-2" />
+            <div
+              v-html="poolFeeLabel"
+              class="text-sm text-gray dark:text-gray-dark mr-2"
+            />
             <BalTooltip>
               <template v-slot:activator>
                 <BalLink
@@ -63,7 +66,12 @@
                 >
                   <GauntletIcon />
                 </BalLink>
-                <BalIcon v-else name="info" size="xs" class="text-gray-dark" />
+                <BalIcon
+                  v-else
+                  name="info"
+                  size="xs"
+                  class="text-gray dark:text-gray-dark"
+                />
               </template>
               <span>
                 {{ swapFeeToolTip }}

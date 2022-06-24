@@ -57,8 +57,8 @@ module.exports = {
       colors: {
         primary: '#4D4040',
         'primary-bright': '#FAFAFA',
-        gray: 'rgb(77, 64, 64, 0.5)',
-        'gray-dark': 'rgb(250, 250, 250, 0.5)',
+        gray: 'rgba(77, 64, 64, 0.5)',
+        'gray-dark': 'rgba(250, 250, 250, 0.5)',
         white1: '#FDFBF5',
         'white1-dark': '#0B0B0B',
         white2: '#F9F4E7',
@@ -67,8 +67,11 @@ module.exports = {
         'white3-dark': '#383838',
         white4: '#EADFC7',
         'white4-dark': '#424242',
+        'white4-dark-greyed': 'rgba(66, 66, 66, 0.5)',
         'ape-yellow': '#FFB300',
         'hovered-ape-yellow': '#FFDA00',
+        success: '#38A611',
+        error: '#DF4141',
         // gray: {
         //   50: '#FAFAFA',
         //   100: '#EAF0F6',

@@ -74,7 +74,7 @@ function getTokenShare(address: string) {
   >
     <template #header>
       <div
-        class="p-4 w-full grid grid-cols-3 border-b dark:border-white1-dark text-base font-bold"
+        class="p-4 w-full grid grid-cols-3 border-b border-white4 dark:border-white4-dark text-base font-bold"
       >
         <div>{{ $t('token') }}</div>
         <div class="justify-self-end">{{ $t('balance') }}</div>
@@ -102,7 +102,7 @@ function getTokenShare(address: string) {
             <BalIcon
               name="arrow-up-right"
               size="sm"
-              class="ml-2 text-gray hover:text-blue-500 transition-colors"
+              class="ml-2 text-gray dark:text-gray-dark hover:text-text-gray dark:hover:text-gray-dark transition-colors"
             />
           </BalLink>
           <template #item="{ item: asset }">

@@ -22,7 +22,7 @@ import useWeb3 from '@/services/web3/useWeb3';
 // COMPOSABLES
 const router = useRouter();
 const { t } = useI18n();
-const { isWalletReady, appNetworkConfig, isWalletConnecting } = useWeb3();
+const { isWalletReady, isWalletConnecting } = useWeb3();
 const {
   selectedTokens,
   addSelectedToken,

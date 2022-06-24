@@ -146,9 +146,9 @@ function navigateToPoolMigration(pool: FullPool) {
 </script>
 
 <template>
-  <BalCard shadow="2xl" noPad class="rounded-xl">
+  <BalCard noPad shadow="none" class="rounded-xl">
     <template #header>
-      <div class="card-header">
+      <div class="card-header text-primary dark:text-primary-bright">
         <h5>
           {{ $t('poolTransfer.myPoolBalancesCard.title') }}
         </h5>
@@ -170,25 +170,27 @@ function navigateToPoolMigration(pool: FullPool) {
             class="mr-4"
           />
           <div class="flex flex-col">
-            <span>
+            <span class="text-primary dark:text-primary-bright">
               <span v-if="!isStableLikePool">
                 {{ weightLabelFor(address) }}
               </span>
               {{ poolTokens[index].symbol }}
             </span>
-            <span class="text-gray text-sm">
+            <span class="text-gray dark:text-gray-dark text-sm">
               {{ poolTokens[index].name }}
             </span>
           </div>
         </div>
 
-        <span class="flex flex-col flex-grow text-right">
+        <span
+          class="flex flex-col flex-grow text-right text-primary dark:text-primary-bright"
+        >
           {{
             isWalletReady
               ? fNum2(propTokenAmounts[index], FNumFormats.token)
               : '-'
           }}
-          <span class="text-gray text-sm">
+          <span class="text-gray dark:text-gray-dark text-sm">
             {{ isWalletReady ? fiatLabelFor(index, address) : '-' }}
           </span>
         </span>
@@ -212,7 +214,7 @@ function navigateToPoolMigration(pool: FullPool) {
 <style scoped>
 .card-header {
   @apply p-4 w-full flex items-center justify-between;
-  @apply border-b dark:border-white4-dark;
+   @apply border-b border-white4 dark:border-white4-dark;
 }
 
 .asset-row {

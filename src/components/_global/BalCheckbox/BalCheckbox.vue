@@ -102,7 +102,7 @@ export default defineComponent({
     });
 
     const colorClasses = computed(() => {
-      return `text-${props.color}-500`;
+      return `text-${props.color}`;
     });
 
     const wrapperClasses = computed(() => {

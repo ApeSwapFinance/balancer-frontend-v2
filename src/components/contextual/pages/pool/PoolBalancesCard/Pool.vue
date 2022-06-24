@@ -33,7 +33,7 @@
             <BalIcon
               name="arrow-up-right"
               size="sm"
-              class="ml-2 text-gray hover:text-blue-500 transition-colors"
+              class="ml-2 text-gray dark:text-gray-dark hover:text-text-gray dark:hover:text-gray-dark transition-colors"
             />
           </BalLink>
         </div>

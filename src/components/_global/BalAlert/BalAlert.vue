@@ -68,9 +68,9 @@ export default defineComponent({
     const bgColorClass = computed(() => {
       switch (props.type) {
         case 'warning':
-          return 'bg-orange-50 dark:bg-orange-500 border border-orange-200 dark:border-0 text-primary dark:text-primary-bright';
+          return 'bg-orange dark:bg-orange border border-orange dark:border-0 text-primary dark:text-primary-bright';
         case 'error':
-          return 'bg-red-50 dark:bg-red-500 border border-red-200 dark:border-0 text-primary dark:text-primary-bright';
+          return 'bg-red dark:bg-red border border-red dark:border-0 text-primary dark:text-primary-bright';
         default:
           return 'bg-primary-bright dark:bg-primary-bright border dark:border-0 border-primary-bright text-primary dark:text-primary-bright';
       }
@@ -128,9 +128,9 @@ export default defineComponent({
     const iconColorClasses = computed(() => {
       switch (props.type) {
         case 'warning':
-          return 'text-orange-500 dark:text-primary-bright bg-orange-500 dark:bg-white bg-opacity-10 dark:bg-opacity-10';
+          return 'text-orange dark:text-primary-bright bg-orange dark:bg-white bg-opacity-10 dark:bg-opacity-10';
         case 'error':
-          return 'text-red-500 dark:text-primary-bright bg-red-500 dark:bg-white bg-opacity-10 dark:bg-opacity-10';
+          return 'text-red dark:text-primary-bright bg-red dark:bg-white bg-opacity-10 dark:bg-opacity-10';
         default:
           return 'text-gray dark:text-primary-bright bg-black dark:bg-white bg-opacity-10 dark:bg-opacity-10';
       }
