@@ -331,7 +331,7 @@ function getMainTokenEquivalentAmount(address: string, amount: string) {
               <BalIcon
                 name="arrow-up-right"
                 size="sm"
-                class="text-gray dark:text-gray-dark transition-colors"
+                class="text-primary dark:text-primary-bright transition-colors"
               />
             </BalLink>
           </div>
