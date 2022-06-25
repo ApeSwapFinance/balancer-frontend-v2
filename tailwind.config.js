@@ -71,7 +71,9 @@ module.exports = {
         'ape-yellow': '#FFB300',
         'hovered-ape-yellow': '#FFDA00',
         success: '#38A611',
+        'hovered-success': '#38A611B3',
         error: '#DF4141',
+        'hovered-error': '#DF4141B3',
         // gray: {
         //   50: '#FAFAFA',
         //   100: '#EAF0F6',

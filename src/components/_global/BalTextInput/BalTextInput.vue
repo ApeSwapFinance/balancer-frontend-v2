@@ -167,7 +167,7 @@ onMounted(() => {
 
 <style scoped>
 .input-container {
-  @apply bg-white dark:bg-white3-dark border transition-colors;
+  @apply bg-white3 dark:bg-white3-dark border-none;
 }
 
 .input-group {
@@ -183,6 +183,6 @@ onMounted(() => {
 }
 
 .error {
-  @apply text-xs text-red-500 mt-1 ml-1;
+  @apply text-xs text-error mt-1 ml-1;
 }
 </style>

@@ -214,7 +214,7 @@ function navigateToPoolMigration(pool: FullPool) {
 <style scoped>
 .card-header {
   @apply p-4 w-full flex items-center justify-between;
-   @apply border-b border-white4 dark:border-white4-dark;
+  @apply border-b border-white4 dark:border-white4-dark;
 }
 
 .asset-row {

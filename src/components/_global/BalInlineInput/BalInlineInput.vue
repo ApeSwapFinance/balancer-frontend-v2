@@ -176,7 +176,7 @@ function handleBlur(e: HtmlInputEvent) {
 
 <style scoped>
 .input-container {
-  @apply bg-white dark:bg-white3-dark;
+  @apply bg-white3 dark:bg-white3-dark;
 }
 
 .input-group {
@@ -192,6 +192,6 @@ function handleBlur(e: HtmlInputEvent) {
 }
 
 .error {
-  @apply text-xs text-red-500 mt-1 ml-1;
+  @apply text-xs text-error mt-1 ml-1;
 }
 </style>

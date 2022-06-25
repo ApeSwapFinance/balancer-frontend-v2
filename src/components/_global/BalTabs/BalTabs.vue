@@ -53,10 +53,8 @@ export default defineComponent({
 
     function stateClasses(tab: Tab): Record<string, boolean> {
       return {
-        'border-primary dark:border-primary-bright hover:border-primary text-primary hover:text-primary dark:text-primary-bright dark:hover-text-primary-bright': isActiveTab(
-          tab
-        ),
-        'text-gray dark:text-gray-dark border-none transition-colors': !isActiveTab(
+        'border-ape-yellow text-ape-yellow': isActiveTab(tab),
+        'text-gray dark:text-gray-dark hover:text-ape-yellow dark:hover:text-ape-yellow border-none transition-colors': !isActiveTab(
           tab
         )
       };

@@ -56,7 +56,8 @@ export default defineComponent({
           'gray',
           'red',
           'white',
-          'blue'
+          'blue',
+          'ape-yellow'
         ].includes(val)
     },
     label: { type: String, default: '' },
@@ -157,7 +158,9 @@ export default defineComponent({
 
     const borderClasses = computed(() => {
       if (props.outline)
-        return `border border-${props.color}-200 dark:border-${props.color}-700`;
+        return `border border-${props.color} dark:border-${
+          props.color
+        }${props.color.includes('dark') && '-dark'}`;
       return 'border-none';
     });
 
@@ -231,6 +234,7 @@ export default defineComponent({
   transition: all 0.2s ease;
   text-decoration: none !important;
   line-height: 0;
+  box-shadow: none;
 }
 
 .bal-btn:focus,

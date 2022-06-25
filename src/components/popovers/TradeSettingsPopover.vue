@@ -3,12 +3,16 @@
     <template v-slot:activator>
       <BalBtn
         circle
-        color="white"
         size="sm"
-        class="mb-2 text-gray icon-spin-anim"
+        color="transparent"
+        class="mb-2 icon-spin-anim bg-transparent shadow-none"
         @click="onActivatorClick"
       >
-        <BalIcon name="settings" size="sm" />
+        <BalIcon
+          name="settings"
+          size="md"
+          class="text-primary dark:text-primary-bright"
+        />
       </BalBtn>
     </template>
 
@@ -17,7 +21,11 @@
         <span v-text="$t('slippageTolerance')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-dark -mb-px" />
+            <BalIcon
+              name="info"
+              size="xs"
+              class="ml-1 text-gray dark:text-gray-dark -mb-px"
+            />
           </template>
           <div v-html="$t('marketConditionsWarning')" />
         </BalTooltip>
@@ -29,7 +37,11 @@
         <span v-text="$t('transactionType')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-dark -mb-px" />
+            <BalIcon
+              name="info"
+              size="xs"
+              class="ml-1 text-gray dark:text-gray-dark -mb-px"
+            />
           </template>
           <div v-text="$t('ethereumTxTypeTooltip')" />
         </BalTooltip>

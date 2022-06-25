@@ -9,7 +9,7 @@
 }
 
 .icon-spin-anim:hover .bal-icon {
-  @apply text-blue-500;
+  @apply text-primary;
 }
 
 @keyframes fadeIn {
