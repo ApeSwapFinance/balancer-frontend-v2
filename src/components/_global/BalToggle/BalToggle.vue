@@ -10,7 +10,7 @@
     />
     <label :for="name" class="bal-toggle-track" />
   </div>
-  <label v-if="label" class="text-xs  dark:text-primary-bright ml-2">
+  <label v-if="label" class="text-xs ml-2">
     {{ label }}
   </label>
 </template>
@@ -55,13 +55,13 @@ export default defineComponent({
   @apply relative inline-block w-10 align-middle select-none transition duration-200 ease-out;
 }
 .bal-toggle-checkbox {
-  @apply absolute block w-6 h-6 rounded-full bg-white border-4 border-primary-bright group-hover:border-gray-dark dark:border-white4-dark dark:group-hover:border-white1-dark appearance-none cursor-pointer transition-colors;
+  @apply absolute block w-6 h-6 rounded-full bg-ape-yellow border-4 border-ape-yellow appearance-none cursor-pointer transition-colors;
 }
 .bal-toggle-track {
-  @apply block overflow-hidden h-6 rounded-full bg-primary-bright group-hover:bg-gray-dark dark:bg-white4-dark dark:group-hover:bg-white1-dark bg-none cursor-pointer transition-colors;
+  @apply block overflow-hidden h-6 rounded-full bg-white4 dark:bg-white4-dark bg-none cursor-pointer transition-colors;
 }
 .bal-toggle-checkbox:checked {
-  @apply right-0 border-green-400 group-hover:border-green-500 dark:border-green-500 dark:group-hover:border-green-400 transition-colors;
+  @apply right-0 bg-success border-4 border-success transition-colors;
 }
 
 .bal-toggle-track[for='tradeGasless'] {
@@ -78,12 +78,12 @@ export default defineComponent({
 }
 
 .bal-toggle-checkbox:checked + .bal-toggle-track {
-  @apply bg-green-400 group-hover:bg-green-500 dark:bg-green-500 dark:group-hover:bg-green-400;
+  @apply bg-hovered-ape-yellow;
 }
 .bal-toggle-checkbox[disabled] {
-  @apply border-gray-dark dark:border-white4-dark cursor-not-allowed;
+  @apply cursor-not-allowed;
 }
 .bal-toggle-checkbox[disabled] + .bal-toggle-track {
-  @apply bg-gray-dark dark:bg-white4-dark cursor-not-allowed;
+  @apply cursor-not-allowed;
 }
 </style>

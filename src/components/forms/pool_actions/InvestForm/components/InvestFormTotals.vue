@@ -46,13 +46,13 @@ const {
  */
 const priceImpactClasses = computed(() => ({
   'dark:bg-white3-dark': !highPriceImpact.value,
-  'bg-red-500 dark:bg-red-500 text-primary-bright divide-red-400':
+  'bg-error dark:bg-error text-primary-bright divide-error':
     highPriceImpact.value
 }));
 
 const optimizeBtnClasses = computed(() => ({
   'text-gradient': !highPriceImpact.value,
-  'text-red-500 px-2 py-1 bg-white rounded-lg': highPriceImpact.value
+  'text-error px-2 py-1 bg-white1 rounded-lg': highPriceImpact.value
 }));
 </script>
 
@@ -63,12 +63,12 @@ const optimizeBtnClasses = computed(() => ({
       <div class="data-table-number-col">
         {{ fNum2(fiatTotal, FNumFormats.fiat) }}
         <div v-if="isWalletReady && !hasNoBalances" class="text-sm">
-          <span v-if="maximized" class="text-gray-dark dark:text-gray-dark">
+          <span v-if="maximized" class="text-gray dark:text-gray-dark">
             {{ $t('maxed') }}
           </span>
           <span
             v-else
-            class="text-blue-500 cursor-pointer"
+            class="text-ape-yellow cursor-pointer"
             @click="emit('maximize')"
           >
             {{ $t('max') }}
@@ -97,7 +97,7 @@ const optimizeBtnClasses = computed(() => ({
                 v-else
                 name="info"
                 size="xs"
-                class="text-gray-dark -mb-px ml-1"
+                class="text-gray -mb-px ml-1"
               />
             </template>
           </BalTooltip>
@@ -109,7 +109,7 @@ const optimizeBtnClasses = computed(() => ({
           "
           class="text-sm font-bold"
         >
-          <span v-if="optimized" class="text-gray-dark dark:text-gray-dark">
+          <span v-if="optimized" class="text-gray dark:text-gray-dark">
             {{ $t('optimized') }}
           </span>
           <div

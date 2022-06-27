@@ -192,14 +192,18 @@ watch(
           ref="handleBarElement"
           @click="toggleSection(section.id)"
           :class="[
-            'w-full flex justify-between p-3 hover:bg-primary-bright dark:hover:bg-white3-dark',
+            'w-full flex justify-between p-3 hover:bg-white3 dark:hover:bg-white3-dark',
             {
-              'border-b dark:border-white1-dark': i !== sections.length - 1
+              'border-b border-white4 dark:border-white4-dark':
+                i !== sections.length - 1
             }
           ]"
         >
           <h6>{{ section.title }}</h6>
-          <BalIcon class="text-blue-400" name="chevron-down" />
+          <BalIcon
+            class="text-primary dark:text-primary-bright"
+            name="chevron-down"
+          />
         </button>
         <div
           class="relative"

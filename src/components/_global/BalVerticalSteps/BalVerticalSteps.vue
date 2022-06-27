@@ -47,17 +47,14 @@ const stepCircleClasses = computed(() => {
         StepState.Active,
         'border-2 border-none bg-gradient-from-l bg-gradient-to-r from-blue-600 to-blue-50 text-primary-bright active'
       ],
-      [
-        StepState.Todo,
-        'border-2 border-gray-dark dark:border-gray-dark text-gray'
-      ],
+      [StepState.Todo, 'border-2 border-gray dark:border-gray-dark text-gray'],
       [
         StepState.Success,
         'border-2 border-none bg-gradient-to-tr from-green-500 to-green-200 text-primary-bright'
       ],
       [
         StepState.Warning,
-        'border-2 border-none bg-red-500 text-primary-bright active'
+        'border-2 border-none bg-error text-primary-bright active'
       ],
       [StepState.Completed, 'border-2 border-gray-dark font-medium']
     ]);

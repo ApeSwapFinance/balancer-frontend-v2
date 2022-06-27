@@ -153,12 +153,12 @@ function handleBlur(e: HtmlInputEvent) {
             </div>
             <button
               v-if="!isEditable"
-              class="hover:text-blue-500"
+              class="hover:text-gray"
               @click="toggleEditable"
             >
               <BalIcon name="edit" size="xs" />
             </button>
-            <button v-else class="hover:text-blue-500" @click="toggleEditable">
+            <button v-else class="hover:text-gray" @click="toggleEditable">
               <BalIcon name="save" size="xs" />
             </button>
           </BalStack>
@@ -188,7 +188,7 @@ function handleBlur(e: HtmlInputEvent) {
 }
 
 .label {
-  @apply text-sm text-gray;
+  @apply text-sm text-gray dark:text-gray-dark;
 }
 
 .error {

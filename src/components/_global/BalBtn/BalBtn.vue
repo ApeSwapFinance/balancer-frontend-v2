@@ -137,16 +137,13 @@ export default defineComponent({
       if (props.color.includes('gradient')) return bgGradientClasses.value;
       else if (props.outline) return 'bg-transparent';
       else if (props.flat) return bgFlatClasses.value;
-      else if (props.color === 'white') {
-        return 'bg-primary-bright dark:bg-white3-dark';
+      else if (props.disabled) {
+        return `bg-white3 dark:bg-white3 text-white4-dark-greyed`;
       } else if (props.color === 'ape-yellow') {
         return `bg-${props.color} hover:bg-hovered-${props.color}`;
       } else {
-        if (props.disabled) {
-          return `bg-white3 dark:bg-white3 text-white4-dark-greyed`;
-        }
         if (props.loading) {
-          return `bg-${props.color}-400 dark:bg-${props.color}-dark-400`;
+          return `bg-${props.color} dark:bg-${props.color}-dark`;
         }
 
         return `
@@ -160,7 +157,7 @@ export default defineComponent({
       if (props.outline)
         return `border border-${props.color} dark:border-${
           props.color
-        }${props.color.includes('dark') && '-dark'}`;
+        }-${props.color.includes('dark') && 'dark'}`;
       return 'border-none';
     });
 
@@ -229,12 +226,12 @@ export default defineComponent({
 
 <style scoped>
 .bal-btn {
-  @apply overflow-hidden tracking-tight;
-  font-weight: 500;
+  @apply overflow-hidden tracking-tight font-bold;
   transition: all 0.2s ease;
   text-decoration: none !important;
   line-height: 0;
   box-shadow: none;
+  text-transform: uppercase;
 }
 
 .bal-btn:focus,

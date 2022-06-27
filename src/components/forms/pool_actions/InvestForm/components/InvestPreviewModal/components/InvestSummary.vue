@@ -49,7 +49,7 @@ const { currency } = useUserSettings();
         :class="[
           'summary-table-row',
           {
-            'bg-red-50 dark:bg-red-500 text-red-500 dark:text-primary-bright': highPriceImpact
+            'bg-error dark:bg-error text-error dark:text-primary-bright': highPriceImpact
           }
         ]"
       >
@@ -66,7 +66,7 @@ const { currency } = useUserSettings();
               :icon-name="highPriceImpact ? 'alert-triangle' : 'info'"
               :icon-class="
                 highPriceImpact
-                  ? 'text-red-500 dark:text-primary-bright'
+                  ? 'text-error dark:text-primary-bright'
                   : 'text-gray'
               "
               width="72"

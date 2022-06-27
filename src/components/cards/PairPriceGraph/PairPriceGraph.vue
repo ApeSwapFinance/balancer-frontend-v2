@@ -201,8 +201,8 @@ const isNegativeTrend = computed(() => {
 });
 
 const chartColors = computed(() => {
-  let color = tailwind.theme.colors.green['400'];
-  if (isNegativeTrend.value) color = tailwind.theme.colors.red['400'];
+  let color = tailwind.theme.colors.success;
+  if (isNegativeTrend.value) color = tailwind.theme.colors.error;
   return [color];
 });
 
@@ -249,8 +249,16 @@ const chartGrid = computed(() => {
           @click="toggle"
           class="maximise m-4 p-2 flex justify-center items-center shadow-lg rounded-full"
         >
-          <BalIcon v-if="!isModal" name="maximize-2" class="text-gray" />
-          <BalIcon v-if="isModal" name="x" class="text-gray" />
+          <BalIcon
+            v-if="!isModal"
+            name="maximize-2"
+            class="text-primary dark:text-primary-bright"
+          />
+          <BalIcon
+            v-if="isModal"
+            name="x"
+            class="text-primary dark:text-primary-bright"
+          />
         </button>
         <div
           v-if="!failedToLoadPriceData && !(isLoadingPriceData || appLoading)"
@@ -323,14 +331,14 @@ const chartGrid = computed(() => {
                     'text-primary-bright':
                       activeTimespan.value === timespan.value,
                     'text-gray': activeTimespan.value !== timespan.value,
-                    'bg-green-400':
+                    'bg-success':
                       !isNegativeTrend &&
                       activeTimespan.value === timespan.value,
-                    'bg-red-400':
+                    'bg-error':
                       isNegativeTrend &&
                       activeTimespan.value === timespan.value,
-                    'hover:bg-red-200': isNegativeTrend,
-                    'hover:bg-green-200': !isNegativeTrend
+                    'hover:bg-hovered-error hover:text-primary-bright': isNegativeTrend,
+                    'hover:bg-hovered-success hover:text-primary-bright': !isNegativeTrend
                   }
                 ]"
               >
@@ -347,9 +355,11 @@ const chartGrid = computed(() => {
             </div>
           </div>
           <div class="-mt-2 lg:mt-2" v-else>
-            <span class="text-sm text-gray w-full flex justify-end">{{
-              activeTimespan.option
-            }}</span>
+            <span
+              class="text-sm text-gray dark:text-gray-dark w-full flex justify-end"
+            >
+              {{ activeTimespan.option }}
+            </span>
           </div>
         </div>
       </div>

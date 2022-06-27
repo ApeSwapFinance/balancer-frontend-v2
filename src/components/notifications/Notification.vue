@@ -99,9 +99,9 @@ export default defineComponent({
       let bgClasses = 'bg-orange-600 dark:bg-orange-500';
 
       if (props.notification.type === 'success') {
-        bgClasses = 'bg-green-500 dark:bg-green-500';
+        bgClasses = 'bg-success dark:bg-success';
       } else if (props.notification.type === 'error') {
-        bgClasses = 'bg-red-500 dark:bg-red-500';
+        bgClasses = 'bg-error dark:bg-error';
       }
 
       return `

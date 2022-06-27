@@ -80,7 +80,10 @@ function tokenFor(option: string): TokenInfo {
       <span class="text-base font-medium">
         {{ token?.symbol }}
       </span>
-      <span v-if="Number(weight) > 0" class="text-gray ml-2">
+      <span
+        v-if="Number(weight) > 0"
+        class="text-gray dark:text-gray-dark ml-2"
+      >
         {{
           fNum2(weight, {
             style: 'percent',
@@ -110,7 +113,10 @@ function tokenFor(option: string): TokenInfo {
           <span class="text-base font-medium">
             {{ token?.symbol }}
           </span>
-          <span v-if="Number(weight) > 0" class="text-gray ml-2">
+          <span
+            v-if="Number(weight) > 0"
+            class="text-gray dark:text-gray-dark ml-2"
+          >
             {{
               fNum2(weight, {
                 style: 'percent',
@@ -121,7 +127,7 @@ function tokenFor(option: string): TokenInfo {
           <BalIcon
             name="chevron-down"
             size="sm"
-            class="text-blue-500 group-hover:text-pink-500 ml-2"
+            class="text-primary dark:text-primary-bright ml-2"
           />
         </div>
       </template>
@@ -139,7 +145,7 @@ function tokenFor(option: string): TokenInfo {
           <BalIcon
             v-if="optionToken.address === modelValue"
             name="check"
-            class="text-blue-500 ml-4"
+            class="text-primary dark:text-primary-bright ml-4"
           />
         </div>
       </template>

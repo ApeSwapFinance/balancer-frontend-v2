@@ -234,6 +234,7 @@ watchEffect(() => {
     @update:modelValue="emit('update:amount', $event)"
     @update:isValid="emit('update:isValid', $event)"
     @keydown="emit('keydown', $event)"
+    noShadow
   >
     <template #prepend>
       <slot name="tokenSelect">
@@ -254,7 +255,7 @@ watchEffect(() => {
         class="flex flex-col pt-1"
       >
         <div
-          class="flex items-center justify-between text-sm text-gray leading-none"
+          class="flex items-center justify-between text-sm text-gray dark:text-gray-dark leading-none"
         >
           <div v-if="!isWalletReady || disableBalance" />
           <div v-else class="cursor-pointer flex items-center" @click="setMax">

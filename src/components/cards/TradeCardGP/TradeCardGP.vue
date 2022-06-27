@@ -23,6 +23,7 @@
         @amountChange="trading.handleAmountChange"
         class="mb-4"
       />
+
       <GasReimbursement
         v-if="!ENABLE_LEGACY_TRADE_INTERFACE && trading.isBalancerTrade.value"
         class="mb-5"
@@ -62,8 +63,8 @@
       <BalBtn
         v-else
         :label="$t('preview')"
+        color="ape-yellow"
         :disabled="tradeDisabled"
-        color="gradient"
         block
         @click.prevent="handlePreviewButton"
       />
@@ -132,7 +133,7 @@
                   <BalIcon
                     name="info"
                     size="xs"
-                    class="text-gray-dark ml-1 flex"
+                    class="text-gray dark:text-gray-dark ml-1 flex"
                   />
                 </template>
                 <div v-html="$t('tradeGaslessToggle.tooltip')" />
@@ -462,7 +463,7 @@ export default defineComponent({
   width: 3rem;
 }
 .gas-symbol {
-  @apply h-8 w-8 rounded-full flex items-center justify-center text-lg bg-primary-bright dark:bg-white3-dark;
+  @apply h-8 w-8 rounded-full flex items-center justify-center text-lg bg-white3 dark:bg-white3-dark;
 }
 .gas-symbol:before {
   content: '⛽';

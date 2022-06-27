@@ -43,7 +43,7 @@ export default defineComponent({
     const colorClass = computed(() => {
       switch (props.alert.type) {
         case AlertType.ERROR:
-          return 'bg-red-500 text-primary-bright';
+          return 'bg-error text-primary-bright';
         case AlertType.FEATURE:
           return 'bg-orange-300 text-primary';
         default:

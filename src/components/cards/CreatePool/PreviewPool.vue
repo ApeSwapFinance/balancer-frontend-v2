@@ -187,16 +187,13 @@ function getInitialWeightHighlightClass(tokenAddress: string) {
           <BalCircle
             v-if="poolCreated"
             size="8"
-            color="green"
+            color="success"
             class="text-primary-bright mr-2"
           >
             <BalIcon name="check" />
           </BalCircle>
           <BalStack horizontal align="center" spacing="xs">
-            <button
-              @click="goBack"
-              class="text-blue-500 hover:text-blue-700 flex"
-            >
+            <button @click="goBack" class="text-gray hover:text-gray flex">
               <BalIcon class="flex" name="chevron-left" />
             </button>
 
@@ -204,7 +201,7 @@ function getInitialWeightHighlightClass(tokenAddress: string) {
           </BalStack>
         </div>
         <BalCard shadow="none" noPad>
-          <div class="bg-primary-bright dark:bg-white4-dark p-2">
+          <div class="bg-white4 dark:bg-white4-dark p-2">
             <h6 class="text-sm">
               {{ $t('createAPool.tokensAndSeedLiquidity') }}
             </h6>
