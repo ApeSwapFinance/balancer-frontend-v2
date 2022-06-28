@@ -60,7 +60,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <BalCard shadow="xl" exposeOverflow noBorder>
+  <BalCard shadow="none" exposeOverflow noBorder>
     <template #header>
       <div class="w-full">
         <div class="text-xs text-gray leading-none">

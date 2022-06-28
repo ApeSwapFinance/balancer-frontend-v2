@@ -42,7 +42,7 @@ onBeforeMount(async () => {
       v-if="loadingPool || !transfersAllowed || !sorReady"
       class="h-96"
     />
-    <BalCard v-else shadow="xl" exposeOverflow noBorder>
+    <BalCard v-else shadow="none" exposeOverflow noBorder>
       <template #header>
         <div class="w-full">
           <div class="text-xs text-gray  leading-none">

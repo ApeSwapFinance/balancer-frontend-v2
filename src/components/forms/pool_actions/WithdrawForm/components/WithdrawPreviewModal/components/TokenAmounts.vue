@@ -63,7 +63,7 @@ function amountShare(address: string): string {
 
 <style scoped>
 .token-amount-table {
-  @apply shadow-lg border dark:border-white4-dark divide-y dark:divide-white4-dark rounded-lg;
+  @apply shadow-none border dark:border-white4-dark divide-y dark:divide-white4-dark rounded-lg;
 }
 
 .token-amount-table-content {

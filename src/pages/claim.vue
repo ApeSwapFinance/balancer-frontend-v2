@@ -314,7 +314,7 @@ onBeforeMount(async () => {
           <img
             :src="require(`@/assets/images/icons/networks/${network.id}.svg`)"
             :alt="network.id"
-            class="w-6 h-6 rounded-full shadow-sm mr-2"
+            class="w-6 h-6 rounded-full shadow-none mr-2"
           />
           {{ $t('pages.claim.btns.claimOn') }} {{ network.name }}
         </BalBtn>

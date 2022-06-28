@@ -128,7 +128,7 @@ function handleSelected(newToken: string): void {
 
 <style scoped>
 .token-select-input {
-  @apply shadow rounded-lg flex items-center h-10 px-2 whitespace-nowrap;
+  @apply rounded-lg flex items-center h-10 px-2 whitespace-nowrap;
   @apply text-sm;
   font-weight: 700;
 }
@@ -138,6 +138,6 @@ function handleSelected(newToken: string): void {
 }
 
 .selected {
-  @apply bg-primary-bright dark:bg-white4-dark text-primary dark:text-primary-bright;
+  @apply bg-white4 dark:bg-white4-dark text-primary dark:text-primary-bright;
 }
 </style>

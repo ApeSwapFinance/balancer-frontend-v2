@@ -69,7 +69,7 @@
       </div>
       <div class="flex mt-1">
         <div
-          class="flex items-center px-1 border rounded-lg shadow-inner dark:border-white4-dark"
+          class="flex items-center px-1 border rounded-lg dark:border-white4-dark"
         >
           <input
             class="w-8 text-right bg-transparent"

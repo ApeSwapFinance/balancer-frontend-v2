@@ -7,15 +7,15 @@
     <p class="pb-3 text-sm">
       {{ $t('byConnectingWallet') }}
       <router-link :to="{ name: 'terms-of-use' }" target="_blank">
-        <span className="link">{{ $t('policies.termsOfUse') }}</span
+        <span className="link yellow">{{ $t('policies.termsOfUse') }}</span
         >,
       </router-link>
       <router-link :to="{ name: 'cookies-policy' }" target="_blank">
-        <span className="link">{{ $t('policies.cookiesPolicy') }}</span>
+        <span className="link yellow">{{ $t('policies.cookiesPolicy') }}</span>
       </router-link>
       {{ $t('and') }}
       <router-link :to="{ name: 'privacy-policy' }" target="_blank">
-        <span className="link">{{ $t('policies.privacyPolicy') }}</span
+        <span className="link yellow">{{ $t('policies.privacyPolicy') }}</span
         >.
       </router-link>
     </p>
@@ -24,20 +24,21 @@
       class="
         p-4
         rounded-lg
-        bg-gradient-to-b
-        from-primary-bright
-        dark:from-white1-dark
-        to-primary-bright
-        dark:to-white1-dark
+        bg-white3
+        dark:bg-white3-dark
       "
     >
       <h6>{{ $t('newToEthereum') }}</h6>
       <p class="text-sm">
         {{ $t('setUpEthereumWallet') }}
-        <BalLink :href="EXTERNAL_LINKS.Ethereum.Wallets" external>
+        <BalLink
+          :href="EXTERNAL_LINKS.Ethereum.Wallets"
+          class="yellow"
+          external
+        >
           {{ $t('learnMore') }}
           <span class="align-middle"
-            ><BalIcon name="arrow-up-right" size="sm"
+            ><BalIcon name="arrow-up-right" size="sm" class="text-ape-yellow"
           /></span>
         </BalLink>
       </p>

@@ -54,8 +54,7 @@ export default defineComponent({
 
 <style scoped>
 .app-nav-toggle {
-  @apply h-10 flex items-center rounded-lg shadow;
-  font-weight: 700;
+  @apply h-10 flex items-center rounded-lg font-bold;
 }
 
 .toggle-link {

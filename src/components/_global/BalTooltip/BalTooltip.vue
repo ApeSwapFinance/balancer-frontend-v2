@@ -152,13 +152,13 @@ onUnmounted(() => {
 }
 
 /* Dark mode radial gradient shadow */
-.dark .tooltip:before {
+/* .dark .tooltip:before {
   background-blend-mode: soft-light, soft-light, normal;
   background: radial-gradient(ellipse at left, yellow, transparent),
     radial-gradient(ellipse at bottom right, blue, transparent),
     radial-gradient(ellipse at top, red, transparent);
   content: '';
-}
+} */
 
 .tooltip[data-show] {
   @apply block;

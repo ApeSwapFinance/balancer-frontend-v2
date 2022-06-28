@@ -72,7 +72,7 @@ defineExpose({ hide });
         <div v-if="showContent" class="content">
           <BalCard
             :title="title"
-            shadow="lg"
+            shadow="none"
             :no-pad="noPad"
             :no-content-pad="noContentPad"
             class="modal-card"

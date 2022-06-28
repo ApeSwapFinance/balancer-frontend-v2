@@ -179,7 +179,7 @@ function tokenFor(option: string): TokenInfo {
 
 <style scoped>
 .token-select-input {
-  @apply shadow rounded-lg flex items-center h-10 px-2 whitespace-nowrap;
+  @apply rounded-lg flex items-center h-10 px-2 whitespace-nowrap;
   @apply text-sm;
 }
 

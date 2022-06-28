@@ -247,7 +247,7 @@ const chartGrid = computed(() => {
         <button
           v-if="!failedToLoadPriceData && !(isLoadingPriceData || appLoading)"
           @click="toggle"
-          class="maximise m-4 p-2 flex justify-center items-center shadow-lg rounded-full"
+          class="maximise m-4 p-2 flex justify-center items-center shadow-none rounded-full"
         >
           <BalIcon
             v-if="!isModal"
@@ -330,7 +330,8 @@ const chartGrid = computed(() => {
                   {
                     'text-primary-bright':
                       activeTimespan.value === timespan.value,
-                    'text-gray': activeTimespan.value !== timespan.value,
+                    'text-gray dark:text-gray-dark':
+                      activeTimespan.value !== timespan.value,
                     'bg-success':
                       !isNegativeTrend &&
                       activeTimespan.value === timespan.value,
@@ -346,10 +347,10 @@ const chartGrid = computed(() => {
               </button>
             </div>
             <div :class="{ 'mt-4': isModal }">
-              <span class="text-sm text-gray mr-4"
+              <span class="text-sm text-gray dark:text-gray-dark mr-4"
                 >Low: {{ dataMin.toPrecision(6) }}</span
               >
-              <span class="text-sm text-gray"
+              <span class="text-sm text-gray dark:text-gray-dark"
                 >High: {{ dataMax.toPrecision(6) }}</span
               >
             </div>

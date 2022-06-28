@@ -41,7 +41,7 @@ const { poolPathSymbolSegment, apyVisionNetworkName } = useApyVisionHelpers();
       <img
         width="32"
         height="32"
-        class="mr-2 rounded-full group-hover:shadow-lg transition"
+        class="mr-2 rounded-full transition"
         src="@/assets/images/icons/apy-vision.svg"
         alt=""
       />

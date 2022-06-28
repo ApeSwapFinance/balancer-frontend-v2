@@ -102,7 +102,7 @@ const hasClaimableBalance = computed((): boolean =>
 
 <template>
   <BalCard
-    shadow="lg"
+    shadow="none"
     :square="upToLargeBreakpoint"
     :noBorder="upToLargeBreakpoint"
     noPad

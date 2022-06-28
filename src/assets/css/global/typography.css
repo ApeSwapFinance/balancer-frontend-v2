@@ -78,6 +78,10 @@ th {
   @apply text-primary dark:text-gray-dark transition-all underline;
 }
 
+.link.yellow {
+  @apply text-ape-yellow font-medium no-underline hover:underline;
+}
+
 .link-black {
   @apply text-gray dark:text-gray-dark;
 }

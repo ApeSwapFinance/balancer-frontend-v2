@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative p-3 overflow-hidden rounded bg-white dark:bg-white3-dark shadow-lg text-sm dark:text-primary-bright dark:border-white1-dark w-64"
+    class="relative p-3 overflow-hidden rounded bg-white dark:bg-white3-dark shadow-none text-sm dark:text-primary-bright dark:border-white1-dark w-64"
   >
     <div class="justify-between group">
       <BalLink

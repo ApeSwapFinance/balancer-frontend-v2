@@ -119,7 +119,7 @@ function redirectToPool({ pool }: { pool: GaugePool }) {
 
 <template>
   <BalCard
-    shadow="lg"
+    shadow="none"
     :square="upToLargeBreakpoint"
     :noBorder="upToLargeBreakpoint"
     noPad
