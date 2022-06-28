@@ -1,21 +1,25 @@
 <template>
   <BalPopover no-pad>
     <template v-slot:activator>
-      <BalBtn color="white" :size="upToLargeBreakpoint ? 'md' : 'sm'">
+      <BalBtn color="white3" :size="upToLargeBreakpoint ? 'md' : 'sm'">
         <img
           :src="iconSrc(activeNetwork)"
           :alt="activeNetwork.name"
           class="w-6 h-6 rounded-full"
         />
-        <span class="ml-2">
+        <span class="ml-2 text-primary dark:text-primary-bright">
           {{ activeNetwork.name }}
         </span>
-        <BalIcon name="chevron-down" size="sm" class="ml-2" />
+        <BalIcon
+          name="chevron-down"
+          size="sm"
+          class="ml-2 text-primary dark:text-primary-bright"
+        />
       </BalBtn>
     </template>
     <div class="flex flex-col w-44 rounded-lg overflow-hidden">
       <div
-        class="p-3 border-b dark:border-white1-dark whitespace-nowrap text-gray font-medium"
+        class="p-3 border-b border-white4 dark:border-white4-dark whitespace-nowrap text-gray dark:text-gray-dark font-medium"
       >
         Select a network
       </div>
@@ -23,7 +27,7 @@
         v-for="network in networks"
         :key="network.id"
         :href="appUrl(network)"
-        class="flex items-center justify-between p-3 cursor-pointer hover:bg-primary-bright dark:hover:bg-white1-dark"
+        class="flex items-center justify-between p-3 cursor-pointer hover:bg-white3 dark:hover:bg-white3-dark"
       >
         <div class="flex items-center">
           <img
@@ -35,7 +39,11 @@
             {{ network.name }}
           </span>
         </div>
-        <BalIcon v-if="isActive(network)" name="check" class="text-blue-500" />
+        <BalIcon
+          v-if="isActive(network)"
+          name="check"
+          class="text-primary dark:text-primary-bright"
+        />
       </a>
     </div>
   </BalPopover>

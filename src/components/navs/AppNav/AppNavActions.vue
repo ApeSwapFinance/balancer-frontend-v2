@@ -24,7 +24,7 @@ const hideNetworkSelect = computed(() => connector.value?.id === 'gnosis');
 </script>
 
 <template>
-  <div class="grid gap-2 grid-rows-1 grid-flow-col">
+  <div class="grid gap-4 grid-rows-1 grid-flow-col">
     <DarkModeToggle v-if="isDesktop" />
     <AppNavActivityBtn v-if="account" />
     <AppNavAccountBtn v-if="account" />
@@ -35,13 +35,19 @@ const hideNetworkSelect = computed(() => connector.value?.id === 'gnosis');
       @click="toggleWalletSelectModal"
     >
       <WalletIcon class="mr-2" />
-      <span class="hidden lg:inline-block" v-text="$t('connectWallet')" />
-      <span class="lg:hidden" v-text="$t('connect')" />
+      <span
+        class="hidden lg:inline-block text-primary dark:text-primary-bright"
+        v-text="$t('connectWallet')"
+      />
+      <span
+        class="lg:hidden text-primary dark:text-primary-bright"
+        v-text="$t('connect')"
+      />
     </BalBtn>
     <AppNavNetworkSelect v-if="!hideNetworkSelect" />
     <BalBtn
       v-if="isMobile"
-      color="white"
+      color="white3"
       @click="setSidebarOpen(true)"
       flat
       circle

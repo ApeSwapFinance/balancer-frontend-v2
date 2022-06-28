@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="p-4 border-b dark:border-white1-dark">
+    <div class="p-4 border-b border-white4 dark:border-white4-dark">
       <div class="flex justify-between items-center mb-4">
         <h5 v-text="$t('account')" class="leading-none" />
         <div v-if="!hideDisconnect">

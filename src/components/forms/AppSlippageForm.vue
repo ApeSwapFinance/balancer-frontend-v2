@@ -90,14 +90,9 @@ watch(
       v-model="state.fixedSlippage"
       @update:modelValue="onFixedInput"
     />
-    <div
-      :class="[
-        'custom-input bg-white3 dark:bg-white3-dark',
-        customInputClasses
-      ]"
-    >
+    <div :class="['custom-input', customInputClasses]">
       <input
-        class="w-12 text-right bg-white3 dark:bg-white3-dark"
+        class="w-12 text-right bg-white2 dark:bg-white2-dark"
         v-model="state.customSlippage"
         placeholder="0.1"
         type="number"
@@ -115,5 +110,6 @@ watch(
 <style scoped>
 .custom-input {
   @apply flex items-center px-1 rounded-lg;
+  @apply border-gray dark:border-gray-dark bg-white2 dark:bg-white2-dark;
 }
 </style>

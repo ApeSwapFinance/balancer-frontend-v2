@@ -4,8 +4,9 @@
       <BalBtn
         color="white3"
         :size="upToLargeBreakpoint ? 'md' : 'sm'"
-        class="p-1 relative"
+        class="activity-btn"
         :circle="upToLargeBreakpoint"
+        :style="{ width: '36px', height: '36px' }"
       >
         <ActivityIcon v-if="pendingTransactions.length === 0" />
         <ActivityCounter v-else :count="pendingTransactions.length" />
@@ -156,3 +157,10 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+.activity-btn {
+  @apply relative;
+  padding: 8px;
+}
+</style>
