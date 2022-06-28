@@ -24,7 +24,7 @@
             <BalIcon
               name="info"
               size="xs"
-              class="ml-1 text-gray dark:text-gray-dark -mb-px"
+              class="ml-1 text-primary dark:text-primary-bright -mb-px"
             />
           </template>
           <div v-html="$t('marketConditionsWarning')" />
@@ -40,7 +40,7 @@
             <BalIcon
               name="info"
               size="xs"
-              class="ml-1 text-gray dark:text-gray-dark -mb-px"
+              class="ml-1 text-primary dark:text-primary-bright -mb-px"
             />
           </template>
           <div v-text="$t('ethereumTxTypeTooltip')" />

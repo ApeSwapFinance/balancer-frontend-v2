@@ -16,18 +16,19 @@
             <div class="connector-icon-wrapper">
               <img
                 :src="connectorLogo"
-                class="p-0.5 w-5 h-5 absolute bottom-0 right-0 flex items-center justify-center bg-white rounded-full"
+                class="p-0.5 w-5 h-5 absolute bottom-0 right-0 flex items-center justify-center bg-white3 rounded-full"
               />
             </div>
           </div>
           <div class="ml-2">
             <div class="address flex items-baseline">
-              <div v-text="_shorten(account)" />
+              <div v-text="_shorten(account)" class="text-ape-yellow" />
               <div class="ml-3 flex">
                 <BalTooltip width="auto">
                   <template v-slot:activator>
                     <BalBtn
                       circle
+                      outline
                       color="gray"
                       size="xs"
                       flat
@@ -46,6 +47,7 @@
                 <BalBtn
                   circle
                   flat
+                  outline
                   color="gray"
                   size="xs"
                   tag="a"
@@ -100,7 +102,11 @@
         <span v-text="$t('slippageTolerance')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-dark -mb-px" />
+            <BalIcon
+              name="info"
+              size="xs"
+              class="ml-1 text-primary dark:text-primary-bright -mb-px"
+            />
           </template>
           <div v-html="$t('marketConditionsWarning')" />
         </BalTooltip>
@@ -112,7 +118,11 @@
         <span v-text="$t('transactionType')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-dark -mb-px" />
+            <BalIcon
+              name="info"
+              size="xs"
+              class="ml-1 text-primary dark:text-primary-bright -mb-px"
+            />
           </template>
           <div v-text="$t('ethereumTxTypeTooltip')" />
         </BalTooltip>
@@ -131,7 +141,11 @@
         <span v-text="$t('tradeInterface')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-dark -mb-px" />
+            <BalIcon
+              name="info"
+              size="xs"
+              class="ml-1 text-gray dark:text-gray-dark -mb-px"
+            />
           </template>
           <div v-text="$t('tradeInterfaceTooltip')" class="w-52" />
         </BalTooltip>
@@ -144,7 +158,7 @@
       <div class="flex mt-1"></div>
     </div>
     <div
-      class="network p-4 mt-4 text-sm border-t dark:border-white1-dark rounded-b-xl"
+      class="network p-4 mt-4 text-sm border-t border-white4 dark:border-white4-dark rounded-b-xl"
     >
       <div v-text="$t('network')" />
       <div class="flex items-baseline">

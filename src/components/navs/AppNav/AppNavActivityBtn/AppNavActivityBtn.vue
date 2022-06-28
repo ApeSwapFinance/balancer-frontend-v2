@@ -2,7 +2,7 @@
   <BalPopover no-pad :align="isMobile ? 'left' : undefined">
     <template v-slot:activator>
       <BalBtn
-        color="white"
+        color="white3"
         :size="upToLargeBreakpoint ? 'md' : 'sm'"
         class="p-1 relative"
         :circle="upToLargeBreakpoint"
@@ -14,7 +14,7 @@
     <BalCard class="w-72" noPad noBorder>
       <template v-slot:header>
         <div
-          class="p-3 w-full flex items-center justify-between border-b dark:border-white1-dark"
+          class="p-3 w-full flex items-center justify-between border-b border-white4 dark:border-white4-dark"
         >
           <h5>{{ $t('recentActivityTitle') }}</h5>
         </div>
@@ -32,7 +32,7 @@
             v-if="
               pendingTransactions.length > 0 && finalizedTransactions.length > 0
             "
-            class="bg-primary-bright dark:bg-white4-dark my-3 h-px"
+            class="bg-white3 dark:bg-white3-dark my-3 h-px"
           />
           <ActivityRows
             :transactions="finalizedTransactions"
@@ -46,9 +46,12 @@
       </div>
       <template v-if="transactions.length > 0" v-slot:footer>
         <div
-          class="w-full p-3 rounded-b-lg bg-white dark:bg-white3-dark text-sm"
+          class="w-full p-3 rounded-b-lg bg-white3 dark:bg-white3-dark text-sm"
         >
-          <a @click="clearAllTransactions()" class="text-blue-500">
+          <a
+            @click="clearAllTransactions()"
+            class="text-primary dark:text-primary-bright"
+          >
             {{ $t('clearTransactions') }}
           </a>
         </div>

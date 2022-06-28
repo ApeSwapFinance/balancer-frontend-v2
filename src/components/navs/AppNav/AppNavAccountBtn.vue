@@ -10,7 +10,7 @@
         :class="{ btn: upToLargeBreakpoint }"
         :loading="isLoadingProfile"
         :loading-label="upToLargeBreakpoint ? '' : $t('connecting')"
-        color="white"
+        color="white3"
         :size="upToLargeBreakpoint ? 'md' : 'sm'"
         :circle="upToLargeBreakpoint"
       >
@@ -22,12 +22,12 @@
         <span
           v-if="profile && profile.ens"
           v-text="profile && profile.ens"
-          class="pl-2 hidden lg:inline-block"
+          class="pl-2 hidden lg:inline-block text-primary dark:text-primary-bright"
         />
         <span
           v-else
           v-text="_shorten(account)"
-          class="pl-2 hidden lg:inline-block eth-address"
+          class="pl-2 hidden lg:inline-block eth-address text-primary dark:text-primary-bright"
         />
       </BalBtn>
     </template>
