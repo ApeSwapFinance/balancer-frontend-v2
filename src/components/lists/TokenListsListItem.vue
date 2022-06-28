@@ -8,7 +8,7 @@
     />
     <div class="flex-auto">
       {{ tokenlist.name }}
-      <div class="text-gray text-sm flex items-center">
+      <div class="text-gray dark:text-gray-dark text-sm flex items-center">
         {{
           fNum2(tokenlist.tokens.length, {
             style: 'decimal',
@@ -21,7 +21,7 @@
           <BalIcon
             name="arrow-up-right"
             size="sm"
-            class="ml-1 text-gray hover:text-blue-500 transition-colors"
+            class="ml-1 text-gray dark:text-gray-dark transition-colors"
           />
         </BalLink>
       </div>

@@ -3,17 +3,13 @@
     <template v-slot:header>
       <div class="w-full flex justify-between items-center">
         <div class="flex items-center">
-          <BalBtn
+          <BalIcon
             v-if="selectTokenList"
-            color="gray"
-            size="xs"
-            class="mr-2"
-            flat
-            circle
             @click="onListExit"
-          >
-            <BalIcon name="arrow-left" size="sm" />
-          </BalBtn>
+            name="arrow-left"
+            size="md"
+            class="text-primary dark:text-primary-bright mr-2"
+          />
           <h5>{{ title }}</h5>
         </div>
         <div

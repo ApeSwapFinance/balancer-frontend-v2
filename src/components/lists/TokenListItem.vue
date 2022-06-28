@@ -11,7 +11,7 @@
     />
     <div class="flex-auto">
       {{ token.symbol }}
-      <div class="text-gray text-sm w-40 md:w-60 truncate">
+      <div class="text-gray dark:text-gray-dark text-sm w-40 md:w-60 truncate">
         {{ token.name }}
       </div>
     </div>
@@ -36,7 +36,7 @@
         numberHeight="4"
         class="text-sm font-medium"
       />
-      <div v-else class="text-gray text-sm font-medium">
+      <div v-else class="text-gray dark:text-gray-dark text-sm font-medium">
         <template v-if="value > 0">
           {{ fNum2(value, FNumFormats.fiat) }}
         </template>
