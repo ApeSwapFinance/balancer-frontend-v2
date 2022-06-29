@@ -4,8 +4,6 @@ import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 
 import ApeswapLogo from '@/components/images/ApeswapLogo.vue';
-import useApp from '@/composables/useApp';
-import useConfig from '@/composables/useConfig';
 import useDarkMode from '@/composables/useDarkMode';
 import { sleep } from '@/lib/utils';
 import useWeb3 from '@/services/web3/useWeb3';
@@ -20,8 +18,6 @@ const emit = defineEmits(['close']);
  */
 const { darkMode, toggleDarkMode } = useDarkMode();
 const { blockNumber } = useWeb3();
-const { networkConfig } = useConfig();
-const { version } = useApp();
 const { t } = useI18n();
 const router = useRouter();
 
@@ -39,17 +35,6 @@ const ecosystemLinks = [
   { label: t('build'), url: 'https://balancer.fi/build' },
   { label: t('blog'), url: 'https://medium.com/balancer-protocol' },
   { label: t('docs'), url: 'https://docs.balancer.fi/' }
-];
-
-const socialLinks = [
-  { component: 'TwitterIcon', url: 'https://twitter.com/BalancerLabs' },
-  { component: 'DiscordIcon', url: 'https://discord.balancer.fi/' },
-  { component: 'MediumIcon', url: 'https://medium.com/balancer-protocol' },
-  {
-    component: 'YoutubeIcon',
-    url: 'https://www.youtube.com/channel/UCBRHug6Hu3nmbxwVMt8x_Ow'
-  },
-  { component: 'GithubIcon', url: 'https://github.com/balancer-labs/' }
 ];
 
 /**
