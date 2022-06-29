@@ -50,7 +50,7 @@ onUnmounted(() => {
 
 <template>
   <AppNavAlert v-if="currentAlert" :alert="currentAlert" />
-  <nav id="app-nav" ref="appNav" class="h-20 pl-4 pr-1 lg:px-6 sticky top-0">
+  <nav id="app-nav" ref="appNav" class="h-16 pl-4 pr-1 lg:px-6 sticky top-0">
     <div class="h-full flex items-center justify-between">
       <div class="flex items-center h-full">
         <router-link
@@ -72,8 +72,7 @@ onUnmounted(() => {
 <style scoped>
 #app-nav {
   @apply w-full z-30;
-  @apply bg-white dark:bg-white1-dark;
-  @apply border-b border-transparent;
+  @apply bg-white2 dark:bg-white2-dark;
   transition: all 0.2s ease-in-out;
 }
 </style>

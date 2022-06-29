@@ -226,7 +226,7 @@ export default defineComponent({
 
 <style scoped>
 .bal-btn {
-  @apply overflow-hidden tracking-tight font-bold;
+  @apply overflow-hidden tracking-tight;
   transition: all 0.2s ease;
   text-decoration: none !important;
   line-height: 0;

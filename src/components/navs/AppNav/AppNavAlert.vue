@@ -47,7 +47,7 @@ export default defineComponent({
         case AlertType.FEATURE:
           return 'bg-orange-300 text-primary';
         default:
-          return 'bg-black text-primary-bright';
+          return 'bg-white1-dark text-primary-bright';
       }
     });
 
