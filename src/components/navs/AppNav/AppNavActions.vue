@@ -49,11 +49,15 @@ const hideNetworkSelect = computed(() => connector.value?.id === 'gnosis');
     <BalBtn
       v-if="isMobile"
       color="primary"
+      class="menu-btn"
       @click="setSidebarOpen(true)"
-      flat
-      circle
+      transparent
     >
-      <BalIcon name="menu" size="lg" />
+      <BalIcon
+        name="menu"
+        size="lg"
+        class="text-primary dark:text-primary-bright"
+      />
     </BalBtn>
   </div>
 </template>
@@ -61,5 +65,8 @@ const hideNetworkSelect = computed(() => connector.value?.id === 'gnosis');
 <style scoped>
 .connect-wallet-btn:hover {
   @apply bg-white4 dark:bg-white4-dark;
+}
+.menu-btn {
+  @apply p-2;
 }
 </style>

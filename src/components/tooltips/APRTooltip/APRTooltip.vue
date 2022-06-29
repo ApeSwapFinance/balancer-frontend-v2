@@ -64,23 +64,23 @@ const totalLabel = computed((): string => {
           v-else
           name="info"
           size="sm"
-          class="text-gray-dark dark:text-gray-dark"
+          class="text-gray dark:text-gray-dark"
           v-bind="$attrs"
         />
       </div>
     </template>
-    <div class="text-sm divide-y dark:divide-white1-dark">
-      <div
-        class="px-3 pt-3 pb-1 bg-primary-bright dark:bg-white3-dark rounded-t"
-      >
-        <div class="text-gray">{{ $t('totalAPR') }}</div>
+    <div class="text-sm divide-y divide-white4 dark:divide-white4-dark">
+      <div class="px-3 pt-3 pb-1 bg-white3 dark:bg-white3-dark rounded-t">
+        <div class="text-gray dark:text-gray-dark">{{ $t('totalAPR') }}</div>
         <div>{{ totalLabel }}</div>
       </div>
       <div class="p-3">
         <!-- SWAP FEE APR -->
         <div class="whitespace-nowrap flex items-center mb-1">
           {{ fNum2(pool?.apr?.swap || '0', FNumFormats.percent) }}
-          <span class="ml-1 text-gray text-xs">{{ $t('swapFeeAPR') }}</span>
+          <span class="ml-1 text-gray dark:text-gray-dark text-xs">{{
+            $t('swapFeeAPR')
+          }}</span>
         </div>
 
         <!-- VeBal APR -->

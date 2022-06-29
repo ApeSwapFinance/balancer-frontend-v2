@@ -68,7 +68,8 @@ export default defineComponent({
     rounded: { type: Boolean, default: false },
     loading: { type: Boolean, default: false },
     loadingLabel: { type: String, default: 'loading...' },
-    disabled: { type: Boolean, default: false }
+    disabled: { type: Boolean, default: false },
+    transparent: { type: Boolean, default: false }
   },
 
   setup(props) {
@@ -136,6 +137,7 @@ export default defineComponent({
     const bgColorClasses = computed(() => {
       if (props.color.includes('gradient')) return bgGradientClasses.value;
       else if (props.outline) return 'bg-transparent';
+      else if (props.transparent) return 'bg-transparent border-none';
       else if (props.flat) return bgFlatClasses.value;
       else if (props.disabled) {
         return `bg-white3 dark:bg-white3 text-white4-dark-greyed`;

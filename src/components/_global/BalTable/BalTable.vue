@@ -382,7 +382,7 @@ watch(
 
 <style>
 .horizontalSticky {
-  @apply z-10 bg-white2 dark:bg-white2-dark group-hover:bg-white2 dark:group-hover:bg-white2-dark opacity-95 xs:opacity-90;
+  @apply z-10 bg-white2 dark:bg-white2-dark group-hover:bg-white3 dark:group-hover:bg-white3-dark opacity-95 xs:opacity-90;
   position: sticky;
   left: 0;
   width: 100%;
@@ -405,13 +405,13 @@ watch(
 }
 
 .row-bg {
-  @apply bg-white2 dark:bg-white2-dark hover:bg-white2 dark:hover:bg-white2-dark;
+  @apply bg-white2 dark:bg-white2-dark hover:bg-white3 dark:hover:bg-white3-dark;
 }
 
 .bal-table-pagination-btn {
   @apply flex items-center justify-center h-16 transition-all;
   @apply text-gray dark:text-gray-dark font-medium hover:text-gray dark:hover:text-gray-dark;
   @apply border-t border-white2 dark:border-white2-dark rounded-b-lg;
-  @apply bg-white2 dark:bg-white2-dark hover:bg-white2 dark:hover:bg-white2-dark cursor-pointer;
+  @apply bg-white2 dark:bg-white2-dark hover:bg-white3 dark:hover:bg-white3-dark cursor-pointer;
 }
 </style>

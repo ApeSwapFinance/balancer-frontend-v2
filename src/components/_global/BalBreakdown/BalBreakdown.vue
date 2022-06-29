@@ -96,14 +96,14 @@ const offsetClass = computed(() => {
 
 <style scoped>
 .horiz-bar {
-  @apply h-px w-3 bg-primary-bright dark:bg-white4-dark mr-2;
+  @apply h-px w-3 bg-primary dark:bg-primary-bright mr-2;
 }
 
 .init-vert-bar {
-  @apply w-px bg-primary-bright dark:bg-white4-dark -mr-px;
+  @apply w-px bg-primary dark:bg-primary-bright -mr-px;
 }
 
 .vert-bar {
-  @apply w-px bg-primary-bright dark:bg-white4-dark -mr-px;
+  @apply w-px bg-primary dark:bg-primary-bright -mr-px;
 }
 </style>

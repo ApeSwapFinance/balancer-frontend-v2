@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 
+import ApeswapLogoBlack from '@/components/images/ApeswapLogoBlack.vue';
+import ApeswapLogoYellow from '@/components/images/ApeswapLogoYellow.vue';
 import useDarkMode from '@/composables/useDarkMode';
 
 /**
@@ -29,11 +31,6 @@ const useDarkLogo = computed(() => (props.forceDark ? true : darkMode.value));
 </script>
 
 <template>
-  <img
-    v-if="useDarkLogo"
-    src="~@/assets/images/logo-dark.svg"
-    width="30"
-    class="mr-2"
-  />
-  <img v-else src="~@/assets/images/logo-light.svg" width="30" class="mr-2" />
+  <ApeswapLogoYellow v-if="useDarkLogo" />
+  <ApeswapLogoBlack v-else />
 </template>

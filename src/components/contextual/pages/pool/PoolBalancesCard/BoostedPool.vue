@@ -102,7 +102,7 @@ function getTokenShare(address: string) {
             <BalIcon
               name="arrow-up-right"
               size="sm"
-              class="ml-2 text-primary dark:text-primary-bright hover:text-primary dark:hover:text-primary-bright transition-colors"
+              class="ml-2 text-primary dark:text-primary-bright transition-colors"
             />
           </BalLink>
           <template #item="{ item: asset }">

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { onMounted, onUnmounted, ref } from 'vue';
 
-import AppIcon from '@/components/images/AppIcon.vue';
-import AppLogo from '@/components/images/AppLogo.vue';
+import ApeswapIcon from '@/components/images/ApeswapIcon.vue';
+import ApeswapLogo from '@/components/images/ApeswapLogo.vue';
 import useAlerts from '@/composables/useAlerts';
 import useBreakpoints from '@/composables/useBreakpoints';
 import useFathom from '@/composables/useFathom';
@@ -57,8 +57,8 @@ onUnmounted(() => {
           :to="{ name: 'home' }"
           @click="trackGoal(Goals.ClickNavLogo)"
         >
-          <AppIcon v-if="['xs', 'sm', 'md'].includes(bp)" />
-          <AppLogo v-else />
+          <ApeswapIcon v-if="['xs', 'sm', 'md'].includes(bp)" />
+          <ApeswapLogo v-else />
         </router-link>
 
         <DesktopLinks v-if="isDesktop" class="ml-8 font-medium" />

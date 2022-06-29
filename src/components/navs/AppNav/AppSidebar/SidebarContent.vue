@@ -3,7 +3,7 @@ import { ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 
-import AppLogo from '@/components/images/AppLogo.vue';
+import ApeswapLogo from '@/components/images/ApeswapLogo.vue';
 import useApp from '@/composables/useApp';
 import useConfig from '@/composables/useConfig';
 import useDarkMode from '@/composables/useDarkMode';
@@ -32,22 +32,13 @@ const blockIcon = ref<HTMLDivElement>();
 
 const navLinks = [
   { label: t('invest'), path: '/' },
-  { label: t('trade'), path: '/trade' },
-  { label: 'veBAL', path: '/vebal' },
-  { label: t('claim'), path: '/claim' }
+  { label: t('trade'), path: '/trade' }
 ];
 
 const ecosystemLinks = [
   { label: t('build'), url: 'https://balancer.fi/build' },
   { label: t('blog'), url: 'https://medium.com/balancer-protocol' },
-  { label: t('docs'), url: 'https://docs.balancer.fi/' },
-  { label: t('governance'), url: 'https://vote.balancer.fi/#/' },
-  { label: t('analytics'), url: 'https://dune.xyz/balancerlabs' },
-  { label: t('forum'), url: 'https://forum.balancer.fi/' },
-  {
-    label: t('grants'),
-    url: 'https://balancer.community/balancer-community-grants'
-  }
+  { label: t('docs'), url: 'https://docs.balancer.fi/' }
 ];
 
 const socialLinks = [
@@ -82,9 +73,9 @@ watch(blockNumber, async () => {
 <template>
   <div class="opacity-0 fade-in-delay">
     <div
-      class="h-20 px-4 border-b border-white3-dark flex flex-col justify-center"
+      class="h-20 px-4 border-b border-white4 dark:border-white4-dark flex flex-col justify-center"
     >
-      <AppLogo forceDark />
+      <ApeswapLogo />
     </div>
 
     <div class="grid grid-col-1 text-lg mt-2">
@@ -99,7 +90,9 @@ watch(blockNumber, async () => {
     </div>
 
     <div class="grid grid-col-1 text-sm mt-5">
-      <span class="text-gray px-4 pb-1 font-medium">Ecosystem</span>
+      <span class="text-gray dark:text-gray-dark px-4 pb-1 font-medium"
+        >Ecosystem</span
+      >
       <BalLink
         v-for="link in ecosystemLinks"
         :key="link.url"
@@ -109,78 +102,34 @@ watch(blockNumber, async () => {
         noStyle
       >
         {{ link.label }}
-        <BalIcon name="arrow-up-right" size="sm" class="ml-1 text-gray" />
-      </BalLink>
-    </div>
-
-    <div class="mt-6 px-4">
-      <div id="intercom-activator" class="side-bar-btn">
-        <IntercomIcon />
-        <span class="ml-2">Chat for help</span>
-      </div>
-      <div class="side-bar-btn mt-2" @click="toggleDarkMode">
-        <MoonIcon v-if="!darkMode" class="mr-2" />
-        <SunIcon v-else class="mr-2" />
-        <span>{{ darkMode ? 'Light' : 'Dark' }} mode</span>
-      </div>
-    </div>
-
-    <div class="mt-4 px-4 grid grid-rows-1 grid-flow-col auto-cols-min gap-2">
-      <BalLink
-        v-for="link in socialLinks"
-        :key="link.component"
-        :href="link.url"
-        class="social-link"
-        noStyle
-        external
-      >
-        <component :is="link.component" />
-      </BalLink>
-      <BalLink
-        href="mailto:contact@balancer.finance"
-        class="social-link"
-        noStyle
-      >
-        <EmailIcon />
-      </BalLink>
-    </div>
-
-    <div class="mt-6 px-4 text-xs">
-      <div class="flex items-center">
-        <div
-          ref="blockIcon"
-          class="block-icon w-2 h-2 rounded-full bg-success"
+        <BalIcon
+          name="arrow-up-right"
+          size="sm"
+          class="ml-1 text-gray dark:text-gray-dark"
         />
-        <span class="ml-2 text-gray">
-          {{ networkConfig.name }}: Block {{ blockNumber }}
-        </span>
-      </div>
-      <BalLink
-        :href="
-          `https://github.com/balancer-labs/frontend-v2/releases/tag/${version}`
-        "
-        class="text-gray flex items-center mt-2"
-        external
-        noStyle
-      >
-        App: v{{ version }}
-        <BalIcon name="arrow-up-right" size="xs" class="ml-1" />
       </BalLink>
+    </div>
+
+    <div class="side-bar-btn mt-6" @click="toggleDarkMode">
+      <MoonIcon v-if="!darkMode" class="mr-2" />
+      <SunIcon v-else class="mr-2" />
+      <span>{{ darkMode ? 'Light' : 'Dark' }} mode</span>
     </div>
   </div>
 </template>
 
 <style scoped>
 .side-bar-link {
-  @apply transition duration-300 p-4 py-1.5 hover:bg-white1-dark cursor-pointer;
+  @apply transition duration-300 p-4 py-1.5 cursor-pointer;
+  @apply hover:bg-white3 dark:hover:bg-white3-dark;
 }
 
 .side-bar-btn {
-  @apply flex items-center bg-white1-dark hover:bg-white3-dark rounded-lg p-2 cursor-pointer transition;
+  @apply flex items-center bg-white3 dark:bg-white3-dark hover:bg-white3 dark:hover:bg-white3-dark rounded-lg p-2 mx-3 cursor-pointer transition;
 }
 
 .social-link {
-  @apply w-11 h-11 xs:w-12 xs:h-12  rounded-full bg-white1-dark hover:bg-white3-dark flex items-center justify-center text-primary-bright cursor-pointer;
+  @apply w-11 h-11 xs:w-12 xs:h-12 rounded-full bg-white1-dark hover:bg-white3-dark flex items-center justify-center text-primary-bright cursor-pointer;
 }
 
 .social-link > svg {
