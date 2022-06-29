@@ -226,12 +226,10 @@ export default defineComponent({
 
 <style scoped>
 .bal-btn {
-  @apply overflow-hidden tracking-tight;
+  @apply overflow-hidden tracking-tight shadow-none;
   transition: all 0.2s ease;
   text-decoration: none !important;
   line-height: 0;
-  box-shadow: none;
-  text-transform: uppercase;
 }
 
 .bal-btn:focus,

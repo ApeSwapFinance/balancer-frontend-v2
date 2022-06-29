@@ -163,4 +163,7 @@ export default defineComponent({
   @apply relative;
   padding: 8px;
 }
+.activity-btn:hover {
+  @apply bg-white4 dark:bg-white4-dark;
+}
 </style>

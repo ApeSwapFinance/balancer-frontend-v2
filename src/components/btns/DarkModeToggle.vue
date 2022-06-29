@@ -27,4 +27,8 @@ const { darkMode, toggleDarkMode } = useDarkMode();
 .theme-mode-toggle {
   padding: 8px;
 }
+
+.theme-mode-toggle:hover {
+  @apply bg-white4 dark:bg-white4-dark;
+}
 </style>

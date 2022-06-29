@@ -6,7 +6,7 @@
   >
     <template v-slot:activator>
       <BalBtn
-        class="text-base"
+        class="nav-acct-btn"
         :class="{ btn: upToLargeBreakpoint }"
         :loading="isLoadingProfile"
         :loading-label="upToLargeBreakpoint ? '' : $t('connecting')"
@@ -79,3 +79,12 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+.nav-acct-btn {
+  @apply text-base;
+}
+.nav-acct-btn:hover {
+  @apply bg-white4 dark:bg-white4-dark;
+}
+</style>

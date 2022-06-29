@@ -1,7 +1,11 @@
 <template>
   <BalPopover no-pad>
     <template v-slot:activator>
-      <BalBtn color="white3" :size="upToLargeBreakpoint ? 'md' : 'sm'">
+      <BalBtn
+        class="network-select-btn"
+        color="white3"
+        :size="upToLargeBreakpoint ? 'md' : 'sm'"
+      >
         <img
           :src="iconSrc(activeNetwork)"
           :alt="activeNetwork.name"
@@ -131,3 +135,9 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+.network-select-btn:hover {
+  @apply bg-white4 dark:bg-white4-dark;
+}
+</style>

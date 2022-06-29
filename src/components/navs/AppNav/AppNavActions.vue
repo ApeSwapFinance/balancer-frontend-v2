@@ -30,6 +30,7 @@ const hideNetworkSelect = computed(() => connector.value?.id === 'gnosis');
     <AppNavAccountBtn v-if="account" />
     <BalBtn
       v-else
+      class="connect-wallet-btn"
       color="white3"
       :size="isMobile ? 'md' : 'sm'"
       @click="toggleWalletSelectModal"
@@ -47,7 +48,7 @@ const hideNetworkSelect = computed(() => connector.value?.id === 'gnosis');
     <AppNavNetworkSelect v-if="!hideNetworkSelect" />
     <BalBtn
       v-if="isMobile"
-      color="white3"
+      color="primary"
       @click="setSidebarOpen(true)"
       flat
       circle
@@ -56,3 +57,9 @@ const hideNetworkSelect = computed(() => connector.value?.id === 'gnosis');
     </BalBtn>
   </div>
 </template>
+
+<style scoped>
+.connect-wallet-btn:hover {
+  @apply bg-white4 dark:bg-white4-dark;
+}
+</style>
