@@ -106,7 +106,9 @@ function isSelectedNativeAsset(address: string): boolean {
 <template>
   <BalCard shadow="none" noPad>
     <template v-if="!hideHeader" #header>
-      <div class="p-4 w-full border-b dark:border-white1-dark">
+      <div
+        class="p-4 w-full border-b border-white4-dark dark:border-white4-dark"
+      >
         <h6>
           {{ $t('poolTransfer.myWalletTokensCard.title') }}
         </h6>

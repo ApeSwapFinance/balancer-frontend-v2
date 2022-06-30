@@ -7,7 +7,8 @@
         <BalBtn
           v-if="alert.action && alert.actionLabel"
           class="cursor-pointer"
-          color="white"
+          color="white3"
+          outline
           size="xs"
           :label="alert.actionLabel"
           @click="alert.action"
@@ -45,9 +46,9 @@ export default defineComponent({
         case AlertType.ERROR:
           return 'bg-error text-primary-bright';
         case AlertType.FEATURE:
-          return 'bg-orange-300 text-primary';
+          return 'bg-blue-400 text-primary-bright';
         default:
-          return 'bg-white1-dark text-primary-bright';
+          return 'bg-white4 text-primary';
       }
     });
 

@@ -97,7 +97,7 @@ const optimizeBtnClasses = computed(() => ({
                 v-else
                 name="info"
                 size="xs"
-                class="text-gray -mb-px ml-1"
+                class="text-gray dark:text-gray-dark -mb-px ml-1"
               />
             </template>
           </BalTooltip>
@@ -127,12 +127,12 @@ const optimizeBtnClasses = computed(() => ({
 
 <style scoped>
 .data-table {
-  @apply border dark:border-white1-dark rounded-lg divide-y dark:divide-white1-dark;
+  @apply bg-white3 dark:bg-white3-dark rounded-lg divide-y divide-white4 dark:divide-white4-dark;
 }
 
 .data-table-row {
   @apply grid grid-cols-4 items-center;
-  @apply divide-x dark:divide-white1-dark;
+  @apply divide-x divide-white4 dark:divide-white4-dark;
 }
 
 .data-table-number-col {
@@ -140,7 +140,7 @@ const optimizeBtnClasses = computed(() => ({
 }
 
 .total-row {
-  @apply text-lg font-bold rounded-t-lg dark:bg-white3-dark;
+  @apply text-lg font-bold rounded-t-lg;
 }
 
 .price-impact-row {

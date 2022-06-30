@@ -29,7 +29,7 @@ const barClasses = computed(() => ({
 
 const bufferBarClasses = computed(() => ({
   [`h-${props.size}`]: true,
-  [`bg-orange-500`]: true
+  [`bg-ape-yellow`]: true
 }));
 
 const barStyles = computed(() => ({

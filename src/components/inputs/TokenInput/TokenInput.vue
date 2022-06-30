@@ -267,10 +267,10 @@ watchEffect(() => {
             </span>
 
             <template v-if="hasBalance && !noMax && !disableMax">
-              <span v-if="!isMaxed" class="text-blue-500">
+              <span v-if="!isMaxed" class="text-ape-yellow">
                 {{ $t('max') }}
               </span>
-              <span v-else class="text-gray-dark dark:text-gray-dark lowercase">
+              <span v-else class="text-gray dark:text-gray-dark lowercase">
                 {{ $t('maxed') }}
               </span>
             </template>
@@ -286,7 +286,7 @@ watchEffect(() => {
             </template>
             <template v-else-if="hint">
               <span
-                class="text-blue-500 lowercase cursor-pointer"
+                class="text-primary dark:text-gray-dark underline lowercase cursor-pointer"
                 @click="emit('update:amount', hintAmount)"
               >
                 {{ hint }}
@@ -303,7 +303,7 @@ watchEffect(() => {
         />
         <div
           v-if="shouldShowTxBufferMessage"
-          class="mt-2 text-orange-600 dark:text-orange-400 text-xs"
+          class="mt-2 text-ape-yellow text-xs"
         >
           {{
             t('minTransactionBuffer', [

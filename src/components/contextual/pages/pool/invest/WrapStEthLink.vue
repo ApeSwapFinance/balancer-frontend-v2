@@ -42,7 +42,7 @@ const wstETH = computed(() => getToken(networkConfig.addresses.wstETH));
           assetOut: wstETH.address
         }
       }"
-      class="text-xs text-gray underline"
+      class="text-xs text-gray dark:text-gray-dark underline"
     >
       {{ $t('wrapInstruction', [stETH.symbol, wstETH.symbol]) }}
     </router-link>

@@ -54,7 +54,7 @@ const fiatLabel = computed(() => {
       <span>
         {{ balanceLabel }}
       </span>
-      <span class="text-sm text-gray">
+      <span class="text-sm text-gray dark:text-gray-dark">
         {{ fiatLabel }}
       </span>
     </div>

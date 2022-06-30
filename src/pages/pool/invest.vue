@@ -45,7 +45,7 @@ onBeforeMount(async () => {
     <BalCard v-else shadow="none" exposeOverflow noBorder>
       <template #header>
         <div class="w-full">
-          <div class="text-xs text-gray  leading-none">
+          <div class="text-xs text-gray dark:text-gray-dark leading-none">
             {{ network.chainName }}
           </div>
           <div class="flex items-center justify-between">

@@ -50,7 +50,7 @@ const totalFiat = computed(() => {
 
 <template>
   <BalCard noPad shadow="none">
-    <div class="p-2 px-3 border-b">
+    <div class="p-2 px-3 border-b border-white4 dark:border-white4-dark">
       <h6>Pool tokens in my wallet</h6>
     </div>
     <BalStack vertical class="p-4" spacing="sm">

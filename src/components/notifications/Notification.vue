@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative p-3 overflow-hidden rounded bg-white dark:bg-white3-dark shadow-none text-sm dark:text-primary-bright dark:border-white1-dark w-64"
+    class="relative p-3 overflow-hidden rounded bg-white3 dark:bg-white3-dark shadow-none text-sm text-primary dark:text-primary-bright w-64"
   >
     <div class="justify-between group">
       <BalLink
@@ -14,7 +14,7 @@
           <BalIcon
             name="arrow-up-right"
             size="sm"
-            class="ml-1 text-gray-dark dark:text-gray-dark group-hover:text-pink-500 transition-colors"
+            class="ml-1 text-gray dark:text-gray-dark transition-colors"
           />
         </div>
         <div class="message">{{ notification.message }}</div>
@@ -96,7 +96,7 @@ export default defineComponent({
 
     // COMPUTED
     const progressClasses = computed(() => {
-      let bgClasses = 'bg-orange-600 dark:bg-orange-500';
+      let bgClasses = 'bg-ape-yellow';
 
       if (props.notification.type === 'success') {
         bgClasses = 'bg-success dark:bg-success';
