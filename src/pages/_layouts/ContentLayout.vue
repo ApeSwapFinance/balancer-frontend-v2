@@ -4,7 +4,7 @@ import AppNav from '@/components/navs/AppNav/AppNav.vue';
 
 <template>
   <AppNav />
-  <section class="dark:bg-white1-dark lg:py-8">
+  <section class="bg-white1 dark:bg-white1-dark lg:py-8">
     <div class="content-container">
       <router-view />
     </div>
@@ -13,7 +13,7 @@ import AppNav from '@/components/navs/AppNav/AppNav.vue';
 
 <style scoped>
 .content-container {
-  @apply w-full max-w-4xl px-4 md:p-8 lg:p-12 mx-auto py-8 bg-white dark:bg-white1-dark;
+  @apply w-full max-w-4xl px-4 md:p-8 lg:p-12 mx-auto py-8 bg-white1 dark:bg-white1-dark;
   min-height: calc(100vh - 140px);
 }
 

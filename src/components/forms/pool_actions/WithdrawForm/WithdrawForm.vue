@@ -139,7 +139,7 @@ onBeforeMount(() => {
 
     <div
       v-if="highPriceImpact"
-      class="border dark:border-white4-dark rounded-lg p-2 pb-2 mt-4"
+      class="border border-white4 dark:border-white4-dark rounded-lg p-2 pb-2 mt-4"
     >
       <BalCheckbox
         v-model="highPriceImpactAccepted"
@@ -165,14 +165,14 @@ onBeforeMount(() => {
       <BalBtn
         v-if="!isWalletReady"
         :label="$t('connectWallet')"
-        color="gradient"
+        color="ape-yellow"
         block
         @click="toggleWalletSelectModal"
       />
       <BalBtn
         v-else
         :label="$t('preview')"
-        color="gradient"
+        color="ape-yellow"
         :disabled="
           !hasAmounts ||
             !hasValidInputs ||

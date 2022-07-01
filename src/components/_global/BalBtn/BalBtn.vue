@@ -69,7 +69,8 @@ export default defineComponent({
     loading: { type: Boolean, default: false },
     loadingLabel: { type: String, default: 'loading...' },
     disabled: { type: Boolean, default: false },
-    transparent: { type: Boolean, default: false }
+    transparent: { type: Boolean, default: false },
+    tertiary: { type: Boolean, default: false }
   },
 
   setup(props) {
@@ -141,6 +142,8 @@ export default defineComponent({
       else if (props.flat) return bgFlatClasses.value;
       else if (props.disabled) {
         return `bg-white3 dark:bg-white3 text-white4-dark-greyed`;
+      } else if (props.tertiary) {
+        return `bg-white3 hover:text-ape-yellow dark:hover:text-white4-dark-greyed dark:bg-white3 text-white4-dark-greyed`;
       } else if (props.color === 'ape-yellow') {
         return `bg-${props.color} hover:bg-hovered-${props.color}`;
       } else {

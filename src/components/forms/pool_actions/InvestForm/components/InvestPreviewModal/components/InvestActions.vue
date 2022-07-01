@@ -236,7 +236,7 @@ watch(blockNumber, async () => {
       <BalBtn
         tag="router-link"
         :to="{ name: 'pool', params: { id: route.params.id } }"
-        color="primary"
+        color="ape-yellow"
         outline
         block
         class="mt-2"

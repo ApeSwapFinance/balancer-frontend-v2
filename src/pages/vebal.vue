@@ -14,7 +14,7 @@ import { isVeBalSupported } from '@/composables/useVeBAL';
       <Hero />
     </div>
   </div>
-  <div class="py-16 xl:py-20 bg-primary-bright dark:bg-white1-dark">
+  <div class="py-16 xl:py-20 bg-white1 dark:bg-white1-dark">
     <div v-if="isVeBalSupported" class="lg:container lg:mx-auto">
       <div class="px-1 lg:px-0">
         <MyVeBAL />

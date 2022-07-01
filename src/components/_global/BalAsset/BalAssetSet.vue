@@ -174,7 +174,7 @@ export default defineComponent({
 .token-icon {
   margin-left: -2px;
   @apply rounded-full overflow-hidden shadow-none;
-  @apply bg-white dark:bg-white1-dark;
+  @apply bg-white1 dark:bg-white1-dark;
   @apply border-2 border-white dark:border-white1-dark group-hover:border-primary-bright dark:group-hover:border-white3-dark;
 }
 

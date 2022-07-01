@@ -131,7 +131,7 @@ onBeforeMount(() => {
             <span v-else>{{ missingPrices ? '-' : fiatTotalLabel }}</span>
           </div>
         </div>
-        <div class="flex mt-2 text-sm text-gray">
+        <div class="flex mt-2 text-sm text-gray dark:text-gray-dark">
           <span>
             {{ $t('proportionalWithdrawal') }}
           </span>
@@ -181,7 +181,7 @@ onBeforeMount(() => {
               <span class="break-words text-xl">
                 {{ fNum2(proportionalAmounts[i], FNumFormats.token) }}
               </span>
-              <span class="text-sm text-gray-dark">
+              <span class="text-sm text-gray dark:text-gray-dark">
                 {{ fNum2(fiatAmounts[i], FNumFormats.fiat) }}
               </span>
             </template>
@@ -194,17 +194,16 @@ onBeforeMount(() => {
 
 <style scoped>
 .proportional-input {
-  @apply shadow-none rounded-lg mb-4 w-full dark:bg-white3-dark;
+  @apply shadow-none rounded-lg mb-4 w-full bg-white3 dark:bg-white3-dark;
 }
 
 .proportional-input-container {
-  @apply shadow-inner p-3 pb-1 rounded-lg;
+  @apply p-3 pb-1 rounded-lg;
   @apply border border-white3 dark:border-white3-dark;
 }
 
 .token-amounts {
   @apply rounded-lg;
-  @apply bg-white3 dark:bg-white3-dark;
-  @apply border dark:border-white1-dark divide-y dark:divide-white1-dark;
+  @apply border border-white4 dark:border-white4-dark divide-y divide-white4 dark:divide-white4-dark;
 }
 </style>
