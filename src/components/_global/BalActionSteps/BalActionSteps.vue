@@ -226,7 +226,7 @@ async function handleTransaction(
         <BalBtn
           v-if="!lastActionState?.confirmed"
           :disabled="props.disabled"
-          color="gradient"
+          color="ape-yellow"
           :loading="currentAction?.pending || isLoading"
           :loading-label="
             isLoading

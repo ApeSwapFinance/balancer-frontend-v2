@@ -49,7 +49,7 @@ const { currency } = useUserSettings();
         :class="[
           'summary-table-row',
           {
-            'bg-error dark:bg-error text-error dark:text-primary-bright': highPriceImpact
+            'bg-error text-primary-bright': highPriceImpact
           }
         ]"
       >
@@ -66,8 +66,8 @@ const { currency } = useUserSettings();
               :icon-name="highPriceImpact ? 'alert-triangle' : 'info'"
               :icon-class="
                 highPriceImpact
-                  ? 'text-error dark:text-primary-bright'
-                  : 'text-gray'
+                  ? 'text-primary-bright'
+                  : 'text-primary dark:text-primary-bright'
               "
               width="72"
               class="ml-2"
@@ -81,7 +81,7 @@ const { currency } = useUserSettings();
 
 <style scoped>
 .summary-table {
-  @apply border dark:border-white4-dark divide-y dark:divide-white4-dark rounded-lg mt-4;
+  @apply border border-white4 dark:border-white4-dark divide-y divide-white4 dark:divide-white4-dark rounded-lg mt-4;
 }
 .summary-table-row {
   @apply grid grid-cols-2 px-2 py-1;

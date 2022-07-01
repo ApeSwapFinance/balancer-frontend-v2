@@ -1,7 +1,6 @@
 <template>
   <BalCard noPad shadow="none" v-if="routes.length > 0">
     <div class="p-3.5 border rounded-lg border-white4 dark:border-white4-dark">
-
       <div
         class="flex text-gray dark:text-gray-dark items-center cursor-pointer"
         @click="toggleVisibility"
@@ -71,7 +70,8 @@
               :key="index"
               :style="{
                 height: `${18 + 70 * index}px`,
-                width: `calc(100% - ${4 * (routes.length - index - 1)}px + 1px)`,
+                width: `calc(100% - ${4 *
+                  (routes.length - index - 1)}px + 1px)`,
                 margin: `0 ${2 * (routes.length - index - 1) - 1}px`
               }"
               class="absolute border-l border-r border-b border-gray dark:border-gray-dark rounded-b-md"
@@ -121,7 +121,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </BalCard>
 </template>

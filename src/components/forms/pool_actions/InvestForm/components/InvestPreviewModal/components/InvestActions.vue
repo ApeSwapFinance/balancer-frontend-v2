@@ -213,15 +213,15 @@ watch(blockNumber, async () => {
         v-if="lockablePoolId === pool.id"
         tag="router-link"
         :to="{ name: 'get-vebal' }"
-        color="gradient"
+        color="ape-yellow"
         block
         class="mt-2 flex"
       >
-        <StarsIcon class="h-5 text-orange-300 mr-2" />{{ $t('lockToGetVeBAL') }}
+        <StarsIcon class="h-5 text-primary-bright mr-2" />{{ $t('lockToGetVeBAL') }}
       </BalBtn>
       <BalBtn
         v-else-if="isPoolEligibleForStaking"
-        color="gradient"
+        color="ape-yellow"
         block
         class="mt-2 flex"
         @click="emit('showStakeModal')"
@@ -234,7 +234,7 @@ watch(blockNumber, async () => {
       <BalBtn
         tag="router-link"
         :to="{ name: 'pool', params: { id: route.params.id } }"
-        color="gray"
+        color="primary"
         outline
         block
         class="mt-2"
