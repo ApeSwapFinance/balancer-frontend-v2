@@ -96,7 +96,7 @@ function stateClasses(state: StepState): string {
 
 <style scoped>
 .step {
-  @apply w-8 h-8 rounded-full border shadow font-medium;
+  @apply w-8 h-8 rounded-full border font-medium;
   @apply flex items-center justify-center relative;
 }
 </style>

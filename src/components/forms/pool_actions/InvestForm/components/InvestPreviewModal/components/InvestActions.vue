@@ -217,7 +217,9 @@ watch(blockNumber, async () => {
         block
         class="mt-2 flex"
       >
-        <StarsIcon class="h-5 text-primary-bright mr-2" />{{ $t('lockToGetVeBAL') }}
+        <StarsIcon class="h-5 text-primary-bright mr-2" />{{
+          $t('lockToGetVeBAL')
+        }}
       </BalBtn>
       <BalBtn
         v-else-if="isPoolEligibleForStaking"
