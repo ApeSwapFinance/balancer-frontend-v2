@@ -1,121 +1,127 @@
 <template>
-  <BalCard shadow="none" v-if="routes.length > 0">
-    <div
-      class="flex text-gray items-center cursor-pointer"
-      @click="toggleVisibility"
-    >
-      <div class="mr-2">
-        {{ $t('tradeRoute') }}
-      </div>
-      <BalIcon v-if="visible" name="chevron-up" size="sm" />
-      <BalIcon v-else name="chevron-down" size="sm" />
-    </div>
-    <div v-if="visible" class="mt-5">
+  <BalCard noPad shadow="none" v-if="routes.length > 0">
+    <div class="p-3.5 border rounded-lg border-white4 dark:border-white4-dark">
+
       <div
-        v-if="routes.length === 0"
-        v-text="$t('noData')"
-        class="mt-5 text-sm text-gray"
-      />
-      <div v-else>
-        <div>
-          <div class="flex justify-between text-xs">
-            <div>
-              <div class="font-bold">
-                {{ input.amount }}
-              </div>
-              <div>
-                {{ input.symbol }}
-              </div>
-            </div>
-            <div class="flex flex-col items-end">
-              <div class="font-bold">
-                {{ output.amount }}
-              </div>
-              <div>
-                {{ output.symbol }}
-              </div>
-            </div>
-          </div>
-          <div class="relative mt-2">
-            <div
-              class="pair-line absolute h-1/2 mx-9 border-b border-dashed border-primary-bright"
-            />
-            <div class="relative z-10 flex justify-between">
-              <BalAsset :address="input.address" :size="36" />
-              <BalAsset :address="output.address" :size="36" />
-            </div>
-          </div>
+        class="flex text-gray dark:text-gray-dark items-center cursor-pointer"
+        @click="toggleVisibility"
+      >
+        <div class="mr-2">
+          {{ $t('tradeRoute') }}
         </div>
+        <BalIcon v-if="visible" name="chevron-up" size="sm" />
+        <BalIcon v-else name="chevron-down" size="sm" />
+      </div>
+      <div v-if="visible" class="mt-5">
         <div
-          class="flex justify-between"
-          :style="{ margin: `8px ${12 + routes.length}px` }"
-        >
-          <BalIcon
-            name="triangle"
-            size="xxs"
-            :filled="true"
-            class="transform rotate-180 text-gray"
-          />
-          <BalIcon
-            name="triangle"
-            size="xxs"
-            :filled="true"
-            class="text-gray"
-          />
-        </div>
-        <div class="relative my-1.5 mx-4">
-          <div
-            v-for="(route, index) in routes"
-            :key="index"
-            :style="{
-              height: `${18 + 70 * index}px`,
-              width: `calc(100% - ${4 * (routes.length - index - 1)}px + 1px)`,
-              margin: `0 ${2 * (routes.length - index - 1) - 1}px`
-            }"
-            class="absolute border-l border-r border-b border-primary-bright rounded-b-md"
-          />
-          <div class="relative z-10">
-            <div
-              v-for="route in routes"
-              :key="route.hops[0]?.pool?.address"
-              class="mt-9 first:mt-0 flex justify-between"
-            >
-              <div class="w-4 ml-4 flex items-center">
-                <BalIcon
-                  name="triangle"
-                  size="xxs"
-                  :filled="true"
-                  class="transform rotate-90 text-gray"
-                />
-              </div>
-              <div class="flex">
-                <div
-                  v-for="hop in route.hops"
-                  :key="hop?.pool?.address"
-                  class="ml-4 first:ml-0 flex bg-white hover:bg-primary-bright dark:bg-white1-dark dark:hover:bg-white3-dark border border-primary-bright hover:border-gray-dark dark:border-gray-dark dark:hover:border-gray-dark rounded-xl shadow transition-colors"
-                >
-                  <a
-                    class="flex p-1.5"
-                    :href="getPoolLink(hop.pool.id)"
-                    target="_blank"
-                  >
-                    <BalAsset
-                      class="ml-1.5 first:ml-0"
-                      v-for="token in hop.pool.tokens"
-                      :key="token.address"
-                      :address="token.address"
-                      :size="20"
-                    />
-                  </a>
+          v-if="routes.length === 0"
+          v-text="$t('noData')"
+          class="mt-5 text-sm text-gray dark:text-gray-dark"
+        />
+        <div v-else>
+          <div>
+            <div class="flex justify-between text-xs">
+              <div>
+                <div class="font-bold">
+                  {{ input.amount }}
+                </div>
+                <div>
+                  {{ input.symbol }}
                 </div>
               </div>
-              <div class="w-10 mr-4 text-xs text-right text-gray">
-                {{ formatShare(route.share) }}
+              <div class="flex flex-col items-end">
+                <div class="font-bold">
+                  {{ output.amount }}
+                </div>
+                <div>
+                  {{ output.symbol }}
+                </div>
+              </div>
+            </div>
+            <div class="relative mt-2">
+              <div
+                class="pair-line absolute h-1/2 mx-9 border-b border-dashed border-gray dark:border-gray-dark"
+              />
+              <div class="relative z-10 flex justify-between">
+                <BalAsset :address="input.address" :size="36" />
+                <BalAsset :address="output.address" :size="36" />
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex justify-between"
+            :style="{ margin: `8px ${12 + routes.length}px` }"
+          >
+            <BalIcon
+              name="triangle"
+              size="xxs"
+              :filled="true"
+              class="transform rotate-180 text-gray dark:text-gray-dark"
+            />
+            <BalIcon
+              name="triangle"
+              size="xxs"
+              :filled="true"
+              class="text-gray dark:text-gray-dark"
+            />
+          </div>
+          <div class="relative my-1.5 mx-4">
+            <div
+              v-for="(route, index) in routes"
+              :key="index"
+              :style="{
+                height: `${18 + 70 * index}px`,
+                width: `calc(100% - ${4 * (routes.length - index - 1)}px + 1px)`,
+                margin: `0 ${2 * (routes.length - index - 1) - 1}px`
+              }"
+              class="absolute border-l border-r border-b border-gray dark:border-gray-dark rounded-b-md"
+            />
+            <div class="relative z-10">
+              <div
+                v-for="route in routes"
+                :key="route.hops[0]?.pool?.address"
+                class="mt-9 first:mt-0 flex justify-between"
+              >
+                <div class="w-4 ml-4 flex items-center">
+                  <BalIcon
+                    name="triangle"
+                    size="xxs"
+                    :filled="true"
+                    class="transform rotate-90 text-gray dark:text-gray-dark"
+                  />
+                </div>
+                <div class="flex">
+                  <div
+                    v-for="hop in route.hops"
+                    :key="hop?.pool?.address"
+                    class="ml-4 first:ml-0 flex bg-white2 dark:bg-white2-dark border border-gray dark:border-gray-dark rounded-xl shadow transition-colors"
+                  >
+                    <a
+                      class="flex p-1.5"
+                      :href="getPoolLink(hop.pool.id)"
+                      target="_blank"
+                    >
+                      <BalAsset
+                        class="ml-1.5 first:ml-0"
+                        v-for="token in hop.pool.tokens"
+                        :key="token.address"
+                        :address="token.address"
+                        :size="20"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div
+                  class="w-10 mr-4 text-xs text-right text-gray dark:text-gray-dark"
+                >
+                  {{ formatShare(route.share) }}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </BalCard>
 </template>

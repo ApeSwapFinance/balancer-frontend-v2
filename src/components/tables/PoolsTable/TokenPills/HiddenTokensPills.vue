@@ -71,8 +71,8 @@ withDefaults(defineProps<Props>(), {
 
 .balance-indicator {
   @apply w-3 h-3;
-  @apply rounded-full border-2 border-white1 dark:border-white1-dark;
-  @apply bg-success dark:bg-success;
+  @apply rounded-full border-2 border-white1;
+  @apply bg-success;
   @apply absolute top-0 right-0 -mt-1 -mr-1;
 }
 </style>

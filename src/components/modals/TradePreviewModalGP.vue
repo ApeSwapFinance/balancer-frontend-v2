@@ -1,10 +1,10 @@
 <template>
   <BalModal show @close="onClose" :title="labels.modalTitle">
     <div>
-      <BalCard noPad class="relative mb-6 overflow-auto">
+      <BalCard shadow="none" noPad class="relative mb-6 overflow-auto">
         <template v-slot:header>
           <div
-            class="w-full p-3 border-b bg-primary-bright rounded-t-lg text-sm dark:border-white3-dark dark:bg-white3-dark"
+            class="w-full p-3 bg-white4 dark:bg-white4-dark rounded-t-lg text-sm"
           >
             <span>
               {{ $t('effectivePrice') }}
@@ -18,7 +18,7 @@
         </template>
         <div>
           <div
-            class="p-3 border-primary-bright border-b relative dark:border-white1-dark"
+            class="border-mod p-3 border border-white4 relative dark:border-white4-dark"
           >
             <div class="flex items-center">
               <div class="mr-3">
@@ -37,10 +37,9 @@
               </div>
             </div>
           </div>
-          <div class="arrow-down">
-            <ArrowDownIcon />
-          </div>
-          <div class="p-3">
+          <div
+            class="border-mod p-3 border rounded-b-lg border-white4 dark:border-white4-dark"
+          >
             <div class="flex items-center">
               <div class="mr-3">
                 <BalAsset
@@ -74,21 +73,24 @@
           </div>
         </div>
       </BalCard>
+
       <BalCard noPad shadow="none" class="mb-3">
         <template v-slot:header>
           <div
-            class="p-3 flex w-full items-center justify-between border-b dark:border-white1-dark"
+            class="p-3 flex w-full items-center justify-between border rounded-t-lg border-white4 dark:border-white4-dark"
           >
             <div class="font-bold">
               {{ labels.tradeSummary.title }}
             </div>
             <div
-              class="flex divide-x dark:divide-primary-bright text-xs uppercase"
+              class="flex divide-x divide-white4 dark:divide-white4-dark text-xs uppercase"
             >
               <div
                 :class="[
                   'pr-2 cursor-pointer font-medium',
-                  { 'text-blue-600': !showSummaryInFiat }
+                  {
+                    'text-ape-yellow': !showSummaryInFiat
+                  }
                 ]"
                 @click="showSummaryInFiat = false"
               >
@@ -97,7 +99,9 @@
               <div
                 :class="[
                   'pl-2 cursor-pointer font-medium uppercase',
-                  { 'text-blue-600': showSummaryInFiat }
+                  {
+                    'text-ape-yellow': showSummaryInFiat
+                  }
                 ]"
                 @click="showSummaryInFiat = true"
               >
@@ -106,7 +110,9 @@
             </div>
           </div>
         </template>
-        <div class="p-3 text-sm">
+        <div
+          class="border-mod p-3 text-sm border border-white4 dark:border-white4-dark"
+        >
           <div class="summary-item-row">
             <div>
               {{ labels.tradeSummary.totalBeforeFees }}
@@ -134,7 +140,7 @@
         </div>
         <template v-slot:footer>
           <div
-            class="w-full p-3 rounded-b-lg bg-white text-sm dark:bg-white3-dark"
+            class="w-full p-3 rounded-b-lg border-mod text-sm border border-white4 dark:border-white4-dark bg-white4 dark:bg-white4-dark"
           >
             <div class="summary-item-row font-medium">
               <div class="w-64">
@@ -192,7 +198,7 @@
                 <BalIcon
                   v-if="!requiresGnosisRelayerApproval"
                   name="check"
-                  class="text-green-500"
+                  class="text-success"
                 />
                 <template v-else>1</template>
               </div>
@@ -234,7 +240,7 @@
                 <BalIcon
                   v-if="!requiresLidoRelayerApproval"
                   name="check"
-                  class="text-green-500"
+                  class="text-success"
                 />
                 <template v-else>1</template>
               </div>
@@ -279,7 +285,7 @@
                 <BalIcon
                   v-if="!requiresTokenApproval"
                   name="check"
-                  class="text-green-500"
+                  class="text-success"
                 />
                 <template v-else>{{
                   showGnosisRelayerApprovalStep || showLidoRelayerApprovalStep
@@ -341,7 +347,7 @@
       </div>
       <BalBtn
         v-if="requiresGnosisRelayerApproval"
-        color="gradient"
+        color="ape-yellow"
         block
         @click.prevent="gnosisRelayerApproval.approve"
         :loading="
@@ -354,7 +360,7 @@
       </BalBtn>
       <BalBtn
         v-else-if="requiresLidoRelayerApproval"
-        color="gradient"
+        color="ape-yellow"
         block
         @click.prevent="lidoRelayerApproval.approve"
         :loading="
@@ -368,7 +374,7 @@
         v-else-if="requiresTokenApproval"
         :loading="tokenApproval.approving.value"
         :loading-label="`${$t('approving')} ${trading.tokenIn.value.symbol}...`"
-        color="gradient"
+        color="ape-yellow"
         block
         @click.prevent="approveToken"
       >
@@ -376,7 +382,7 @@
       </BalBtn>
       <BalBtn
         v-else
-        color="gradient"
+        color="ape-yellow"
         block
         @click.prevent="trade"
         :loading="trading.isConfirming.value"
@@ -878,27 +884,27 @@ export default defineComponent({
   }
 });
 </script>
-<style scoped>
-.arrow-down {
-  @apply absolute right-0 rounded-full border border-primary-bright flex items-center h-8 w-8 justify-center bg-white mr-3 dark:border-white3-dark dark:bg-white3-dark;
-  transform: translateY(-50%);
-}
 
+<style scoped>
 .summary-item-row {
   @apply flex justify-between mb-1;
 }
 
 .step {
-  @apply rounded-full w-7 h-7 border border-primary-bright dark:border-white4-dark flex items-center justify-center text-purple-500 relative;
+  @apply rounded-full w-7 h-7 border border-white4 dark:border-white4-dark flex items-center justify-center text-white4 dark:text-white4-dark relative;
 }
 .step-seperator {
-  @apply bg-primary-bright dark:bg-white4-dark h-px w-6;
+  @apply bg-white4 dark:bg-white4-dark h-px w-6;
 }
 
 .step-active {
-  @apply border-purple-500 dark:border-purple-500;
+  @apply border-ape-yellow;
 }
 .step-approved {
-  @apply border-green-500 dark:border-green-500;
+  @apply border-success;
+}
+
+.border-mod {
+  border-top: none;
 }
 </style>

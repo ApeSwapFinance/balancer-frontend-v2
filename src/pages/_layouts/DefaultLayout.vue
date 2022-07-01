@@ -53,5 +53,6 @@ const isHomePage = computed(() => route.path === '/');
 }
 .body-con {
   @apply bg-white1 dark:bg-white1-dark;
+  height: 100%;
 }
 </style>
