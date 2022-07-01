@@ -51,7 +51,7 @@
         >
           <a
             @click="clearAllTransactions()"
-            class="text-primary dark:text-primary-bright"
+            class="text-primary dark:text-primary-bright underline"
           >
             {{ $t('clearTransactions') }}
           </a>
