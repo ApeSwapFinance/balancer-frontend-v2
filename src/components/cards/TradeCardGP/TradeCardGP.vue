@@ -436,7 +436,8 @@ export default defineComponent({
       // methods
       trade,
       switchToWETH,
-      handleErrorButtonClick
+      handleErrorButtonClick,
+      bp
     };
   }
 });

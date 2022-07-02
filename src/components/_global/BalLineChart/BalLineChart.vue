@@ -2,7 +2,9 @@
   <BalLoadingBlock v-if="isLoading" class="h-96 mt-16" />
   <div :class="[wrapperClass]" v-else @mouseleave="handleMouseLeave">
     <div id="lineChartHeader" class="mb-4" v-if="showHeader">
-      <h3 class="text-primary dark:text-primary-bright text-base tracking-wider">
+      <h3
+        class="text-primary dark:text-primary-bright text-base tracking-wider"
+      >
         {{ currentValue }}
       </h3>
       <span
