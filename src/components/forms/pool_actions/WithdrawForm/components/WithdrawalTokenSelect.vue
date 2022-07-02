@@ -88,7 +88,7 @@ function handleSelected(newToken: string): void {
             class="shadow mr-2"
           />
         </div>
-        <span class="text-base font-medium">
+        <span class="text-xl font-bold">
           <span v-if="isProportional">All tokens</span>
           <span v-else>{{ selectedToken.symbol }}</span>
         </span>

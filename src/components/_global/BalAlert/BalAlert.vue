@@ -221,7 +221,7 @@ export default defineComponent({
 }
 
 .bal-alert-description {
-  @apply overflow-hidden break-words;
+  @apply overflow-hidden break-words font-medium;
 }
 
 .bal-alert-btn {

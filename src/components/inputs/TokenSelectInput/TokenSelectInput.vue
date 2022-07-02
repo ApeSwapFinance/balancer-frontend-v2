@@ -77,7 +77,7 @@ function tokenFor(option: string): TokenInfo {
       <div class="w-8">
         <BalAsset :address="token?.address" class="shadow" />
       </div>
-      <span class="text-base font-medium">
+      <span class="text-xl font-bold">
         {{ token?.symbol }}
       </span>
       <span
@@ -110,7 +110,7 @@ function tokenFor(option: string): TokenInfo {
           <div class="w-8">
             <BalAsset :address="token?.address" class="shadow" />
           </div>
-          <span class="text-base font-medium">
+          <span class="text-xl font-bold">
             {{ token?.symbol }}
           </span>
           <span

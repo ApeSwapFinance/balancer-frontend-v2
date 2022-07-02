@@ -256,7 +256,9 @@ watch(
                 :name="column.Header"
               ></slot>
               <div v-else>
-                <h5 class="text-base text-primary dark:text-primary-bright">
+                <h5
+                  class="text-base font-medium text-primary dark:text-primary-bright"
+                >
                   {{ column.name }}
                 </h5>
               </div>

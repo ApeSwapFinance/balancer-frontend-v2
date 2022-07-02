@@ -62,7 +62,7 @@ const optimizeBtnClasses = computed(() => ({
       <div class="p-2">{{ $t('total') }}</div>
       <div class="data-table-number-col">
         {{ fNum2(fiatTotal, FNumFormats.fiat) }}
-        <div v-if="isWalletReady && !hasNoBalances" class="text-sm">
+        <div v-if="isWalletReady && !hasNoBalances" class="text-sm font-medium">
           <span v-if="maximized" class="text-gray dark:text-gray-dark">
             {{ $t('maxed') }}
           </span>
@@ -107,7 +107,7 @@ const optimizeBtnClasses = computed(() => ({
           v-if="
             isWalletReady && hasAllTokens && supportsPropotionalOptimization
           "
-          class="text-sm font-bold"
+          class="text-sm font-medium"
         >
           <span v-if="optimized" class="text-gray dark:text-gray-dark">
             {{ $t('optimized') }}

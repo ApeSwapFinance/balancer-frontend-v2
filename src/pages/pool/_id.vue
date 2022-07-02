@@ -31,7 +31,7 @@
             </div>
             <BalChip
               v-if="pool?.isNew"
-              color="red"
+              color="error"
               size="sm"
               class="uppercase mt-2 mr-2"
               :outline="false"
@@ -55,7 +55,7 @@
           <div class="flex items-center mt-2">
             <div
               v-html="poolFeeLabel"
-              class="text-sm text-gray dark:text-gray-dark mr-2"
+              class="font-medium text-sm text-gray dark:text-gray-dark mr-2"
             />
             <BalTooltip>
               <template v-slot:activator>
@@ -84,14 +84,14 @@
           v-if="!appLoading && !loadingPool && missingPrices"
           type="warning"
           :title="$t('noPriceInfo')"
-          class="mt-2"
+          class="mt-2 font-medium"
           block
         />
         <BalAlert
           v-if="!appLoading && !loadingPool && hasCustomToken"
           type="error"
           :title="$t('highRiskPool')"
-          class="mt-2"
+          class="mt-2 font-medium"
           block
         />
         <template v-if="!appLoading && !loadingPool && isAffected">
@@ -99,7 +99,7 @@
             v-for="(warning, i) in warnings"
             :key="`warning-${i}`"
             type="error"
-            class="mt-2"
+            class="mt-2 font-medium"
             block
           >
             <template #title>
@@ -472,8 +472,7 @@ export default defineComponent({
 
 <style scoped>
 .pool-title {
-  @apply mr-4 capitalize mt-2;
-  font-weight: 700;
+  @apply mr-4 capitalize mt-2 font-bold;
 }
 
 .pool-actions-card {

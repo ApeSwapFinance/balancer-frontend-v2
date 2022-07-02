@@ -6,7 +6,7 @@
       @click="onSelect(option)"
       outline
       size="sm"
-      class="capitalize mr-2 w-18"
+      class="custom-btn-group capitalize mr-2 w-18"
       v-bind="attrs_"
       :color="modelValue === option.value ? 'ape-yellow' : 'gray'"
     >
@@ -55,3 +55,9 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+.custom-btn-group {
+  @apply font-medium text-base;
+}
+</style>

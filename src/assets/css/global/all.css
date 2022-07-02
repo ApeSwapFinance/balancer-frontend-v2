@@ -24,6 +24,10 @@ input {
   caret-color: theme('colors.gray');
 }
 
+.dark input {
+  caret-color: theme('colors.gray-dark');
+}
+
 #app {
   @apply text-primary dark:text-primary-bright;
 }

@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="['bal-btn', btnClasses]"
+    :class="['bal-btn text-base uppercase font-bold', btnClasses]"
     :disabled="disabled || loading"
   >
     <div v-if="loading" class="flex items-center justify-center">

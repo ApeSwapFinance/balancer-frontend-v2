@@ -62,7 +62,11 @@
         <span v-text="$t('transactionDeadline')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-dark -mb-px" />
+            <BalIcon
+              name="info"
+              size="xs"
+              class="ml-1 text-gray dark:text-gray-dark -mb-px"
+            />
           </template>
           <div v-html="$t('transactionDeadlineTooltip')" />
         </BalTooltip>

@@ -49,7 +49,7 @@ onBeforeMount(async () => {
             {{ network.chainName }}
           </div>
           <div class="flex items-center justify-between">
-            <h4>{{ $t('investInPool') }}</h4>
+            <h4>{{ $t('invest') }}</h4>
             <TradeSettingsPopover :context="TradeSettingsContext.invest" />
           </div>
         </div>

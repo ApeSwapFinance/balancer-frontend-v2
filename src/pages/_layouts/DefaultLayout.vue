@@ -35,7 +35,7 @@ const isHomePage = computed(() => route.path === '/');
       id="intercom-activator"
       circle
       size="lg"
-      color="blue"
+      color="primary"
       class="fixed bottom-0 right-0 m-4 z-100"
     >
       <BalIcon name="message-square" size="lg" />
