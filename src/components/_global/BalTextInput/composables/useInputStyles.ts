@@ -69,7 +69,7 @@ export default function useInputStyles(
     [extPaddingClass()]: true,
     'border-primary-bright dark:border-white3-dark':
       !isInvalid.value && !isActive.value,
-    'border-red-500 dark:border-red-500': isInvalid.value,
+    'border-error dark:border-error': isInvalid.value,
     'border-blue-300': isActive.value && !isInvalid.value,
     'hover:border-gray-dark dark:hover:border-white4-dark':
       isHover.value && !isActive.value,
@@ -93,7 +93,7 @@ export default function useInputStyles(
     [inputTextSize()]: true,
     'text-right': props.inputAlignRight,
     'font-numeric': props.type === 'number',
-    'text-red-500': isInvalid.value
+    'text-error': isInvalid.value
   }));
 
   const prependClasses = computed(() => ({

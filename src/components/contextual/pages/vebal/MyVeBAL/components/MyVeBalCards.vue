@@ -160,7 +160,7 @@ const cards = computed(() => {
     <div class="value" :class="card.id">
       <div v-if="card.id === 'myLockedLpToken'">
         <span
-          :class="{ 'text-red-500': totalExpiredLpTokens > 0 }"
+          :class="{ 'text-error': totalExpiredLpTokens > 0 }"
           class="font-bold truncate mr-1"
           >{{ card.value }}</span
         >
@@ -169,9 +169,7 @@ const cards = computed(() => {
           :text="$t('veBAL.myVeBAL.cards.myExpiredLockTooltip')"
           icon-size="sm"
           :icon-name="'alert-triangle'"
-          :icon-class="
-            'text-red-500 hover:text-red-700 dark:hover:text-red-400 transition-colors'
-          "
+          :icon-class="'text-error transition-colors'"
           width="72"
           class="relative top-0.5"
         />

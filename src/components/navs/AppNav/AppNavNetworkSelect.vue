@@ -11,19 +11,15 @@
           :alt="activeNetwork.name"
           class="w-6 h-6 rounded-full"
         />
-        <span class="ml-2 text-primary dark:text-primary-bright">
+        <span class="ml-2">
           {{ activeNetwork.name }}
         </span>
-        <BalIcon
-          name="chevron-down"
-          size="sm"
-          class="ml-2 text-primary dark:text-primary-bright"
-        />
+        <BalIcon name="chevron-down" size="sm" class="ml-2" />
       </BalBtn>
     </template>
     <div class="flex flex-col w-44 rounded-lg overflow-hidden">
       <div
-        class="p-3 border-b border-white4 dark:border-white4-dark whitespace-nowrap text-gray dark:text-gray-dark font-medium"
+        class="p-3 border-b border-white4 dark:border-white4-dark whitespace-nowrap text-gray dark:text-gray-dark font-medium text-xs"
       >
         Select a network
       </div>
@@ -137,6 +133,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.network-select-btn {
+  @apply font-medium text-xs text-primary dark:text-primary-bright;
+}
 .network-select-btn:hover {
   @apply bg-white4 dark:bg-white4-dark;
 }

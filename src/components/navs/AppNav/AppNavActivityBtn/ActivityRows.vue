@@ -22,7 +22,7 @@
               "
               name="arrow-up-right"
               size="sm"
-              class="ml-1 text-gray-dark dark:text-gray-dark group-hover:text-pink-500 transition-colors"
+              class="ml-1 text-gray dark:text-gray-dark transition-colors"
             />
           </div>
           <div
@@ -34,16 +34,16 @@
         <div>
           <SpinnerIcon
             v-if="isPendingTransactionStatus(transaction.status)"
-            class="animate-spin text-orange-500"
+            class="animate-spin text-ape-yellow"
           />
           <template v-else>
             <CheckIcon
               v-if="isSuccessfulTransaction(transaction)"
-              class="text-green-500"
+              class="text-success"
             />
             <BalTooltip v-else class="cursor-default">
               <template v-slot:activator>
-                <BalIcon name="alert-circle" class="text-red-500" />
+                <BalIcon name="alert-circle" class="text-error" />
               </template>
               <div class="failed-reason-tooltip">
                 {{ $t(`transactionAction.${transaction.action}`) }}

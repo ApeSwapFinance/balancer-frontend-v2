@@ -37,13 +37,10 @@ const hideNetworkSelect = computed(() => connector.value?.id === 'gnosis');
     >
       <WalletIcon class="mr-2" />
       <span
-        class="hidden lg:inline-block text-primary dark:text-primary-bright"
+        class="hidden lg:inline-block capitalize"
         v-text="$t('connectWallet')"
       />
-      <span
-        class="lg:hidden text-primary dark:text-primary-bright"
-        v-text="$t('connect')"
-      />
+      <span class="lg:hidden" v-text="$t('connect')" />
     </BalBtn>
     <AppNavNetworkSelect v-if="!hideNetworkSelect" />
     <BalBtn
@@ -63,6 +60,9 @@ const hideNetworkSelect = computed(() => connector.value?.id === 'gnosis');
 </template>
 
 <style scoped>
+.connect-wallet-btn {
+  @apply text-primary dark:text-primary-bright font-medium text-xs;
+}
 .connect-wallet-btn:hover {
   @apply bg-white4 dark:bg-white4-dark;
 }

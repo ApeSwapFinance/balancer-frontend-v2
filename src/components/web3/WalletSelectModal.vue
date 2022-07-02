@@ -28,7 +28,7 @@
         dark:bg-white3-dark
       "
     >
-      <h6>{{ $t('newToEthereum') }}</h6>
+      <h6>{{ $t('newToBinance') }}</h6>
       <p class="text-sm">
         {{ $t('setUpEthereumWallet') }}
         <BalLink

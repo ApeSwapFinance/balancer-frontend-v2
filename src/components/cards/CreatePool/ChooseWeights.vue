@@ -126,14 +126,14 @@ const progressBarColor = computed(() => {
     Number(totalAllocatedWeight.value) > 100 ||
     Number(totalAllocatedWeight.value) <= 0
   ) {
-    return 'red';
+    return 'error';
   }
-  return 'green';
+  return 'success';
 });
 
 const weightColor = computed(() => {
   if (Number(totalWeight.value) > 100 || Number(totalWeight.value) <= 0) {
-    return 'text-red-500';
+    return 'text-error';
   }
   return darkMode.value ? 'text-gray' : 'text-gray';
 });
@@ -378,7 +378,7 @@ function onAlertMountChange() {
                       v-if="
                         Number(totalWeight) > 100 || Number(totalWeight) <= 0
                       "
-                      class="text-red-500 mt-px"
+                      class="text-error mt-px"
                       name="alert-circle"
                       size="sm"
                     />

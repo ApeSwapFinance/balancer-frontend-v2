@@ -70,7 +70,8 @@ export default defineComponent({
     loadingLabel: { type: String, default: 'loading...' },
     disabled: { type: Boolean, default: false },
     transparent: { type: Boolean, default: false },
-    tertiary: { type: Boolean, default: false }
+    tertiary: { type: Boolean, default: false },
+    primary: { type: Boolean, default: false }
   },
 
   setup(props) {
@@ -144,6 +145,8 @@ export default defineComponent({
         return `bg-white3 dark:bg-white3 text-white4-dark-greyed`;
       } else if (props.tertiary) {
         return `bg-white3 hover:text-ape-yellow dark:hover:text-white4-dark-greyed dark:bg-white3 text-white4-dark-greyed`;
+      } else if (props.outline && props.primary) {
+        return `bg-transparent text-primary dark:text-primary-bright`;
       } else if (props.color === 'ape-yellow') {
         return `bg-${props.color} hover:bg-hovered-${props.color}`;
       } else {
@@ -160,8 +163,14 @@ export default defineComponent({
 
     const borderClasses = computed(() => {
       if (props.outline)
-        return `border border-${props.color} dark:border-${props.color}-${
-          props.color.includes('dark') ? '' : 'dark'
+        return `border border-${props.color} dark:border-${props.color}${
+          props.color === 'primary'
+            ? '-bright'
+            : props.color === 'ape-yellow' ||
+              props.color === 'success' ||
+              props.color === 'error'
+            ? ''
+            : '-dark'
         }`;
       return 'border-none';
     });

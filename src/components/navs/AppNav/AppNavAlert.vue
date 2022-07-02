@@ -6,8 +6,8 @@
         <p class="alert-label">{{ alert.label }}</p>
         <BalBtn
           v-if="alert.action && alert.actionLabel"
-          class="cursor-pointer"
-          color="white3"
+          class="app-nav-btn cursor-pointer"
+          color="white"
           outline
           size="xs"
           :label="alert.actionLabel"
@@ -90,5 +90,8 @@ export default defineComponent({
 }
 .alert-label {
   @apply font-medium pb-1 block md:inline pr-4;
+}
+.app-nav-btn {
+  @apply font-medium text-sm;
 }
 </style>

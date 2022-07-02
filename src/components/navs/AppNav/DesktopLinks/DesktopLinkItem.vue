@@ -26,6 +26,6 @@ const classes = computed(() => ({
   @apply transition ease-in-out duration-500;
   @apply border-b-2 hover:border-primary;
   @apply h-full flex flex-col justify-center;
-  @apply cursor-pointer hover:text-primary;
+  @apply cursor-pointer hover:text-primary font-bold text-base;
 }
 </style>

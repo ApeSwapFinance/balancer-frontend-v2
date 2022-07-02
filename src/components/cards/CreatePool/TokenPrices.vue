@@ -82,7 +82,7 @@ const hasUnknownPrice = computed(() =>
           :class="[
             'mt-1',
             {
-              'text-red-500 hover:text-red-700': hasUnknownPrice,
+              'text-error hover:text-error': hasUnknownPrice,
               'hover:text-blue-500': !hasUnknownPrice
             }
           ]"

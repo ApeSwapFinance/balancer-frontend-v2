@@ -111,7 +111,7 @@ function handleVoteSuccess() {
         </div>
         <p
           class="text-lg font-bold inline mr-1"
-          :class="{ 'text-red-500': hasExpiredLock }"
+          :class="{ 'text-error': hasExpiredLock }"
         >
           <span v-if="hasLock">
             {{ unallocatedVotesFormatted }}
@@ -123,9 +123,7 @@ function handleVoteSuccess() {
           :text="$t('veBAL.liquidityMining.votingPowerExpiredTooltip')"
           icon-size="sm"
           :icon-name="'alert-triangle'"
-          :icon-class="
-            'text-red-500 hover:text-red-700 dark:hover:text-red-400 transition-colors'
-          "
+          :icon-class="'text-error transition-colors'"
           width="72"
           class="relative top-0.5"
         />

@@ -1,7 +1,7 @@
 <template>
   <div
     ref="animateRef"
-    class="flex py-3 px-4 highlight items-center leading-5 text-base opacity-0"
+    class="flex py-3 px-4 highlight items-center leading-5 text-base opacity-0 uppercase"
   >
     <BalAsset
       :address="token.address"

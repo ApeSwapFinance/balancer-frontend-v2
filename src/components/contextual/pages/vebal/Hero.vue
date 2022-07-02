@@ -48,7 +48,7 @@ function navigateToGetVeBAL() {
           :key="i"
           class="flex items-center mb-2 text-primary-bright"
         >
-          <BalIcon name="check" class="text-green-500 mr-2" />
+          <BalIcon name="check" class="text-success mr-2" />
           {{ benefit }}
         </div>
         <div class="flex mt-6">

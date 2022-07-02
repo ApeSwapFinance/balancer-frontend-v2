@@ -117,7 +117,7 @@ const optimisedLiquidity = computed(() => getOptimisedLiquidity());
         Add estimated token price for the unknown tokens to see potential pool
         liquidity percentages
       </span>
-      <button class="font-bold text-red-500">Add token prices -></button>
+      <button class="font-bold text-error">Add token prices -></button>
       </BalStack>
     </BalAlert> -->
   </BalCard>

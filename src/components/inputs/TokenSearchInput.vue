@@ -139,7 +139,7 @@ function onClick() {
 
 <style scoped>
 .filter-btn {
-  @apply bg-white2 dark:bg-white2-dark text-primary dark:text-primary-bright;
+  @apply bg-white2 dark:bg-white2-dark text-primary dark:text-primary-bright normal-case font-medium text-base;
   box-shadow: none;
 }
 .bal-chip {

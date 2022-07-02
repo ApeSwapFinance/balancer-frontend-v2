@@ -1,5 +1,5 @@
 <template>
-  <BalCard class="relative" :shadow="tradeCardShadow" :no-border="!darkMode">
+  <BalCard shadow="none" class="relative" :no-border="!darkMode">
     <template v-slot:header>
       <div class="w-full flex items-center justify-between">
         <h4 class="font-bold">{{ title }}</h4>
@@ -45,7 +45,7 @@
         :label="'Preview trade'"
         :disabled="tradeDisabled"
         :loading-label="$t('confirming')"
-        color="gradient"
+        color="ape-yellow"
         block
         @click.prevent="showTradePreviewModal"
       />
@@ -154,17 +154,6 @@ export default defineComponent({
     const tokenIn = computed(() => tokens.value[tokenInAddress.value]);
 
     const tokenOut = computed(() => tokens.value[tokenOutAddress.value]);
-
-    const tradeCardShadow = computed(() => {
-      switch (bp.value) {
-        case 'xs':
-          return 'none';
-        case 'sm':
-          return 'lg';
-        default:
-          return 'xl';
-      }
-    });
 
     const wrapType = computed(() =>
       getWrapAction(tokenInAddress.value, tokenOutAddress.value)
@@ -319,7 +308,6 @@ export default defineComponent({
       isLoadingApprovals,
       bp,
       darkMode,
-      tradeCardShadow,
       explorer: explorerLinks
     };
   }

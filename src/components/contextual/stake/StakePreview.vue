@@ -156,7 +156,7 @@ function handleClose() {
       <BalCircle
         v-if="isActionConfirmed"
         size="8"
-        color="green"
+        color="success"
         class="text-primary-bright"
       >
         <BalIcon name="check" />

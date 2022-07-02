@@ -264,7 +264,7 @@ const chartGrid = computed(() => {
           v-if="!failedToLoadPriceData && !(isLoadingPriceData || appLoading)"
           class="flex"
         >
-          <h6 class="font-medium">{{ outputSym }}/{{ inputSym }}</h6>
+          <h6 class="font-bold text-base">{{ outputSym }}/{{ inputSym }}</h6>
           <BalTooltip class="ml-2" :text="$t('coingeckoPricingTooltip')">
             <template v-slot:activator>
               <img class="h-5" src="@/assets/images/icons/coingecko.svg" />
@@ -275,7 +275,7 @@ const chartGrid = computed(() => {
           v-if="failedToLoadPriceData && tokenOutAddress"
           class="h-full w-full flex justify-center items-center"
         >
-          <span class="text-sm text-gray-dark">{{
+          <span class="text-sm text-gray dark:text-gray-dark">{{
             $t('insufficientData')
           }}</span>
         </div>
@@ -283,7 +283,7 @@ const chartGrid = computed(() => {
           v-if="failedToLoadPriceData && !tokenOutAddress"
           class="h-full w-full flex justify-center items-center"
         >
-          <span class="text-sm text-gray-dark text-center">{{
+          <span class="text-sm text-gray dark:text-gray-dark text-center">{{
             $t('chooseAPair')
           }}</span>
         </div>
@@ -330,7 +330,7 @@ const chartGrid = computed(() => {
                   {
                     'text-primary-bright':
                       activeTimespan.value === timespan.value,
-                    'text-gray dark:text-gray-dark':
+                    'text-primary dark:text-primary-bright':
                       activeTimespan.value !== timespan.value,
                     'bg-success':
                       !isNegativeTrend &&
@@ -347,17 +347,17 @@ const chartGrid = computed(() => {
               </button>
             </div>
             <div :class="{ 'mt-4': isModal }">
-              <span class="text-sm text-gray dark:text-gray-dark mr-4"
+              <span class="text-sm text-primary dark:text-primary-bright mr-4"
                 >Low: {{ dataMin.toPrecision(6) }}</span
               >
-              <span class="text-sm text-gray dark:text-gray-dark"
+              <span class="text-sm text-primary dark:text-primary-bright"
                 >High: {{ dataMax.toPrecision(6) }}</span
               >
             </div>
           </div>
           <div class="-mt-2 lg:mt-2" v-else>
             <span
-              class="text-sm text-gray dark:text-gray-dark w-full flex justify-end"
+              class="text-sm text-primary dark:text-primary-bright w-full flex justify-end"
             >
               {{ activeTimespan.option }}
             </span>

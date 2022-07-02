@@ -26,7 +26,7 @@
                 v-for="(tokenlist, i) in activeTokenLists"
                 :key="i"
                 :src="resolve(tokenlist.logoURI)"
-                class="rounded-full inline-block bg-primary-bright w-6 h-6"
+                class="rounded-full inline-block bg-primary dark:bg-primary-bright w-6 h-6"
               />
             </span>
             <BalIcon

@@ -4,7 +4,13 @@
       <div class="flex justify-between items-center mb-4">
         <h5 v-text="$t('account')" class="leading-none" />
         <div v-if="!hideDisconnect">
-          <BalBtn outline color="gray" size="xs" @click="disconnectWallet">
+          <BalBtn
+            outline
+            color="gray"
+            size="xs"
+            class="disconnect-btn"
+            @click="disconnectWallet"
+          >
             Disconnect
           </BalBtn>
         </div>
@@ -29,14 +35,19 @@
                     <BalBtn
                       circle
                       outline
-                      color="gray"
+                      color="primary"
                       size="xs"
                       flat
                       @click="copyAddress"
                       class="mr-2"
                     >
                       <BalIcon v-if="copiedAddress" name="check" size="xs" />
-                      <BalIcon v-else name="clipboard" size="xs" />
+                      <BalIcon
+                        v-else
+                        name="clipboard"
+                        size="xs"
+                        class="text-primary dark:text-primary-bright"
+                      />
                     </BalBtn>
                   </template>
                   <div
@@ -48,14 +59,18 @@
                   circle
                   flat
                   outline
-                  color="gray"
+                  color="primary"
                   size="xs"
                   tag="a"
                   :href="explorer.addressLink(account)"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <BalIcon name="arrow-up-right" size="xs" />
+                  <BalIcon
+                    name="arrow-up-right"
+                    size="xs"
+                    class="text-primary dark:text-primary-bright"
+                  />
                 </BalBtn>
               </div>
             </div>
@@ -323,23 +338,9 @@ export default defineComponent({
 
 <style scoped>
 .address {
-  @apply text-blue-500;
   font-variant-ligatures: no-contextual;
 }
-
-.option:hover {
-  @apply text-blue-500 border-blue-500;
-}
-
-.option.active {
-  @apply text-blue-500 border-blue-500;
-}
-
-.slippage-input {
-  @apply bg-white;
-}
-
-.slippage-input.active {
-  @apply text-blue-500 border-blue-500;
+.disconnect-btn {
+  @apply font-medium normal-case text-xs;
 }
 </style>

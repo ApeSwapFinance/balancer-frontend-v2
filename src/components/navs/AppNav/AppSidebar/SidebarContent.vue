@@ -127,11 +127,11 @@ watch(blockNumber, async () => {
 }
 
 .block-icon {
-  box-shadow: 0px 0px 3px 2px theme('colors.green.500');
+  box-shadow: 0px 0px 3px 2px theme('colors.success');
   transition: box-shadow 0.3s ease-in-out;
 }
 
 .block-change {
-  box-shadow: 0px 0px 6px 4px theme('colors.green.500');
+  box-shadow: 0px 0px 6px 4px theme('colors.success');
 }
 </style>

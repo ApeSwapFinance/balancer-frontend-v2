@@ -27,7 +27,7 @@
         <span
           v-else
           v-text="_shorten(account)"
-          class="pl-2 hidden lg:inline-block eth-address text-primary dark:text-primary-bright"
+          class="pl-2 hidden lg:inline-block eth-address"
         />
       </BalBtn>
     </template>
@@ -82,7 +82,7 @@ export default defineComponent({
 
 <style scoped>
 .nav-acct-btn {
-  @apply text-base;
+  @apply text-xs text-primary dark:text-primary-bright normal-case font-medium;
 }
 .nav-acct-btn:hover {
   @apply bg-white4 dark:bg-white4-dark;

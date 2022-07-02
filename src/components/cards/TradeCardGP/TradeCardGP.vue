@@ -1,5 +1,5 @@
 <template>
-  <BalCard class="relative card-container" :shadow="tradeCardShadow" no-border>
+  <BalCard shadow="none" class="relative card-container" no-border>
     <template v-slot:header>
       <div class="w-full flex items-center justify-between">
         <h4 class="font-bold">{{ title }}</h4>
@@ -232,17 +232,6 @@ export default defineComponent({
     });
     const alwaysShowRoutes = lsGet('alwaysShowRoutes', false);
 
-    const tradeCardShadow = computed(() => {
-      switch (bp.value) {
-        case 'xs':
-          return 'none';
-        case 'sm':
-          return 'lg';
-        default:
-          return 'xl';
-      }
-    });
-
     const trading = useTrading(
       exactIn,
       tokenInAddress,
@@ -441,7 +430,6 @@ export default defineComponent({
       errorMessage,
       isRequired,
       tradeDisabled,
-      tradeCardShadow,
       handlePreviewButton,
       handlePreviewModalClose,
 

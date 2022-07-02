@@ -31,10 +31,10 @@ const visibleSteps = computed(() => {
 const stepTextClasses = computed(() => {
   return visibleSteps.value.map(step => {
     return getActiveClassName(step.state, [
-      [StepState.Active, 'text-blue-400 font-bold hover:text-blue-800'],
+      [StepState.Active, 'text-primary font-bold'],
       [StepState.Todo, 'text-gray-dark font-medium'],
-      [StepState.Success, 'text-green-500 font-bold'],
-      [StepState.Warning, 'text-red-500 font-bold'],
+      [StepState.Success, 'text-success font-bold'],
+      [StepState.Warning, 'text-error font-bold'],
       [StepState.Completed, 'text-gray font-medium']
     ]);
   });
@@ -45,12 +45,12 @@ const stepCircleClasses = computed(() => {
     return getActiveClassName(step.state, [
       [
         StepState.Active,
-        'border-2 border-none bg-gradient-from-l bg-gradient-to-r from-blue-600 to-blue-50 text-primary-bright active'
+        'border-2 border-none bg-primary text-primary-bright active'
       ],
       [StepState.Todo, 'border-2 border-gray dark:border-gray-dark text-gray'],
       [
         StepState.Success,
-        'border-2 border-none bg-gradient-to-tr from-green-500 to-green-200 text-primary-bright'
+        'border-2 border-none bg-success text-primary-bright'
       ],
       [
         StepState.Warning,

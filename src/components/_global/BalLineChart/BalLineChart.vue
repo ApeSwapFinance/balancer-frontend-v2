@@ -2,14 +2,14 @@
   <BalLoadingBlock v-if="isLoading" class="h-96 mt-16" />
   <div :class="[wrapperClass]" v-else @mouseleave="handleMouseLeave">
     <div id="lineChartHeader" class="mb-4" v-if="showHeader">
-      <h3 class="text-gray dark:text-gray-dark text-xl tracking-wider">
+      <h3 class="text-primary dark:text-primary-bright text-base tracking-wider">
         {{ currentValue }}
       </h3>
       <span
         :class="{
           'text-success': change >= 0,
           'text-error': change < 0,
-          'font-medium': true
+          'font-light text-base': true
         }"
         >{{ numeral(change).format('+0.0%') }}</span
       >

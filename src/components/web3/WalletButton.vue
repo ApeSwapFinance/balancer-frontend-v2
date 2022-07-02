@@ -5,7 +5,7 @@
         :src="require(`@/assets/images/connectors/${wallet}.svg`)"
         class="h-10 w-10 mr-4"
       />
-      <h5 class="text-primary dark:text-primary-bright text-base">
+      <h5 class="text-primary dark:text-primary-bright text-base font-medium">
         <span class="capitalize">{{ WalletNameMap[wallet] }}</span>
       </h5>
     </div>

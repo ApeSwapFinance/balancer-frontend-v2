@@ -213,7 +213,7 @@ const unallocatedVotesFormatted = computed((): string =>
 );
 
 const unallocatedVotesClass = computed(() => {
-  return hasEnoughVotes.value ? ['text-gray'] : ['text-red-600'];
+  return hasEnoughVotes.value ? ['text-gray'] : ['text-error'];
 });
 
 const remainingVotes = computed(() => {
@@ -330,7 +330,7 @@ onMounted(() => {
         <BalCircle
           v-if="voteState.confirmed"
           size="8"
-          color="green"
+          color="success"
           class="text-primary-bright mr-2"
         >
           <BalIcon name="check" />

@@ -15,10 +15,10 @@ export function useChipClasses(props) {
   const bgColorClasses = (): string => {
     if (props.color === 'gradient')
       return 'text-primary-bright bg-gradient-to-tr from-blue-500 to-pink-500';
-    if (props.color === 'white') return 'bg-white dark:bg-white1-dark';
+    if (props.color === 'white') return 'bg-primary-bright';
     if (props.color === 'red') return 'text-primary-bright bg-error';
 
-    return `bg-${props.color}-100 dark:bg-${props.color}-800`;
+    return `bg-${props.color} dark:bg-${props.color}-dark`;
   };
 
   const outlineClasses = (): string => {
