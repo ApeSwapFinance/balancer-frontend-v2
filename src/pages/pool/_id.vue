@@ -134,11 +134,6 @@
           </div>
           <div class="mb-4 px-1 lg:px-0">
             <PoolStatCards :pool="pool" :loading="loadingPool" />
-            <ApyVisionPoolLink
-              v-if="!loadingPool"
-              :poolId="pool?.id"
-              :titleTokens="titleTokens"
-            />
           </div>
           <div class="mb-4">
             <h4 v-text="$t('poolComposition')" class="px-4 lg:px-0 mb-4" />
@@ -172,10 +167,6 @@
               v-if="loadingPool"
               class="pool-actions-card h-40"
             />
-            <StakingIncentivesCard
-              v-if="isStakablePool && !loadingPool"
-              :pool="pool"
-            />
           </BalStack>
         </StakingProvider>
       </div>
@@ -189,9 +180,7 @@ import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 
 import * as PoolPageComponents from '@/components/contextual/pages/pool';
-import StakingIncentivesCard from '@/components/contextual/pages/pool/StakingIncentivesCard/StakingIncentivesCard.vue';
 import GauntletIcon from '@/components/images/icons/GauntletIcon.vue';
-import ApyVisionPoolLink from '@/components/links/ApyVisionPoolLink.vue';
 import APRTooltip from '@/components/tooltips/APRTooltip/APRTooltip.vue';
 import usePoolQuery from '@/composables/queries/usePoolQuery';
 import usePoolSnapshotsQuery from '@/composables/queries/usePoolSnapshotsQuery';
@@ -217,9 +206,7 @@ export default defineComponent({
     ...PoolPageComponents,
     GauntletIcon,
     APRTooltip,
-    StakingIncentivesCard,
-    StakingProvider,
-    ApyVisionPoolLink
+    StakingProvider
   },
 
   setup() {

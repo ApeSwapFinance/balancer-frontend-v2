@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="subsection">
-      <h1>Balancer Labs OU Cookies&nbsp;Policy</h1>
+      <h1>ApeSwap OU Cookies&nbsp;Policy</h1>
       <p><em>Last Updated: November 15, 2021</em></p>
     </div>
     <div class="subsection">
       <h2>Introduction and Scope of Policy</h2>
       <p>
-        This Balancer Labs OU Cookies Policy (“Policy”) applies to your
-        interaction with Balancer Labs OU or any of its subsidiaries or
-        affiliates (“Balancer Labs” or “we”).
+        This ApeSwap OU Cookies Policy (“Policy”) applies to your
+        interaction with ApeSwap OU or any of its subsidiaries or
+        affiliates (“ApeSwap” or “we”).
       </p>
     </div>
 

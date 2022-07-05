@@ -87,7 +87,7 @@
     "build": "Build",
     "blog": "Blog",
     "boostedPool": "Balancer Boosted pool",
-    "byConnectingWallet": "By connecting a wallet, I agree to Balancer Labs’",
+    "byConnectingWallet": "By connecting a wallet, I agree to Apeswap's",
     "cancel": "Cancel",
     "cancelling": "Cancelling",
     "checkWallet": "Confirm in wallet",
@@ -296,7 +296,7 @@
     "highGasFees": "High gas fees? Here's a helping hand",
     "highPriceImpact": "High price impact",
     "highPriceImpactDetailed": "This trade is significantly moving the market price.",
-    "highRiskPool": "This is a higher-risk pool that contains one or more unlisted tokens. A liquidity pool is only as good as its weakest token! If a token were blacklisted, infinitely minted, frozen, or exploited in any other way, the value of this pool could go to 0. Balancer Labs is never liable for losses incurred through using our UI or the Balancer protocol. Be careful, and do your own research!",
+    "highRiskPool": "This is a higher-risk pool that contains one or more unlisted tokens. A liquidity pool is only as good as its weakest token! If a token were blacklisted, infinitely minted, frozen, or exploited in any other way, the value of this pool could go to 0. ApeSwap is never liable for losses incurred through using our UI or the Balancer protocol. Be careful, and do your own research!",
     "home": "Home",
     "hourAbbrev": "h",
     "incentiveToken": "Incentive token",
@@ -979,7 +979,7 @@
     "tokensLowerCase": "tokens",
     "tokensParen": "Token(s)",
     "tokenPrices": "Token prices",
-    "tokenWarning": "Balancer Labs is not liable for any losses you might incur as a direct or indirect result of adding liquidity to this pool. Do not add deflationary tokens, tokens with transfer fees, or any other non-ERC20-conforming tokens. Please acknowlege before continuing.",
+    "tokenWarning": "ApeSwap is not liable for any losses you might incur as a direct or indirect result of adding liquidity to this pool. Do not add deflationary tokens, tokens with transfer fees, or any other non-ERC20-conforming tokens. Please acknowlege before continuing.",
     "tokenWarningTitle": "You have added a custom token",
     "tooltips": {
         "invest": {
