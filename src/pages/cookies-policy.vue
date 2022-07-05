@@ -7,9 +7,9 @@
     <div class="subsection">
       <h2>Introduction and Scope of Policy</h2>
       <p>
-        This ApeSwap OU Cookies Policy (“Policy”) applies to your
-        interaction with ApeSwap OU or any of its subsidiaries or
-        affiliates (“ApeSwap” or “we”).
+        This ApeSwap OU Cookies Policy (“Policy”) applies to your interaction
+        with ApeSwap OU or any of its subsidiaries or affiliates (“ApeSwap” or
+        “we”).
       </p>
     </div>
 

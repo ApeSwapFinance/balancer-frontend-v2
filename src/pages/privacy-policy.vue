@@ -5,11 +5,11 @@
       <p><em>Last Updated: November 16, 2021</em></p>
       <p>
         <em class="font-medium">
-          This Privacy Policy explains how ApeSwap OU and its subsidiaries
-          and affiliates (“ApeSwap,” “we,” “our,” or “us”) collects, uses,
-          and discloses information about you. This Privacy Policy applies when
-          you use our website, Balancer Protocol user-interface or application
-          and other online products (collectively, our “UI”), engage with us on
+          This Privacy Policy explains how ApeSwap OU and its subsidiaries and
+          affiliates (“ApeSwap,” “we,” “our,” or “us”) collects, uses, and
+          discloses information about you. This Privacy Policy applies when you
+          use our website, Balancer Protocol user-interface or application and
+          other online products (collectively, our “UI”), engage with us on
           social media, or otherwise interact with us.</em
         >
       </p>
@@ -38,8 +38,8 @@
         customized and this policy reflects that practice.
       </p>
       <p>
-        The ApeSwap UI is not directed to children under the age of 16. If
-        a parent or guardian becomes aware that his or her child has provided us
+        The ApeSwap UI is not directed to children under the age of 16. If a
+        parent or guardian becomes aware that his or her child has provided us
         with personal information without your consent, please contact us at
         <a class="link" href="mailto:privacypolicy@balancer.finance"
           >privacypolicy@balancer.finance</a
@@ -150,10 +150,10 @@
 
       <p>
         We do not have access to or share personally identifiable information in
-        the normal course of ApeSwap business. However, when ApeSwap
-        has access to personal information, such as your wallet and certain IP
-        addresses, it may share that information in the following circumstances
-        or as otherwise described in this policy:
+        the normal course of ApeSwap business. However, when ApeSwap has access
+        to personal information, such as your wallet and certain IP addresses,
+        it may share that information in the following circumstances or as
+        otherwise described in this policy:
       </p>
       <ul>
         <li>
@@ -177,8 +177,8 @@
           We may share personal information if we believe that your actions are
           inconsistent with our user agreements or policies, if we believe that
           you have violated the law, or if we believe it is necessary to protect
-          the rights, property, and safety of ApeSwap, the Balancer
-          ecosystem, the public, or others.
+          the rights, property, and safety of ApeSwap, the Balancer ecosystem,
+          the public, or others.
         </li>
         <li>
           We share personal information with our lawyers and other professional
@@ -195,8 +195,8 @@
           may have regarding the sharing of your personal information.
         </li>
         <li>
-          Personal information may be shared between and among ApeSwap and
-          our current and future parents, affiliates, and subsidiaries and other
+          Personal information may be shared between and among ApeSwap and our
+          current and future parents, affiliates, and subsidiaries and other
           companies under common control and ownership (“corporate affiliates”).
           This information may be used to provide you with offers, services, or
           products that may be of interest to you and provide you with their
@@ -222,14 +222,13 @@
 
       <p>
         We do not work with third parties to serve ads to you as part of
-        customized campaigns on the UI or third-party UIs. ApeSwap may
-        allow others to provide analytics services on our behalf across the web
-        and in mobile apps. These entities may use web beacons, device
-        identifiers, and other technologies to collect information about your
-        use of the UI and other websites and applications, including your wallet
-        address, web browser, mobile network information, pages viewed, time
-        spent on pages or in mobile apps, links clicked, and conversion
-        information.
+        customized campaigns on the UI or third-party UIs. ApeSwap may allow
+        others to provide analytics services on our behalf across the web and in
+        mobile apps. These entities may use web beacons, device identifiers, and
+        other technologies to collect information about your use of the UI and
+        other websites and applications, including your wallet address, web
+        browser, mobile network information, pages viewed, time spent on pages
+        or in mobile apps, links clicked, and conversion information.
       </p>
     </div>
     <div class="subsection">
@@ -250,9 +249,9 @@
       <h2>Your Choices</h2>
       <h3>Cookies</h3>
       <p>
-        ApeSwap does not typically use any cookies. It reserves the
-        ability to use them to affect the availability and functionality of the
-        UI. For more information about cookies and how to disable them, see our
+        ApeSwap does not typically use any cookies. It reserves the ability to
+        use them to affect the availability and functionality of the UI. For
+        more information about cookies and how to disable them, see our
 
         <router-link :to="{ name: 'cookies-policy' }">
           <span className="text-blue-500 hover:text-blue-800 transition-colors"
@@ -298,8 +297,8 @@
       </table>
 
       <p>
-        ApeSwap does not “sell” personal information to advertise our
-        products to you or otherwise.
+        ApeSwap does not “sell” personal information to advertise our products
+        to you or otherwise.
       </p>
 
       <p>
@@ -320,8 +319,8 @@
       <h3>Shine the Light</h3>
 
       <p>
-        ApeSwap does not share such information with third parties for
-        direct marketing purposes..
+        ApeSwap does not share such information with third parties for direct
+        marketing purposes..
       </p>
 
       <h3>Do Not Track Signals</h3>
@@ -348,9 +347,9 @@
       <h3>Legal Basis for Processing</h3>
 
       <p>
-        ApeSwap does not typically process user personal data. If Balancer
-        Labs processes data, such as a wallet address and certain IP addresses,
-        it will do so in reliance on the following lawful bases:
+        ApeSwap does not typically process user personal data. If Balancer Labs
+        processes data, such as a wallet address and certain IP addresses, it
+        will do so in reliance on the following lawful bases:
       </p>
       <ul>
         <li>
@@ -378,8 +377,7 @@
         the personal data we hold about you and to receive your data in a
         portable format, the right to ask that your personal data be corrected
         or erased, and the right to object to, or request that we restrict,
-        certain processing. ApeSwap does not typically hold such personal
-        data.
+        certain processing. ApeSwap does not typically hold such personal data.
       </p>
     </div>
     <div>
