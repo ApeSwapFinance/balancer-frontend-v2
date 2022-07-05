@@ -173,7 +173,7 @@ const bufferPercentage = computed(() => {
 });
 
 const barColor = computed(() =>
-  amountExceedsTokenBalance.value ? 'error' : 'success'
+  amountExceedsTokenBalance.value ? 'error' : 'ape-yellow'
 );
 
 const priceImpactSign = computed(() =>

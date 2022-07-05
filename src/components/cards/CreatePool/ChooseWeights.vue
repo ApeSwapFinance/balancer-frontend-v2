@@ -128,7 +128,7 @@ const progressBarColor = computed(() => {
   ) {
     return 'error';
   }
-  return 'success';
+  return 'ape-yellow';
 });
 
 const weightColor = computed(() => {
