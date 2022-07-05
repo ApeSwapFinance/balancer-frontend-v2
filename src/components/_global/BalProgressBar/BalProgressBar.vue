@@ -54,7 +54,7 @@ const bufferBarStyles = computed(() => ({
 
 <style scoped>
 .progress-track {
-  @apply w-full rounded-full overflow-hidden flex;
+  @apply w-full rounded-full bg-white4 dark:bg-white4-dark overflow-hidden flex;
 }
 
 .progress-bar {
