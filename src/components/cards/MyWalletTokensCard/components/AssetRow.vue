@@ -53,10 +53,7 @@ const fiatLabel = computed(() => {
       </span>
       <span
         v-if="token.name !== token.symbol"
-        :class="[
-          'text-sm',
-          selected ? 'text-success' : 'text-gray dark:text-gray-dark'
-        ]"
+        :class="['text-sm', 'text-gray dark:text-gray-dark']"
       >
         {{ token.name }}
       </span>
@@ -66,12 +63,7 @@ const fiatLabel = computed(() => {
       <span>
         {{ balanceLabel }}
       </span>
-      <span
-        :class="[
-          'text-sm',
-          selected ? 'text-success' : 'text-gray dark:text-gray-dark'
-        ]"
-      >
+      <span :class="['text-sm', 'text-gray dark:text-gray-dark']">
         {{ fiatLabel }}
       </span>
     </div>
