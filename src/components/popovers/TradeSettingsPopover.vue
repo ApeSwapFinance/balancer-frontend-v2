@@ -174,10 +174,10 @@ export default defineComponent({
 
 <style>
 .trade-settings-option:hover {
-  @apply text-blue-500 border-blue-500;
+  @apply text-primary dark:text-primary-bright;
 }
 
 .trade-settings-option.active {
-  @apply text-blue-500 border-blue-500;
+  @apply text-primary dark:text-primary-bright;
 }
 </style>

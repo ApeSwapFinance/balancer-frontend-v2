@@ -225,7 +225,7 @@ async function claimAvailableRewards() {
       <BalCard no-pad class="mb-4">
         <template v-slot:header>
           <div
-            class="w-full px-3 border-b dark:border-white1-dark bg-primary-bright dark:bg-white3-dark"
+            class="w-full px-3 border-b border-white4 dark:border-white4-dark bg-white3 dark:bg-white3-dark"
           >
             <BalTabs
               v-model="activeTab"
@@ -241,7 +241,7 @@ async function claimAvailableRewards() {
             :key="`token-${claimableToken.token}`"
           >
             <div
-              class="px-3 py-2 flex items-center mb-2 border-b dark:border-white1-dark last:border-0"
+              class="px-3 py-2 flex items-center mb-2 border-b border-white4 dark:border-white4-dark last:border-0"
             >
               <BalAsset
                 :address="claimableToken.token"
@@ -266,7 +266,7 @@ async function claimAvailableRewards() {
             :key="`token-${claimableToken.token}`"
           >
             <div
-              class="px-3 py-2 flex items-center mb-2 border-b dark:border-white1-dark last:border-0"
+              class="px-3 py-2 flex items-center mb-2 border-b border-white4 dark:border-white4-dark last:border-0"
             >
               <BalAsset
                 :address="claimableToken.token"

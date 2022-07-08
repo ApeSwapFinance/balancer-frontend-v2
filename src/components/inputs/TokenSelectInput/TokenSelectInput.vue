@@ -188,7 +188,7 @@ function tokenFor(option: string): TokenInfo {
 }
 
 .unselected {
-  @apply bg-gray text-gray-dark;
+  @apply bg-white4 dark:bg-white4-dark text-primary dark:text-primary-bright;
 }
 
 .selected {

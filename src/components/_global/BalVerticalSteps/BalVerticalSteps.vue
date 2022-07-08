@@ -31,11 +31,11 @@ const visibleSteps = computed(() => {
 const stepTextClasses = computed(() => {
   return visibleSteps.value.map(step => {
     return getActiveClassName(step.state, [
-      [StepState.Active, 'text-primary font-bold'],
-      [StepState.Todo, 'text-gray-dark font-medium'],
+      [StepState.Active, 'font-bold'],
+      [StepState.Todo, 'text-gray dark:text-gray-dark font-medium'],
       [StepState.Success, 'text-success font-bold'],
       [StepState.Warning, 'text-error font-bold'],
-      [StepState.Completed, 'text-gray font-medium']
+      [StepState.Completed, 'text-ape-yellow dark:border-ape-yellow font-medium']
     ]);
   });
 });
@@ -43,20 +43,17 @@ const stepTextClasses = computed(() => {
 const stepCircleClasses = computed(() => {
   return visibleSteps.value.map(step => {
     return getActiveClassName(step.state, [
+      [StepState.Active, 'border-2 border-ape-yellow dark:border-ape-yellow text-ape-yellow active'],
       [
-        StepState.Active,
-        'border-2 border-none bg-primary text-primary-bright active'
+        StepState.Todo,
+        'border-2 border-white4 dark:border-white4-dark text-white4'
       ],
-      [StepState.Todo, 'border-2 border-gray dark:border-gray-dark text-gray'],
+      [StepState.Success, 'border-2 border-success text-success'],
+      [StepState.Warning, 'border-2 border-error text-error active'],
       [
-        StepState.Success,
-        'border-2 border-none bg-success text-primary-bright'
-      ],
-      [
-        StepState.Warning,
-        'border-2 border-none bg-error text-primary-bright active'
-      ],
-      [StepState.Completed, 'border-2 border-gray-dark font-medium']
+        StepState.Completed,
+        'border-2 border-ape-yellow dark:border-ape-yellow text-ape-yellow font-medium'
+      ]
     ]);
   });
 });
@@ -72,8 +69,8 @@ function handleNavigate(state: StepState, stepIndex: number) {
 
 <template>
   <BalCard noPad shadow="none">
-    <div class="p-4 border-b dark:border-gray-dark">
-      <h6 class="dark:text-gray-dark">{{ title }}</h6>
+    <div class="p-4 border-b border-white4 dark:border-white4-dark">
+      <h6>{{ title }}</h6>
     </div>
     <BalStack vertical spacing="base" class="p-4" justify="center">
       <div
@@ -117,7 +114,7 @@ function handleNavigate(state: StepState, stepIndex: number) {
 
 <style scoped>
 .circle-line::after {
-  @apply absolute left-0 right-0 my-0 mx-auto bg-gray-dark dark:bg-gray-dark w-px;
+  @apply absolute left-0 right-0 my-0 mx-auto bg-white4 dark:bg-white4-dark w-px;
   content: '';
   bottom: -1.125rem;
   height: 1rem;

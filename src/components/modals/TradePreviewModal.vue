@@ -2,7 +2,7 @@
   <BalModal show @close="onClose" :title="$t('previewTradeTransactions')">
     <div>
       <div
-        class="-mx-4 p-4 flex items-center border-b border-t dark:border-white3-dark"
+        class="-mx-4 p-4 flex items-center border-b border-t border-white4 dark:border-white4-dark"
       >
         <BalAssetSet
           :addresses="[addressIn, addressOut]"

@@ -66,8 +66,9 @@ const chartConfig = computed(() => {
       top: 'bottom',
       textStyle: {
         color: darkMode.value
-          ? tailwind.theme.colors.gray['300']
-          : tailwind.theme.colors.gray['850']
+          ? tailwind.theme.colors['primary-bright']
+          : tailwind.theme.colors.primary,
+        fontWeight: 700
       }
     },
     series: [
@@ -78,9 +79,7 @@ const chartConfig = computed(() => {
         stillShowZeroSum: true,
         showEmptyCircle: true,
         itemStyle: {
-          borderColor: darkMode.value
-            ? tailwind.theme.colors.gray['850']
-            : '#fff',
+          borderColor: tailwind.theme.colors['primary-bright'],
           borderWidth: 5,
           borderCap: 'butt',
           borderJoin: 'round'
@@ -183,13 +182,16 @@ async function calculateColors() {
 
 <template>
   <BalCard noPad shadow="none">
-    <div class="p-4 border-b dark:border-gray-dark" v-if="!upToLargeBreakpoint">
+    <div
+      class="p-4 border-b border-white4 dark:border-white4-dark"
+      v-if="!upToLargeBreakpoint"
+    >
       <h6 class="dark:text-gray-dark">{{ $t('createAPool.poolSummary') }}</h6>
     </div>
     <div class="p-2">
       <ECharts
         ref="chartInstance"
-        class="w-full h-56"
+        class="w-full h-56 dark:text-primary-bright"
         :option="chartConfig"
         autoresize
       />

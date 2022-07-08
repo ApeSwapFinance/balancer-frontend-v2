@@ -33,7 +33,7 @@ function getPoolLabel(pool: Pool) {
       spacing="sm"
       align="center"
       horizontal
-      class="p-2 px-3 border-b dark:border-gray-dark text-orange-500"
+      class="p-2 px-3 border-b border-white4 dark:border-white4-dark text-ape-yellow"
     >
       <BalIcon class="mt-1" name="alert-circle" size="md" />
       <h6>{{ $t('createAPool.similarPoolsExist') }}</h6>

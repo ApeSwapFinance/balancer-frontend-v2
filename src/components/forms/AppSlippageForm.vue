@@ -43,7 +43,7 @@ const isFixedSlippage = computed(() => {
 
 const customInputClasses = computed(() => ({
   'border border-white4': !isFixedSlippage.value || state.isCustomInput,
-  'border-gray dark:border-gray-dark':
+  'border-white4 dark:border-white4-dark':
     isFixedSlippage.value && !state.isCustomInput
 }));
 
@@ -113,6 +113,6 @@ watch(
   @apply flex items-center px-1 rounded-lg;
 }
 .mod-input {
-  @apply border border-gray dark:border-gray-dark;
+  @apply border border-white4 dark:border-white4-dark;
 }
 </style>

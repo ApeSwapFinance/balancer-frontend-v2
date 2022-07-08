@@ -70,7 +70,7 @@ export default function useInputStyles(
     'border-primary-bright dark:border-white3-dark':
       !isInvalid.value && !isActive.value,
     'border-error dark:border-error': isInvalid.value,
-    'border-blue-300': isActive.value && !isInvalid.value,
+    'border-white4 dark:border-white4-dark': isActive.value && !isInvalid.value,
     'hover:border-gray-dark dark:hover:border-white4-dark':
       isHover.value && !isActive.value,
     'shadow-inner': !props.noShadow

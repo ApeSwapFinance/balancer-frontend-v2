@@ -33,7 +33,7 @@ const tokenBalance = computed(() => balanceFor(props.token.address));
 
 <template>
   <div>
-    <div class="mb-2 text-gray-dark dark:text-gray-dark">
+    <div class="mb-2 text-gray dark:text-gray-dark">
       {{ $t('tokenPills.balanceTooltip.title', [shortenLabel(account)]) }}
     </div>
     <div class="flex">
@@ -43,7 +43,7 @@ const tokenBalance = computed(() => balanceFor(props.token.address));
           {{ fNum2(tokenBalance, FNumFormats.token) }}
           {{ symbol }}
         </div>
-        <div class="text-gray-dark dark:text-gray-dark">
+        <div class="text-gray dark:text-gray-dark">
           {{ fNum2(toFiat(tokenBalance, token.address), FNumFormats.fiat) }}
         </div>
       </div>

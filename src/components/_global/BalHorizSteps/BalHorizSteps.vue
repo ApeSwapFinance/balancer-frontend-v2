@@ -53,7 +53,7 @@ function stateClasses(state: StepState): string {
     case StepState.Active:
       return 'border-ape-yellow text-ape-yellow';
     case StepState.WalletOpen:
-      return 'border-yellow text-ape-yellow';
+      return 'border-ape-yellow text-ape-yellow';
     default:
       return 'border-white4 dark:border-white4-dark text-white4 dark:text-white4-dark';
   }

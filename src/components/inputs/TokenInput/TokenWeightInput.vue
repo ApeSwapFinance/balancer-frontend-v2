@@ -143,6 +143,7 @@ watchEffect(() => {
     @update:modelValue="emit('update:weight', $event)"
     @update:isValid="emit('update:isValid', $event)"
     @keydown="emit('keydown', $event)"
+    class="mod-input-select"
   >
     <template v-slot:prepend>
       <TokenSelectInput
@@ -155,13 +156,17 @@ watchEffect(() => {
     </template>
     <template v-slot:append>
       <BalStack align="center" horizontal spacing="none">
-        <BalIcon name="percent" size="sm" class="mt-3 text-gray" />
+        <BalIcon
+          name="percent"
+          size="sm"
+          class="mt-3 text-primary dark:text-primary-bright"
+        />
         <button
           @click="lockWeight(false)"
           :class="[
-            'ml-2 ease-color mt-1 text-gray dark:text-gray-dark flex items-center shadow-none border dark:border-0 rounded-full p-1 justify-center',
+            'ml-2 ease-color mt-1 text-gray dark:text-gray-dark flex items-center shadow-none border border-white4 dark:border-white4-dark dark:border-0 rounded-full p-1 justify-center',
             {
-              'text-ape-yellow': isLocked,
+              'text-ape-yellow border-ape-yellow': isLocked,
               'border-transparent': !isLocked
             }
           ]"
@@ -186,7 +191,7 @@ watchEffect(() => {
         <button
           @click="emit('delete')"
           :class="[
-            'ml-2 ease-color mt-1 text-gray dark:text-gray-dark hover:text-error flex items-center shadow-none border dark:border-0 rounded-full p-1 justify-center'
+            'ml-2 ease-color mt-1 text-gray dark:text-gray-dark hover:text-error hover:border-error flex items-center shadow-none border border-white4 dark:border-white4-dark dark:border-0 rounded-full p-1 justify-center'
           ]"
         >
           <BalIcon name="trash-2" size="sm" />
@@ -199,5 +204,8 @@ watchEffect(() => {
 <style scoped>
 .ease-color {
   transition: color border-color easeOut 0.1s;
+}
+.mod-input-select.bal-text-input > .input-container {
+  background-color: transparent !important;
 }
 </style>

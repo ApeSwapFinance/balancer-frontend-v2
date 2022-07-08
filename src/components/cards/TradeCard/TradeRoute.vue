@@ -39,7 +39,7 @@
             </div>
             <div class="relative mt-2">
               <div
-                class="pair-line absolute h-1/2 mx-9 border-b border-dashed border-gray dark:border-gray-dark"
+                class="pair-line absolute h-1/2 mx-9 border-b border-dashed border-white4 dark:border-white4-dark"
               />
               <div class="relative z-10 flex justify-between">
                 <BalAsset :address="input.address" :size="36" />
@@ -74,7 +74,7 @@
                   (routes.length - index - 1)}px + 1px)`,
                 margin: `0 ${2 * (routes.length - index - 1) - 1}px`
               }"
-              class="absolute border-l border-r border-b border-gray dark:border-gray-dark rounded-b-md"
+              class="absolute border-l border-r border-b border-white4 dark:border-white4-dark rounded-b-md"
             />
             <div class="relative z-10">
               <div
@@ -94,7 +94,7 @@
                   <div
                     v-for="hop in route.hops"
                     :key="hop?.pool?.address"
-                    class="ml-4 first:ml-0 flex bg-white2 dark:bg-white2-dark border border-gray dark:border-gray-dark rounded-xl shadow transition-colors"
+                    class="ml-4 first:ml-0 flex bg-white2 dark:bg-white2-dark border border-white4 dark:border-white4-dark rounded-xl shadow transition-colors"
                   >
                     <a
                       class="flex p-1.5"

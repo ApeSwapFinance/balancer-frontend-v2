@@ -71,7 +71,7 @@ export default defineComponent({
     const borderType = this.vertical ? 'b' : 'r';
     const widthClass = this.expandChildren ? 'w-full' : '';
     const borderClass = this.withBorder ? `border-${borderType}` : '';
-    const stackNodeClass = `dark:border-gray-dark ${spacingType}-${
+    const stackNodeClass = `border-white4 dark:border-white4-dark ${spacingType}-${
       SpacingMap[this.spacing]
     } ${borderClass} ${widthClass}`;
 

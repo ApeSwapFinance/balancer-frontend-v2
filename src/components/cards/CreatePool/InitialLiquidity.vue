@@ -227,30 +227,30 @@ function saveAndProceed() {
             userNetworkConfig?.name
           }}</span>
           <BalStack horizontal spacing="xs" align="center">
-            <button
-              v-if="!createPoolTxHash"
-              @click="goBack"
-              class="text-blue-500 hover:text-blue-700 flex"
-            >
+            <button v-if="!createPoolTxHash" @click="goBack" class="flex">
               <BalIcon class="flex" name="chevron-left" />
             </button>
 
-            <h5 class="font-bold dark:text-gray-dark">Set initial liquidity</h5>
+            <h5 class="font-bold">Set initial liquidity</h5>
           </BalStack>
           <AnimatePresence :isVisible="isOptimised" unmountInstantly>
             <BalStack
               horizontal
               align="center"
               spacing="sm"
-              class="border rounded-lg p-2 mt-2"
+              class="border border-white4 dark:border-white4-dark rounded-lg p-2 mt-2"
             >
-              <BalIcon name="zap" size="sm" class="mt-1 text-gray" />
-              <span class="dark:text-gray-dark font-medium">
+              <BalIcon
+                name="zap"
+                size="sm"
+                class="mt-1 text-gray dark:text-gray-dark"
+              />
+              <span class="text-gray dark:text-gray-dark font-medium text-sm">
                 {{ t('optimizedPrefilled') }}
               </span>
               <button
                 @click="handleClearAll"
-                class="text-sm font-medium text-gray-dark hover:text-blue-500"
+                class="text-sm font-medium text-gray text-gray-dark"
               >
                 Clear all
               </button>
@@ -310,8 +310,8 @@ function saveAndProceed() {
                   :class="[
                     'text-sm font-bold3',
                     {
-                      'text-gray-dark dark:text-gray-dark': areAmountsMaxed,
-                      'text-blue-500 hover:text-blue-50': !areAmountsMaxed
+                      'text-gray dark:text-gray-dark': areAmountsMaxed,
+                      'text-ape-yellow': !areAmountsMaxed
                     }
                   ]"
                   @click="handleMax"
@@ -332,7 +332,7 @@ function saveAndProceed() {
               >
                 <button
                   @click="optimiseLiquidity(true)"
-                  class="bg-clip-text text-sm text-transparent font-medium bg-gradient-to-tr from-blue-500 to-pink-500  hover:from-blue-800 hover:to-pink-800"
+                  class="bg-clip-text text-sm text-transparent font-medium bg-ape-yellow "
                 >
                   {{ t('optimize') }}
                 </button>
@@ -362,7 +362,7 @@ function saveAndProceed() {
           :disabled="isExceedingWalletBalance || hasZeroAmount"
           @click="saveAndProceed"
           block
-          color="gradient"
+          color="ape-yellow"
           >{{ t('preview') }}</BalBtn
         >
       </BalStack>

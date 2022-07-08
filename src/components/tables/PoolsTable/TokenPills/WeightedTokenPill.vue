@@ -77,6 +77,6 @@ withDefaults(defineProps<Props>(), {
 
 .pill-hoverable:hover,
 .pill-hoverable:focus {
-  @apply bg-white1 dark:bg-white1-dark;
+  @apply bg-white1 dark:bg-white1-dark text-primary dark:text-primary-bright;
 }
 </style>

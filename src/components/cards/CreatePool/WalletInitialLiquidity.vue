@@ -44,10 +44,10 @@ const optimisedLiquidity = computed(() => getOptimisedLiquidity());
 <template>
   <BalCard noPad shadow="none">
     <div
-      class="p-2 px-3 border-b dark:border-gray-dark"
+      class="p-2 px-3 border-b border-white4 dark:border-white4-dark"
       v-if="!upToLargeBreakpoint"
     >
-      <h6 class="dark:text-gray-dark">
+      <h6 class="text-gray dark:text-gray-dark">
         {{ $t('createAPool.maxInitialLiquidity') }}
       </h6>
     </div>
