@@ -35,7 +35,10 @@ const stepTextClasses = computed(() => {
       [StepState.Todo, 'text-gray dark:text-gray-dark font-medium'],
       [StepState.Success, 'text-success font-bold'],
       [StepState.Warning, 'text-error font-bold'],
-      [StepState.Completed, 'text-ape-yellow dark:border-ape-yellow font-medium']
+      [
+        StepState.Completed,
+        'text-ape-yellow dark:border-ape-yellow font-medium'
+      ]
     ]);
   });
 });
@@ -43,7 +46,10 @@ const stepTextClasses = computed(() => {
 const stepCircleClasses = computed(() => {
   return visibleSteps.value.map(step => {
     return getActiveClassName(step.state, [
-      [StepState.Active, 'border-2 border-ape-yellow dark:border-ape-yellow text-ape-yellow active'],
+      [
+        StepState.Active,
+        'border-2 border-ape-yellow dark:border-ape-yellow text-ape-yellow active'
+      ],
       [
         StepState.Todo,
         'border-2 border-white4 dark:border-white4-dark text-white4'

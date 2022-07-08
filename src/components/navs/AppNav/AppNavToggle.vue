@@ -38,7 +38,7 @@ export default defineComponent({
 
   setup() {
     const route = useRoute();
-    const activeClasses = 'gradient-blue-l-to-r text-primary-bright rounded-lg';
+    const activeClasses = 'text-primary-bright rounded-lg';
     const isTradePage = computed(() => route.name === 'trade');
     const { trackGoal, Goals } = useFathom();
 

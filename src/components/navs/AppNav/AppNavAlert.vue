@@ -46,7 +46,7 @@ export default defineComponent({
         case AlertType.ERROR:
           return 'bg-error text-primary-bright';
         case AlertType.FEATURE:
-          return 'bg-blue-400 text-primary-bright';
+          return 'bg-gray text-primary-bright';
         default:
           return 'bg-white4 text-primary';
       }

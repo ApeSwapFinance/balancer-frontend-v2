@@ -144,10 +144,7 @@ async function onChangeFeeController(val: string) {
             userNetworkConfig?.name
           }}</span>
           <BalStack horizontal align="center" spacing="xs">
-            <button
-              @click="goBack"
-              class="flex"
-            >
+            <button @click="goBack" class="flex">
               <BalIcon class="flex" name="chevron-left" />
             </button>
             <h5 class="font-bold">
@@ -158,7 +155,9 @@ async function onChangeFeeController(val: string) {
         <BalStack vertical spacing="sm">
           <div>
             <h6 class="mb-1">Initial swap fee</h6>
-            <p class="text-gray dark:text-gray-dark">{{ $t('createAPool.bestFeeOption') }}</p>
+            <p class="text-gray dark:text-gray-dark">
+              {{ $t('createAPool.bestFeeOption') }}
+            </p>
           </div>
           <BalStack spacing="xs" horizontal>
             <BalBtnGroup

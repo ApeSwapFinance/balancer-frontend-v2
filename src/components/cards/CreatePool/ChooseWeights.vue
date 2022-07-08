@@ -368,7 +368,9 @@ function onAlertMountChange() {
               </div>
               <div ref="totalsRowElement" class="w-full p-2 px-4">
                 <div class="w-full flex justify-between">
-                  <h6 class="dark:text-primary-bright">{{ $t('totalAllocated') }}</h6>
+                  <h6 class="dark:text-primary-bright">
+                    {{ $t('totalAllocated') }}
+                  </h6>
                   <BalStack horizontal spacing="xs" align="center">
                     <h6 :class="weightColor">{{ totalAllocatedWeight }}%</h6>
                     <BalIcon

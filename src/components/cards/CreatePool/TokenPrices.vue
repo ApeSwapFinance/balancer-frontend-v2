@@ -86,7 +86,7 @@ const hasUnknownPrice = computed(() =>
             'mt-1',
             {
               'text-error hover:text-error': hasUnknownPrice,
-              'hover:text-blue-500': !hasUnknownPrice
+              'hover:text-ape-yellow': !hasUnknownPrice
             }
           ]"
           v-for="token in unknownTokens"

@@ -135,7 +135,7 @@ function navigateToCreatePool() {
           />
           <BalBtn
             @click="navigateToCreatePool"
-            color="blue"
+            color="ape-yellow"
             size="sm"
             :class="{ 'mt-4': upToMediumBreakpoint }"
             class="bg-ape-yellow hover:bg-hovered-ape-yellow"
