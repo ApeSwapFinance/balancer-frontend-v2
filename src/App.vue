@@ -121,8 +121,4 @@ export default defineComponent({
 .VueQueryDevtoolsPanel + button {
   @apply text-primary bg-primary-bright p-2 rounded text-sm;
 }
-
-#intercom-activator {
-  z-index: 2147483004;
-}
 </style>

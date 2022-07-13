@@ -122,10 +122,6 @@ watch(blockNumber, async () => {
   fill: white;
 }
 
-#intercom-activator {
-  z-index: 2147483004;
-}
-
 .block-icon {
   box-shadow: 0px 0px 3px 2px theme('colors.success');
   transition: box-shadow 0.3s ease-in-out;
