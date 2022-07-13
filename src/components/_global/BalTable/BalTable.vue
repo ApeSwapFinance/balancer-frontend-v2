@@ -294,7 +294,7 @@ watch(
       />
       <div
         v-else-if="!isLoading && !tableData.length"
-        class="max-w-full bg-white2 dark:bg-white2-dark row-bg h-40 flex items-center justify-center text-primary dark:text-primary-bright"
+        class="max-w-full bg-white2 dark:bg-white2-dark row-bg h-10 flex items-center justify-center text-primary dark:text-primary-bright"
       >
         {{ noResultsLabel || $t('noResults') }}
       </div>

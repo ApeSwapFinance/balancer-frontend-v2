@@ -242,6 +242,18 @@ export default defineComponent({
     } = useWeb3();
     const { ethereumTxType, setEthereumTxType } = useEthereumTxType();
 
+    console.log('ethereumTxTypeOptions', ethereumTxTypeOptions);
+    console.log('ethereumTxType', ethereumTxType);
+
+    // const hideNetwork = false;
+    // const newTxTypeOptions = ethereumTxTypeOptions;
+
+    // const hideEIP1559Button = () => {
+    //   // if hideEIPNetwork is true
+    //   // then get ethereumTxTypeOptions array
+    //   // remove the object with label of EIP1559Button from the ethereumTxTypeOptions
+    // }
+
     // DATA
     const data = reactive({
       locales,

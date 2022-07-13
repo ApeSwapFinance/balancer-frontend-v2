@@ -6,10 +6,6 @@ import {
   Web3Provider
 } from '@ethersproject/providers';
 
-import {
-  EthereumTxType,
-  ethereumTxType
-} from '@/composables/useEthereumTxType';
 import { logFailedTx } from '@/lib/utils/logging';
 import GasPriceService from '@/services/gas-price/gas-price.service';
 import { WalletError } from '@/types';
@@ -62,7 +58,6 @@ export async function sendTransaction(
       const gasPrice = await gasPriceService.getLatest();
       if (gasPrice != null) {
         if (
-          ethereumTxType.value === EthereumTxType.EIP1559 &&
           gasPrice.maxFeePerGas != null &&
           gasPrice.maxPriorityFeePerGas != null &&
           !forceEthereumLegacyTxType

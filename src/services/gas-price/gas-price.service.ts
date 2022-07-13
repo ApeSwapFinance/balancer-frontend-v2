@@ -1,10 +1,5 @@
 import { Contract } from '@ethersproject/contracts';
 
-import {
-  EthereumTxType,
-  ethereumTxType
-} from '@/composables/useEthereumTxType';
-
 import ConfigService from '../config/config.service';
 import BlocknativeProvider from './providers/blocknative.provider';
 import PolygonProvider from './providers/polygon.provider';
@@ -58,7 +53,6 @@ export default class GasPriceService {
       const gasPrice = await this.getLatest();
       if (gasPrice != null) {
         if (
-          ethereumTxType.value === EthereumTxType.EIP1559 &&
           gasPrice.maxFeePerGas != null &&
           gasPrice.maxPriorityFeePerGas != null &&
           !forceEthereumLegacyTxType

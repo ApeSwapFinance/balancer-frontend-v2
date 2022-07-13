@@ -115,7 +115,7 @@ function navigateToCreatePool() {
           </BalStack>
         </BalStack>
       </BalStack>
-      <div class="mb-16" />
+      <div class="mb-10" />
     </template>
 
     <BalStack vertical>

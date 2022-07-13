@@ -4,14 +4,12 @@ import { useRoute } from 'vue-router';
 
 import AppHero from '@/components/heros/AppHero.vue';
 import AppNav from '@/components/navs/AppNav/AppNav.vue';
-import useBreakpoints from '@/composables/useBreakpoints';
 import StakingProvider from '@/providers/local/staking/staking.provider';
 
 /**
  * COMPOSABLES
  */
 const route = useRoute();
-const { isDesktop } = useBreakpoints();
 
 /**
  * COMPUTED
