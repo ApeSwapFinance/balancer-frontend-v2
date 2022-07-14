@@ -1,4 +1,4 @@
-import { Network } from '@balancer-labs/sdk';
+import { Network } from '@ape.swap/swap-v2-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
 import { JsonRpcProvider } from '@ethersproject/providers';
 
@@ -175,8 +175,9 @@ export class GaugeControllerDecorator {
    * so the network key can only be kovan (42) or mainnet (1).
    */
   private getNetwork(): Network {
-    return this.config.env.NETWORK === Network.KOVAN
-      ? Network.KOVAN
+    // TODO: ApeSwap: Returning one of two networks for gauges
+    return this.config.env.NETWORK === Network.BSC_TESTNET
+      ? Network.BSC_TESTNET
       : Network.MAINNET;
   }
 

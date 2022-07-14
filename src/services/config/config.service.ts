@@ -1,4 +1,4 @@
-import { Network } from '@balancer-labs/sdk';
+import { Network } from '@ape.swap/swap-v2-sdk';
 
 import { networkId } from '@/composables/useNetwork';
 import { Config } from '@/lib/config';
@@ -52,6 +52,7 @@ export default class ConfigService {
 
   public get rpc(): string {
     return template(this.network.rpc, {
+      // TODO: Add templates for different chains?
       INFURA_KEY: this.env.INFURA_PROJECT_ID,
       ALCHEMY_KEY: this.env.ALCHEMY_KEY
     });

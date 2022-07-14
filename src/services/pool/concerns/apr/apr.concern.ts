@@ -1,4 +1,3 @@
-import { isKovan } from '@/composables/useNetwork';
 import { isStablePhantom, isVeBalPool } from '@/composables/usePool';
 import { FiatCurrency } from '@/constants/currency';
 import { bnSum, bnum } from '@/lib/utils';
@@ -134,6 +133,7 @@ export class AprConcern {
    * such as Aave tokens.
    * @returns total yield APR and breakdown of total by pool token.
    */
+  // TODO: Calculate APR for Ola?
   private async calcYieldAPR(
     prices: TokenPrices,
     currency: FiatCurrency,
@@ -187,7 +187,7 @@ export class AprConcern {
   }
 
   private async calcVeBalAPR(prices: TokenPrices): Promise<string> {
-    if (!isVeBalPool(this.pool.id) || isKovan.value) return '0';
+    if (!isVeBalPool(this.pool.id)) return '0';
 
     const veBalApr = new this.VeBalAprCalcClass();
     return await veBalApr.calc(

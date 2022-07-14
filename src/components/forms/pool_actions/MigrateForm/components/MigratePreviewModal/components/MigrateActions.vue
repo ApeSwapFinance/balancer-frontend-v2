@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { StablePoolEncoder, WeightedPoolEncoder } from '@balancer-labs/sdk';
+import { StablePoolEncoder, WeightedPoolEncoder } from '@ape.swap/swap-v2-sdk';
 import {
   TransactionReceipt,
   TransactionResponse

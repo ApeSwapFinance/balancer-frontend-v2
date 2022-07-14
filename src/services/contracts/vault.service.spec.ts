@@ -3,7 +3,7 @@ import {
   SingleSwap,
   SwapType,
   SwapV2
-} from '@balancer-labs/sdk';
+} from '@ape.swap/swap-v2-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
 
 import { SwapToken, SwapTokenType } from '../swap/swap.service';

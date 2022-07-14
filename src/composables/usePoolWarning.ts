@@ -1,11 +1,13 @@
-import { Network } from '@balancer-labs/sdk';
+import { Network } from '@ape.swap/swap-v2-sdk';
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import { networkId } from './useNetwork';
 
 const POOL_ISSUES = {
-  [Network.KOVAN]: {},
+  [Network.BSC]: {},
+  [Network.BSC_DUMMY]: {},
+  [Network.BSC_TESTNET]: {},
   [Network.MAINNET]: {
     poolOwnerVulnWarningGovernance: [
       '0x06df3b2bbb68adc8b0e302443692037ed9f91b42000000000000000000000063',
@@ -26,30 +28,32 @@ const POOL_ISSUES = {
       '0xb6b9b165c4ac3f5233a0cf413126c72be28b468a00010000000000000000005a',
       '0x09804caea2400035b18e2173fdd10ec8b670ca09000100000000000000000038'
     ]
-  },
-  [Network.POLYGON]: {
-    poolOwnerVulnWarningGovernance: [
-      '0x06df3b2bbb68adc8b0e302443692037ed9f91b42000000000000000000000012',
-      '0xfeadd389a5c427952d8fdb8057d6c8ba1156cc5600020000000000000000001e',
-      '0xf38cf113d2d4f60c36cbd95af2f48a9a0167045a00000000000000000000005b',
-      '0x0d34e5dd4d8f043557145598e4e2dc286b35fd4f000000000000000000000068',
-      '0x5028497af0c9a54ea8c6d42a054c0341b9fc616800020000000000000000007b',
-      '0xc31a37105b94ab4efca1954a14f059af11fcd9bb000000000000000000000455',
-      '0xc17636e36398602dd37bb5d1b3a9008c7629005f0002000000000000000004c4'
-    ],
-    poolOwnerVulnWarningEcosystemMigrate: [
-      '0xaf5e0b5425de1f5a630a8cb5aa9d97b8141c908d000200000000000000000366',
-      '0xb4670d1389c758e4380c4211bcbc85342688b9c50002000000000000000003d8'
-    ]
-  },
-  [Network.ARBITRUM]: {
-    poolOwnerVulnWarningGovernance: [
-      '0x5a5884fc31948d59df2aeccca143de900d49e1a300000000000000000000006f'
-    ],
-    poolOwnerVulnWarningEcosystemMigrate: [
-      '0x0510ccf9eb3ab03c1508d3b9769e8ee2cfd6fdcf00000000000000000000005d'
-    ]
   }
+  // Balancer Defaults
+  // [Network.KOVAN]: {},
+  // [Network.POLYGON]: {
+  //   poolOwnerVulnWarningGovernance: [
+  //     '0x06df3b2bbb68adc8b0e302443692037ed9f91b42000000000000000000000012',
+  //     '0xfeadd389a5c427952d8fdb8057d6c8ba1156cc5600020000000000000000001e',
+  //     '0xf38cf113d2d4f60c36cbd95af2f48a9a0167045a00000000000000000000005b',
+  //     '0x0d34e5dd4d8f043557145598e4e2dc286b35fd4f000000000000000000000068',
+  //     '0x5028497af0c9a54ea8c6d42a054c0341b9fc616800020000000000000000007b',
+  //     '0xc31a37105b94ab4efca1954a14f059af11fcd9bb000000000000000000000455',
+  //     '0xc17636e36398602dd37bb5d1b3a9008c7629005f0002000000000000000004c4'
+  //   ],
+  //   poolOwnerVulnWarningEcosystemMigrate: [
+  //     '0xaf5e0b5425de1f5a630a8cb5aa9d97b8141c908d000200000000000000000366',
+  //     '0xb4670d1389c758e4380c4211bcbc85342688b9c50002000000000000000003d8'
+  //   ]
+  // },
+  // [Network.ARBITRUM]: {
+  //   poolOwnerVulnWarningGovernance: [
+  //     '0x5a5884fc31948d59df2aeccca143de900d49e1a300000000000000000000006f'
+  //   ],
+  //   poolOwnerVulnWarningEcosystemMigrate: [
+  //     '0x0510ccf9eb3ab03c1508d3b9769e8ee2cfd6fdcf00000000000000000000005d'
+  //   ]
+  // }
 };
 
 const issues = POOL_ISSUES[networkId.value];

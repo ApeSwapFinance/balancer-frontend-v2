@@ -16,6 +16,8 @@ export class GaugesSubgraphClient {
       return data;
     } catch (error) {
       console.error('GaugesSubgraphClient request failed', error);
+      // ApeSwap Update skipping throw
+      return;
       throw error;
     }
   }

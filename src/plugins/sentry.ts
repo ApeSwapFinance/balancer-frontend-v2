@@ -1,4 +1,4 @@
-import { Network } from '@balancer-labs/sdk';
+import { Network } from '@ape.swap/swap-v2-sdk';
 import { captureException, init, setTag } from '@sentry/browser';
 import { Integrations } from '@sentry/tracing';
 import { App } from 'vue';
@@ -14,9 +14,13 @@ import { version } from '../../package.json';
 const ENV = process.env.VUE_APP_ENV || 'development';
 const networkMap = {
   [Network.MAINNET]: 'mainnet',
-  [Network.KOVAN]: 'kovan',
-  [Network.POLYGON]: 'polygon',
-  [Network.ARBITRUM]: 'arbitrum-one'
+  [Network.BSC]: 'bsc',
+  [Network.BSC_DUMMY]: 'bsc-dummy',
+  [Network.BSC_TESTNET]: 'bsc-testnet',
+  // Balancer Defaults:
+  // [Network.KOVAN]: 'kovan',
+  // [Network.POLYGON]: 'polygon',
+  // [Network.ARBITRUM]: 'arbitrum-one'
 };
 const environment = `${ENV}-${networkMap[networkId.value]}`;
 const release = `frontend-v2@${version}`;

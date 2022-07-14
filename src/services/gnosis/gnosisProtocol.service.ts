@@ -1,4 +1,4 @@
-import { Network } from '@balancer-labs/sdk';
+import { Network } from '@ape.swap/swap-v2-sdk';
 import axios from 'axios';
 
 import { networkId } from '@/composables/useNetwork';
@@ -24,9 +24,11 @@ export const API_URLS = {
   [Network.MAINNET]: IS_DEV
     ? 'https://protocol-mainnet.dev.gnosisdev.com/api'
     : 'https://protocol-mainnet.gnosis.io/api',
-  [Network.RINKEBY]: IS_DEV
-    ? 'https://protocol-rinkeby.dev.gnosisdev.com/api'
-    : 'https://protocol-rinkeby.gnosis.io/api'
+  // ApeSwap Update:
+  // TODO: Integrate Gnosis Safe connection? 
+  // [Network.RINKEBY]: IS_DEV
+  //   ? 'https://protocol-rinkeby.dev.gnosisdev.com/api'
+  //   : 'https://protocol-rinkeby.gnosis.io/api'
 };
 
 export default class GnosisProtocolService {

@@ -1,4 +1,4 @@
-import { toNormalizedWeights } from '@balancer-labs/sdk';
+import { toNormalizedWeights } from '@ape.swap/swap-v2-sdk';
 import {
   Vault__factory,
   WeightedPool__factory,

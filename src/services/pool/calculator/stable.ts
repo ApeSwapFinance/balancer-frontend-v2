@@ -1,4 +1,4 @@
-import { stableBPTForTokensZeroPriceImpact as _bptForTokensZeroPriceImpact } from '@balancer-labs/sdk';
+import { stableBPTForTokensZeroPriceImpact as _bptForTokensZeroPriceImpact } from '@ape.swap/swap-v2-sdk';
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 import { formatUnits, parseUnits } from '@ethersproject/units';
 import * as SDK from '@georgeroman/balancer-v2-pools';
