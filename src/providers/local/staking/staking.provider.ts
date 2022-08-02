@@ -117,32 +117,37 @@ export default defineComponent({
       () => !!poolAddress.value && poolAddress.value != ''
     );
 
+    // NOTE: A|S Update: Disable staking rewards
+    const poolEligibilityResponse = ref({ liquidityGauges: undefined });
+    const isLoadingPoolEligibility = ref(false);
+
     // this query is responsible for checking if the given pool
     // is eligible for staking rewards or not
-    const {
-      data: poolEligibilityResponse,
-      isLoading: isLoadingPoolEligibility
-    } = useGraphQuery<{ liquidityGauges: TLiquidityGauge[] }>(
-      subgraphs.gauge,
-      ['pool', 'eligibility', { poolAddress: poolAddress.value }],
-      () => ({
-        liquidityGauges: {
-          __args: {
-            where: {
-              poolAddress: (poolAddress.value || '').toLowerCase()
-            }
-          },
-          id: true
-        }
-      }),
-      reactive({
-        enabled: isPoolAddressRegistered,
-        refetchOnWindowFocus: false
-      })
-    );
+    // const {
+    //   data: poolEligibilityResponse,
+    //   isLoading: isLoadingPoolEligibility
+    // } = useGraphQuery<{ liquidityGauges: TLiquidityGauge[] }>(
+    //   subgraphs.gauge,
+    //   ['pool', 'eligibility', { poolAddress: poolAddress.value }],
+    //   () => ({
+    //     liquidityGauges: {
+    //       __args: {
+    //         where: {
+    //           poolAddress: (poolAddress.value || '').toLowerCase()
+    //         }
+    //       },
+    //       id: true
+    //     }
+    //   }),
+    //   reactive({
+    //     enabled: isPoolAddressRegistered,
+    //     refetchOnWindowFocus: false
+    //   })
+    // );
 
     const isPoolEligibleForStaking = computed(
       () =>
+        // @ts-ignore
         (poolEligibilityResponse.value?.liquidityGauges || [])[0]?.id !==
         undefined
     );

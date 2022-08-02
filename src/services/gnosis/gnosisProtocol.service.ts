@@ -21,11 +21,11 @@ import {
 import { getCanonicalMarket, toErc20Address } from './utils';
 
 export const API_URLS = {
+  // TODO: A|S Integrate Gnosis Safe connection?
   [Network.MAINNET]: IS_DEV
     ? 'https://protocol-mainnet.dev.gnosisdev.com/api'
-    : 'https://protocol-mainnet.gnosis.io/api',
-  // ApeSwap Update:
-  // TODO: Integrate Gnosis Safe connection? 
+    : 'https://protocol-mainnet.gnosis.io/api'
+  // NOTE: A|S Update: Remove RINKEBY from gnosis
   // [Network.RINKEBY]: IS_DEV
   //   ? 'https://protocol-rinkeby.dev.gnosisdev.com/api'
   //   : 'https://protocol-rinkeby.gnosis.io/api'

@@ -175,7 +175,7 @@ export class GaugeControllerDecorator {
    * so the network key can only be kovan (42) or mainnet (1).
    */
   private getNetwork(): Network {
-    // TODO: ApeSwap: Returning one of two networks for gauges
+    // NOTE: A|S Update: Returning one of two networks for gauges
     return this.config.env.NETWORK === Network.BSC_TESTNET
       ? Network.BSC_TESTNET
       : Network.MAINNET;

@@ -52,7 +52,7 @@ export default class ConfigService {
 
   public get rpc(): string {
     return template(this.network.rpc, {
-      // TODO: Add templates for different chains?
+      // TODO: A|S Add templates for different chains?
       INFURA_KEY: this.env.INFURA_PROJECT_ID,
       ALCHEMY_KEY: this.env.ALCHEMY_KEY
     });

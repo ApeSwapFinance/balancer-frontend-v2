@@ -21,7 +21,8 @@ import {
   lpTokensFor
 } from '../usePool';
 import useUserSettings from '../useUserSettings';
-import useGaugesQuery from './useGaugesQuery';
+// NOTE: ApeSwap Update: remove useGaugesQuery
+// import useGaugesQuery from './useGaugesQuery';
 
 export default function usePoolQuery(
   id: string,
@@ -35,12 +36,14 @@ export default function usePoolQuery(
   const { appLoading } = useApp();
   const { account } = useWeb3();
   const { currency } = useUserSettings();
-  const { data: subgraphGauges } = useGaugesQuery();
+  // NOTE: ApeSwap Update: remove useGaugesQuery
+  // const { data: subgraphGauges } = useGaugesQuery();
   const { tokens } = useTokens();
-
-  const gaugeAddresses = computed(() =>
-    (subgraphGauges.value || []).map(gauge => gauge.id)
-  );
+  // NOTE: ApeSwap Update: remove gaugeAddresses
+  // const gaugeAddresses = computed(() =>
+  //   (subgraphGauges.value || []).map(gauge => gauge.id)
+  // );
+  const gaugeAddresses = computed(() => []);
 
   /**
    * COMPUTED
@@ -170,7 +173,9 @@ export default function usePoolQuery(
       '24h',
       prices.value,
       currency.value,
-      subgraphGauges.value || [],
+      // NOTE: ApeSwap Update: remove subgraphGauges
+      // subgraphGauges.value || [],
+      [],
       tokens.value
     );
 

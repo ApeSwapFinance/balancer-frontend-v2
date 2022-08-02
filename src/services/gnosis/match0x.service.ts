@@ -44,8 +44,8 @@ export interface MatchaPriceQuote extends MatchaBaseQuote {
 }
 
 export const API_URLS = {
-  [Network.MAINNET]: 'https://api.0x.org/swap',
-  // ApeSwap Update:
+  [Network.MAINNET]: 'https://api.0x.org/swap'
+  // NOTE: A|S Update: Remove Ropsten from match0x.service.ts
   // [Network.ROPSTEN]: 'https://ropsten.api.0x.org/swap'
 };
 

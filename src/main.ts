@@ -30,8 +30,8 @@ import vueQuery from '@/plugins/vueQuery';
 import Web3Plugin from '@/services/web3/web3.plugin';
 import store from '@/store';
 
-import Root from './Root';
 import { IS_DEV } from './constants/env';
+import Root from './Root';
 
 use([
   TitleComponent,

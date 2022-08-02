@@ -8,7 +8,8 @@ import { useQuery, UseQueryOptions } from 'vue-query';
 import { configService } from '@/services/config/config.service';
 
 export const subgraphs = {
-  gauge: configService.network.subgraphs.gauge,
+  // NOTE: ApeSwap Update: Remove gauge
+  // gauge: configService.network.subgraphs.gauge,
   balancer: configService.network.subgraph
 };
 
