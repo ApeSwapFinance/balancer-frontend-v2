@@ -31,6 +31,7 @@ import Web3Plugin from '@/services/web3/web3.plugin';
 import store from '@/store';
 
 import Root from './Root';
+import { IS_DEV } from './constants/env';
 
 use([
   TitleComponent,
@@ -60,6 +61,8 @@ const app = createApp(Root)
 registerDirectives(app);
 registerGlobalComponents(app);
 initSentry(app);
+
+app.config.performance = IS_DEV;
 
 app.mount('#app');
 

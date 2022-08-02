@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@aave/protocol-js": "^4.3.0",
-    "@ape.swap/swap-v2-sdk": "0.0.1-alpha.0",
+    "@ape.swap/swap-v2-sdk": "0.0.1-alpha.3",
     "@babel/core": "^7.13.8",
     "@babel/plugin-proposal-numeric-separator": "^7.14.5",
     "@balancer-labs/assets": "github:balancer-labs/assets#master",

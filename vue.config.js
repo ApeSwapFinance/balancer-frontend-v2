@@ -10,7 +10,8 @@ module.exports = {
     }
   },
   configureWebpack: {
-    plugins
+    plugins,
+    devtool: 'source-map'
   },
   chainWebpack: config => {
     config.resolve.alias.set(
