@@ -8,8 +8,7 @@ import useWeb3 from '@/services/web3/useWeb3';
 const SUPPORTED_NETWORKS = [
   Network.MAINNET,
   Network.BSC,
-  Network.BSC_DUMMY,
-  Network.BSC_TESTNET,
+  Network.BSC_TESTNET
   // Balancer Defauls:
   // Network.KOVAN,
   // Network.RINKEBY,

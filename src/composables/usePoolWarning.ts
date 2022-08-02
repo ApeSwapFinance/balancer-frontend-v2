@@ -6,7 +6,6 @@ import { networkId } from './useNetwork';
 
 const POOL_ISSUES = {
   [Network.BSC]: {},
-  [Network.BSC_DUMMY]: {},
   [Network.BSC_TESTNET]: {},
   [Network.MAINNET]: {
     poolOwnerVulnWarningGovernance: [

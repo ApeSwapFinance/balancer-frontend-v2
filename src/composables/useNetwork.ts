@@ -16,7 +16,6 @@ export const networkId = ref<Network>(DEFAULT_NETWORK_ID);
 
 export const isMainnet = computed(() => networkId.value === Network.MAINNET);
 export const isBSC = computed(() => networkId.value === Network.BSC);
-export const isBSCDummy = computed(() => networkId.value === Network.BSC_DUMMY);
 export const isBSCTestnet = computed(
   () => networkId.value === Network.BSC_TESTNET
 );
@@ -45,8 +44,6 @@ export function networkFor(key: string | number): Network {
   switch (key.toString()) {
     case '56':
       return Network.BSC;
-    case '-56':
-      return Network.BSC_DUMMY;
     case '97':
       return Network.BSC_TESTNET;
     case '1':
@@ -73,8 +70,6 @@ export function subdomainFor(network: Network): string {
   switch (network) {
     case Network.BSC:
       return 'app';
-    case Network.BSC_DUMMY:
-      return 'dummy.app';
     case Network.BSC_TESTNET:
       return 'testnet.bsc';
     case Network.MAINNET:
@@ -96,8 +91,6 @@ export function blocktimeFor(network: Network): number {
     case Network.MAINNET:
       return 13;
     case Network.BSC:
-      return 3;
-    case Network.BSC_DUMMY:
       return 3;
     case Network.BSC_TESTNET:
       return 3;

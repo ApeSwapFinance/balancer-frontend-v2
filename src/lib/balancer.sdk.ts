@@ -8,8 +8,6 @@ const network = ((): Network => {
       return Network.MAINNET;
     case '56':
       return Network.BSC;
-    case '-56':
-      return Network.BSC_DUMMY;
     case '97':
       return Network.BSC_TESTNET;
     // Balancer Defaults:

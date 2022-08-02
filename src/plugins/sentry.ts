@@ -15,8 +15,7 @@ const ENV = process.env.VUE_APP_ENV || 'development';
 const networkMap = {
   [Network.MAINNET]: 'mainnet',
   [Network.BSC]: 'bsc',
-  [Network.BSC_DUMMY]: 'bsc-dummy',
-  [Network.BSC_TESTNET]: 'bsc-testnet',
+  [Network.BSC_TESTNET]: 'bsc-testnet'
   // Balancer Defaults:
   // [Network.KOVAN]: 'kovan',
   // [Network.POLYGON]: 'polygon',
