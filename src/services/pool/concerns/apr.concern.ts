@@ -3,16 +3,20 @@ import { FiatCurrency } from '@/constants/currency';
 import { bnSum, bnum } from '@/lib/utils';
 import { calcUSDPlusWeightedAPR } from '@/lib/utils/apr.helper';
 import { includesWstEth } from '@/lib/utils/balancer/lido';
-import { aaveService } from '@/services/aave/aave.service';
+// NOTE: A|S Update: disable aaveService
+// import { aaveService } from '@/services/aave/aave.service';
 import { AprRange, Pool, PoolAPRs } from '@/services/balancer/subgraph/types';
 import { TokenPrices } from '@/services/coingecko/api/price.service';
 import { lidoService } from '@/services/lido/lido.service';
+import { olaService } from '@/services/ola/ola.service';
 
 export class AprConcern {
   constructor(
     public pool: Pool,
     public readonly lido = lidoService,
-    public readonly aave = aaveService
+    // NOTE: A|S Update: Disable aaveService
+    // public readonly aave = aaveService
+    public readonly ola = olaService
   ) {}
 
   public async calc(
@@ -134,12 +138,12 @@ export class AprConcern {
     if (includesWstEth(this.pool.tokensList)) {
       total = await this.lido.calcStEthAPRFor(this.pool, protocolFeePercentage);
     } else if (isStablePhantom(this.pool.poolType)) {
-      const aaveAPR = await this.aave.calcWeightedSupplyAPRFor(
+      const olaAPR = await this.ola.calcWeightedSupplyAPRFor(
         this.pool,
         prices,
         currency
       );
-      ({ total, breakdown } = aaveAPR);
+      ({ total, breakdown } = olaAPR);
 
       // TODO burn with fire once scalable linear pool support is added.
       // If USD+ pool, replace aave APR with USD+

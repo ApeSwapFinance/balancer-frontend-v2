@@ -38,6 +38,32 @@ export const TOKEN_LIST_MAP: TokenListMapByNetwork = {
       'https://umaproject.org/uma.tokenlist.json'
     ]
   },
+  // TODO: A|S Update tokenlist for BSC
+  '56': {
+    Balancer: {
+      Default:
+        'https://raw.githubusercontent.com/balancer-labs/assets/refactor-for-multichain/generated/kovan.listed.tokenlist.json',
+      Vetted:
+        'https://raw.githubusercontent.com/balancer-labs/assets/refactor-for-multichain/generated/kovan.vetted.tokenlist.json'
+    },
+    External: [
+      'ipns://tokens.uniswap.org',
+      'https://umaproject.org/uma.tokenlist.json'
+    ]
+  },
+  // TODO: A|S Update tokenlist for BSC_TESTNET
+  '97': {
+    Balancer: {
+      Default:
+        'https://raw.githubusercontent.com/balancer-labs/assets/refactor-for-multichain/generated/kovan.listed.tokenlist.json',
+      Vetted:
+        'https://raw.githubusercontent.com/balancer-labs/assets/refactor-for-multichain/generated/kovan.vetted.tokenlist.json'
+    },
+    External: [
+      'ipns://tokens.uniswap.org',
+      'https://umaproject.org/uma.tokenlist.json'
+    ]
+  },
   '137': {
     Balancer: {
       Default:

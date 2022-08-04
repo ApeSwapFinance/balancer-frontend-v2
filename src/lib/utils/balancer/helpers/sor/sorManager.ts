@@ -5,7 +5,7 @@ import {
   SwapInfo,
   SwapOptions,
   SwapTypes
-} from '@balancer-labs/sdk';
+} from '@ape.swap/swap-v2-sdk';
 import { Pool } from '@balancer-labs/sor/dist/types';
 import { BigNumber } from '@ethersproject/bignumber';
 import { AddressZero } from '@ethersproject/constants';

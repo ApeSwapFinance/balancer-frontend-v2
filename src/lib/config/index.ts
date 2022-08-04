@@ -1,12 +1,11 @@
-import { Network } from '@balancer-labs/sdk';
+import { Network } from '@ape.swap/swap-v2-sdk';
 
-import arbitrum from './arbitrum.json';
+import { USE_DUMMY } from '@/constants/env';
+
+import bsc from './bsc.json';
+import bscDummy from './bsc-dummy.json';
+import bscTestnet from './bsc-testnet.json';
 import docker from './docker.json';
-import homestead from './homestead.json';
-import kovan from './kovan.json';
-import polygon from './polygon.json';
-import rinkeby from './rinkeby.json';
-import test from './test.json';
 
 export interface Config {
   key: string;
@@ -80,12 +79,14 @@ export interface Config {
 }
 
 const config: Record<Network | number, Config> = {
-  [Network.MAINNET]: homestead,
-  [Network.KOVAN]: kovan,
-  [Network.RINKEBY]: rinkeby,
-  [Network.POLYGON]: polygon,
-  [Network.ARBITRUM]: arbitrum,
-  12345: test,
+  [Network.BSC]: USE_DUMMY ? bscDummy : bsc,
+  [Network.BSC_TESTNET]: bscTestnet,
+  // NOTE: ApeSwap Update: Remove default Balancer configs:
+  // [Network.MAINNET]: homestead,
+  // [Network.KOVAN]: kovan,
+  // [Network.RINKEBY]: rinkeby,
+  // [Network.POLYGON]: polygon,
+  // [Network.ARBITRUM]: arbitrum,
   // @ts-ignore
   17: docker
 };

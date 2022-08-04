@@ -1,4 +1,3 @@
-import { Network } from '@balancer-labs/sdk';
 import { getUnixTime } from 'date-fns';
 import { formatUnits, getAddress } from 'ethers/lib/utils';
 import { isNil, mapValues } from 'lodash';
@@ -77,13 +76,14 @@ export class StakingRewardsService {
   }
 
   private async getRelativeWeightsForGauges(gaugeAddresses: string[]) {
-    const timestamp = getUnixTime(new Date());
-    if (configService.network.chainId === Network.KOVAN) {
-      return await this.gaugeController.getRelativeWeights(
-        gaugeAddresses,
-        timestamp
-      );
-    }
+    // ApeSwap Update:
+    // const timestamp = getUnixTime(new Date());
+    // if (configService.network.chainId === Network.KOVAN) {
+    //   return await this.gaugeController.getRelativeWeights(
+    //     gaugeAddresses,
+    //     timestamp
+    //   );
+    // }
     // the ve bal helpers contract for gauge weights calls
     // the checkpoint function which is necesary for returning
     // the correct value.

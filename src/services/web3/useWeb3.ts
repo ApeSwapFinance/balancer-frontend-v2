@@ -1,4 +1,3 @@
-import { Network } from '@balancer-labs/sdk';
 import { Web3Provider } from '@ethersproject/providers';
 import { computed, inject, reactive, ref, watch } from 'vue';
 import { useQuery } from 'vue-query';
@@ -51,16 +50,7 @@ export default function useWeb3() {
   });
   const isWalletReady = computed(() => walletState.value === 'connected');
   const isWalletConnecting = computed(() => walletState.value === 'connecting');
-  const isMainnet = computed(
-    () => appNetworkConfig.chainId === Network.MAINNET
-  );
-  const isKovan = computed(() => appNetworkConfig.chainId === Network.KOVAN);
-  const isPolygon = computed(
-    () => appNetworkConfig.chainId === Network.POLYGON
-  );
-  const isArbitrum = computed(
-    () => appNetworkConfig.chainId === Network.ARBITRUM
-  );
+
   const isEIP1559SupportedNetwork = computed(
     () => appNetworkConfig.supportsEIP1559
   );
@@ -132,10 +122,6 @@ export default function useWeb3() {
     explorerLinks,
     signer,
     blockNumber,
-    isMainnet,
-    isKovan,
-    isPolygon,
-    isArbitrum,
     isEIP1559SupportedNetwork,
     isWalletConnecting,
 

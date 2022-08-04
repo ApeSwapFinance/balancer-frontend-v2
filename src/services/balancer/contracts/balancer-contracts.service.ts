@@ -5,11 +5,16 @@ import {
 } from '@balancer-labs/typechain';
 import { JsonRpcProvider } from '@ethersproject/providers';
 
+/**
+ * // NOTE: A|S Update
+ * Adding in Ola's oTokens
+ */
+// import StaticATokenLMAbi from '@/lib/abi/StaticATokenLM.json';
+import CErc20DelegateV0_05 from '@/lib/abi/CErc20DelegateV0_05.json';
 import ERC20_ABI from '@/lib/abi/ERC20.json';
 import IERC4626 from '@/lib/abi/IERC4626.json';
 import LinearPoolAbi from '@/lib/abi/LinearPool.json';
 import StablePhantomPool from '@/lib/abi/StablePhantomPool.json';
-import StaticATokenLMAbi from '@/lib/abi/StaticATokenLM.json';
 import { balancer } from '@/lib/balancer.sdk';
 import { Config } from '@/lib/config';
 import { configService as _configService } from '@/services/config/config.service';
@@ -50,7 +55,8 @@ export default class BalancerContractsService {
           ...InvestmentPool__factory.abi,
           ...StablePhantomPool,
           ...LinearPoolAbi,
-          ...StaticATokenLMAbi,
+          ...CErc20DelegateV0_05,
+          // ...StaticATokenLMAbi,
           ...ERC20_ABI,
           ...IERC4626
         ].map(row => [row.name, row])

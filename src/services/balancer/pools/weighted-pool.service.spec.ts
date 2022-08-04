@@ -1,4 +1,4 @@
-import { WeightedPoolEncoder } from '@balancer-labs/sdk';
+import { WeightedPoolEncoder } from '@ape.swap/swap-v2-sdk';
 import { AddressZero } from '@ethersproject/constants';
 import { TransactionResponse, Web3Provider } from '@ethersproject/providers';
 import BigNumber from 'bignumber.js';

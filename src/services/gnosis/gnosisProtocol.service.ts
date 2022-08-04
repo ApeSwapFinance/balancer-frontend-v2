@@ -1,4 +1,4 @@
-import { Network } from '@balancer-labs/sdk';
+import { Network } from '@ape.swap/swap-v2-sdk';
 import axios from 'axios';
 
 import { networkId } from '@/composables/useNetwork';
@@ -21,12 +21,14 @@ import {
 import { getCanonicalMarket, toErc20Address } from './utils';
 
 export const API_URLS = {
+  // TODO: A|S Integrate Gnosis Safe connection?
   [Network.MAINNET]: IS_DEV
     ? 'https://protocol-mainnet.dev.gnosisdev.com/api'
-    : 'https://protocol-mainnet.gnosis.io/api',
-  [Network.RINKEBY]: IS_DEV
-    ? 'https://protocol-rinkeby.dev.gnosisdev.com/api'
-    : 'https://protocol-rinkeby.gnosis.io/api'
+    : 'https://protocol-mainnet.gnosis.io/api'
+  // NOTE: A|S Update: Remove RINKEBY from gnosis
+  // [Network.RINKEBY]: IS_DEV
+  //   ? 'https://protocol-rinkeby.dev.gnosisdev.com/api'
+  //   : 'https://protocol-rinkeby.gnosis.io/api'
 };
 
 export default class GnosisProtocolService {

@@ -1,8 +1,8 @@
 {
-  "name": "@balancer-labs/frontend-v2",
-  "version": "1.57.0",
+  "name": "@ape.swap/balancer-frontend-v2",
+  "version": "2.0.0-alpha.0",
   "engines": {
-    "node": "14.x",
+    "node": "16.x",
     "npm": ">=7"
   },
   "scripts": {
@@ -21,10 +21,10 @@
   },
   "devDependencies": {
     "@aave/protocol-js": "^4.3.0",
+    "@ape.swap/swap-v2-sdk": "0.0.1-alpha.3",
     "@babel/core": "^7.13.8",
     "@babel/plugin-proposal-numeric-separator": "^7.14.5",
     "@balancer-labs/assets": "github:balancer-labs/assets#master",
-    "@balancer-labs/sdk": "^0.1.11",
     "@balancer-labs/sor": "^1.1.0",
     "@balancer-labs/typechain": "^1.0.0",
     "@ensdomains/content-hash": "^2.5.3",

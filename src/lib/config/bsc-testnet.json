@@ -1,0 +1,83 @@
+{
+  "key": "97",
+  "chainId": 97,
+  "chainName": "BSC Testnet",
+  "name": "BNB Smart Chain Testnet",
+  "shortName": "BSC Testnet",
+  "network": "BSC Testnet",
+  "portisNetwork": "",
+  "unknown": false,
+  "rpc": "https://data-seed-prebsc-1-s1.binance.org:8545/",
+  "ws": "",
+  "loggingRpc": "",
+  "explorer": "https://testnet.bscscan.com",
+  "explorerName": "BSCScan",
+  "subgraph": "",
+  "poolsUrlV2": "",
+  "subgraphs": {
+    "aave": "",
+    "gauge": ""
+  },
+  "supportsEIP1559": false,
+  "supportsElementPools": false,
+  "nativeAsset": {
+    "name": "BNB",
+    "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+    "symbol": "BNB",
+    "decimals": 18,
+    "deeplinkId": "bnb",
+    "logoURI": "https://github.com/trustwallet/assets/blob/master/blockchains/smartchain/assets/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/logo.png",
+    "minTransactionBuffer": "0.05"
+  },
+  "addresses": {
+    "bFactory": "",
+    "bActions": "",
+    "dsProxyRegistry": "",
+    "merkleRedeem": "",
+    "merkleOrchard": "",
+    "multicall": "",
+    "authorizer": "",
+    "vault": "",
+    "weightedPoolFactory": "",
+    "weightedPool2TokensFactory": "",
+    "stablePoolFactory": "",
+    "tokenFactory": "",
+    "weth": "",
+    "stETH": "",
+    "wstETH": "",
+    "lidoRelayer": "",
+    "MockFlashLoanReceiver": "",
+    "balancerHelpers": "",
+    "batchRelayer": "0x0000000000000000000000000000000000000000",
+    "veBAL": "",
+    "gaugeController": "",
+    "gaugeFactory": "",
+    "balancerMinter": "",
+    "tokenAdmin": "",
+    "veDelegationProxy": "",
+    "veBALHelpers": "",
+    "feeDistributor": ""
+  },
+  "keys": {
+    "infura": "daaa68ec242643719749dd1caba2fc66",
+    "alchemy": "cQGZUiTLRCFsQS7kbRxPJK4eH4fTTu88"
+  },
+  "strategies": {
+    "0": {
+      "type": "0",
+      "name": "stablePool"
+    },
+    "1": {
+      "type": "1",
+      "name": "weightedPool"
+    },
+    "2": {
+      "type": "2",
+      "name": "weightedPool"
+    }
+  },
+  "gauges": {
+    "type": 2,
+    "weight": 100
+  }
+}

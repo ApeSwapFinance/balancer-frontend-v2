@@ -1,4 +1,4 @@
-import { Network } from '@balancer-labs/sdk';
+import { Network } from '@ape.swap/swap-v2-sdk';
 import { OrderKind } from '@gnosis.pm/gp-v2-contracts';
 import axios from 'axios';
 
@@ -44,8 +44,9 @@ export interface MatchaPriceQuote extends MatchaBaseQuote {
 }
 
 export const API_URLS = {
-  [Network.MAINNET]: 'https://api.0x.org/swap',
-  [Network.ROPSTEN]: 'https://ropsten.api.0x.org/swap'
+  [Network.MAINNET]: 'https://api.0x.org/swap'
+  // NOTE: A|S Update: Remove Ropsten from match0x.service.ts
+  // [Network.ROPSTEN]: 'https://ropsten.api.0x.org/swap'
 };
 
 // GPV2Settlement

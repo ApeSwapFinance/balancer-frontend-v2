@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PoolType } from '@balancer-labs/sdk';
+import { PoolType } from '@ape.swap/swap-v2-sdk';
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 

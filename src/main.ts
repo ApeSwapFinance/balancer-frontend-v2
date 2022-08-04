@@ -30,6 +30,7 @@ import vueQuery from '@/plugins/vueQuery';
 import Web3Plugin from '@/services/web3/web3.plugin';
 import store from '@/store';
 
+import { IS_DEV } from './constants/env';
 import Root from './Root';
 
 use([
@@ -60,6 +61,8 @@ const app = createApp(Root)
 registerDirectives(app);
 registerGlobalComponents(app);
 initSentry(app);
+
+app.config.performance = IS_DEV;
 
 app.mount('#app');
 

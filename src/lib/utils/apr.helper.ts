@@ -14,6 +14,7 @@ export async function calcUSDPlusWeightedAPR(
   prices: TokenPrices,
   currency: FiatCurrency
 ): Promise<string> {
+  // FIXME: A|S balancer api
   const { data: apr } = await axios.get(
     'https://app.overnight.fi/api/balancer/week/apr'
   );
