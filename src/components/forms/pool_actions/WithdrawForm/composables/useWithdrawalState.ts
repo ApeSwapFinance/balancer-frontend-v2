@@ -80,7 +80,8 @@ export default function useWithdrawalState(pool: Ref<FullPool | undefined>) {
    * COMPOSABLES
    */
   const { nativeAsset, wrappedNativeAsset } = useTokens();
-  const batchRelayerApproval = useRelayerApproval(Relayer.BATCH);
+  // NOTE: ApeSwap Update: Disable batch relayer
+  // const batchRelayerApproval = useRelayerApproval(Relayer.BATCH);
 
   /**
    * COMPUTED
@@ -118,7 +119,8 @@ export default function useWithdrawalState(pool: Ref<FullPool | undefined>) {
     ...toRefs(state),
     tokensOut,
     tokenOutIndex,
-    batchRelayerApproval,
+    // NOTE: ApeSwap Update: Disable batch relayer
+    // batchRelayerApproval,
     // methods
     maxSlider,
     setError,

@@ -126,8 +126,8 @@
 </template>
 
 <script lang="ts">
-import { SubgraphPoolBase, SwapV2 } from '@balancer-labs/sdk';
-import { Network } from '@balancer-labs/sdk';
+import { SubgraphPoolBase, SwapV2 } from '@ape.swap/swap-v2-sdk';
+import { Network } from '@ape.swap/swap-v2-sdk';
 import { Pool } from '@balancer-labs/sor/dist/types';
 import { getAddress } from '@ethersproject/address';
 import { AddressZero } from '@ethersproject/constants';
@@ -365,13 +365,16 @@ export default defineComponent({
     function getPoolLink(id: string): string {
       const chainId = appNetworkConfig.chainId;
       const prefixMap = {
-        [Network.MAINNET]: 'app.',
-        [Network.KOVAN]: 'kovan.',
-        [Network.POLYGON]: 'polygon.',
-        [Network.ARBITRUM]: 'arbitrum.'
+        [Network.BSC]: 'app.',
+        [Network.BSC_TESTNET]: 'testnet.bsc',
+        [Network.MAINNET]: 'eth'
+        // NOTE: ApeSwap Update: Remove unused networks
+        // [Network.KOVAN]: 'kovan.',
+        // [Network.POLYGON]: 'polygon.',
+        // [Network.ARBITRUM]: 'arbitrum.'
       };
       const prefix = prefixMap[chainId] || '';
-
+      // FIXME: balancer.fi link
       return `https://${prefix}balancer.fi/#/pool/${id}`;
     }
 

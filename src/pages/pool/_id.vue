@@ -186,7 +186,7 @@ import usePoolQuery from '@/composables/queries/usePoolQuery';
 import usePoolSnapshotsQuery from '@/composables/queries/usePoolSnapshotsQuery';
 import useAlerts, { AlertPriority, AlertType } from '@/composables/useAlerts';
 import useApp from '@/composables/useApp';
-import { isL2 } from '@/composables/useNetwork';
+import { isKovan, isL2, isMainnet, isPolygon } from '@/composables/useNetwork';
 import useNumbers from '@/composables/useNumbers';
 import { usePool } from '@/composables/usePool';
 import { usePoolWarning } from '@/composables/usePoolWarning';
@@ -219,7 +219,7 @@ export default defineComponent({
     const { fNum2 } = useNumbers();
     const { explorerLinks, isWalletReady } = useWeb3();
     const { prices } = useTokens();
-    const { blockNumber, isKovan, isMainnet, isPolygon } = useWeb3();
+    const { blockNumber } = useWeb3();
     const { addAlert, removeAlert } = useAlerts();
     const { balancerTokenListTokens } = useTokens();
     const { isAffected, warnings } = usePoolWarning(route.params.id as string);
@@ -348,6 +348,7 @@ export default defineComponent({
       () => isMainnet.value || isPolygon.value || isKovan.value
     );
 
+    // TODO: Temp solution code
     // Temporary solution to hide Copper card on Fei pool page.
     // Longer terms solution is needed distinguish LBP platforms
     // and display custom widgets linking to their pages.

@@ -185,7 +185,7 @@
 </template>
 
 <script>
-import { Network } from '@balancer-labs/sdk';
+import { Network } from '@ape.swap/swap-v2-sdk';
 import { computed, defineComponent, reactive, toRefs } from 'vue';
 import { useStore } from 'vuex';
 

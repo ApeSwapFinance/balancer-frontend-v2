@@ -1,4 +1,4 @@
-import { Network } from '@balancer-labs/sdk';
+import { Network } from '@ape.swap/swap-v2-sdk';
 
 import { PoolToken, PoolType } from '@/services/balancer/subgraph/types';
 
@@ -18,11 +18,15 @@ export type VotingGauge = {
 };
 
 export const KOVAN_VOTING_GAUGES: VotingGauge[] = (ALL_VOTING_GAUGES as VotingGauge[]).filter(
-  gauge => gauge.network === Network.KOVAN
+  gauge => gauge.network === (42 as any)
+  // Balancer Default:
+  // gauge => gauge.network === Network.KOVAN
 );
 
 export const MAINNET_VOTING_GAUGES: VotingGauge[] = (ALL_VOTING_GAUGES as VotingGauge[]).filter(
-  gauge => gauge.network !== Network.KOVAN
+  gauge => gauge.network === Network.MAINNET
+  // Balancer Default:
+  // gauge => gauge.network !== Network.KOVAN
 );
 
 export const VEBAL_VOTING_GAUGE:

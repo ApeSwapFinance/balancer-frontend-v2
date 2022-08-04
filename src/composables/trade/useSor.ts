@@ -1,4 +1,4 @@
-import { SubgraphPoolBase, SwapType, SwapTypes } from '@balancer-labs/sdk';
+import { SubgraphPoolBase, SwapType, SwapTypes } from '@ape.swap/swap-v2-sdk';
 import { Pool } from '@balancer-labs/sor/dist/types';
 import { BigNumber, formatFixed, parseFixed } from '@ethersproject/bignumber';
 import {

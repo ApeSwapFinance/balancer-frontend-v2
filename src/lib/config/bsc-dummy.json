@@ -1,0 +1,83 @@
+{
+  "key": "56",
+  "chainId": 56,
+  "chainName": "BSC",
+  "name": "BNB Smart Chain",
+  "shortName": "BSC",
+  "network": "BSC",
+  "portisNetwork": "",
+  "unknown": false,
+  "rpc": "https://bscrpc.com",
+  "ws": "",
+  "loggingRpc": "",
+  "explorer": "https://bscscan.com",
+  "explorerName": "BSCScan",
+  "subgraph": "http://65.108.138.33:8000/subgraphs/name/apeswap/balancer-v2",
+  "poolsUrlV2": "",
+  "subgraphs": {
+    "aave": "",
+    "gauge": ""
+  },
+  "supportsEIP1559": false,
+  "supportsElementPools": false,
+  "nativeAsset": {
+    "name": "BNB",
+    "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+    "symbol": "BNB",
+    "decimals": 18,
+    "deeplinkId": "bnb",
+    "logoURI": "https://github.com/trustwallet/assets/blob/master/blockchains/smartchain/assets/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/logo.png",
+    "minTransactionBuffer": "0.05"
+  },
+  "addresses": {
+    "bFactory": "",
+    "bActions": "",
+    "dsProxyRegistry": "",
+    "merkleRedeem": "",
+    "merkleOrchard": "",
+    "multicall": "0xC50F4c1E81c873B2204D7eFf7069Ffec6Fbe136D",
+    "authorizer": "0x9BF0c48e4b6bF844204D88aF3ad15CE554A95862",
+    "vault": "0x42B7888FFf938C54faeDF52485C8323c4Fc8C99B",
+    "weightedPoolFactory": "0x72E07CEe8c7Bb212940F755E297bE60Afc426F9b",
+    "weightedPool2TokensFactory": "0xe7C30cadBeb9D707F857eE8a1145688F7A5eDaBc",
+    "stablePoolFactory": "",
+    "tokenFactory": "",
+    "weth": "",
+    "stETH": "",
+    "wstETH": "",
+    "lidoRelayer": "",
+    "MockFlashLoanReceiver": "",
+    "balancerHelpers": "0x3A94927bA5Da97623357c2FD2bd03b154703cD66",
+    "batchRelayer": "0x0000000000000000000000000000000000000000",
+    "veBAL": "",
+    "gaugeController": "",
+    "gaugeFactory": "",
+    "balancerMinter": "",
+    "tokenAdmin": "",
+    "veDelegationProxy": "",
+    "veBALHelpers": "",
+    "feeDistributor": ""
+  },
+  "keys": {
+    "infura": "daaa68ec242643719749dd1caba2fc66",
+    "alchemy": "cQGZUiTLRCFsQS7kbRxPJK4eH4fTTu88"
+  },
+  "strategies": {
+    "0": {
+      "type": "0",
+      "name": "stablePool"
+    },
+    "1": {
+      "type": "1",
+      "name": "weightedPool"
+    },
+    "2": {
+      "type": "2",
+      "name": "weightedPool"
+    }
+  },
+  "gauges": {
+    "type": 2,
+    "weight": 100
+  }
+}

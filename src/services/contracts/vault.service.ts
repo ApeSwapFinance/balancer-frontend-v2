@@ -3,7 +3,7 @@ import {
   SingleSwap,
   SwapType,
   SwapV2
-} from '@balancer-labs/sdk';
+} from '@ape.swap/swap-v2-sdk';
 import { Vault__factory } from '@balancer-labs/typechain';
 import { TransactionResponse } from '@ethersproject/abstract-provider';
 import { MaxUint256 } from '@ethersproject/constants';

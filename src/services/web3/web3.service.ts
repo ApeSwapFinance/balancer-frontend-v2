@@ -1,4 +1,4 @@
-import { Network } from '@balancer-labs/sdk';
+import { Network } from '@ape.swap/swap-v2-sdk';
 import { Contract } from '@ethersproject/contracts';
 import { ErrorCode } from '@ethersproject/logger';
 import {
@@ -9,7 +9,7 @@ import {
 import { resolveENSAvatar } from '@tomfrench/ens-avatar-resolver';
 import { ComputedRef } from 'vue';
 
-import { networkId } from '@/composables/useNetwork';
+import { blocktimeFor, networkId } from '@/composables/useNetwork';
 import { twentyFourHoursInSecs } from '@/composables/useTime';
 import { logFailedTx } from '@/lib/utils/logging';
 import ConfigService, { configService } from '@/services/config/config.service';
@@ -40,7 +40,7 @@ export default class Web3Service {
     private readonly config: ConfigService = configService
   ) {
     this.appProvider = this.rpcProviderService.jsonProvider;
-    this.ensProvider = this.rpcProviderService.getJsonProvider(Network.MAINNET);
+    this.ensProvider = this.rpcProviderService.getJsonProvider(Network.BSC);
   }
 
   public setUserProvider(provider: ComputedRef<Web3Provider>) {
@@ -130,19 +130,7 @@ export default class Web3Service {
   }
 
   public get blockTime(): number {
-    switch (networkId.value) {
-      case Network.MAINNET:
-        return 13;
-      case Network.POLYGON:
-        return 2;
-      case Network.ARBITRUM:
-        return 3;
-      case Network.KOVAN:
-        // Should be ~4s but this causes subgraph to return with unindexed block error.
-        return 1;
-      default:
-        return 13;
-    }
+    return blocktimeFor(networkId.value);
   }
 
   public async getTimeTravelBlock(period: TimeTravelPeriod): Promise<number> {

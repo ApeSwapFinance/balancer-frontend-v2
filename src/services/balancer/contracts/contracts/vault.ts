@@ -1,4 +1,4 @@
-import { toNormalizedWeights } from '@balancer-labs/sdk';
+import { toNormalizedWeights } from '@ape.swap/swap-v2-sdk';
 import { Vault__factory } from '@balancer-labs/typechain';
 import { getAddress } from '@ethersproject/address';
 import { BigNumber } from '@ethersproject/bignumber';
@@ -145,18 +145,37 @@ export default class Vault {
       });
 
       Object.entries(wrappedTokensMap).forEach(([address, wrappedToken]) => {
+        /**
+         * // NOTE: A|S Update 2022.07.19
+         * The wrapped tokens in the BalancerV2 UI are based on Aave's "aTokens".
+         * ApeSwap's boosted pools are based on Ola's "oTokens", which have a different
+         * function based on the Ola market contracts.
+         *
+         * Example Aave contract with `ATOKEN` function:
+         * https://etherscan.io/address/0xf8fd466f12e236f4c96f7cce6c79eadb819abf58#readProxyContract
+         *
+         * Example Ola contract with `underlying` function:
+         * https://bscscan.com/address/0xC2E840BdD02B4a1d970C87A912D8576a7e61D314#readProxyContract
+         *
+         */
         // The method to fetch the unwrapped asset of a linear pool can be
         // different depending on if it's an ERC4626 or StaticAToken interface.
         // Here we just try both methods and merge the result in formatting.
+        // poolMulticaller.call(
+        //   `linearPools.${address}.unwrappedTokenAddress`,
+        //   wrappedToken,
+        //   'ATOKEN'
+        // );
+        // poolMulticaller.call(
+        //   `linearPools.${address}.unwrappedERC4626Address`,
+        //   wrappedToken,
+        //   'asset'
+        // );
+
         poolMulticaller.call(
           `linearPools.${address}.unwrappedTokenAddress`,
           wrappedToken,
-          'ATOKEN'
-        );
-        poolMulticaller.call(
-          `linearPools.${address}.unwrappedERC4626Address`,
-          wrappedToken,
-          'asset'
+          'underlying'
         );
 
         poolMulticaller.call(

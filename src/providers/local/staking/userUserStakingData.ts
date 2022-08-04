@@ -77,9 +77,11 @@ export type UserStakingDataResponse = {
   isUserPoolsIdle: Ref<boolean>;
   refetchStakedShares: Ref<() => void>;
   getStakedShares: () => Promise<string>;
-  refetchUserStakingData: Ref<
-    (options?: RefetchOptions) => Promise<QueryObserverResult>
-  >;
+  refetchUserStakingData: Ref<(options?: RefetchOptions) => undefined>;
+  // NOTE: A|S Update: refetchUserStakingData disabled
+  //   refetchUserStakingData: Ref<
+  //   (options?: RefetchOptions) => Promise<QueryObserverResult>
+  // >;
   stakedSharesMap: Ref<Record<string, string>>;
   poolBoosts: Ref<Record<string, string>>;
   isLoadingBoosts: Ref<boolean>;
@@ -113,40 +115,45 @@ export default function useUserStakingData(
     return userPools.value.map(pool => pool.id);
   });
 
-  const {
-    data: stakingData,
-    isLoading: isLoadingUserStakingData,
-    isIdle: isUserStakeDataIdle,
-    refetch: refetchUserStakingData
-  } = useGraphQuery<UserGaugeSharesResponse>(
-    subgraphs.gauge,
-    ['staking', 'data', { account, userPoolIds }],
-    () => ({
-      gaugeShares: {
-        __args: {
-          where: { user: account.value.toLowerCase(), balance_gt: '0' }
-        },
-        balance: true,
-        gauge: {
-          id: true,
-          poolId: true,
-          totalSupply: true
-        }
-      },
-      liquidityGauges: {
-        __args: {
-          where: {
-            poolId_in: stakeableUserPoolIds.value
-          }
-        },
-        poolId: true
-      }
-    }),
-    reactive({
-      refetchOnWindowFocus: false,
-      enabled: true
-    })
-  );
+  // NOTE: A|S Update: disable staking
+  const stakingData = ref(undefined);
+  const isLoadingUserStakingData = ref(false);
+  const isUserStakeDataIdle = ref(false);
+  const refetchUserStakingData = ref(() => undefined);
+  // const {
+  //   data: stakingData,
+  //   isLoading: isLoadingUserStakingData,
+  //   isIdle: isUserStakeDataIdle,
+  //   refetch: refetchUserStakingData
+  // } = useGraphQuery<UserGaugeSharesResponse>(
+  //   subgraphs.gauge,
+  //   ['staking', 'data', { account, userPoolIds }],
+  //   () => ({
+  //     gaugeShares: {
+  //       __args: {
+  //         where: { user: account.value.toLowerCase(), balance_gt: '0' }
+  //       },
+  //       balance: true,
+  //       gauge: {
+  //         id: true,
+  //         poolId: true,
+  //         totalSupply: true
+  //       }
+  //     },
+  //     liquidityGauges: {
+  //       __args: {
+  //         where: {
+  //           poolId_in: stakeableUserPoolIds.value
+  //         }
+  //       },
+  //       poolId: true
+  //     }
+  //   }),
+  //   reactive({
+  //     refetchOnWindowFocus: false,
+  //     enabled: true
+  //   })
+  // );
 
   // we pull staked shares for a specific pool manually do to the
   // fact that the subgraph is too slow, so we gotta rely on the
@@ -178,12 +185,16 @@ export default function useUserStakingData(
   );
 
   const userGaugeShares = computed(() => {
+    // @ts-ignore
     if (!stakingData.value?.gaugeShares) return [];
+    // @ts-ignore
     return stakingData.value.gaugeShares;
   });
 
   const userLiquidityGauges = computed(() => {
+    // @ts-ignore
     if (!stakingData.value?.liquidityGauges) return [];
+    // @ts-ignore
     return stakingData.value.liquidityGauges;
   });
 

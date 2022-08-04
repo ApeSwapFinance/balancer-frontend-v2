@@ -1,4 +1,4 @@
-import { Network } from '@balancer-labs/sdk';
+import { Network } from '@ape.swap/swap-v2-sdk';
 import { getAddress } from '@ethersproject/address';
 
 import { twentyFourHoursInSecs } from '@/composables/useTime';

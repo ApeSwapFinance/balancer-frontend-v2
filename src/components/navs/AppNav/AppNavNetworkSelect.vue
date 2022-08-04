@@ -75,23 +75,36 @@ export default defineComponent({
     // DATA
     const networks = [
       {
-        id: 'ethereum',
-        name: 'Ethereum',
+        id: 'bsc',
+        name: 'BSC',
         subdomain: 'app',
-        key: '1'
+        key: '56'
       },
       {
-        id: 'polygon',
-        name: 'Polygon',
-        subdomain: 'polygon',
-        key: '137'
-      },
-      {
-        id: 'arbitrum',
-        name: 'Arbitrum',
-        subdomain: 'arbitrum',
-        key: '42161'
+        id: 'bsc-testnet',
+        name: 'BSC Testnet',
+        subdomain: 'app',
+        key: '97'
       }
+      // NOTE: A|S Update: Disable Balancer default networks
+      // {
+      //   id: 'ethereum',
+      //   name: 'Ethereum',
+      //   subdomain: 'app',
+      //   key: '1'
+      // },
+      // {
+      //   id: 'polygon',
+      //   name: 'Polygon',
+      //   subdomain: 'polygon',
+      //   key: '137'
+      // },
+      // {
+      //   id: 'arbitrum',
+      //   name: 'Arbitrum',
+      //   subdomain: 'arbitrum',
+      //   key: '42161'
+      // }
     ];
 
     const appNetworkSupported = networks
@@ -109,6 +122,7 @@ export default defineComponent({
     }
 
     function appUrl(network: NetworkOption): string {
+      // FIXME: appUrl link
       return `https://${network.subdomain}.balancer.fi`;
     }
 

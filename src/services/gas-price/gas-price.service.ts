@@ -22,6 +22,10 @@ export default class GasPriceService {
         return await this.blocknativeProvider.getLatest();
       case '137':
         return await this.polygonProvider.getLatest();
+      case '56':
+        return { price: 5000000000 };
+      case '97':
+        return { price: 5000000000 };
       default:
         return null;
     }
