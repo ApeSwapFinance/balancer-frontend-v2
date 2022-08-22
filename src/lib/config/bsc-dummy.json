@@ -12,7 +12,7 @@
   "loggingRpc": "",
   "explorer": "https://bscscan.com",
   "explorerName": "BSCScan",
-  "subgraph": "https://balancer-dummy-test.apeswapgraphs.com/subgraphs/name/apeswap/balancer-v2",
+  "subgraph": "https://balancer.apeswapgraphs.com/subgraphs/name/apeswap/balancer-v2",
   "poolsUrlV2": "",
   "subgraphs": {
     "aave": "",
