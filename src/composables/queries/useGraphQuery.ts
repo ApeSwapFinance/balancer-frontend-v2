@@ -33,6 +33,9 @@ export default function useGraphQuery<T>(
   ]);
 
   const queryFn = async () => {
+
+    console.log("Graph Query FN");
+
     if (!subgraphUrl) {
       throw new Error(`A graphQL endpoint wasn't supplied for this query`);
     }
@@ -54,6 +57,11 @@ export default function useGraphQuery<T>(
       throw error;
     }
   };
+
+
+  console.log('----------');
+  console.log(queryKey, queryFn, options);
+  console.log('----------');
 
   return useQuery(queryKey, queryFn, options);
 }

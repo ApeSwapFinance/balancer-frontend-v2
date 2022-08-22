@@ -132,6 +132,9 @@ export default function usePoolQuery(
   const queryKey = QUERY_KEYS.Pools.Current(id, gaugeAddresses);
 
   const queryFn = async () => {
+
+    console.log('Pool Query FN');
+
     let [pool] = await balancerSubgraphService.pools.get({
       where: {
         id: id.toLowerCase(),
