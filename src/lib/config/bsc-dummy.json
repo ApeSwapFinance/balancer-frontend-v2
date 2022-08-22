@@ -12,7 +12,7 @@
   "loggingRpc": "",
   "explorer": "https://bscscan.com",
   "explorerName": "BSCScan",
-  "subgraph": "https://api.thegraph.com/subgraphs/name/prof-sd/bal-bsc",
+  "subgraph": "https://api.thegraph.com/subgraphs/name/prof-sd/new-balancer-two",
   "poolsUrlV2": "",
   "subgraphs": {
     "aave": "",
