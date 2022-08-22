@@ -6,11 +6,11 @@
   >
     <template v-slot:activator>
       <BalBtn
-        class="text-base"
+        class="nav-acct-btn"
         :class="{ btn: upToLargeBreakpoint }"
         :loading="isLoadingProfile"
         :loading-label="upToLargeBreakpoint ? '' : $t('connecting')"
-        color="white"
+        color="white3"
         :size="upToLargeBreakpoint ? 'md' : 'sm'"
         :circle="upToLargeBreakpoint"
       >
@@ -22,7 +22,7 @@
         <span
           v-if="profile && profile.ens"
           v-text="profile && profile.ens"
-          class="pl-2 hidden lg:inline-block"
+          class="pl-2 hidden lg:inline-block text-primary dark:text-primary-bright"
         />
         <span
           v-else
@@ -79,3 +79,12 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+.nav-acct-btn {
+  @apply text-xs text-primary dark:text-primary-bright normal-case font-medium;
+}
+.nav-acct-btn:hover {
+  @apply bg-white4 dark:bg-white4-dark;
+}
+</style>

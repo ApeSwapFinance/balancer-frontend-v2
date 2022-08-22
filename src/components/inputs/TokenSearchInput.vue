@@ -84,18 +84,17 @@ function onClick() {
   <div>
     <div class="flex items-center flex-wrap">
       <div class="flex items-center flex-wrap">
-        <BalBtn color="white" size="sm" @click="onClick" class="mr-4 mb-2">
+        <BalBtn size="sm" @click="onClick" class="filter-btn mr-4 mb-2">
           <BalIcon name="search" size="sm" class="mr-2" />
           {{ $t('filterByToken') }}
         </BalBtn>
         <BalChip
           v-for="token in modelValue"
-          class="mr-2"
           :key="token"
-          color="white"
           iconSize="sm"
           :closeable="true"
           @closed="emit('remove', token)"
+          class="bal-chip"
         >
           <BalAsset :address="token" :size="20" class="flex-auto" />
           <span class="ml-2">{{ tokens[token]?.symbol }}</span>
@@ -103,24 +102,24 @@ function onClick() {
       </div>
       <div
         v-if="account && !dynamicDataLoading && !hasNoBalances"
-        class="text-gray-400 overflow-x-auto"
+        class="text-gray dark:text-gray-dark overflow-x-auto"
       >
         <span class="mr-2">{{ $t('inYourWallet') }}:</span>
         <span
           v-for="token in sortedBalances"
           :key="`wallet-${token.symbol}`"
-          class="mr-6 cursor-pointer hover:text-blue-700"
+          class="mr-6 cursor-pointer hover:text-primary dark:hover:text-primary-bright"
           @click="addToken(token.address)"
         >
           {{ token?.symbol }}
         </span>
       </div>
-      <div v-else class="text-gray-400 flex flex-wrap py-3">
+      <div v-else class="text-gray dark:text-gray-dark flex flex-wrap py-3">
         <span class="mr-2">{{ $t('popularBases') }}</span>
         <span
           v-for="token in whiteListedTokens"
           :key="`popular-${token.symbol}`"
-          class="mr-3 md:mr-4 cursor-pointer hover:text-gray-700 dark:hover:text-white transition-colors"
+          class="mr-3 md:mr-4 cursor-pointer hover:text-primary dark:hover:text-primary-bright transition-colors"
           @click="addToken(token.address)"
         >
           {{ token?.symbol }}
@@ -137,3 +136,14 @@ function onClick() {
     </teleport>
   </div>
 </template>
+
+<style scoped>
+.filter-btn {
+  @apply bg-white2 dark:bg-white2-dark text-primary dark:text-primary-bright normal-case font-medium text-base;
+  box-shadow: none;
+}
+.bal-chip {
+  @apply mr-2 bg-white3 dark:bg-white3-dark text-primary dark:text-primary-bright;
+  box-shadow: none;
+}
+</style>

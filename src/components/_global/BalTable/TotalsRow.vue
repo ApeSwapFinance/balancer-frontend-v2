@@ -27,16 +27,16 @@ function getHorizontalStickyClass(index: number) {
 <template>
   <tbody>
     <tr
-      :class="['bg-white z-10 row-bg group', { 'cursor-pointer': onRowClick }]"
+      :class="['bg-white1 z-10 row-bg group', { 'cursor-pointer': onRowClick }]"
     >
       <td
         :class="[
           getHorizontalStickyClass(0),
           isColumnStuck ? 'isSticky' : '',
-          'text-left p-6 bg-white dark:bg-gray-850 border-t dark:border-gray-900 align-top'
+          'text-left p-6 bg-white1 dark:bg-white1-dark border-t border-white1 dark:border-white1-dark align-top'
         ]"
       >
-        <span class="font-semibold text-left">
+        <span class="font-bold text-left">
           Total
         </span>
       </td>
@@ -47,7 +47,7 @@ function getHorizontalStickyClass(index: number) {
           column.align === 'right' ? 'text-left' : 'text-right',
           getHorizontalStickyClass(columnIndex + 1),
           isColumnStuck ? 'isSticky' : '',
-          'p-6 bg-white dark:bg-gray-850 border-t dark:border-gray-900'
+          'p-6 bg-white1 dark:bg-white1-dark border-t border-white1 dark:border-white1-dark'
         ]"
       >
         <slot v-if="column.totalsCell" :name="column.totalsCell"> </slot>

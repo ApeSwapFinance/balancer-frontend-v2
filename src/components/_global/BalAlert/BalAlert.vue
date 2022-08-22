@@ -23,7 +23,12 @@
           </p>
         </div>
         <div v-if="actionLabel" :class="[actionClasses]">
-          <BalBtn :color="btnColor" size="xs" @click="$emit('actionClick')">
+          <BalBtn
+            :color="btnColor"
+            size="xs"
+            @click="$emit('actionClick')"
+            class="bal-alert-btn"
+          >
             {{ actionLabel }}
           </BalBtn>
         </div>
@@ -38,7 +43,7 @@ import { computed, defineComponent, PropType } from 'vue';
 import BalBtn from '../BalBtn/BalBtn.vue';
 import BalIcon from '../BalIcon/BalIcon.vue';
 
-type AlertType = 'warning' | 'error' | 'info';
+type AlertType = 'warning' | 'error' | 'success' | 'info';
 
 export default defineComponent({
   name: 'BalAlert',
@@ -68,11 +73,13 @@ export default defineComponent({
     const bgColorClass = computed(() => {
       switch (props.type) {
         case 'warning':
-          return 'bg-orange-50 dark:bg-orange-500 border border-orange-200 dark:border-0 text-black dark:text-white';
+          return 'bg-ape-yellow dark:bg-ape-yellow border border-ape-yellow dark:border-0 text-primary-bright';
         case 'error':
-          return 'bg-red-50 dark:bg-red-500 border border-red-200 dark:border-0 text-black dark:text-white';
+          return 'bg-error dark:bg-error border border-error dark:border-0 text-primary-bright';
+        case 'success':
+          return 'bg-success dark:bg-success border dark:border-0 border-success text-primary-bright';
         default:
-          return 'bg-gray-100 dark:bg-gray-500 border dark:border-0 border-gray-200 text-black dark:text-white';
+          return 'bg-primary-bright border dark:border-0 border-primary-bright text-primary';
       }
     });
 
@@ -128,11 +135,11 @@ export default defineComponent({
     const iconColorClasses = computed(() => {
       switch (props.type) {
         case 'warning':
-          return 'text-orange-500 dark:text-white bg-orange-500 dark:bg-white bg-opacity-10 dark:bg-opacity-10';
+          return 'text-primary-bright bg-ape-yellow bg-opacity-10 dark:bg-opacity-10';
         case 'error':
-          return 'text-red-500 dark:text-white bg-red-500 dark:bg-white bg-opacity-10 dark:bg-opacity-10';
+          return 'text-primary-bright bg-error bg-opacity-10 dark:bg-opacity-10';
         default:
-          return 'text-gray-500 dark:text-white bg-black dark:bg-white bg-opacity-10 dark:bg-opacity-10';
+          return 'text-primary-bright bg-gray bg-opacity-10 dark:bg-opacity-10';
       }
     });
 
@@ -148,9 +155,8 @@ export default defineComponent({
     }));
 
     const descriptionColor = computed(() => {
-      if (props.type === 'info')
-        return 'text-black dark:text-white text-opacity-70';
-      return 'text-black dark:text-white text-opacity-70';
+      if (props.type === 'info') return 'text-primary';
+      return 'text-primary-bright';
     });
 
     const iconSize = computed(() => {
@@ -165,9 +171,11 @@ export default defineComponent({
     const btnColor = computed(() => {
       switch (props.type) {
         case 'warning':
-          return 'yellow';
+          return 'ape-yellow';
         case 'error':
-          return 'red';
+          return 'error';
+        case 'success':
+          return 'success';
         default:
           return 'gray';
       }
@@ -213,6 +221,9 @@ export default defineComponent({
 }
 
 .bal-alert-description {
-  @apply overflow-hidden break-words;
+  @apply overflow-hidden break-words font-medium;
+}
+
+.bal-alert-btn {
 }
 </style>

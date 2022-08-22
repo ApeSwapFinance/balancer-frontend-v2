@@ -82,8 +82,8 @@ function handleClose() {
         <BalCircle
           v-if="withdrawalConfirmed"
           size="8"
-          color="green"
-          class="text-white mr-2"
+          color="success"
+          class="text-primary-bright mr-2"
         >
           <BalIcon name="check" />
         </BalCircle>
@@ -113,7 +113,7 @@ function handleClose() {
 
     <div
       v-if="highPriceImpact"
-      class="border dark:border-gray-700 rounded-lg p-3 mt-4"
+      class="border dark:border-white4-dark rounded-lg p-3 mt-4"
     >
       <BalCheckbox
         v-model="highPriceImpactAccepted"

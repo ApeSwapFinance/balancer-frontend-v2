@@ -223,7 +223,7 @@ onBeforeMount(async () => {
             }}
           </p>
         </div>
-        <div class="bg-gray-200 dark:bg-gray-700 p-4 rounded-lg">
+        <div class="bg-primary-bright dark:bg-white4-dark p-4 rounded-lg">
           <h3 class="mb-3">
             {{
               isL2
@@ -314,7 +314,7 @@ onBeforeMount(async () => {
           <img
             :src="require(`@/assets/images/icons/networks/${network.id}.svg`)"
             :alt="network.id"
-            class="w-6 h-6 rounded-full shadow-sm mr-2"
+            class="w-6 h-6 rounded-full shadow-none mr-2"
           />
           {{ $t('pages.claim.btns.claimOn') }} {{ network.name }}
         </BalBtn>

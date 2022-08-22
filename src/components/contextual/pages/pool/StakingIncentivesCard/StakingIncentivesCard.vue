@@ -94,7 +94,7 @@ async function handleActionSuccess() {
   >
     <div class="relative">
       <BalAccordion
-        :class="['shadow-2xl', { handle: isPoolEligibleForStaking }]"
+        :class="[{ handle: isPoolEligibleForStaking }]"
         :sections="[
           {
             title: $t('stakingIncentives'),
@@ -105,17 +105,15 @@ async function handleActionSuccess() {
         ]"
       >
         <template v-slot:staking-handle>
-          <button
-            class="p-4 rounded-xl w-full hover:bg-gray-50 dark:hover:bg-gray-800"
-          >
+          <button class="p-4 rounded-xl w-full">
             <BalStack horizontal justify="between" align="center">
               <BalStack spacing="sm" align="center">
                 <div
                   :class="[
-                    'flex items-center p-1 text-white rounded-full',
+                    'flex items-center p-1 text-primary-bright rounded-full',
                     {
-                      'bg-green-500': isPoolEligibleForStaking,
-                      'bg-gray-400': !isPoolEligibleForStaking
+                      'bg-success': isPoolEligibleForStaking,
+                      'bg-gray-dark': !isPoolEligibleForStaking
                     }
                   ]"
                 >
@@ -134,17 +132,20 @@ async function handleActionSuccess() {
                 spacing="sm"
                 align="center"
               >
-                <BalIcon name="chevron-down" class="text-blue-500" />
+                <BalIcon
+                  name="chevron-down"
+                  class="text-primary dark:text-primary-bright"
+                />
               </BalStack>
             </BalStack>
           </button>
         </template>
         <template v-slot:staking-incentives>
-          <div class="bg-white dark:bg-gray-850 relative">
+          <div class="bg-white2 dark:bg-white2-dark relative">
             <BalStack
               vertical
               spacing="sm"
-              class="px-4 py-4 border-t dark:border-gray-900"
+              class="px-4 py-4 border-t border-white4 dark:border-white4-dark"
             >
               <BalStack horizontal justify="between">
                 <span>{{ $t('staked') }} {{ $t('lpTokens') }}</span>
@@ -176,7 +177,7 @@ async function handleActionSuccess() {
               </BalStack>
               <BalStack horizontal spacing="sm" class="mt-2">
                 <BalBtn
-                  color="gradient"
+                  color="ape-yellow"
                   size="sm"
                   @click="showStakePreview"
                   :disabled="fiatValueOfUnstakedShares === '0'"
@@ -184,7 +185,6 @@ async function handleActionSuccess() {
                   {{ $t('stake') }}
                 </BalBtn>
                 <BalBtn
-                  outline
                   color="gray"
                   size="sm"
                   @click="showUnstakePreview"

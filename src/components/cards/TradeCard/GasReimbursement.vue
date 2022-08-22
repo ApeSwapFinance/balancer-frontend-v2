@@ -8,7 +8,10 @@
     <div class="message relative px-2 py-3">
       <div class="ml-12">
         <h6 v-text="$t('highGasFees')" class="relative text-sm" />
-        <div class="relative text-sm text-gray-500" v-html="text" />
+        <div
+          class="relative text-sm text-gray dark:text-gray-dark"
+          v-html="text"
+        />
       </div>
     </div>
   </BalLink>
@@ -154,7 +157,7 @@ export default defineComponent({
 }
 
 .message::before {
-  @apply absolute px-4 py-3 inset-0.5 text-2xl bg-white dark:bg-gray-900 rounded-lg;
+  @apply absolute px-4 py-3 inset-0.5 text-2xl bg-white dark:bg-white1-dark rounded-lg;
   content: '🤝';
 }
 

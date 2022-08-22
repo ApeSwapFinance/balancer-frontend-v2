@@ -45,13 +45,14 @@ const {
  * COMPUTED
  */
 const priceImpactClasses = computed(() => ({
-  'dark:bg-gray-800': !highPriceImpact.value,
-  'bg-red-500 dark:bg-red-500 text-white divide-red-400': highPriceImpact.value
+  'dark:bg-white3-dark': !highPriceImpact.value,
+  'bg-error dark:bg-error text-primary-bright divide-error':
+    highPriceImpact.value
 }));
 
 const optimizeBtnClasses = computed(() => ({
-  'text-gradient': !highPriceImpact.value,
-  'text-red-500 px-2 py-1 bg-white rounded-lg': highPriceImpact.value
+  'text-ape-yellow': !highPriceImpact.value,
+  'text-primary-bright px-2 py-1 bg-error rounded-lg': highPriceImpact.value
 }));
 </script>
 
@@ -61,13 +62,13 @@ const optimizeBtnClasses = computed(() => ({
       <div class="p-2">{{ $t('total') }}</div>
       <div class="data-table-number-col">
         {{ fNum2(fiatTotal, FNumFormats.fiat) }}
-        <div v-if="isWalletReady && !hasNoBalances" class="text-sm">
-          <span v-if="maximized" class="text-gray-400 dark:text-gray-600">
+        <div v-if="isWalletReady && !hasNoBalances" class="text-sm font-medium">
+          <span v-if="maximized" class="text-gray dark:text-gray-dark">
             {{ $t('maxed') }}
           </span>
           <span
             v-else
-            class="text-blue-500 cursor-pointer"
+            class="text-ape-yellow cursor-pointer"
             @click="emit('maximize')"
           >
             {{ $t('max') }}
@@ -96,7 +97,7 @@ const optimizeBtnClasses = computed(() => ({
                 v-else
                 name="info"
                 size="xs"
-                class="text-gray-400 -mb-px ml-1"
+                class="text-gray dark:text-gray-dark -mb-px ml-1"
               />
             </template>
           </BalTooltip>
@@ -106,9 +107,9 @@ const optimizeBtnClasses = computed(() => ({
           v-if="
             isWalletReady && hasAllTokens && supportsPropotionalOptimization
           "
-          class="text-sm font-semibold"
+          class="text-sm font-medium"
         >
-          <span v-if="optimized" class="text-gray-400 dark:text-gray-600">
+          <span v-if="optimized" class="text-gray dark:text-gray-dark">
             {{ $t('optimized') }}
           </span>
           <div
@@ -126,12 +127,12 @@ const optimizeBtnClasses = computed(() => ({
 
 <style scoped>
 .data-table {
-  @apply border dark:border-gray-900 rounded-lg divide-y dark:divide-gray-900;
+  @apply bg-white3 dark:bg-white3-dark rounded-lg divide-y divide-white4 dark:divide-white4-dark;
 }
 
 .data-table-row {
   @apply grid grid-cols-4 items-center;
-  @apply divide-x dark:divide-gray-900;
+  @apply divide-x divide-white4 dark:divide-white4-dark;
 }
 
 .data-table-number-col {
@@ -139,7 +140,7 @@ const optimizeBtnClasses = computed(() => ({
 }
 
 .total-row {
-  @apply text-lg font-bold rounded-t-lg dark:bg-gray-800;
+  @apply text-lg font-bold rounded-t-lg;
 }
 
 .price-impact-row {

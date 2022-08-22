@@ -2,10 +2,11 @@
   <BalPopover no-pad :align="isMobile ? 'left' : undefined">
     <template v-slot:activator>
       <BalBtn
-        color="white"
+        color="white3"
         :size="upToLargeBreakpoint ? 'md' : 'sm'"
-        class="p-1 relative"
+        class="activity-btn"
         :circle="upToLargeBreakpoint"
+        :style="{ width: '36px', height: '36px' }"
       >
         <ActivityIcon v-if="pendingTransactions.length === 0" />
         <ActivityCounter v-else :count="pendingTransactions.length" />
@@ -14,7 +15,7 @@
     <BalCard class="w-72" noPad noBorder>
       <template v-slot:header>
         <div
-          class="p-3 w-full flex items-center justify-between border-b dark:border-gray-900"
+          class="p-3 w-full flex items-center justify-between border-b border-white4 dark:border-white4-dark"
         >
           <h5>{{ $t('recentActivityTitle') }}</h5>
         </div>
@@ -32,7 +33,7 @@
             v-if="
               pendingTransactions.length > 0 && finalizedTransactions.length > 0
             "
-            class="bg-gray-100 dark:bg-gray-700 my-3 h-px"
+            class="bg-white3 dark:bg-white3-dark my-3 h-px"
           />
           <ActivityRows
             :transactions="finalizedTransactions"
@@ -45,8 +46,13 @@
         <template v-else>{{ $t('noRecentActivity') }}</template>
       </div>
       <template v-if="transactions.length > 0" v-slot:footer>
-        <div class="w-full p-3 rounded-b-lg bg-white dark:bg-gray-800 text-sm">
-          <a @click="clearAllTransactions()" class="text-blue-500">
+        <div
+          class="w-full p-3 rounded-b-lg bg-white3 dark:bg-white3-dark text-sm"
+        >
+          <a
+            @click="clearAllTransactions()"
+            class="text-primary dark:text-primary-bright hover:text-ape-yellow underline"
+          >
             {{ $t('clearTransactions') }}
           </a>
         </div>
@@ -151,3 +157,13 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+.activity-btn {
+  @apply relative;
+  padding: 8px;
+}
+.activity-btn:hover {
+  @apply bg-white4 dark:bg-white4-dark;
+}
+</style>

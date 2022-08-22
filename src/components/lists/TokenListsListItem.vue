@@ -1,5 +1,7 @@
 <template>
-  <div class="flex py-3 px-4 highlight items-center leading-5 text-base">
+  <div
+    class="flex py-3 px-4 highlight items-center leading-5 text-base uppercase"
+  >
     <img
       :src="_url(tokenlist.logoURI)"
       class="rounded-full inline-block align-middle mr-3"
@@ -8,7 +10,7 @@
     />
     <div class="flex-auto">
       {{ tokenlist.name }}
-      <div class="text-gray text-sm flex items-center">
+      <div class="text-gray dark:text-gray-dark flex items-center">
         {{
           fNum2(tokenlist.tokens.length, {
             style: 'decimal',
@@ -21,7 +23,7 @@
           <BalIcon
             name="arrow-up-right"
             size="sm"
-            class="ml-1 text-gray-500 hover:text-blue-500 transition-colors"
+            class="ml-1 text-gray dark:text-gray-dark transition-colors"
           />
         </BalLink>
       </div>

@@ -11,12 +11,24 @@ const { darkMode, toggleDarkMode } = useDarkMode();
 
 <template>
   <BalBtn
-    color="white"
+    color="white3"
     :size="isMobile ? 'md' : 'sm'"
     :circle="isMobile"
     @click="toggleDarkMode"
+    :style="{ width: '36px', height: '36px' }"
+    class="theme-mode-toggle"
   >
-    <MoonIcon v-if="darkMode" />
-    <SunIcon v-else />
+    <SunIcon v-if="darkMode" />
+    <MoonIcon v-else />
   </BalBtn>
 </template>
+
+<style scoped>
+.theme-mode-toggle {
+  padding: 8px;
+}
+
+.theme-mode-toggle:hover {
+  @apply bg-white4 dark:bg-white4-dark;
+}
+</style>

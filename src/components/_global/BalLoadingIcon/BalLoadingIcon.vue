@@ -43,7 +43,7 @@ export default defineComponent({
         case 'white':
           return 'bg-white dark:bg-opacity-50';
         case 'gray':
-          return 'bg-gray-400 dark:bg-gray-500';
+          return 'bg-gray-dark dark:bg-primary-bright';
         default:
           return `bg-${props.color}-500`;
       }

@@ -1,7 +1,7 @@
 {
   "key": "56",
   "chainId": 56,
-  "chainName": "BSC",
+  "chainName": "BSC Dummy",
   "name": "BNB Smart Chain",
   "shortName": "BSC",
   "network": "BSC",
@@ -12,7 +12,7 @@
   "loggingRpc": "",
   "explorer": "https://bscscan.com",
   "explorerName": "BSCScan",
-  "subgraph": "http://65.108.138.33:8000/subgraphs/name/apeswap/balancer-v2",
+  "subgraph": "https://balancer.apeswapgraphs.com/subgraphs/name/apeswap/balancer-v2",
   "poolsUrlV2": "",
   "subgraphs": {
     "aave": "",

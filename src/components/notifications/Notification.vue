@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative p-3 overflow-hidden rounded bg-white dark:bg-gray-800 shadow-lg text-sm dark:text-white dark:border-gray-850 w-64"
+    class="relative p-3 overflow-hidden rounded bg-white3 dark:bg-white3-dark shadow-none text-sm text-primary dark:text-primary-bright w-64"
   >
     <div class="justify-between group">
       <BalLink
@@ -9,24 +9,24 @@
         external
         noStyle
       >
-        <div class="font-semibold flex items-center mb-1">
+        <div class="font-bold flex items-center mb-1">
           <span class="title">{{ notification.title }}</span>
           <BalIcon
             name="arrow-up-right"
             size="sm"
-            class="ml-1 text-gray-400 dark:text-gray-600 group-hover:text-pink-500 transition-colors"
+            class="ml-1 text-gray dark:text-gray-dark transition-colors"
           />
         </div>
         <div class="message">{{ notification.message }}</div>
       </BalLink>
       <div v-else>
-        <div class="font-semibold title mb-1">
+        <div class="font-bold title mb-1">
           {{ notification.title }}
         </div>
         <div class="message">{{ notification.message }}</div>
       </div>
       <BalCloseIcon
-        class="cursor-pointer text-black dark:text-white flex-shrink-0 absolute top-3 right-2"
+        class="cursor-pointer text-primary dark:text-primary-bright flex-shrink-0 absolute top-3 right-2"
         @click="closeNotification()"
       />
     </div>
@@ -96,12 +96,12 @@ export default defineComponent({
 
     // COMPUTED
     const progressClasses = computed(() => {
-      let bgClasses = 'bg-orange-600 dark:bg-orange-500';
+      let bgClasses = 'bg-ape-yellow';
 
       if (props.notification.type === 'success') {
-        bgClasses = 'bg-green-500 dark:bg-green-500';
+        bgClasses = 'bg-success dark:bg-success';
       } else if (props.notification.type === 'error') {
-        bgClasses = 'bg-red-500 dark:bg-red-500';
+        bgClasses = 'bg-error dark:bg-error';
       }
 
       return `

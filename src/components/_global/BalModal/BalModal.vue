@@ -72,7 +72,7 @@ defineExpose({ hide });
         <div v-if="showContent" class="content">
           <BalCard
             :title="title"
-            shadow="lg"
+            shadow="none"
             :no-pad="noPad"
             :no-content-pad="noContentPad"
             class="modal-card"
@@ -117,10 +117,10 @@ defineExpose({ hide });
 }
 
 .dark .bal-modal .content:before {
-  background-blend-mode: soft-light, soft-light, normal;
-  background: radial-gradient(circle at left, yellow, transparent),
+  /* background-blend-mode: soft-light, soft-light, normal; */
+  /* background: radial-gradient(circle at left, yellow, transparent),
     radial-gradient(circle at bottom right, blue, transparent),
-    radial-gradient(circle at top, red, transparent);
+    radial-gradient(circle at top, red, transparent); */
   content: '';
   display: block;
   width: 100%;

@@ -105,7 +105,7 @@ const totalRewardValue = computed((): string => {
 
 <template>
   <BalCard
-    shadow="lg"
+    shadow="none"
     :square="upToLargeBreakpoint"
     :noBorder="upToLargeBreakpoint"
     noPad

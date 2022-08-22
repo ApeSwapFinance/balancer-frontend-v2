@@ -39,7 +39,6 @@ export default defineComponent({
     noPad: { type: Boolean, default: false },
     noContentPad: { type: Boolean, default: false },
     noBorder: { type: Boolean, default: false },
-    darkBgColor: { type: String, default: '850' },
     imgSrc: { type: String, default: '' },
     hFull: { type: Boolean, default: false },
     growContent: { type: Boolean, default: false },
@@ -67,14 +66,14 @@ export default defineComponent({
 
   setup(props) {
     const borderClasses = computed(() => {
-      return 'border dark:border-gray-900';
+      return 'border dark:border-white1-dark';
     });
 
     const cardClasses = computed(() => {
       return {
         'rounded-lg': !props.square,
         'overflow-hidden': !props.exposeOverflow,
-        [`bg-white dark:bg-gray-${props.darkBgColor}`]: true,
+        [`bg-white3 dark:bg-white3-dark`]: true,
         [`shadow${props.shadow ? '-' : ''}${props.shadow}`]: true,
         [borderClasses.value]: !props.noBorder,
         'h-full': props.hFull
@@ -125,7 +124,8 @@ export default defineComponent({
 
 <style scoped>
 .bal-card {
-  @apply flex flex-col;
+  @apply flex flex-col bg-white2 dark:bg-white2-dark shadow-none;
+  border: none;
 }
 
 .card-container {

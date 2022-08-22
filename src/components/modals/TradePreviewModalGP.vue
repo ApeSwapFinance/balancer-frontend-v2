@@ -1,10 +1,10 @@
 <template>
   <BalModal show @close="onClose" :title="labels.modalTitle">
     <div>
-      <BalCard noPad class="relative mb-6 overflow-auto">
+      <BalCard shadow="none" noPad class="relative mb-6 overflow-auto">
         <template v-slot:header>
           <div
-            class="w-full p-3 border-b bg-gray-50 rounded-t-lg text-sm dark:border-gray-800 dark:bg-gray-800"
+            class="w-full p-3 bg-white4 dark:bg-white4-dark rounded-t-lg text-sm"
           >
             <span>
               {{ $t('effectivePrice') }}
@@ -18,7 +18,7 @@
         </template>
         <div>
           <div
-            class="p-3 border-gray-100 border-b relative dark:border-gray-900"
+            class="border-mod p-3 border border-white4 relative dark:border-white4-dark"
           >
             <div class="flex items-center">
               <div class="mr-3">
@@ -31,16 +31,15 @@
                   }}
                   {{ trading.tokenIn.value.symbol }}
                 </div>
-                <div class="text-gray-500 dark:text-gray-400 text-sm">
+                <div class="text-gray dark:text-gray-dark text-sm">
                   {{ tokenInFiatValue }}
                 </div>
               </div>
             </div>
           </div>
-          <div class="arrow-down">
-            <ArrowDownIcon />
-          </div>
-          <div class="p-3">
+          <div
+            class="border-mod p-3 border rounded-b-lg border-white4 dark:border-white4-dark"
+          >
             <div class="flex items-center">
               <div class="mr-3">
                 <BalAsset
@@ -55,7 +54,7 @@
                   }}
                   {{ trading.tokenOut.value.symbol }}
                 </div>
-                <div class="text-gray-500 dark:text-gray-400 text-sm">
+                <div class="text-gray dark:text-gray-dark text-sm">
                   {{ tokenOutFiatValue }}
                   <span
                     v-if="
@@ -74,19 +73,24 @@
           </div>
         </div>
       </BalCard>
+
       <BalCard noPad shadow="none" class="mb-3">
         <template v-slot:header>
           <div
-            class="p-3 flex w-full items-center justify-between border-b dark:border-gray-900"
+            class="p-3 flex w-full items-center justify-between border rounded-t-lg border-white4 dark:border-white4-dark"
           >
-            <div class="font-semibold">
+            <div class="font-bold">
               {{ labels.tradeSummary.title }}
             </div>
-            <div class="flex divide-x dark:divide-gray-500 text-xs uppercase">
+            <div
+              class="flex divide-x divide-primary dark:divide-primary-bright uppercase"
+            >
               <div
                 :class="[
                   'pr-2 cursor-pointer font-medium',
-                  { 'text-blue-600': !showSummaryInFiat }
+                  {
+                    'text-ape-yellow': !showSummaryInFiat
+                  }
                 ]"
                 @click="showSummaryInFiat = false"
               >
@@ -95,7 +99,9 @@
               <div
                 :class="[
                   'pl-2 cursor-pointer font-medium uppercase',
-                  { 'text-blue-600': showSummaryInFiat }
+                  {
+                    'text-ape-yellow': showSummaryInFiat
+                  }
                 ]"
                 @click="showSummaryInFiat = true"
               >
@@ -104,7 +110,9 @@
             </div>
           </div>
         </template>
-        <div class="p-3 text-sm">
+        <div
+          class="border-mod p-3 text-sm border border-white4 dark:border-white4-dark"
+        >
           <div class="summary-item-row">
             <div>
               {{ labels.tradeSummary.totalBeforeFees }}
@@ -113,7 +121,7 @@
           </div>
           <div class="summary-item-row" v-if="trading.isGnosisTrade.value">
             <div>{{ $t('tradeSummary.gasCosts') }}</div>
-            <div class="text-green-400">-{{ zeroFee }}</div>
+            <div class="text-success">-{{ zeroFee }}</div>
           </div>
           <div class="summary-item-row">
             <div>{{ labels.tradeSummary.tradeFees }}</div>
@@ -132,7 +140,7 @@
         </div>
         <template v-slot:footer>
           <div
-            class="w-full p-3 rounded-b-lg bg-white text-sm dark:bg-gray-800"
+            class="w-full p-3 rounded-b-lg border-mod text-sm border border-white4 dark:border-white4-dark bg-white4 dark:bg-white4-dark"
           >
             <div class="summary-item-row font-medium">
               <div class="w-64">
@@ -140,7 +148,7 @@
               </div>
               <div v-html="summary.totalWithoutSlippage" />
             </div>
-            <div class="summary-item-row text-gray-500 dark:text-gray-400">
+            <div class="summary-item-row text-gray dark:text-gray-dark">
               <div class="w-64">
                 {{ labels.tradeSummary.totalWithSlippage }}
               </div>
@@ -190,13 +198,13 @@
                 <BalIcon
                   v-if="!requiresGnosisRelayerApproval"
                   name="check"
-                  class="text-green-500"
+                  class="text-success"
                 />
                 <template v-else>1</template>
               </div>
             </template>
             <div>
-              <div class="mb-2 font-semibold">
+              <div class="mb-2 font-bold">
                 <div>
                   {{
                     $t(
@@ -232,13 +240,13 @@
                 <BalIcon
                   v-if="!requiresLidoRelayerApproval"
                   name="check"
-                  class="text-green-500"
+                  class="text-success"
                 />
                 <template v-else>1</template>
               </div>
             </template>
             <div>
-              <div class="mb-2 font-semibold">
+              <div class="mb-2 font-bold">
                 <div>
                   {{
                     $t(
@@ -277,7 +285,7 @@
                 <BalIcon
                   v-if="!requiresTokenApproval"
                   name="check"
-                  class="text-green-500"
+                  class="text-success"
                 />
                 <template v-else>{{
                   showGnosisRelayerApprovalStep || showLidoRelayerApprovalStep
@@ -287,7 +295,7 @@
               </div>
             </template>
             <div>
-              <div class="mb-2 font-semibold">
+              <div class="mb-2 font-bold">
                 {{
                   $t(
                     'tradeSummary.transactionTypesTooltips.tokenApproval.title',
@@ -320,7 +328,7 @@
             </div>
           </template>
           <div>
-            <div class="mb-2 font-semibold">
+            <div class="mb-2 font-bold">
               {{
                 trading.isGnosisTrade.value
                   ? $t('tradeSummary.transactionTypesTooltips.sign.title')
@@ -339,7 +347,7 @@
       </div>
       <BalBtn
         v-if="requiresGnosisRelayerApproval"
-        color="gradient"
+        color="ape-yellow"
         block
         @click.prevent="gnosisRelayerApproval.approve"
         :loading="
@@ -352,7 +360,7 @@
       </BalBtn>
       <BalBtn
         v-else-if="requiresLidoRelayerApproval"
-        color="gradient"
+        color="ape-yellow"
         block
         @click.prevent="lidoRelayerApproval.approve"
         :loading="
@@ -366,7 +374,7 @@
         v-else-if="requiresTokenApproval"
         :loading="tokenApproval.approving.value"
         :loading-label="`${$t('approving')} ${trading.tokenIn.value.symbol}...`"
-        color="gradient"
+        color="ape-yellow"
         block
         @click.prevent="approveToken"
       >
@@ -374,7 +382,7 @@
       </BalBtn>
       <BalBtn
         v-else
-        color="gradient"
+        color="ape-yellow"
         block
         @click.prevent="trade"
         :loading="trading.isConfirming.value"
@@ -876,27 +884,27 @@ export default defineComponent({
   }
 });
 </script>
-<style scoped>
-.arrow-down {
-  @apply absolute right-0 rounded-full border border-gray-100 flex items-center h-8 w-8 justify-center bg-white mr-3 dark:border-gray-800 dark:bg-gray-800;
-  transform: translateY(-50%);
-}
 
+<style scoped>
 .summary-item-row {
   @apply flex justify-between mb-1;
 }
 
 .step {
-  @apply rounded-full w-7 h-7 border border-gray-100 dark:border-gray-700 flex items-center justify-center text-purple-500 relative;
+  @apply rounded-full w-7 h-7 border border-white4 dark:border-white4-dark flex items-center justify-center text-white4 dark:text-white4-dark relative;
 }
 .step-seperator {
-  @apply bg-gray-200 dark:bg-gray-700 h-px w-6;
+  @apply bg-white4 dark:bg-white4-dark h-px w-6;
 }
 
 .step-active {
-  @apply border-purple-500 dark:border-purple-500;
+  @apply border-ape-yellow;
 }
 .step-approved {
-  @apply border-green-500 dark:border-green-500;
+  @apply border-success;
+}
+
+.border-mod {
+  border-top: none;
 }
 </style>

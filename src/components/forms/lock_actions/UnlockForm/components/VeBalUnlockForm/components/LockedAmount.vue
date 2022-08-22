@@ -29,7 +29,9 @@ const { fNum2 } = useNumbers();
     <div class="pb-4">
       {{ $t('unlockVeBAL.unlockForm.lockedAmount.title') }}
     </div>
-    <div class="rounded-lg border dark:border-gray-800 dark:bg-gray-800 p-3">
+    <div
+      class="rounded-lg border dark:border-white3-dark dark:bg-white3-dark p-3"
+    >
       <div class="flex items-center">
         <BalAsset :address="lockablePool.address" class="mr-2" :size="36" />
         <div class="w-full">
@@ -37,7 +39,7 @@ const { fNum2 } = useNumbers();
             <div>{{ lockablePoolTokenInfo.symbol }}</div>
             <div>{{ fNum2(totalLpTokens, FNumFormats.token) }}</div>
           </div>
-          <div class="flex justify-between text-gray-500">
+          <div class="flex justify-between text-gray">
             <div>{{ lockablePoolTokenInfo.name }}</div>
             <div>{{ fNum2(fiatTotalLpTokens, FNumFormats.fiat) }}</div>
           </div>

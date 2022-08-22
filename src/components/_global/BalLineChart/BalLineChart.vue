@@ -2,14 +2,16 @@
   <BalLoadingBlock v-if="isLoading" class="h-96 mt-16" />
   <div :class="[wrapperClass]" v-else @mouseleave="handleMouseLeave">
     <div id="lineChartHeader" class="mb-4" v-if="showHeader">
-      <h3 class="text-gray-800 dark:text-gray-400 text-xl tracking-wider">
+      <h3
+        class="text-primary dark:text-primary-bright text-base tracking-wider"
+      >
         {{ currentValue }}
       </h3>
       <span
         :class="{
-          'text-green-400': change >= 0,
-          'text-red-400': change < 0,
-          'font-medium': true
+          'text-success': change >= 0,
+          'text-error': change < 0,
+          'font-light text-base': true
         }"
         >{{ numeral(change).format('+0.0%') }}</span
       >
@@ -163,8 +165,8 @@ export default defineComponent({
 
     const axisColor = computed(() =>
       darkMode.value
-        ? tailwind.theme.colors.gray['800']
-        : tailwind.theme.colors.gray['100']
+        ? tailwind.theme.colors['white4-dark']
+        : tailwind.theme.colors.white4
     );
 
     // https://echarts.apache.org/en/option.html
@@ -189,12 +191,12 @@ export default defineComponent({
         selected: props.legendState || {},
         textStyle: {
           color: darkMode.value
-            ? tailwind.theme.colors.gray['100']
-            : tailwind.theme.colors.gray['800']
+            ? tailwind.theme.colors['gray-dark']
+            : tailwind.theme.colors.gray
         },
         inactiveColor: darkMode.value
-          ? tailwind.theme.colors.gray['700']
-          : tailwind.theme.colors.gray['300']
+          ? tailwind.theme.colors['gray-dark']
+          : tailwind.theme.colors.gray
       },
       // controlling the display of the X-Axis
       xAxis: {
@@ -209,7 +211,9 @@ export default defineComponent({
           formatter: props.axisLabelFormatter.xAxis
             ? value => fNum2(value, props.axisLabelFormatter.xAxis)
             : undefined,
-          color: tailwind.theme.colors.gray['400']
+          color: darkMode.value
+            ? tailwind.theme.colors['gray-dark']
+            : tailwind.theme.colors.gray
         }
       },
       // controlling the display of the Y-Axis
@@ -232,7 +236,7 @@ export default defineComponent({
           formatter: props.axisLabelFormatter.yAxis
             ? value => fNum2(value, props.axisLabelFormatter.yAxis)
             : undefined,
-          color: tailwind.theme.colors.gray['400']
+          color: tailwind.theme.colors.gray
         },
         nameGap: 25
       },
@@ -256,14 +260,14 @@ export default defineComponent({
           }
         },
         backgroundColor: darkMode.value
-          ? tailwind.theme.colors.gray['800']
-          : tailwind.theme.colors.white,
+          ? tailwind.theme.colors['white2-dark']
+          : tailwind.theme.colors.white2,
         borderColor: darkMode.value
-          ? tailwind.theme.colors.gray['900']
-          : tailwind.theme.colors.white,
+          ? tailwind.theme.colors['white2-dark']
+          : tailwind.theme.colors.white2,
         formatter: params => {
           return `
-            <div class='flex flex-col font-body bg-white dark:bg-gray-850 dark:text-white'>
+            <div class='flex flex-col font-body bg-white2 dark:bg-white2-dark dark:text-primary-bright'>
               <span>${params[0].value[0]}</span>
               ${params
                 .map(

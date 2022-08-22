@@ -41,14 +41,19 @@ const fiatLabel = computed(() => {
 </script>
 
 <template>
-  <div :class="['flex justify-between', { 'text-gray-400': !selected }]">
+  <div
+    :class="[
+      'flex justify-between',
+      { 'text-primary dark:text-primary-bright': !selected }
+    ]"
+  >
     <div class="flex flex-col">
       <span>
         {{ token.symbol }}
       </span>
       <span
         v-if="token.name !== token.symbol"
-        :class="['text-sm', selected ? 'text-gray-500' : 'text-gray-400']"
+        :class="['text-sm', 'text-gray dark:text-gray-dark']"
       >
         {{ token.name }}
       </span>
@@ -58,7 +63,7 @@ const fiatLabel = computed(() => {
       <span>
         {{ balanceLabel }}
       </span>
-      <span :class="['text-sm', selected ? 'text-gray-500' : 'text-gray-400']">
+      <span :class="['text-sm', 'text-gray dark:text-gray-dark']">
         {{ fiatLabel }}
       </span>
     </div>

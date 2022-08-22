@@ -163,11 +163,11 @@ export default defineComponent({
 
 <style scoped>
 .bal-select-input {
-  @apply relative w-full border rounded-lg shadow-sm overflow-hidden px-2;
+  @apply relative w-full border rounded-lg shadow-none overflow-hidden px-2;
 }
 
 .label {
-  @apply text-gray-400;
+  @apply text-gray-dark;
 }
 
 select {

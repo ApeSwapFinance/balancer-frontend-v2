@@ -1,5 +1,5 @@
 <template>
-  <BalCard class="relative card-container" :shadow="tradeCardShadow" no-border>
+  <BalCard shadow="none" class="relative card-container" no-border>
     <template v-slot:header>
       <div class="w-full flex items-center justify-between">
         <h4 class="font-bold">{{ title }}</h4>
@@ -23,6 +23,7 @@
         @amountChange="trading.handleAmountChange"
         class="mb-4"
       />
+
       <GasReimbursement
         v-if="!ENABLE_LEGACY_TRADE_INTERFACE && trading.isBalancerTrade.value"
         class="mb-5"
@@ -62,8 +63,8 @@
       <BalBtn
         v-else
         :label="$t('preview')"
+        color="ape-yellow"
         :disabled="tradeDisabled"
-        color="gradient"
         block
         @click.prevent="handlePreviewButton"
       />
@@ -77,7 +78,7 @@
         <Transition name="fade" mode="out-in">
           <div
             v-if="trading.isGaslessTradingDisabled.value"
-            class="text-gray-600 dark:text-gray-500"
+            class="text-gray dark:text-gray-dark"
           >
             <div class="flex items-center gap-2">
               <span class="text-lg">⛽</span>
@@ -118,12 +119,12 @@
               <Transition name="fade" mode="out-in">
                 <span
                   v-if="trading.tradeGasless.value"
-                  class="text-sm pl-2 text-gray-600 dark:text-gray-500"
+                  class="text-sm pl-2 text-gray dark:text-gray-dark"
                   >{{ $t('tradeToggle.tradeGasless') }}</span
                 >
                 <span
                   v-else
-                  class="text-sm pl-2 text-gray-600 dark:text-gray-500"
+                  class="text-sm pl-2 text-gray dark:text-gray-dark"
                   >{{ $t('tradeToggle.tradeWithGas') }}</span
                 >
               </Transition>
@@ -132,7 +133,7 @@
                   <BalIcon
                     name="info"
                     size="xs"
-                    class="text-gray-400 ml-1 flex"
+                    class="text-gray dark:text-gray-dark ml-1 flex"
                   />
                 </template>
                 <div v-html="$t('tradeGaslessToggle.tooltip')" />
@@ -230,17 +231,6 @@ export default defineComponent({
       highPriceImpact: false
     });
     const alwaysShowRoutes = lsGet('alwaysShowRoutes', false);
-
-    const tradeCardShadow = computed(() => {
-      switch (bp.value) {
-        case 'xs':
-          return 'none';
-        case 'sm':
-          return 'lg';
-        default:
-          return 'xl';
-      }
-    });
 
     const trading = useTrading(
       exactIn,
@@ -440,14 +430,14 @@ export default defineComponent({
       errorMessage,
       isRequired,
       tradeDisabled,
-      tradeCardShadow,
       handlePreviewButton,
       handlePreviewModalClose,
 
       // methods
       trade,
       switchToWETH,
-      handleErrorButtonClick
+      handleErrorButtonClick,
+      bp
     };
   }
 });
@@ -462,7 +452,7 @@ export default defineComponent({
   width: 3rem;
 }
 .gas-symbol {
-  @apply h-8 w-8 rounded-full flex items-center justify-center text-lg bg-gray-50 dark:bg-gray-800;
+  @apply h-8 w-8 rounded-full flex items-center justify-center text-lg bg-white3 dark:bg-white3-dark;
 }
 .gas-symbol:before {
   content: '⛽';

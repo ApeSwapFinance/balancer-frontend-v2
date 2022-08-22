@@ -100,7 +100,7 @@ function formatDateInput(date: Date | number) {
       :max="formatDateInput(maxLockEndDateTimestamp)"
       step="7"
     />
-    <div class="flex text-sm mt-2 px-1 text-gray-500 dark:text-gray-400">
+    <div class="flex text-sm mt-2 px-1 text-gray dark:text-gray-dark">
       <div
         v-for="(lockDate, index) in lockDates"
         :key="index"

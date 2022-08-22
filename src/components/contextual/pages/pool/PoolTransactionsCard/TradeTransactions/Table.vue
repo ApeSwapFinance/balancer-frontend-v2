@@ -215,7 +215,7 @@ const swapRows = computed<SwapRow[]>(() =>
               <BalIcon
                 name="arrow-up-right"
                 size="sm"
-                class="text-gray-500 hover:text-blue-500 transition-colors"
+                class="text-primary dark:text-primary-bright transition-colors"
               />
             </BalLink>
           </div>
@@ -227,6 +227,6 @@ const swapRows = computed<SwapRow[]>(() =>
 
 <style scoped>
 .token-item {
-  @apply m-1 flex items-center p-1 px-2 bg-gray-50 dark:bg-gray-700 rounded-lg;
+  @apply m-1 flex items-center p-1 px-2 bg-white3 dark:bg-white3-dark rounded-lg;
 }
 </style>

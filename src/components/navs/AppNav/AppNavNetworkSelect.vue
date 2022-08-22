@@ -1,7 +1,11 @@
 <template>
   <BalPopover no-pad>
     <template v-slot:activator>
-      <BalBtn color="white" :size="upToLargeBreakpoint ? 'md' : 'sm'">
+      <BalBtn
+        class="network-select-btn"
+        color="white3"
+        :size="upToLargeBreakpoint ? 'md' : 'sm'"
+      >
         <img
           :src="iconSrc(activeNetwork)"
           :alt="activeNetwork.name"
@@ -15,7 +19,7 @@
     </template>
     <div class="flex flex-col w-44 rounded-lg overflow-hidden">
       <div
-        class="p-3 border-b dark:border-gray-900 whitespace-nowrap text-gray-500 font-medium"
+        class="p-3 border-b border-white4 dark:border-white4-dark whitespace-nowrap text-gray dark:text-gray-dark font-medium text-xs"
       >
         Select a network
       </div>
@@ -23,7 +27,7 @@
         v-for="network in networks"
         :key="network.id"
         :href="appUrl(network)"
-        class="flex items-center justify-between p-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-850"
+        class="flex items-center justify-between p-3 cursor-pointer hover:bg-white3 dark:hover:bg-white3-dark"
       >
         <div class="flex items-center">
           <img
@@ -35,7 +39,11 @@
             {{ network.name }}
           </span>
         </div>
-        <BalIcon v-if="isActive(network)" name="check" class="text-blue-500" />
+        <BalIcon
+          v-if="isActive(network)"
+          name="check"
+          class="text-primary dark:text-primary-bright"
+        />
       </a>
     </div>
   </BalPopover>
@@ -137,3 +145,12 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+.network-select-btn {
+  @apply font-medium text-xs text-primary dark:text-primary-bright;
+}
+.network-select-btn:hover {
+  @apply bg-white4 dark:bg-white4-dark;
+}
+</style>

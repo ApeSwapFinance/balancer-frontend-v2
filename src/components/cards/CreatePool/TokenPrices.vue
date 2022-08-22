@@ -41,9 +41,12 @@ const hasUnknownPrice = computed(() =>
 
 <template>
   <BalCard noPad shadow="none" :noBorder="upToLargeBreakpoint">
-    <div class="p-4 dark:border-gray-600 border-b" v-if="!upToLargeBreakpoint">
+    <div
+      class="p-4 border-white4 dark:border-white4-dark border-b"
+      v-if="!upToLargeBreakpoint"
+    >
       <BalStack horizontal spacing="sm" align="center">
-        <h6 class="dark:text-gray-300">
+        <h6 class="dark:text-primary-bright">
           {{ $t('tokenPrices') }}
         </h6>
         <BalTooltip class="mt-1" :text="$t('correctTokenPricing')" />
@@ -82,8 +85,8 @@ const hasUnknownPrice = computed(() =>
           :class="[
             'mt-1',
             {
-              'text-red-500 hover:text-red-700': hasUnknownPrice,
-              'hover:text-blue-500': !hasUnknownPrice
+              'text-error hover:text-error': hasUnknownPrice,
+              'hover:text-ape-yellow': !hasUnknownPrice
             }
           ]"
           v-for="token in unknownTokens"
@@ -117,7 +120,9 @@ const hasUnknownPrice = computed(() =>
             >
               <div class="w-full justify-end">
                 <div class="-mr-1">
-                  <span class="text-left">{{ $t('enterAPrice') }}</span>
+                  <span class="text-left underline">{{
+                    $t('enterAPrice')
+                  }}</span>
                 </div>
               </div>
               <BalIcon name="alert-circle" />

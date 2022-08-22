@@ -59,7 +59,7 @@ onMounted(() => (isMounted.value = true));
       background: 'white'
     }"
     @error="error = true"
-    class="rounded-full inline-block leading-none shadow-sm"
+    class="rounded-full inline-block leading-none shadow-none"
   />
   <div
     v-else

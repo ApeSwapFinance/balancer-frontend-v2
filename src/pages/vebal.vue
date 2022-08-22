@@ -14,7 +14,7 @@ import { isVeBalSupported } from '@/composables/useVeBAL';
       <Hero />
     </div>
   </div>
-  <div class="py-16 xl:py-20 bg-gray-50 dark:bg-gray-900">
+  <div class="py-16 xl:py-20 bg-white1 dark:bg-white1-dark">
     <div v-if="isVeBalSupported" class="lg:container lg:mx-auto">
       <div class="px-1 lg:px-0">
         <MyVeBAL />
@@ -27,7 +27,7 @@ import { isVeBalSupported } from '@/composables/useVeBAL';
     </div>
   </div>
   <div v-else class="text-center">
-    <div class="font-semibold text-lg">
+    <div class="font-bold text-lg">
       {{ $t('veBAL.notSupported.title') }}
     </div>
     <div>{{ $t('veBAL.notSupported.description') }}</div>

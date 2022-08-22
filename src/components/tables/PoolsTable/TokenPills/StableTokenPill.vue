@@ -36,7 +36,7 @@ withDefaults(defineProps<Props>(), {
         <div v-if="hasBalance" class="balance-indicator" />
         <div
           :class="[
-            'pill-text',
+            'pill-text text-primary dark:text-primary-bright',
             {
               'font-medium': isSelected
             }
@@ -61,7 +61,7 @@ withDefaults(defineProps<Props>(), {
 .pill::before {
   @apply w-full h-full;
   @apply absolute;
-  @apply bg-gray-100 dark:bg-gray-700;
+  @apply bg-white3 dark:bg-white3-dark;
   content: '';
   transform: skew(-12deg);
 }
@@ -84,18 +84,18 @@ withDefaults(defineProps<Props>(), {
 }
 
 .pill-selected::before {
-  @apply ring-2 ring-blue-500 dark:ring-blue-400;
+  @apply ring-2 ring-primary dark:ring-primary-bright;
 }
 
 .balance-indicator {
   @apply w-3 h-3;
-  @apply rounded-full border-2 border-white dark:border-gray-850 group-hover:border-gray-50 dark:group-hover:border-gray-800;
-  @apply bg-green-200 dark:bg-green-500;
+  @apply rounded-full border-2 border-white1;
+  @apply bg-success;
   @apply absolute top-0 right-0 -mt-1 -mr-2;
 }
 
 .pill-hoverable:hover::before,
 .pill-hoverable:focus::before {
-  @apply bg-gray-200 dark:bg-gray-900;
+  @apply bg-white1 dark:bg-white1-dark text-primary dark:text-primary-bright;
 }
 </style>

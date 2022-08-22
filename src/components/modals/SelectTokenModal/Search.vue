@@ -1,6 +1,10 @@
 <template>
   <div class="flex items-center">
-    <BalIcon name="search" size="sm" class="text-gray-500 mr-2" />
+    <BalIcon
+      name="search"
+      size="sm"
+      class="text-gray dark:text-gray-dark mr-2"
+    />
     <input
       ref="searchInput"
       :value="modelValue"

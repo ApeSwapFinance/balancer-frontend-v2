@@ -11,7 +11,7 @@
             <div
               v-for="([address, tokenMeta], i) in titleTokens"
               :key="i"
-              class="mt-2 mr-2 flex items-center px-2 h-10 bg-gray-50 dark:bg-gray-850 rounded-lg"
+              class="mt-2 mr-2 flex items-center px-2 h-10 bg-white3 dark:bg-white3-dark rounded-lg"
             >
               <BalAsset :address="address" />
               <span class="ml-2">
@@ -19,7 +19,7 @@
               </span>
               <span
                 v-if="!isStableLikePool"
-                class="font-medium text-gray-400 text-xs mt-px ml-1"
+                class="font-medium text-gray dark:text-gray-dark text-xs mt-px ml-1"
               >
                 {{
                   fNum2(tokenMeta.weight, {
@@ -31,7 +31,7 @@
             </div>
             <BalChip
               v-if="pool?.isNew"
-              color="red"
+              color="error"
               size="sm"
               class="uppercase mt-2 mr-2"
               :outline="false"
@@ -48,12 +48,15 @@
               <BalIcon
                 name="arrow-up-right"
                 size="sm"
-                class="ml-2 mt-2 text-gray-500 hover:text-blue-500 transition-colors"
+                class="ml-2 mt-2 text-gray dark:text-gray-dark hover:text-primary dark:hover:text-primary-bright transition-colors"
               />
             </BalLink>
           </div>
           <div class="flex items-center mt-2">
-            <div v-html="poolFeeLabel" class="text-sm text-gray-600 mr-2" />
+            <div
+              v-html="poolFeeLabel"
+              class="font-medium text-sm text-gray dark:text-gray-dark mr-2"
+            />
             <BalTooltip>
               <template v-slot:activator>
                 <BalLink
@@ -63,7 +66,12 @@
                 >
                   <GauntletIcon />
                 </BalLink>
-                <BalIcon v-else name="info" size="xs" class="text-gray-400" />
+                <BalIcon
+                  v-else
+                  name="info"
+                  size="xs"
+                  class="text-gray dark:text-gray-dark"
+                />
               </template>
               <span>
                 {{ swapFeeToolTip }}
@@ -76,14 +84,14 @@
           v-if="!appLoading && !loadingPool && missingPrices"
           type="warning"
           :title="$t('noPriceInfo')"
-          class="mt-2"
+          class="mt-2 font-medium"
           block
         />
         <BalAlert
           v-if="!appLoading && !loadingPool && hasCustomToken"
           type="error"
           :title="$t('highRiskPool')"
-          class="mt-2"
+          class="mt-2 font-medium"
           block
         />
         <template v-if="!appLoading && !loadingPool && isAffected">
@@ -91,7 +99,7 @@
             v-for="(warning, i) in warnings"
             :key="`warning-${i}`"
             type="error"
-            class="mt-2"
+            class="mt-2 font-medium"
             block
           >
             <template #title>
@@ -126,11 +134,6 @@
           </div>
           <div class="mb-4 px-1 lg:px-0">
             <PoolStatCards :pool="pool" :loading="loadingPool" />
-            <ApyVisionPoolLink
-              v-if="!loadingPool"
-              :poolId="pool?.id"
-              :titleTokens="titleTokens"
-            />
           </div>
           <div class="mb-4">
             <h4 v-text="$t('poolComposition')" class="px-4 lg:px-0 mb-4" />
@@ -164,10 +167,6 @@
               v-if="loadingPool"
               class="pool-actions-card h-40"
             />
-            <StakingIncentivesCard
-              v-if="isStakablePool && !loadingPool"
-              :pool="pool"
-            />
           </BalStack>
         </StakingProvider>
       </div>
@@ -181,9 +180,7 @@ import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 
 import * as PoolPageComponents from '@/components/contextual/pages/pool';
-import StakingIncentivesCard from '@/components/contextual/pages/pool/StakingIncentivesCard/StakingIncentivesCard.vue';
 import GauntletIcon from '@/components/images/icons/GauntletIcon.vue';
-import ApyVisionPoolLink from '@/components/links/ApyVisionPoolLink.vue';
 import APRTooltip from '@/components/tooltips/APRTooltip/APRTooltip.vue';
 import usePoolQuery from '@/composables/queries/usePoolQuery';
 import usePoolSnapshotsQuery from '@/composables/queries/usePoolSnapshotsQuery';
@@ -209,9 +206,7 @@ export default defineComponent({
     ...PoolPageComponents,
     GauntletIcon,
     APRTooltip,
-    StakingIncentivesCard,
-    StakingProvider,
-    ApyVisionPoolLink
+    StakingProvider
   },
 
   setup() {
@@ -465,8 +460,7 @@ export default defineComponent({
 
 <style scoped>
 .pool-title {
-  @apply mr-4 capitalize mt-2;
-  font-variation-settings: 'wght' 700;
+  @apply mr-4 capitalize mt-2 font-bold;
 }
 
 .pool-actions-card {

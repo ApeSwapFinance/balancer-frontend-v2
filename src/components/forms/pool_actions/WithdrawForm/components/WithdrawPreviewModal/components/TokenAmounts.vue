@@ -51,7 +51,7 @@ function amountShare(address: string): string {
             </span>
             {{ tokenMap[address].symbol }}
           </div>
-          <div class="text-sm text-gray-500 font-numeric">
+          <div class="text-sm text-gray dark:text-gray-dark font-numeric">
             {{ fNum2(fiatAmountMap[address], FNumFormats.fiat) }}
             ({{ fNum2(amountShare(address), FNumFormats.percent) }})
           </div>
@@ -63,7 +63,7 @@ function amountShare(address: string): string {
 
 <style scoped>
 .token-amount-table {
-  @apply shadow-lg border dark:border-gray-700 divide-y dark:divide-gray-700 rounded-lg;
+  @apply shadow-none border border-white4 dark:border-white4-dark divide-y divide-white4 dark:divide-white4-dark rounded-lg;
 }
 
 .token-amount-table-content {

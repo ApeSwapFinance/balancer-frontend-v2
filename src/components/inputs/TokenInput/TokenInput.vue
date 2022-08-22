@@ -173,7 +173,7 @@ const bufferPercentage = computed(() => {
 });
 
 const barColor = computed(() =>
-  amountExceedsTokenBalance.value ? 'red' : 'green'
+  amountExceedsTokenBalance.value ? 'error' : 'ape-yellow'
 );
 
 const priceImpactSign = computed(() =>
@@ -181,7 +181,7 @@ const priceImpactSign = computed(() =>
 );
 
 const priceImpactClass = computed(() =>
-  (props.priceImpact || 0) >= 0.01 ? 'text-red-500' : ''
+  (props.priceImpact || 0) >= 0.01 ? 'text-error' : ''
 );
 
 /**
@@ -234,6 +234,7 @@ watchEffect(() => {
     @update:modelValue="emit('update:amount', $event)"
     @update:isValid="emit('update:isValid', $event)"
     @keydown="emit('keydown', $event)"
+    noShadow
   >
     <template #prepend>
       <slot name="tokenSelect">
@@ -254,7 +255,7 @@ watchEffect(() => {
         class="flex flex-col pt-1"
       >
         <div
-          class="flex items-center justify-between text-sm text-gray-500 leading-none"
+          class="flex items-center justify-between text-sm text-gray dark:text-gray-dark leading-none"
         >
           <div v-if="!isWalletReady || disableBalance" />
           <div v-else class="cursor-pointer flex items-center" @click="setMax">
@@ -266,10 +267,10 @@ watchEffect(() => {
             </span>
 
             <template v-if="hasBalance && !noMax && !disableMax">
-              <span v-if="!isMaxed" class="text-blue-500">
+              <span v-if="!isMaxed" class="text-ape-yellow">
                 {{ $t('max') }}
               </span>
-              <span v-else class="text-gray-400 dark:text-gray-600 lowercase">
+              <span v-else class="text-gray dark:text-gray-dark lowercase">
                 {{ $t('maxed') }}
               </span>
             </template>
@@ -285,7 +286,7 @@ watchEffect(() => {
             </template>
             <template v-else-if="hint">
               <span
-                class="text-blue-500 lowercase cursor-pointer"
+                class="text-primary dark:text-gray-dark underline lowercase cursor-pointer"
                 @click="emit('update:amount', hintAmount)"
               >
                 {{ hint }}
@@ -302,7 +303,7 @@ watchEffect(() => {
         />
         <div
           v-if="shouldShowTxBufferMessage"
-          class="mt-2 text-orange-600 dark:text-orange-400 text-xs"
+          class="mt-2 text-ape-yellow text-xs"
         >
           {{
             t('minTransactionBuffer', [

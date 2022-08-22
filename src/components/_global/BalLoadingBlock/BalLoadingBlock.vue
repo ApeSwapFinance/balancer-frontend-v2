@@ -83,9 +83,9 @@ const classes = computed(() => {
 }
 
 .shimmer-light-mode {
-  --startColor: theme('colors.gray.50');
-  --midColor: theme('colors.gray.100');
-  --endColor: theme('colors.gray.50');
+  --startColor: theme('colors.white1');
+  --midColor: theme('colors.white3');
+  --endColor: theme('colors.white1');
 
   animation: shimmerBackground 10s infinite;
   background: linear-gradient(
@@ -98,9 +98,9 @@ const classes = computed(() => {
 }
 
 .shimmer-light-mode-darker {
-  --startColor: theme('colors.gray.100');
-  --midColor: theme('colors.gray.200');
-  --endColor: theme('colors.gray.100');
+  --startColor: theme('colors.white3');
+  --midColor: theme('colors.white4');
+  --endColor: theme('colors.white3');
 
   animation: shimmerBackground 10s infinite;
   background: linear-gradient(
@@ -113,9 +113,9 @@ const classes = computed(() => {
 }
 
 .shimmer-dark-mode {
-  --startColor: theme('colors.gray.850');
-  --midColor: theme('colors.gray.800');
-  --endColor: theme('colors.gray.850');
+  --startColor: theme('colors.white1-dark');
+  --midColor: theme('colors.white3-dark');
+  --endColor: theme('colors.white1-dark');
 
   animation: shimmerBackground 10s infinite;
   background: linear-gradient(
@@ -128,9 +128,9 @@ const classes = computed(() => {
 }
 
 .shimmer-dark-mode-darker {
-  --startColor: theme('colors.gray.700');
-  --midColor: theme('colors.gray.600');
-  --endColor: theme('colors.gray.700');
+  --startColor: theme('colors.white3-dark');
+  --midColor: theme('colors.white4-dark');
+  --endColor: theme('colors.white3-dark');
 
   animation: shimmerBackground 10s infinite;
   background: linear-gradient(

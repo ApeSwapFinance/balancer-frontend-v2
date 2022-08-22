@@ -42,9 +42,9 @@ const isFixedSlippage = computed(() => {
 });
 
 const customInputClasses = computed(() => ({
-  'border border-blue-500 text-blue-500':
-    !isFixedSlippage.value || state.isCustomInput,
-  'border dark:border-gray-900': isFixedSlippage.value && !state.isCustomInput
+  'border border-white4': !isFixedSlippage.value || state.isCustomInput,
+  'border-white4 dark:border-white4-dark':
+    isFixedSlippage.value && !state.isCustomInput
 }));
 
 /**
@@ -91,9 +91,9 @@ watch(
       v-model="state.fixedSlippage"
       @update:modelValue="onFixedInput"
     />
-    <div :class="['custom-input', customInputClasses]">
+    <div :class="['custom-input mod-input', customInputClasses]">
       <input
-        class="w-12 text-right bg-transparent"
+        class="w-12 text-right bg-white2 dark:bg-white2-dark"
         v-model="state.customSlippage"
         placeholder="0.1"
         type="number"
@@ -110,6 +110,9 @@ watch(
 
 <style scoped>
 .custom-input {
-  @apply flex items-center px-1 rounded-lg shadow-inner;
+  @apply flex items-center px-1 rounded-lg;
+}
+.mod-input {
+  @apply border border-white4 dark:border-white4-dark;
 }
 </style>

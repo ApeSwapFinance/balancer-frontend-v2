@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="subsection">
-      <h1>Balancer Labs OU Terms of Use</h1>
+      <h1>ApeSwap OU Terms of Use</h1>
       <p><em>Last updated: November 23, 2021</em></p>
       <p>
         <em class="font-medium">
@@ -22,16 +22,15 @@
     <div class="subsection">
       <h2>1. Overview</h2>
       <p>
-        This Balancer Labs OU Terms of Use agreement (“Terms” or “agreement”)
-        (“Balancer Labs”, “we” and “us” refers to Balancer Labs OU) covers the
-        website, Balancer Protocol user-interface and free application
-        (collectively “the Site”) we own and administer, at times in conjunction
-        with others, which provides the ability to access the decentralized
-        Balancer Protocol. Additionally, you can access the Balancer Protocol
-        through third-party web or mobile interfaces. These Terms apply to you
-        (“You” or “you”) as a user of our Site including all the products,
-        services, tools and information, without limitation, made available on
-        the Site.
+        This ApeSwap OU Terms of Use agreement (“Terms” or “agreement”)
+        (“ApeSwap”, “we” and “us” refers to ApeSwap OU) covers the website,
+        Balancer Protocol user-interface and free application (collectively “the
+        Site”) we own and administer, at times in conjunction with others, which
+        provides the ability to access the decentralized Balancer Protocol.
+        Additionally, you can access the Balancer Protocol through third-party
+        web or mobile interfaces. These Terms apply to you (“You” or “you”) as a
+        user of our Site including all the products, services, tools and
+        information, without limitation, made available on the Site.
       </p>
       <p>
         You must be able to form a legally binding contract online either as an
@@ -46,15 +45,14 @@
       </p>
       <p>
         You are advised to periodically review these Terms so you understand any
-        changes to the Terms. Balancer Labs in its sole discretion, reserves the
-        right to make changes to our Terms. Changes are binding on users of the
-        Site and will take effect immediately upon posting. As a user, you agree
-        to be bound by any changes, variations, or modifications to our Terms
-        and your continued use of the Site shall constitute acceptance of any
-        such changes, revisions, variations, or modifications. When we make
-        changes, we will make the updated Terms available on the interface and
-        update the “Last Updated” date at the beginning of the Terms
-        accordingly.
+        changes to the Terms. ApeSwap in its sole discretion, reserves the right
+        to make changes to our Terms. Changes are binding on users of the Site
+        and will take effect immediately upon posting. As a user, you agree to
+        be bound by any changes, variations, or modifications to our Terms and
+        your continued use of the Site shall constitute acceptance of any such
+        changes, revisions, variations, or modifications. When we make changes,
+        we will make the updated Terms available on the interface and update the
+        “Last Updated” date at the beginning of the Terms accordingly.
       </p>
       <p>
         You accept such changes, by continuing to use the Site and by doing so
@@ -73,20 +71,20 @@
     <div class="subsection">
       <h2>2. Site</h2>
       <p>
-        As part of the Site, Balancer Labs provides access to a decentralized
-        finance application (“Application” or “Balancer Protocol app”) on the
-        Ethereum blockchain, that allows traders or liquidity providers of
-        Ethereum assets (“Cryptocurrency Assets”) to transact using smart
-        contracts (“Smart Contracts”). Use of the Balancer Protocol may require
-        that you pay a fee, such as gas charges on the Ethereum network to
-        perform a transaction. You acknowledge and agree that Balancer Labs has
-        no control over any activities, transactions, the method of payment of
-        any transactions, or any actual processing of payments of transactions.
-        You must ensure that you have a sufficient balance to complete any
-        transaction on the Balancer Protocol before initiating such transaction.
+        As part of the Site, ApeSwap provides access to a decentralized finance
+        application (“Application” or “Balancer Protocol app”) on the Ethereum
+        blockchain, that allows traders or liquidity providers of Ethereum
+        assets (“Cryptocurrency Assets”) to transact using smart contracts
+        (“Smart Contracts”). Use of the Balancer Protocol may require that you
+        pay a fee, such as gas charges on the Ethereum network to perform a
+        transaction. You acknowledge and agree that ApeSwap has no control over
+        any activities, transactions, the method of payment of any transactions,
+        or any actual processing of payments of transactions. You must ensure
+        that you have a sufficient balance to complete any transaction on the
+        Balancer Protocol before initiating such transaction.
       </p>
       <p>
-        You acknowledge and agree that Balancer Labs has no control over any
+        You acknowledge and agree that ApeSwap has no control over any
         transactions conducted through the Balancer Protocol, the method of
         payment of any transactions or any actual payments of transactions
         including use of any third-party services such as Metamask, or other
@@ -192,9 +190,9 @@
         </li>
         <li>
           Attempt to circumvent or disable any content filtering techniques or
-          security measures that Balancer Labs employs on the Site, or attempt
-          to access any service or area of the Site that you are not authorized
-          to access;
+          security measures that ApeSwap employs on the Site, or attempt to
+          access any service or area of the Site that you are not authorized to
+          access;
         </li>
         <li>
           Use any robot, spider, crawler, scraper, or other automated means or
@@ -256,13 +254,13 @@
           Risks associated with any Smart Contracts with which you interact.
         </li>
         <li>
-          Although Balancer Labs does not have access to your assets, you are
-          reminded and acknowledge that at any time, your access to your
-          Cryptocurrency Assets through third party wallet services, unrelated
-          to Balancer Labs or the Balancer.Fi website, may be suspended or
-          terminated or there may be a delay in your access or use of your
-          Cryptocurrency Assets, which may result in the Cryptocurrency Assets
-          diminishing in value or you being unable to complete a Smart Contract.
+          Although ApeSwap does not have access to your assets, you are reminded
+          and acknowledge that at any time, your access to your Cryptocurrency
+          Assets through third party wallet services, unrelated to ApeSwap or
+          the Balancer.Fi website, may be suspended or terminated or there may
+          be a delay in your access or use of your Cryptocurrency Assets, which
+          may result in the Cryptocurrency Assets diminishing in value or you
+          being unable to complete a Smart Contract.
         </li>
         <li>
           You are reminded of the inherent risks with digital assets and
@@ -323,7 +321,7 @@
           Site, the Application and the Smart Contracts;
         </li>
         <li>
-          that you expressly waive and release Balancer Labs from any and all
+          that you expressly waive and release ApeSwap from any and all
           liability, claims, causes of action, responsibility or damages arising
           from or in any way related to your use of the Site, the Application or
           the Smart Contracts; and
@@ -376,9 +374,9 @@
     <div class="subsection">
       <h2>6. Intellectual Property Rights</h2>
       <p>
-        Balancer Labs is the owner of all intellectual property rights in the
-        Site and the material published on them. To the extent practical, these
-        works are protected by copyright laws and all such rights are reserved.
+        ApeSwap is the owner of all intellectual property rights in the Site and
+        the material published on them. To the extent practical, these works are
+        protected by copyright laws and all such rights are reserved.
         www.Balancer.fi is the uniform resource locator (‘URL’) of Balancer
         Labs. You will not make use of this URL (or any other URL owned by us)
         on another website or digital platform without our prior written
@@ -473,11 +471,11 @@
     <div class="subsection">
       <h2>9. Indemnification</h2>
       <p>
-        You agree to indemnify and hold Balancer Labs and our officers,
-        directors, employees, contractors, agents, affiliates, or subsidiaries
-        harmless from any claim or demand, including attorneys’ fees and costs,
-        made by any third-party due to or arising out of 1) your use of the site
-        or 2) this agreement.
+        You agree to indemnify and hold ApeSwap and our officers, directors,
+        employees, contractors, agents, affiliates, or subsidiaries harmless
+        from any claim or demand, including attorneys’ fees and costs, made by
+        any third-party due to or arising out of 1) your use of the site or 2)
+        this agreement.
       </p>
     </div>
     <div class="subsection">
@@ -512,9 +510,9 @@
       <p>
         These Terms and the documents referred to in them set out the entire
         agreement between you and us with respect to your use of the site,
-        Balancer Labs and the services provided via the site and supersede any
-        and all prior or contemporaneous representations, communications or
-        agreements (written or oral) made between you or us.
+        ApeSwap and the services provided via the site and supersede any and all
+        prior or contemporaneous representations, communications or agreements
+        (written or oral) made between you or us.
       </p>
       <p>
         Any dispute, controversy, or claim arising out of or in relation to
@@ -552,16 +550,16 @@
         opportunity loss (e.g., loss of opportunity to place a payment
         instruction, resulting in loss of profits which could have been
         obtained) due to occurrences such as emergency situations and force
-        majeure events, Balancer Labs is under no obligation to take any
-        corrective action or measure and shall no under circumstances be liable
-        for any lost profits or other trading losses.
+        majeure events, ApeSwap is under no obligation to take any corrective
+        action or measure and shall no under circumstances be liable for any
+        lost profits or other trading losses.
       </p>
     </div>
     <div>
       <h2>12. Contact Us</h2>
       <p>
-        Balancer Labs is a company incorporated in Estonia. Please contact us if
-        you have any questions about these Terms or other topics, by sending an
+        ApeSwap is a company incorporated in Estonia. Please contact us if you
+        have any questions about these Terms or other topics, by sending an
         email to
         <a class="link" href="mailto:termsofuse@balancer.finance"
           >termsofuse@balancer.finance</a

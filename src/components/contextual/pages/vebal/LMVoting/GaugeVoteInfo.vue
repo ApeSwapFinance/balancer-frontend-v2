@@ -46,8 +46,8 @@ const voteDifferenceText = computed<string>(() => {
 
 const voteTextClass = computed(() => {
   return {
-    'text-green-600': voteDifference.value > 0,
-    'text-red-600': voteDifference.value < 0
+    'text-success': voteDifference.value > 0,
+    'text-error': voteDifference.value < 0
   };
 });
 
@@ -70,10 +70,10 @@ function formatVotesAsPercent(votes: string): string {
       <span :class="voteTextClass">{{ votesNextPeriod }}</span>
     </template>
     <div>
-      <div class="mb-2 text-sm font-semibold">
+      <div class="mb-2 text-sm font-bold">
         {{ $t('veBAL.liquidityMining.votesTooltip.title') }}
       </div>
-      <div class="text-xs font-normal">
+      <div class="text-xs font-medium">
         <div class="mb-2">
           {{
             $t('veBAL.liquidityMining.votesTooltip.thisPeriod', [

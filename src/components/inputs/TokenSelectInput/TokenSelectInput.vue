@@ -77,10 +77,13 @@ function tokenFor(option: string): TokenInfo {
       <div class="w-8">
         <BalAsset :address="token?.address" class="shadow" />
       </div>
-      <span class="text-base font-medium">
+      <span class="text-xl font-bold">
         {{ token?.symbol }}
       </span>
-      <span v-if="Number(weight) > 0" class="text-gray-500 ml-2">
+      <span
+        v-if="Number(weight) > 0"
+        class="text-gray dark:text-gray-dark ml-2"
+      >
         {{
           fNum2(weight, {
             style: 'percent',
@@ -92,9 +95,10 @@ function tokenFor(option: string): TokenInfo {
         v-if="!fixed"
         name="chevron-down"
         size="sm"
-        class="text-blue-500 group-hover:text-pink-500 ml-2"
+        class="text-primary dark:text-primary-bright ml-2"
       />
     </div>
+
     <BalDropdown
       v-else-if="hasToken && fixed && options.length > 0"
       :options="options"
@@ -106,10 +110,13 @@ function tokenFor(option: string): TokenInfo {
           <div class="w-8">
             <BalAsset :address="token?.address" class="shadow" />
           </div>
-          <span class="text-base font-medium">
+          <span class="text-xl font-bold">
             {{ token?.symbol }}
           </span>
-          <span v-if="Number(weight) > 0" class="text-gray-500 ml-2">
+          <span
+            v-if="Number(weight) > 0"
+            class="text-gray dark:text-gray-dark ml-2"
+          >
             {{
               fNum2(weight, {
                 style: 'percent',
@@ -120,7 +127,7 @@ function tokenFor(option: string): TokenInfo {
           <BalIcon
             name="chevron-down"
             size="sm"
-            class="text-blue-500 group-hover:text-pink-500 ml-2"
+            class="text-primary dark:text-primary-bright ml-2"
           />
         </div>
       </template>
@@ -138,7 +145,7 @@ function tokenFor(option: string): TokenInfo {
           <BalIcon
             v-if="optionToken.address === modelValue"
             name="check"
-            class="text-blue-500 ml-4"
+            class="text-primary dark:text-primary-bright ml-4"
           />
         </div>
       </template>
@@ -150,7 +157,11 @@ function tokenFor(option: string): TokenInfo {
       @click="toggleModal"
     >
       {{ $t('selectToken') }}
-      <BalIcon name="chevron-down" size="sm" class="ml-2" />
+      <BalIcon
+        name="chevron-down"
+        size="sm"
+        class="text-primary dark:text-primary-bright ml-2"
+      />
     </div>
 
     <teleport to="#modal">
@@ -168,20 +179,19 @@ function tokenFor(option: string): TokenInfo {
 
 <style scoped>
 .token-select-input {
-  @apply shadow rounded-lg flex items-center h-10 px-2 whitespace-nowrap;
+  @apply rounded-lg flex items-center h-10 px-2 whitespace-nowrap;
   @apply text-sm;
-  font-variation-settings: 'wght' 700;
 }
 
 .selectable {
-  @apply cursor-pointer hover:shadow-none transition-shadow;
+  @apply cursor-pointer shadow-none;
 }
 
 .unselected {
-  @apply bg-blue-500 text-white;
+  @apply bg-white4 dark:bg-white4-dark text-primary dark:text-primary-bright;
 }
 
 .selected {
-  @apply bg-gray-50 dark:bg-gray-700 text-black dark:text-white;
+  @apply bg-white4 dark:bg-white4-dark text-primary dark:text-primary-bright;
 }
 </style>

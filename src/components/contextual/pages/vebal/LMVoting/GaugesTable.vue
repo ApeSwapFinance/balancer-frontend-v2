@@ -182,7 +182,7 @@ function redirectToPool(gauge: VotingGaugeWithVotes) {
       <template v-slot:networkColumnCell="{ network }">
         <div v-if="!isLoading" class="px-6 py-4">
           <div
-            class="w-8 h-8 rounded shadow-sm bg-gray-50 dark:bg-gray-800 flex items-center justify-center"
+            class="w-8 h-8 rounded shadow-sm bg-primary-bright dark:bg-white3-dark flex items-center justify-center"
           >
             <img :src="networkSrc(network)" :alt="network" class="w-6 h-6" />
           </div>
@@ -218,10 +218,9 @@ function redirectToPool(gauge: VotingGaugeWithVotes) {
       <template v-slot:voteColumnCell="gauge">
         <div v-if="isWalletReady" class="px-4">
           <BalBtn
-            color="blue"
+            color="ape-yellow"
             :outline="true"
             size="sm"
-            class="hover:text-white hover:bg-blue-500 focus:text-white focus:bg-blue-500"
             flat
             block
             @click.stop="emit('clickedVote', gauge)"

@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="['bal-btn', btnClasses]"
+    :class="['bal-btn text-base uppercase font-bold', btnClasses]"
     :disabled="disabled || loading"
   >
     <div v-if="loading" class="flex items-center justify-center">
@@ -56,7 +56,8 @@ export default defineComponent({
           'gray',
           'red',
           'white',
-          'blue'
+          'blue',
+          'ape-yellow'
         ].includes(val)
     },
     label: { type: String, default: '' },
@@ -67,7 +68,10 @@ export default defineComponent({
     rounded: { type: Boolean, default: false },
     loading: { type: Boolean, default: false },
     loadingLabel: { type: String, default: 'loading...' },
-    disabled: { type: Boolean, default: false }
+    disabled: { type: Boolean, default: false },
+    transparent: { type: Boolean, default: false },
+    tertiary: { type: Boolean, default: false },
+    primary: { type: Boolean, default: false }
   },
 
   setup(props) {
@@ -114,7 +118,7 @@ export default defineComponent({
       }
 
       if (props.disabled) {
-        return `bg-gray-300 dark:bg-gray-700 text-white dark:text-gray-500`;
+        return `bg-white3 dark:bg-white3 text-white4-dark-greyed`;
       }
       if (props.loading) {
         return `bg-gradient-to-tr from-${fromColor}-50 to-${toColor}-50`;
@@ -127,49 +131,61 @@ export default defineComponent({
 
     const bgFlatClasses = computed(() => {
       return `
-        bg-${props.color}-50 hover:bg-${props.color}-100
-        dark:bg-${props.color}-800 dark:hover:bg-${props.color}-700
+        bg-${props.color} hover:bg-${props.color}
+        dark:bg-${props.color}-dark dark:hover:bg-${props.color}-dark
       `;
     });
 
     const bgColorClasses = computed(() => {
       if (props.color.includes('gradient')) return bgGradientClasses.value;
       else if (props.outline) return 'bg-transparent';
+      else if (props.transparent) return 'bg-transparent border-none';
       else if (props.flat) return bgFlatClasses.value;
-      else if (props.color === 'white') {
-        return 'bg-gray-50 dark:bg-gray-800';
+      else if (props.disabled) {
+        return `bg-white3 dark:bg-white3 text-white4-dark-greyed`;
+      } else if (props.tertiary) {
+        return `bg-white3 hover:text-ape-yellow dark:hover:text-white4-dark-greyed dark:bg-white3 text-white4-dark-greyed`;
+      } else if (props.outline && props.primary) {
+        return `bg-transparent text-primary dark:text-primary-bright`;
+      } else if (props.color === 'ape-yellow') {
+        return `bg-${props.color} hover:bg-hovered-${props.color}`;
       } else {
-        if (props.disabled) {
-          return `bg-gray-300 dark:bg-gray-700 text-white dark:text-gray-500`;
-        }
         if (props.loading) {
-          return `bg-${props.color}-400 dark:bg-${props.color}-dark-400`;
+          return `bg-${props.color} dark:bg-${props.color}-dark`;
         }
 
         return `
-          bg-${props.color}-500 hover:bg-${props.color}-600
-          dark:bg-${props.color}-dark-500 dark:hover:bg-${props.color}-dark-600
+          bg-${props.color} hover:bg-${props.color}
+          dark:bg-${props.color}-dark dark:hover:bg-${props.color}-dark
         `;
       }
     });
 
     const borderClasses = computed(() => {
       if (props.outline)
-        return `border border-${props.color}-200 dark:border-${props.color}-700`;
+        return `border border-${props.color} dark:border-${props.color}${
+          props.color === 'primary'
+            ? '-bright'
+            : props.color === 'ape-yellow' ||
+              props.color === 'success' ||
+              props.color === 'error'
+            ? ''
+            : '-dark'
+        }`;
       return 'border-none';
     });
 
     const textColorClasses = computed(() => {
       if (props.outline && props.disabled)
-        return 'text-gray-400 dark:text-gray-700';
+        return 'bg-white3 dark:bg-white3 text-white4-dark-greyed';
       if (props.outline && props.color === 'gradient') return 'text-purple-700';
       if (props.color === 'white') {
-        if (props.outline) return 'text-white';
-        else return 'text-gray-800 dark:text-gray-100';
+        if (props.outline) return 'text-primary-bright';
+        else return 'text-gray dark:text-gray-dark';
       }
       if (props.outline || props.flat)
-        return `text-${props.color}-500 dark:text-${props.color}-400`;
-      return 'text-white';
+        return `text-${props.color} dark:text-${props.color}-dark`;
+      return 'text-primary-bright';
     });
 
     const displayClasses = computed(() => {
@@ -224,8 +240,7 @@ export default defineComponent({
 
 <style scoped>
 .bal-btn {
-  @apply overflow-hidden tracking-tight;
-  font-variation-settings: 'wght' 500;
+  @apply overflow-hidden tracking-tight shadow-none;
   transition: all 0.2s ease;
   text-decoration: none !important;
   line-height: 0;

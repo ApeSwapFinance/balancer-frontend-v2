@@ -27,7 +27,7 @@ const poolMigrationInfo = POOL_MIGRATIONS.find(
     :poolMigrationInfo="poolMigrationInfo"
   />
   <div v-else class="text-center">
-    <div class="font-semibold text-lg">
+    <div class="font-bold text-lg">
       {{ $t('migratePool.errorLoadingMigration.title') }}
     </div>
     <div>{{ $t('migratePool.errorLoadingMigration.description') }}</div>

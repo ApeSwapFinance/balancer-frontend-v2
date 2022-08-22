@@ -1,7 +1,7 @@
 <template>
   <div
     ref="animateRef"
-    class="flex py-3 px-4 highlight items-center leading-5 text-base opacity-0"
+    class="flex py-3 px-4 highlight items-center leading-5 text-base opacity-0 uppercase"
   >
     <BalAsset
       :address="token.address"
@@ -11,7 +11,7 @@
     />
     <div class="flex-auto">
       {{ token.symbol }}
-      <div class="text-gray text-sm w-40 md:w-60 truncate">
+      <div class="text-gray dark:text-gray-dark text-sm w-40 md:w-60 truncate">
         {{ token.name }}
       </div>
     </div>
@@ -34,9 +34,9 @@
         type="fiat"
         numberWidth="2"
         numberHeight="4"
-        class="text-sm font-normal"
+        class="text-sm font-medium"
       />
-      <div v-else class="text-gray-500 text-sm font-normal">
+      <div v-else class="text-gray dark:text-gray-dark text-sm font-medium">
         <template v-if="value > 0">
           {{ fNum2(value, FNumFormats.fiat) }}
         </template>

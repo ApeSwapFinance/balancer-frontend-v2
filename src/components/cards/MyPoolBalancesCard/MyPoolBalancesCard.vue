@@ -97,7 +97,7 @@ const fiatTotal = computed(() => {
 <template>
   <BalCard shadow="none" noPad>
     <template v-if="!hideHeader" #header>
-      <div class="p-4 w-full border-b dark:border-gray-900">
+      <div class="p-4 w-full border-b border-white4 dark:border-white4-dark">
         <h6>
           {{ $t('poolTransfer.myPoolBalancesCard.title') }}
         </h6>
@@ -108,7 +108,7 @@ const fiatTotal = computed(() => {
       <div v-for="(address, i) in tokenAddresses" :key="address" class="py-2">
         <AssetRow :address="address" :balance="propTokenAmounts[i]" />
       </div>
-      <div class="pt-4 flex justify-between font-medium">
+      <div class="pt-4 flex justify-between font-bold text-xl">
         <span>
           {{ $t('total') }}
         </span>

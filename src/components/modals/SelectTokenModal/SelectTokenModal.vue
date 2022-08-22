@@ -3,17 +3,13 @@
     <template v-slot:header>
       <div class="w-full flex justify-between items-center">
         <div class="flex items-center">
-          <BalBtn
+          <BalIcon
             v-if="selectTokenList"
-            color="gray"
-            size="xs"
-            class="mr-2"
-            flat
-            circle
             @click="onListExit"
-          >
-            <BalIcon name="arrow-left" size="sm" />
-          </BalBtn>
+            name="arrow-left"
+            size="md"
+            class="text-primary dark:text-primary-bright mr-2"
+          />
           <h5>{{ title }}</h5>
         </div>
         <div
@@ -21,20 +17,22 @@
           @click="toggleSelectTokenList"
           class="flex items-center group cursor-pointer"
         >
-          <span class="text-xs text-gray-500">{{ $t('tokenLists') }}</span>
+          <span class="text-xs text-gray dark:text-gray-dark">{{
+            $t('tokenLists')
+          }}</span>
           <div class="flex items-center ml-2">
             <span class="mr-1 ">
               <img
                 v-for="(tokenlist, i) in activeTokenLists"
                 :key="i"
                 :src="resolve(tokenlist.logoURI)"
-                class="rounded-full inline-block bg-white shadow w-6 h-6"
+                class="rounded-full inline-block bg-primary dark:bg-primary-bright w-6 h-6"
               />
             </span>
             <BalIcon
               name="chevron-down"
               size="sm"
-              class="ml-1 text-blue-500 group-hover:text-pink-500 group-focus:text-pink-500 transition-all duration-200 ease-out "
+              class="ml-1 text-primary dark:text-primary-bright transition-all duration-200 ease-out "
             />
           </div>
         </div>
@@ -44,7 +42,7 @@
       <Search
         v-model="query"
         :placeholder="$t('searchByName')"
-        class="px-4 py-3 flex-auto border-b dark:border-gray-700"
+        class="px-4 py-3 flex-auto border-b border-white4 dark:border-white4-dark"
       />
       <div>
         <div
@@ -68,7 +66,7 @@
       </div>
     </template>
     <template v-else>
-      <div class="border-b dark:border-gray-700 flex">
+      <div class="border-b border-white4 dark:border-white4-dark flex">
         <Search
           v-model="query"
           :placeholder="$t('searchBy')"
@@ -98,7 +96,7 @@
         <div
           v-else
           v-text="$t('errorNoTokens')"
-          class="h-96 p-12 text-center text-gray-500"
+          class="h-96 p-12 text-center text-gray dark:text-gray-dark"
         />
       </div>
     </template>

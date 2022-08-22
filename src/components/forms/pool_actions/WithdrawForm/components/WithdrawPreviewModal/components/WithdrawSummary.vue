@@ -63,7 +63,7 @@ const { currency } = useUserSettings();
 
 <style scoped>
 .summary-table {
-  @apply border dark:border-gray-700 divide-y dark:divide-gray-700 rounded-lg mt-4;
+  @apply border border-white4 dark:border-white4-dark divide-y divide-white4 dark:divide-white4-dark rounded-lg mt-4;
 }
 
 .summary-table-row {

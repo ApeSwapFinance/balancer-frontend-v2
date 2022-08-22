@@ -2,7 +2,7 @@
   <BalModal show @close="onClose" :title="$t('previewTradeTransactions')">
     <div>
       <div
-        class="-mx-4 p-4 flex items-center border-b border-t dark:border-gray-800"
+        class="-mx-4 p-4 flex items-center border-b border-t border-white4 dark:border-white4-dark"
       >
         <BalAssetSet
           :addresses="[addressIn, addressOut]"
@@ -15,7 +15,7 @@
             {{ symbolIn }} -> {{ fNum2(amountOut, FNumFormats.token) }}
             {{ symbolOut }}
           </div>
-          <div class="text-gray-500 text-sm">
+          <div class="text-gray text-sm">
             {{ fNum2(valueIn, FNumFormats.fiat) }}
           </div>
         </div>
@@ -27,13 +27,13 @@
         </div>
         <div>
           <div v-if="requiresLidoRelayerApproval" class="mb-3 card-container">
-            <div class="card-step text-green-500">
+            <div class="card-step text-success">
               <BalIcon
                 v-if="isLidoRelayerApproved"
                 name="check"
-                class="text-green-500"
+                class="text-success"
               />
-              <span v-else class="text-gray-500 dark:text-gray-400">1</span>
+              <span v-else class="text-gray dark:text-gray-dark">1</span>
             </div>
             <div class="ml-3">
               <span v-if="isLidoRelayerApproved">{{
@@ -43,13 +43,13 @@
             </div>
           </div>
           <div v-if="requiresTokenApproval" class="card-container">
-            <div class="card-step text-green-500">
+            <div class="card-step text-success">
               <BalIcon
                 v-if="isTokenApproved"
                 name="check"
-                class="text-green-500"
+                class="text-success"
               />
-              <span v-else class="text-gray-500 dark:text-gray-400">{{
+              <span v-else class="text-gray dark:text-gray-dark">{{
                 requiresLidoRelayerApproval ? 2 : 1
               }}</span>
             </div>
@@ -61,7 +61,7 @@
             </div>
           </div>
           <div class="mt-3 card-container">
-            <div class="card-step text-gray-500 dark:text-gray-400">
+            <div class="card-step text-gray dark:text-gray-dark">
               {{ totalRequiredTransactions }}
             </div>
             <div class="ml-3">
@@ -294,9 +294,9 @@ export default defineComponent({
 </script>
 <style scoped>
 .card-container {
-  @apply p-3 flex items-center border rounded-lg dark:border-gray-800;
+  @apply p-3 flex items-center border rounded-lg dark:border-white3-dark;
 }
 .card-step {
-  @apply w-9 h-9 flex items-center justify-center border rounded-full dark:border-gray-700;
+  @apply w-9 h-9 flex items-center justify-center border rounded-full dark:border-white4-dark;
 }
 </style>

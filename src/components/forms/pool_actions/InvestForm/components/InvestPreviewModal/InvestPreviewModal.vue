@@ -125,8 +125,8 @@ function handleShowStakeModal() {
         <BalCircle
           v-if="investmentConfirmed"
           size="8"
-          color="green"
-          class="text-white mr-2"
+          color="success"
+          class="text-primary-bright mr-2"
         >
           <BalIcon name="check" />
         </BalCircle>

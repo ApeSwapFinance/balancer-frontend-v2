@@ -161,10 +161,10 @@ watchEffect(() => {
 
     <div class="flex items-center my-2">
       <TradePairToggle @toggle="handleTokenSwitch" />
-      <div class="h-px mx-2 bg-gray-100 dark:bg-gray-700 flex-grow" />
+      <div class="h-px mx-2 bg-white4 dark:bg-white4-dark flex-grow" />
       <div
         v-if="rateLabel"
-        class="flex items-center text-xs text-gray-500 cursor-pointer"
+        class="flex items-center text-xs text-gray dark:text-gray-dark cursor-pointer"
         @click="isInRate = !isInRate"
         v-html="rateLabel"
       />

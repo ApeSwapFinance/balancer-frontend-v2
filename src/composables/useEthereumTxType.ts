@@ -4,13 +4,12 @@ import LS_KEYS from '@/constants/local-storage.keys';
 import { lsGet, lsSet } from '@/lib/utils';
 
 export enum EthereumTxType {
-  LEGACY = 'Legacy',
-  EIP1559 = 'EIP1559'
+  LEGACY = 'Legacy'
 }
 
 const lsEthereumTxType = lsGet(
   LS_KEYS.App.EthereumTxType,
-  EthereumTxType.EIP1559
+  EthereumTxType.LEGACY
 );
 
 // STATE

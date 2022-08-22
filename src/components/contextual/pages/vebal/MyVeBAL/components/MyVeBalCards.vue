@@ -160,7 +160,7 @@ const cards = computed(() => {
     <div class="value" :class="card.id">
       <div v-if="card.id === 'myLockedLpToken'">
         <span
-          :class="{ 'text-red-500': totalExpiredLpTokens > 0 }"
+          :class="{ 'text-error': totalExpiredLpTokens > 0 }"
           class="font-bold truncate mr-1"
           >{{ card.value }}</span
         >
@@ -169,9 +169,7 @@ const cards = computed(() => {
           :text="$t('veBAL.myVeBAL.cards.myExpiredLockTooltip')"
           icon-size="sm"
           :icon-name="'alert-triangle'"
-          :icon-class="
-            'text-red-500 hover:text-red-700 dark:hover:text-red-400 transition-colors'
-          "
+          :icon-class="'text-error transition-colors'"
           width="72"
           class="relative top-0.5"
         />
@@ -224,7 +222,7 @@ const cards = computed(() => {
 }
 
 .secondary-value {
-  @apply text-sm text-gray-500 dark:text-gray-400;
+  @apply text-sm text-gray dark:text-gray-dark;
 }
 
 .plus-circle:hover,
@@ -236,7 +234,7 @@ const cards = computed(() => {
 
 .plus-circle:hover :deep(svg.feather-plus-circle),
 .plus-circle:focus :deep(svg.feather-plus-circle) {
-  @apply transition-all text-white;
+  @apply transition-all text-primary-bright;
   fill: #384aff; /* blue-500 */
 }
 
@@ -247,7 +245,7 @@ const cards = computed(() => {
 
 .minus-circle:hover :deep(svg.feather-minus-circle),
 .minus-circle:focus :deep(svg.feather-minus-circle) {
-  @apply transition-all text-white;
+  @apply transition-all text-primary-bright;
   fill: rgba(239, 68, 68); /* red-500 */
 }
 

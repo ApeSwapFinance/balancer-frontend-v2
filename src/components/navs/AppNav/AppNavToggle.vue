@@ -1,5 +1,5 @@
 <template>
-  <div :class="`app-nav-toggle bg-gray-50 dark:bg-gray-${darkModeBg}`">
+  <div :class="`app-nav-toggle dark:bg-gray-${darkModeBg}`">
     <router-link
       :to="{ name: 'home' }"
       :class="[
@@ -38,7 +38,7 @@ export default defineComponent({
 
   setup() {
     const route = useRoute();
-    const activeClasses = 'gradient-blue-l-to-r text-white rounded-lg';
+    const activeClasses = 'text-primary-bright rounded-lg';
     const isTradePage = computed(() => route.name === 'trade');
     const { trackGoal, Goals } = useFathom();
 
@@ -54,8 +54,7 @@ export default defineComponent({
 
 <style scoped>
 .app-nav-toggle {
-  @apply h-10 flex items-center rounded-lg shadow;
-  font-variation-settings: 'wght' 600;
+  @apply h-10 flex items-center rounded-lg font-bold;
 }
 
 .toggle-link {

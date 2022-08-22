@@ -6,7 +6,6 @@ import { useRouter } from 'vue-router';
 import StakedPoolsTable from '@/components/contextual/pages/pools/StakedPoolsTable.vue';
 import UnstakedPoolsTable from '@/components/contextual/pages/pools/UnstakedPoolsTable.vue';
 import TokenSearchInput from '@/components/inputs/TokenSearchInput.vue';
-import FeaturedProtocols from '@/components/sections/FeaturedProtocols.vue';
 import PoolsTable from '@/components/tables/PoolsTable/PoolsTable.vue';
 import usePoolFilters from '@/composables/pools/usePoolFilters';
 import usePools from '@/composables/pools/usePools';
@@ -23,8 +22,7 @@ import useWeb3 from '@/services/web3/useWeb3';
 // COMPOSABLES
 const router = useRouter();
 const { t } = useI18n();
-const { isWalletReady, appNetworkConfig, isWalletConnecting } = useWeb3();
-const isElementSupported = appNetworkConfig.supportsElementPools;
+const { isWalletReady, isWalletConnecting } = useWeb3();
 const {
   selectedTokens,
   addSelectedToken,
@@ -117,12 +115,14 @@ function navigateToCreatePool() {
           </BalStack>
         </BalStack>
       </BalStack>
-      <div class="mb-16" />
+      <div class="mb-10" />
     </template>
 
     <BalStack vertical>
       <div class="px-4 lg:px-0">
-        <h3 class="mb-3">{{ $t('investmentPools') }}</h3>
+        <h3 class="mb-3 text-primary dark:text-primary-bright">
+          {{ $t('investmentPools') }}
+        </h3>
         <div
           class="flex flex-col md:flex-row w-full justify-between items-end lg:items-center"
         >
@@ -135,9 +135,10 @@ function navigateToCreatePool() {
           />
           <BalBtn
             @click="navigateToCreatePool"
-            color="blue"
+            color="ape-yellow"
             size="sm"
             :class="{ 'mt-4': upToMediumBreakpoint }"
+            class="bg-ape-yellow hover:bg-hovered-ape-yellow"
             :block="upToMediumBreakpoint"
           >
             {{ $t('createAPool.title') }}
@@ -157,9 +158,6 @@ function navigateToCreatePool() {
         :isLoading="isInvestmentPoolsTableLoading"
       >
       </PoolsTable>
-      <div v-if="isElementSupported" class="mt-16 p-4 lg:p-0">
-        <FeaturedProtocols />
-      </div>
     </BalStack>
   </div>
 </template>

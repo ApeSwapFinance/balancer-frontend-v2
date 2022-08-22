@@ -207,7 +207,7 @@ onBeforeMount(async () => {
       <div
         v-for="(lockActionState, i) in lockActionStates"
         :key="i"
-        class="flex items-center justify-between text-gray-400 dark:text-gray-600 mt-4 text-sm"
+        class="flex items-center justify-between text-gray-dark dark:text-gray-dark mt-4 text-sm"
       >
         <div class="flex items-center">
           <BalIcon name="clock" />

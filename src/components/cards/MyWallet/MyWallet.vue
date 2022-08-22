@@ -63,17 +63,17 @@ const tokensWithBalance = computed(() => {
     :hFull="upToLargeBreakpoint"
     shadow="none"
   >
-    <div class="flex flex-col w-full h-full bg-transparent">
+    <div class="flex flex-col w-full h-full my-wal-bg">
       <div
-        class="flex lg:justify-between p-3 pb-0 lg:pb-3 lg:border-b dark:border-gray-700"
+        class="flex lg:justify-between p-3 pb-0 lg:pb-3 lg:border-b lg:border-white4 dark:lg:border-white4-dark"
       >
         <h6 v-if="!upToLargeBreakpoint">{{ $t('myWallet2') }}</h6>
         <div
-          class="font-semibold lg:font-normal ml-1 lg:ml-0"
+          class="font-bold lg:font-medium ml-1 lg:ml-0"
           v-if="!isLoadingBalances"
         >
           <div
-            class="text-red-500 hover:text-red-700 dark:hover:text-red-400 transition-colors mr-0.5"
+            class="text-error hover:text-hovered-error transition-colors mr-0.5"
             v-if="!hasBalance(nativeAsset.address)"
           >
             {{ etherBalance }} {{ nativeCurrency }}
@@ -87,7 +87,7 @@ const tokensWithBalance = computed(() => {
               icon-size="sm"
               :icon-name="'alert-triangle'"
               :icon-class="
-                'text-red-500 hover:text-red-700 dark:hover:text-red-400 transition-colors'
+                'text-error hover:text-hovered-error transition-colors'
               "
               width="72"
               class="relative top-0.5"
@@ -110,7 +110,7 @@ const tokensWithBalance = computed(() => {
           >
           </BalAssetSet>
           <p
-            class="text-sm text-gray-500 dark:text-gray-400 opacity-0 fade-in"
+            class="text-sm text-gray dark:text-gray-dark opacity-0 fade-in"
             v-if="tokensWithBalance.length === 0"
           >
             {{ noTokensMessage }}.
@@ -125,3 +125,5 @@ const tokensWithBalance = computed(() => {
     </div>
   </BalCard>
 </template>
+
+<style scoped></style>

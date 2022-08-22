@@ -53,14 +53,14 @@ function formatWeightLabel(weight: string) {
   <div class="container">
     <div class="p-3 flex justify-between items-center">
       <div>
-        <div class="font-semibold">
+        <div class="font-bold">
           {{
             $t('getVeBAL.previewModal.lpTokens', [
               fNum2(totalLpTokens, FNumFormats.token)
             ])
           }}
         </div>
-        <div class="text-gray-400 dark:text-gray-600">
+        <div class="text-gray-dark dark:text-gray-dark">
           {{ poolWeightsLabel }}
         </div>
       </div>
@@ -78,6 +78,6 @@ function formatWeightLabel(weight: string) {
 
 <style scoped>
 .container {
-  @apply shadow-lg border dark:border-gray-700 divide-y dark:divide-gray-700 rounded-lg;
+  @apply shadow-lg border dark:border-white4-dark divide-y dark:divide-white4-dark rounded-lg;
 }
 </style>

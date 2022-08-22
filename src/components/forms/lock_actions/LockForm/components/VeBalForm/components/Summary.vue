@@ -39,7 +39,7 @@ const { veBalTokenInfo } = useVeBal();
 
 <style scoped>
 .container {
-  @apply border dark:border-gray-800 bg-gray-50 dark:bg-gray-800 divide-y dark:divide-gray-850 rounded-lg text-sm;
+  @apply border dark:border-white3-dark bg-primary-bright dark:bg-white3-dark divide-y dark:divide-white1-dark rounded-lg text-sm;
 }
 
 .row {

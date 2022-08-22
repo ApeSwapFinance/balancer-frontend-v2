@@ -88,14 +88,14 @@ function handleSelected(newToken: string): void {
             class="shadow mr-2"
           />
         </div>
-        <span class="text-base font-medium">
+        <span class="text-xl font-bold">
           <span v-if="isProportional">All tokens</span>
           <span v-else>{{ selectedToken.symbol }}</span>
         </span>
         <BalIcon
           name="chevron-down"
           size="sm"
-          class="text-blue-500 group-hover:text-pink-500 ml-2"
+          class="text-primary dark:text-primary-bright ml-2"
         />
       </div>
     </template>
@@ -108,7 +108,7 @@ function handleSelected(newToken: string): void {
         <BalIcon
           v-if="selectedOption === option"
           name="check"
-          class="text-blue-500 ml-2"
+          class="text-primary dark:text-primary-bright ml-2"
         />
       </div>
       <div v-else class="flex items-center justify-between">
@@ -119,7 +119,7 @@ function handleSelected(newToken: string): void {
         <BalIcon
           v-if="selectedOption === option"
           name="check"
-          class="text-blue-500 ml-2"
+          class="text-primary dark:text-primary-bright ml-2"
         />
       </div>
     </template>
@@ -128,9 +128,8 @@ function handleSelected(newToken: string): void {
 
 <style scoped>
 .token-select-input {
-  @apply shadow rounded-lg flex items-center h-10 px-2 whitespace-nowrap;
-  @apply text-sm;
-  font-variation-settings: 'wght' 700;
+  @apply rounded-lg flex items-center h-10 px-2 whitespace-nowrap;
+  @apply text-sm font-bold;
 }
 
 .selectable {
@@ -138,6 +137,6 @@ function handleSelected(newToken: string): void {
 }
 
 .selected {
-  @apply bg-gray-50 dark:bg-gray-700 text-black dark:text-white;
+  @apply bg-white4 dark:bg-white4-dark text-primary dark:text-primary-bright;
 }
 </style>

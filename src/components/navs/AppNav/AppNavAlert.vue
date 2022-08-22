@@ -6,8 +6,9 @@
         <p class="alert-label">{{ alert.label }}</p>
         <BalBtn
           v-if="alert.action && alert.actionLabel"
-          class="cursor-pointer"
+          class="app-nav-btn cursor-pointer"
           color="white"
+          outline
           size="xs"
           :label="alert.actionLabel"
           @click="alert.action"
@@ -43,11 +44,11 @@ export default defineComponent({
     const colorClass = computed(() => {
       switch (props.alert.type) {
         case AlertType.ERROR:
-          return 'bg-red-500 text-white';
+          return 'bg-error text-primary-bright';
         case AlertType.FEATURE:
-          return 'bg-orange-300 text-black';
+          return 'bg-gray text-primary-bright';
         default:
-          return 'bg-black text-white';
+          return 'bg-white4 text-primary';
       }
     });
 
@@ -89,5 +90,8 @@ export default defineComponent({
 }
 .alert-label {
   @apply font-medium pb-1 block md:inline pr-4;
+}
+.app-nav-btn {
+  @apply font-medium text-sm;
 }
 </style>

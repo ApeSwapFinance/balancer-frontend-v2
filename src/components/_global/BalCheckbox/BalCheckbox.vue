@@ -102,7 +102,7 @@ export default defineComponent({
     });
 
     const colorClasses = computed(() => {
-      return `text-${props.color}-500`;
+      return `text-${props.color}`;
     });
 
     const wrapperClasses = computed(() => {
@@ -143,7 +143,7 @@ export default defineComponent({
 }
 
 .bal-checkbox-input {
-  @apply text-blue-500 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded leading-none;
+  @apply text-ape-yellow bg-white3 dark:bg-white3-dark border border-white4 dark:border-white4-dark rounded leading-none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -167,6 +167,6 @@ export default defineComponent({
 }
 
 .bal-checkbox-error {
-  @apply absolute text-red-500 text-sm;
+  @apply absolute text-error text-sm;
 }
 </style>

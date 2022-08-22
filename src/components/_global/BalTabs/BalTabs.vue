@@ -53,8 +53,8 @@ export default defineComponent({
 
     function stateClasses(tab: Tab): Record<string, boolean> {
       return {
-        'border-blue-500 text-blue-500 hover:text-blue-500': isActiveTab(tab),
-        'hover:text-black dark:hover:text-white dark:border-gray-900 transition-colors': !isActiveTab(
+        'border-ape-yellow text-ape-yellow': isActiveTab(tab),
+        'text-gray dark:text-gray-dark hover:text-ape-yellow dark:hover:text-ape-yellow border-none transition-colors': !isActiveTab(
           tab
         )
       };
@@ -76,6 +76,6 @@ export default defineComponent({
 }
 
 .bal-tab-container {
-  @apply flex border-b font-medium text-gray-500 dark:border-gray-900;
+  @apply flex border-b font-medium text-gray dark:border-white1-dark;
 }
 </style>

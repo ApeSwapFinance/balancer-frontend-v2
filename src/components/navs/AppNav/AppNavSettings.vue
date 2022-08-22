@@ -1,10 +1,16 @@
 <template>
   <div>
-    <div class="p-4 border-b dark:border-gray-900">
+    <div class="p-4 border-b border-white4 dark:border-white4-dark">
       <div class="flex justify-between items-center mb-4">
         <h5 v-text="$t('account')" class="leading-none" />
         <div v-if="!hideDisconnect">
-          <BalBtn outline color="gray" size="xs" @click="disconnectWallet">
+          <BalBtn
+            outline
+            color="gray"
+            size="xs"
+            class="disconnect-btn"
+            @click="disconnectWallet"
+          >
             Disconnect
           </BalBtn>
         </div>
@@ -16,26 +22,32 @@
             <div class="connector-icon-wrapper">
               <img
                 :src="connectorLogo"
-                class="p-0.5 w-5 h-5 absolute bottom-0 right-0 flex items-center justify-center bg-white rounded-full"
+                class="p-0.5 w-5 h-5 absolute bottom-0 right-0 flex items-center justify-center bg-white3 rounded-full"
               />
             </div>
           </div>
           <div class="ml-2">
             <div class="address flex items-baseline">
-              <div v-text="_shorten(account)" />
+              <div v-text="_shorten(account)" class="text-ape-yellow" />
               <div class="ml-3 flex">
                 <BalTooltip width="auto">
                   <template v-slot:activator>
                     <BalBtn
                       circle
-                      color="gray"
+                      outline
+                      color="primary"
                       size="xs"
                       flat
                       @click="copyAddress"
                       class="mr-2"
                     >
                       <BalIcon v-if="copiedAddress" name="check" size="xs" />
-                      <BalIcon v-else name="clipboard" size="xs" />
+                      <BalIcon
+                        v-else
+                        name="clipboard"
+                        size="xs"
+                        class="text-primary dark:text-primary-bright"
+                      />
                     </BalBtn>
                   </template>
                   <div
@@ -46,14 +58,19 @@
                 <BalBtn
                   circle
                   flat
-                  color="gray"
+                  outline
+                  color="primary"
                   size="xs"
                   tag="a"
                   :href="explorer.addressLink(account)"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <BalIcon name="arrow-up-right" size="xs" />
+                  <BalIcon
+                    name="arrow-up-right"
+                    size="xs"
+                    class="text-primary dark:text-primary-bright"
+                  />
                 </BalBtn>
               </div>
             </div>
@@ -100,7 +117,11 @@
         <span v-text="$t('slippageTolerance')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-400 -mb-px" />
+            <BalIcon
+              name="info"
+              size="xs"
+              class="ml-1 text-primary dark:text-primary-bright -mb-px"
+            />
           </template>
           <div v-html="$t('marketConditionsWarning')" />
         </BalTooltip>
@@ -112,7 +133,11 @@
         <span v-text="$t('transactionType')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-400 -mb-px" />
+            <BalIcon
+              name="info"
+              size="xs"
+              class="ml-1 text-primary dark:text-primary-bright -mb-px"
+            />
           </template>
           <div v-text="$t('ethereumTxTypeTooltip')" />
         </BalTooltip>
@@ -131,7 +156,11 @@
         <span v-text="$t('tradeInterface')" class="font-medium mb-2" />
         <BalTooltip>
           <template v-slot:activator>
-            <BalIcon name="info" size="xs" class="ml-1 text-gray-400 -mb-px" />
+            <BalIcon
+              name="info"
+              size="xs"
+              class="ml-1 text-gray dark:text-gray-dark -mb-px"
+            />
           </template>
           <div v-text="$t('tradeInterfaceTooltip')" class="w-52" />
         </BalTooltip>
@@ -144,7 +173,7 @@
       <div class="flex mt-1"></div>
     </div>
     <div
-      class="network p-4 mt-4 text-sm border-t dark:border-gray-900 rounded-b-xl"
+      class="network p-4 mt-4 text-sm border-t border-white4 dark:border-white4-dark rounded-b-xl"
     >
       <div v-text="$t('network')" />
       <div class="flex items-baseline">
@@ -212,6 +241,18 @@ export default defineComponent({
       isUnsupportedNetwork
     } = useWeb3();
     const { ethereumTxType, setEthereumTxType } = useEthereumTxType();
+
+    console.log('ethereumTxTypeOptions', ethereumTxTypeOptions);
+    console.log('ethereumTxType', ethereumTxType);
+
+    // const hideNetwork = false;
+    // const newTxTypeOptions = ethereumTxTypeOptions;
+
+    // const hideEIP1559Button = () => {
+    //   // if hideEIPNetwork is true
+    //   // then get ethereumTxTypeOptions array
+    //   // remove the object with label of EIP1559Button from the ethereumTxTypeOptions
+    // }
 
     // DATA
     const data = reactive({
@@ -309,23 +350,9 @@ export default defineComponent({
 
 <style scoped>
 .address {
-  @apply text-blue-500;
   font-variant-ligatures: no-contextual;
 }
-
-.option:hover {
-  @apply text-blue-500 border-blue-500;
-}
-
-.option.active {
-  @apply text-blue-500 border-blue-500;
-}
-
-.slippage-input {
-  @apply bg-white;
-}
-
-.slippage-input.active {
-  @apply text-blue-500 border-blue-500;
+.disconnect-btn {
+  @apply font-medium normal-case text-xs;
 }
 </style>
